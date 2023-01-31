@@ -14,7 +14,7 @@ const header = {
   left: 0,
   width: "100%",
   height: "1rem",
-  backgroundColor: "#ADFF00",
+  backgroundColor: "#F2DAC4",
   color: "white",
 };
 
@@ -25,7 +25,7 @@ const footer = {
   bottom: 0,
   width: "100%",
   height: "1rem",
-  backgroundColor: "#ADFF00",
+  backgroundColor: "#F2DAC4",
   color: "white",
   display: "flex",
   justifyContent: "center",
