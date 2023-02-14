@@ -39,7 +39,9 @@ export default function March11Vendors() {
      <p> 26. <a href="https://www.instagram.com/spruced.fibers"> spruced fibers </a> - small-batch handcrafted knits </p>
      <p> 27. <a href="https://www.instagram.com/codytreats"> cody's treats </a> - small-batch pet treats, cookies, and chews </p>
      <p> 28. <a href="https://www.instagram.com/jun333designs"> june nelson </a> - chainmail art </p>
-
+     <p> 29. <a href="https://www.instagram.com/dirtboyceramics"> dirtboyceramics </a> - bold ceramics handmade with love </p>
+     <p> 30. <a href="https://www.instagram.com/feelingblue.sf"> feelingblue.sf </a> - felt wall hangings </p>
+     <p> 31. <a href="https://twobaldguysart.com/collections/gwanhyeun-joe?page=3"> Cho Gwanhyeon </a> - fine art and prints </p>
         <Spacer height={2} />
       <p>apply to be a vendor: <a href="mailto:m@ourquest.xyz"> michellurito@gmail.com </a></p>
       
