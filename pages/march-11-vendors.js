@@ -43,6 +43,7 @@ export default function March11Vendors() {
      <p> 30. <a href="https://www.instagram.com/feelingblue.sf"> feelingblue.sf </a> - felt wall hangings </p>
      <p> 31. <a href="https://twobaldguysart.com/collections/gwanhyeun-joe?page=3"> Cho Gwanhyeon </a> - fine art and prints </p>
      <p> 32. <a href="https://www.instagram.com/newt.kazoot"> Adaleyd DeLeon </a> - prints and live sketch commissions </p>
+     <p> 33. <a href="/feralCounty"> Feral County Furniture <b> (Taking Preorders on Etsy!) </b> </a> Shou Sugi Ban wood burnt tables </p>
 
         <Spacer height={2} />
       <p>apply to be a vendor: <a href="mailto:m@ourquest.xyz"> michellurito@gmail.com </a></p>
