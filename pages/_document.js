@@ -10,6 +10,7 @@ class MyDocument extends Document {
         return (
             <Html>
                 <Head>
+                    <meta name="description" content="Queer Art Fair" />
                     <link href="https://fonts.googleapis.com/css?family=Spartan:400, 400i,700&display=swap" rel="stylesheet"></link>
                     <style
                         dangerouslySetInnerHTML={{
