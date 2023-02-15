@@ -8,7 +8,7 @@ export default function March11Vendors() {
       <Layout />
       <div style={Styles.content}>
         <h1> Spring Queer Art Fair Vendors - March 11, 2023 </h1>
-        <h2> Location: Stonestown Sports Basement </h2>
+        <h2> Location: Pebble Bed 1417 15th St, San Francisco, CA 94103  </h2>
         <h3> Time: 11am-4pm </h3>
 
       <p> 1. <a href="https://www.instagram.com/by.evey/"> created by Ev </a>- crochet and earrings </p>
@@ -42,6 +42,8 @@ export default function March11Vendors() {
      <p> 29. <a href="https://www.instagram.com/dirtboyceramics"> dirtboyceramics </a> - bold ceramics handmade with love </p>
      <p> 30. <a href="https://www.instagram.com/feelingblue.sf"> feelingblue.sf </a> - felt wall hangings </p>
      <p> 31. <a href="https://twobaldguysart.com/collections/gwanhyeun-joe?page=3"> Cho Gwanhyeon </a> - fine art and prints </p>
+     <p> 32. <a href="https://www.instagram.com/newt.kazoot"> Adaleyd DeLeon </a> - prints and live sketch commissions </p>
+
         <Spacer height={2} />
       <p>apply to be a vendor: <a href="mailto:m@ourquest.xyz"> michellurito@gmail.com </a></p>
       
