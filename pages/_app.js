@@ -20,7 +20,8 @@ export default class MyApp extends App {
             <>
                 <Head>
                     <title>queer art fair 2023</title>
-                    <description>an inclusive gaggle of artists, from everyday makers to fine arts and craft</description>
+                    <meta name="description" content="an inclusive space to make, sell and share your craft"> </meta>
+
                 </Head>
                 <Component {...pageProps} />
             </>
