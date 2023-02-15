@@ -14,7 +14,7 @@ const header = {
   left: 0,
   width: "100%",
   height: "1rem",
-  backgroundColor: "#F2DAC4",
+  backgroundColor: "#F7A8DF",
   color: "white",
 };
 
@@ -25,7 +25,7 @@ const footer = {
   bottom: 0,
   width: "100%",
   height: "1rem",
-  backgroundColor: "#F2DAC4",
+  backgroundColor: "#F7A8DF",
   color: "white",
   display: "flex",
   justifyContent: "center",
@@ -35,7 +35,11 @@ const Header = () => (
   <div style={header}>
     <a style={linkStyle} href="/">
       {" "}
-      home{" "}
+      Home{" "}
+    </a>
+    <a style={linkStyle} href="/march-11-vendors">
+      {" "}
+      Spring Vendors{" "}
     </a>
   </div>
 );

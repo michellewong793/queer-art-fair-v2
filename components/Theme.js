@@ -10,6 +10,12 @@ let styles = {
     header: {
     },
 
+    posterImage: {
+        height: '350px',
+
+    }   
+    ,
+
     link: {
         fontSize: '14px',
         textDecoration: 'none',

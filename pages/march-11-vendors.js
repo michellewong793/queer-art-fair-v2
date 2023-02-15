@@ -46,7 +46,9 @@ export default function March11Vendors() {
      <p> 33. <a href="/feralCounty"> Feral County Furniture <b> (Taking Preorders on Etsy!) </b> </a> - Shou Sugi Ban wood burnt tables </p>
 
         <Spacer height={2} />
-      <p>apply to be a vendor: <a href="mailto:m@ourquest.xyz"> michellurito@gmail.com </a></p>
+        <h1>Apply to be a vendor!</h1> 
+      <p> Send a short description of your offering, a biography, and a link to your social platforms, including Instagram, Etsy, or personal website to <a href="mailto:m@ourquest.xyz"> michellurito@gmail.com. </a></p>
+      <p> If you don't have a personal website, please message us about opportunities in which the team can help you with building one. </p>
       
       
       </div>

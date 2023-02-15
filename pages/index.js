@@ -7,13 +7,13 @@ export default function Index() {
     <div>
       <Layout />
       <div style={Styles.content}>
-        <h1> Queer Art Faire 2023</h1>
+        <h1> Share your craft at.. </h1>
 
-        <hr/>
+        <img src="/QueerArtFaireSF.jpg" style={Styles.posterImage}/>
 
 
-        <h2>March 11, 2023</h2>
-        <h3> Location: Pebble Bed 1417 15th St, San Francisco, CA 94103 </h3>
+        <h2>Come visit us at Pebble Bed - March 11, 2023</h2>
+        <h3> Location: 1417 15th St, San Francisco, CA 94103 </h3>
         <h3> Time: 11am - 4pm </h3>
 
         <a href="/march-11-vendors"> Spring Fair Vendor List </a>
@@ -35,8 +35,9 @@ export default function Index() {
 
 
         <Spacer height={2} />
-      <p>apply to be a vendor: <a href="mailto:m@ourquest.xyz"> michellurito@gmail.com </a></p>
-      
+        <h1>Apply to be a vendor!</h1> 
+      <p> Send a short description of your offering, a biography, and a link to your social platforms, including Instagram, Etsy, or personal website to <a href="mailto:m@ourquest.xyz"> michellurito@gmail.com. </a></p>
+      <p> If you don't have a personal website, please message us about opportunities in which the team can help you with building one. </p>
       
       </div>
     </div>
