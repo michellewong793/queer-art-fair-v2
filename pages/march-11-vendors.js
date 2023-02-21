@@ -30,7 +30,7 @@ export default function March11Vendors() {
      <p> 17. <a href="https://www.instagram.com/nicoleskitchin"> nicole's kitchin </a> - baked goods and snacks </p>
      <p> 18. <a href="https://www.instagram.com/potheadceramics"> kelsey parker - pothead ceramics </a> - ceramics and prints </p>
      <p> 19. <a href="https://www.instagram.com/aimathedrmr"> aima - be light candles and hue man style </a> - candles and gender neutral clothing </p>
-     <p> 20. <a href="https://www.instagram.com/caketherapy"> cake therapy and kuya studios </a> - baked goods and ceramics </p>
+     <p> 20. <a href="https://www.instagram.com/caketherapybakes"> cake therapy and kuya studios </a> - baked goods and ceramics </p>
      <p> 21. <a href="https://www.instagram.com/moodyzillenial"> moody zillenial </a> - y2k fashion and accessories </p>
      <p> 22. <a href="https://www.instagram.com/clairerandstudio"> claire rand </a> - hats, drawings, art </p>
      <p> 23. <a href="https://www.instagram.com/ashokaalvarez"> asho's prints and cards </a> - stamped linocut prints and cards </p>
