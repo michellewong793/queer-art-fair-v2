@@ -44,6 +44,7 @@ export default function March11Vendors() {
      <p> 31. <a href="https://twobaldguysart.com/collections/gwanhyeun-joe?page=3"> Cho Gwanhyeon </a> - fine art and prints </p>
      <p> 32. <a href="https://www.instagram.com/newt.kazoot"> Adaleyd DeLeon </a> - prints and live sketch commissions </p>
      <p> 33. <a href="/feralCounty"> Feral County Furniture <b> (Taking Preorders on Etsy!) </b> </a> - Shou Sugi Ban wood burnt tables </p>
+     <p> 34. Olivia Lamont  - prints, stickers, small paintings </p>
 
         <Spacer height={2} />
         <h1>Apply to be a vendor!</h1> 
