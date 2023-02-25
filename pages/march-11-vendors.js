@@ -46,7 +46,8 @@ export default function March11Vendors() {
      <p> 33. <a href="/feralCounty"> Feral County Furniture <b> (Taking Preorders on Etsy!) </b> </a> - Shou Sugi Ban wood burnt tables </p>
      <p> 34. Olivia Lamont  - prints, stickers, small paintings </p>
      <p> 35. <a href="https://www.etsy.com/shop/CurioDesignsEmporium"> Galen Wong & The Curio Emporium </a> - original designs </p>
-     <p> 36. <a href="https://www.instagram.com/donrbedumbo_"> Charisma Butler </a> - vaporwave-psychadelic inspired zines </p>
+     <p> 36. <a href="https://www.instagram.com/donrbedumbo_"> Charisma Butler </a> - <a href="thequeenbysartexistsat.threadless.com"> vaporwave-psychadelic inspired zines</a> </p>
+     <p> 37. <a href="https://www.instagram.com/lili_designs_shop"> Lili Torres </a> - <a href="https://lilidesignsshop.square.site/"> custom stickers and tshirts </a> </p>
 
 
         <Spacer height={2} />
