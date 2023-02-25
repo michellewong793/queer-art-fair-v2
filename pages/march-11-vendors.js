@@ -45,6 +45,9 @@ export default function March11Vendors() {
      <p> 32. <a href="https://www.instagram.com/newt.kazoot"> Adaleyd DeLeon </a> - prints and live sketch commissions </p>
      <p> 33. <a href="/feralCounty"> Feral County Furniture <b> (Taking Preorders on Etsy!) </b> </a> - Shou Sugi Ban wood burnt tables </p>
      <p> 34. Olivia Lamont  - prints, stickers, small paintings </p>
+     <p> 35. <a href="https://www.etsy.com/shop/CurioDesignsEmporium"> Galen Wong & The Curio Emporium </a> - original designs </p>
+     <p> 36. <a href="https://www.instagram.com/donrbedumbo_"> Charisma Butler </a> - vaporwave-psychadelic inspired zines </p>
+
 
         <Spacer height={2} />
         <h1>Apply to be a vendor!</h1> 
