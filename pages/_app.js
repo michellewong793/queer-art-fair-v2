@@ -1,6 +1,8 @@
 import App from 'next/app'
 import Head from 'next/head'
 import React from 'react'
+import { Analytics } from '@vercel/analytics/react';
+
 
 export default class MyApp extends App {
     static async getInitialProps({ Component, ctx }) {
@@ -22,6 +24,7 @@ export default class MyApp extends App {
                     <title>an inclusive space to make, share, and sell your craft</title>
                 </Head>
                 <Component {...pageProps} />
+                <Analytics />
             </>
         )
     }
