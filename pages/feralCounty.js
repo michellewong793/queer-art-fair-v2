@@ -21,6 +21,8 @@ export default function Index() {
         <hr/>
 
         <Spacer height={2} />
+        <a href="/march-11-vendors"> Back to Vendor List </a>
+
       <p>apply to be a vendor: <a href="mailto:m@ourquest.xyz"> michellurito@gmail.com </a></p>
       
       

@@ -41,14 +41,19 @@ export default function March11Vendors() {
      <p> 28. <a href="https://www.instagram.com/jun333designs"> june nelson </a> - chainmail art </p>
      <p> 29. <a href="https://www.instagram.com/dirtboyceramics"> dirtboyceramics </a> - bold ceramics handmade with love </p>
      <p> 30. <a href="https://www.instagram.com/feelingblue.sf"> feelingblue.sf </a> - felt wall hangings </p>
-     <p> 31. <a href="https://twobaldguysart.com/collections/gwanhyeun-joe?page=3"> Cho Gwanhyeon </a> - fine art and prints </p>
+     <p> 31. <a href="https://twobaldguysart.com/collections/gwanhyeun-joe?page=3"> Cho Gwanhyeon and John Rockwell </a> - fine art and prints </p>
      <p> 32. <a href="https://www.instagram.com/newt.kazoot"> Adaleyd DeLeon </a> - prints and live sketch commissions </p>
      <p> 33. <a href="/feralCounty"> Feral County Furniture <b> (Taking Preorders on Etsy!) </b> </a> - Shou Sugi Ban wood burnt tables </p>
      <p> 34. Olivia Lamont  - prints, stickers, small paintings </p>
      <p> 35. <a href="https://www.etsy.com/shop/CurioDesignsEmporium"> Galen Wong & The Curio Emporium </a> - original designs </p>
-     <p> 36. <a href="https://www.instagram.com/donrbedumbo_"> Charisma Butler </a> - <a href="thequeenbysartexistsat.threadless.com"> vaporwave-psychadelic inspired zines</a> </p>
+     <p> 36. <a href="https://www.instagram.com/dontbedumbo_"> Charisma Butler </a> - <a href="thequeenbysartexistsat.threadless.com"> vaporwave-psychadelic inspired zines</a> </p>
      <p> 37. <a href="https://www.instagram.com/lili_designs_shop"> Lili Torres </a> - <a href="https://lilidesignsshop.square.site/"> custom stickers and tshirts </a> </p>
-
+     <p> 38. <a href="https://www.instagram.com/cmy.ar7/"> Christy M. Yee </a> - <a href="https://sphere-goby-lxmn.squarespace.com/store"> stickers, prints, and tshirts </a> </p>
+     <p> 39. <a href="https://www.instagram.com/thedawnspring"> thedawnspring </a> - <a href="www.thedawnspring.com"> handmade jewelry made with vintage czech glass beads and pearls and stones </a> </p>
+     <p> 39. <a href="https://www.instagram.com/starseedcandle"> starseedcandle </a> - candles filled with crystals, essential oils, flowers to combar stress, manifest, purify home</p>
+     <p> 40. <a href="https://www.instagram.com/queerdosf"> queerdosf </a> - sex-positive, queer and funny earrings</p>
+     <p> 41. <a href="https://www.instagram.com/frootyshop"> frootyshop </a> - <a href="/frootyshop"> beaded jewelry </a> </p>
+     <p> 42. <a href="https://www.instagram.com/fka.Gaia"> gaia </a> - <a href="/gaia"> unique and colorful prints - CATBOY, handmade jewelry, hand-sculpted dishes, vases, and ashtrays </a> </p>
 
         <Spacer height={2} />
         <h1>Apply to be a vendor!</h1> 

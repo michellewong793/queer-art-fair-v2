@@ -27,7 +27,7 @@ let styles = {
         paddingRight: '1rem',
         paddingBottom: '1rem',
         marginBottom: 100,
-        textAlign: 'center',
+        textAlign: 'left',
         maxWidth: '700px',
         marginLeft: 'auto',
         marginRight: 'auto',
