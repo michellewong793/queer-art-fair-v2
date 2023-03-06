@@ -45,7 +45,7 @@ export default function March11Vendors() {
      <p> 31. <a href="https://twobaldguysart.com/collections/gwanhyeun-joe?page=3"> Cho Gwanhyeon and John Rockwell </a> - fine art and prints </p>
      <p> 32. <a href="https://www.instagram.com/newt.kazoot"> Adaleyd DeLeon </a> - prints and live sketch commissions </p>
      <p> 33. <a href="/feralCounty"> Feral County Furniture <b> (Taking Preorders on Etsy!) </b> </a> - Shou Sugi Ban wood burnt tables </p>
-     <p> 34. Olivia Lamont  - prints, stickers, small paintings </p>
+     <p> 34. <a href="https://www.instagram.com/frenchtoastdoodles">Olivia Lamont </a> - prints, stickers, small paintings </p>
      <p> 35. <a href="https://www.etsy.com/shop/CurioDesignsEmporium"> Galen Wong & The Curio Emporium </a> - original designs </p>
      <p> 36. <a href="https://www.instagram.com/dontbedumbo_"> Charisma Butler </a> - <a href="thequeenbysartexistsat.threadless.com"> vaporwave-psychadelic inspired zines</a> </p>
      <p> 37. <a href="https://www.instagram.com/lili_designs_shop"> Lili Torres </a> - <a href="https://lilidesignsshop.square.site/"> custom stickers and tshirts </a> </p>
