@@ -23,6 +23,7 @@ export default function March11Vendors() {
      <p> 10. <a href="https://www.instagram.com/flashbystace"> flashbystace </a> - flash tattoos </p>
      <p> 11. <a href="https://www.instagram.com/perfectlypinay"> mia balingit </a> - apparel, cups, stickers, planners </p>
      <p> 12. <a href="https://www.instagram.com/planningwithanna"> planning with anna </a> - planner sticker shop </p>
+     <p> 12.1 <a href="www.shopartsyanna.etsy.com"> plushy bouquets and graduation leis </a> </p>
      <p> 13. <a href="https://www.instagram.com/inkyfingerprintshop"> inkyfingerprintshop </a> - handmade prints and clothing </p>
      <p> 14. <a href="https://www.instagram.com/sarahkonggg"> sarah kong </a> - shirts and stickers </p>
      <p> 15. <a href="https://www.instagram.com/mission.tarot"> mission tarot </a> - tarot readings </p>
@@ -54,6 +55,9 @@ export default function March11Vendors() {
      <p> 40. <a href="https://www.instagram.com/queerdosf"> queerdosf </a> - sex-positive, queer and funny earrings</p>
      <p> 41. <a href="https://www.instagram.com/frootyshop"> frootyshop </a> - <a href="/frootyshop"> beaded jewelry </a> </p>
      <p> 42. <a href="https://www.instagram.com/fka.Gaia"> gaia </a> - <a href="/gaia"> unique and colorful prints - CATBOY, handmade jewelry, hand-sculpted dishes, vases, and ashtrays </a> </p>
+     <p> 43. <a href="https://www.instagram.com/strawbs4lunch"> strawbs4lunch </a> - crochet goods  </p>
+     <p> 44. <a href="https://www.instagram.com/water_witch"> water witch by azul </a> - jewelry, ocean bas, and garments </p>
+     <p> 45. <a href="https://www.instagram.com/sodapaints/"> alex sodari </a> - fine art prints, comix, zines, buttons, pins and shirts</p>
 
         <Spacer height={2} />
         <h1>Apply to be a vendor!</h1> 

@@ -4,21 +4,41 @@ import Spacer from "../components/Spacer";
 
 export default function Index() {
   return (
-    <div>
+    <div style={Styles.body}>
       <Layout />
       <div style={Styles.content}>
-        <h1> Share your craft at.. </h1>
+        <h1> 😱 omg.. did you hear about Queer Art Faire?</h1>
+        <p>an inclusive community of artists, makers, and vendors in San Francisco? ✨</p>
 
         <img src="/QueerArtFaireSF.jpg" style={Styles.posterImage}/>
 
 
-        <h2>Come visit us at Pebble Bed - March 11, 2023</h2>
+        <h3>Share your craft and meet local artists at our first event of 2023 on Saturday, 3/11/2023 </h3>
         <h3> Location: 1417 15th St, San Francisco, CA 94103 </h3>
         <h3> Time: 11am - 4pm </h3>
 
-        <a href="/march-11-vendors"> Spring Fair Vendor List </a>
-        <p><a href="https://www.eventbrite.com/e/2023-queer-art-faire-tickets-499055427217?aff=efbneb">Tickets to Event</a></p>
+        <br/>
+        <a style={Styles.link} href="/march-11-vendors"> Spring Vendor Roster 😍 </a>
 
+        <p><a style={Styles.link}href="https://www.eventbrite.com/e/2023-queer-art-faire-tickets-499055427217?aff=efbneb">Get Tickets 🥳</a></p>
+        <br/> 
+
+        <h4>Event Details</h4>
+
+        <p><b>COVID Policy: </b>Please stay at home if you are experiencing COVID-19 symptoms. Please be up to date on vaccinations and boosters. Masks are encouraged, but the venue will have good ventilation, and doors will be open. Attendees will be required to sign a waiver on the day of the event.</p>
+        <p><b>Pet Policy: </b>Dogs are allowed at the venue, as long as they are good with crowds.</p>
+        <p><b>Accessibility: </b>The venue is wheelchair accessible and has bathrooms.</p>
+
+
+        <br/>
+
+
+        <p>To keep Queer Art Faire an accessible event by being free for attendees and vendors, we ask for a <b>$5-$15</b> sliding scale donation for vendors and attendees on the day of the event. If you'd like to donate in advance, you can do so on the link below! Thank you so much for supporting our mission to bring inclusive spaces for art and creativity in the SF Bay Area. </p>
+
+        <a style={Styles.link} href="https://www.gofundme.com/f/queer-art-faire?utm_source=facebook&utm_medium=social&utm_campaign=p_cf%20share-flow-1&fbclid=IwAR2AgoudjzRzqhv20nRF1eQuLQjybLwB8aQxPMbORKvZZnJOCf2pTpFBTNQ"
+        >Donate to Queer Art Faire here 💖</a>
+        
+        <p></p>
         <hr/>
     
        
@@ -29,6 +49,10 @@ export default function Index() {
 
         <h2> (Accepting Vendors) Fall Fair: September 16, 2023</h2>
         <p> Location: Sports Basement Presidio </p>
+        <hr/>
+        <h2> (Accepting Vendors) Winter Fair: December 2, 2023</h2>
+        <p> Location: Sports Basement Presidio </p>
+
 
         <hr/>
 

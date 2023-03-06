@@ -22,6 +22,7 @@ export default class MyApp extends App {
             <>
                 <Head>
                     <title>an inclusive space to make, share, and sell your craft</title>
+                   
                 </Head>
                 <Component {...pageProps} />
                 <Analytics />

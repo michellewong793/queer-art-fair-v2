@@ -10,18 +10,8 @@ class MyDocument extends Document {
         return (
             <Html>
                 <Head>
-                    <meta name="description" content="Queer Art Fair" />
-                    <link href="https://fonts.googleapis.com/css?family=Spartan:400, 400i,700&display=swap" rel="stylesheet"></link>
-                    <style
-                        dangerouslySetInnerHTML={{
-                            __html: `
-                            body {
-                                font-family: "Spartan",
-                                font-size:16px,
-                            }
-                            `
-                        }}
-                    />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+                    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"></link>
                 </Head>
                 <body>
                     <Main />

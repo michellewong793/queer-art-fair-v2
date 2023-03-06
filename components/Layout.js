@@ -18,6 +18,11 @@ const header = {
   color: "white",
 };
 
+const body= {
+  fontFamily: 'poppins', 
+  margin: 0,
+}
+
 const footer = {
   position: "fixed",
   padding: "1rem",
@@ -37,6 +42,10 @@ const Header = () => (
       {" "}
       Home{" "}
     </a>
+    <a style={linkStyle} href="/about">
+      {" "}
+      About Us{" "}
+    </a>
     <a style={linkStyle} href="/march-11-vendors">
       {" "}
       Spring Vendors{" "}
@@ -46,18 +55,18 @@ const Header = () => (
 
 const Layout = () => {
   return (
-    <>
+    <div style={body}>
       {" "}
       <Header />
       
        <Footer />
-    </>
+    </div>
   );
 };
 
 const Footer = () => (
   <div style={footer}>
-    <a href="https://www.instagram.com/queerartfairsf"> instagram </a>
+    <a href="https://www.instagram.com/queerartfairsf"> Instagram </a>
   </div>
 );
 

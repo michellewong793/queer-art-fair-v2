@@ -1,7 +1,8 @@
 let styles = {
-    body: {
-        fontSize: '14px',
-    },
+     body: {
+       fontSize: '16px',
+     },
+
 
     h2: {
         fontSize: '16px',
@@ -17,20 +18,22 @@ let styles = {
     ,
 
     link: {
-        fontSize: '14px',
+        fontSize: '16px',
         textDecoration: 'none',
+        color: '#F088C9'
     },
 
     content: {
-        marginTop: 100,
-        paddingLeft: '1rem',
-        paddingRight: '1rem',
-        paddingBottom: '1rem',
-        marginBottom: 100,
-        textAlign: 'left',
-        maxWidth: '700px',
+        paddingTop: 100,
+        paddingLeft: '10%',
+        paddingRight: '10%',
         marginLeft: 'auto',
         marginRight: 'auto',
+        paddingBottom: 100,
+        textAlign: 'left',
+        maxWidth: '700px',
+        fontFamily: 'helvetica',
+        color: '#865399'
     },
 
     flexContainer: {
