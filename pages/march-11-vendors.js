@@ -57,7 +57,8 @@ export default function March11Vendors() {
      <p> 42. <a href="https://www.instagram.com/fka.Gaia"> gaia </a> - <a href="/gaia"> unique and colorful prints - CATBOY, handmade jewelry, hand-sculpted dishes, vases, and ashtrays </a> </p>
      <p> 43. <a href="https://www.instagram.com/strawbs4lunch"> strawbs4lunch </a> - crochet goods  </p>
      <p> 44. <a href="https://www.instagram.com/water_witch"> water witch by azul </a> - jewelry, ocean bas, and garments </p>
-     <p> 45. <a href="https://www.instagram.com/sodapaints/"> alex sodari </a> - fine art prints, comix, zines, buttons, pins and shirts</p>
+     <p> 45. <a href="https://www.instagram.com/sodapaints"> alex sodari </a> - fine art prints, comix, zines, buttons, pins and shirts</p>
+     <p> 46. <a href="https://www.instagram.com/wolfbabeshop"> wolfbabeshop </a> - polymer clay jewelry</p>
 
         <Spacer height={2} />
         <h1>Apply to be a vendor!</h1> 
