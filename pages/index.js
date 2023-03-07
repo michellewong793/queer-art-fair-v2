@@ -43,15 +43,15 @@ export default function Index() {
         <hr/>
     
        
-        <h2> (Accepting Vendors) Summer Fair: June 17, 2023</h2>
+        <h2> (Accepting Vendors, Deadline to apply 5/17) Summer Fair: June 17, 2023</h2>
         <p> Location: Sports Basement Presidio </p>
 
         <hr/>
 
-        <h2> (Accepting Vendors) Fall Fair: September 16, 2023</h2>
+        <h2> (Accepting Vendors, Deadline to apply 8/16) Fall Fair: September 16, 2023</h2>
         <p> Location: Sports Basement Presidio </p>
         <hr/>
-        <h2> (Accepting Vendors) Winter Fair: December 2, 2023</h2>
+        <h2> (Accepting Vendors, Deadline to apply 11/2) Winter Fair: December 2, 2023</h2>
         <p> Location: Sports Basement Presidio </p>
 
 
