@@ -9,6 +9,7 @@ export default function Index() {
       <div style={Styles.content}>
         <h1> 😱 omg.. did you hear about Queer Art Faire?</h1>
         <p>an inclusive community of artists, makers, and vendors in San Francisco? ✨</p>
+        <p>people who have not had experience or space for vending before will be prioritized.</p>
 
         <img src="/QueerArtFaireSF.jpg" style={Styles.posterImage}/>
 
