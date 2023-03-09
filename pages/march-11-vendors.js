@@ -22,7 +22,7 @@ export default function March11Vendors() {
      <p> 9. <a href="https://www.instagram.com/hellomurry"> hellomurry </a> - artist and illustrator </p>
      <p> 10. <a href="https://www.instagram.com/flashbystace"> flashbystace </a> - flash tattoos </p>
      <p> 11. <a href="https://www.instagram.com/perfectlypinay"> mia balingit </a> - apparel, cups, stickers, planners </p>
-     <p> 12. <a href="https://www.instagram.com/planningwithanna"> planning with anna </a> - planner sticker shop </p>
+     <p> 12. <a href="/anna"> planning with anna </a> - planner sticker shop </p>
      <p> 12.1 <a href="https://www.etsy.com/shop/ShopPlanningWithAnna"> plushy bouquets and graduation leis </a> </p>
      <p> 13. <a href="https://www.instagram.com/inkyfingerprintshop"> inkyfingerprintshop </a> - handmade prints and clothing </p>
      <p> 14. <a href="https://www.instagram.com/sarahkonggg"> sarah kong </a> - shirts and stickers </p>
