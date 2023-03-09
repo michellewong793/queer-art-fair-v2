@@ -9,7 +9,9 @@ export default function Index() {
       <div style={Styles.content}>
         <h1> Featured Vendor: 
         Anna Lam </h1>
-        <a href="https://www.etsy.com/shop/ShopPlanningWithAnna">Anna's Etsy Shop</a> 
+        <a href="https://www.etsy.com/shop/ShopPlanningWithAnna">Anna's Planning Etsy Shop</a> 
+        <a href="https://www.etsy.com/shop/ShopArtsyAnna">Anna's Plushie Bouquet and Graduation Leis Etsy Shop</a> 
+
         <h3>Biography</h3>
         <p><a href="https://www.instagram.com/planningwithanna">@planningwithanna</a> - Anna's love for stickers and stationery started at 8 years old when she was gifted a sticker book to collect and trade stickers with her friends. In middle school, she received a free school planner which she decorated with lots of colorful gel pens, "scratch and sniff" stickers and doodles! 
 
