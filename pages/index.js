@@ -7,46 +7,42 @@ export default function Index() {
     <div style={Styles.body}>
       <Layout />
       <div style={Styles.content}>
-        <h1> 😱 omg.. did you hear about Queer Art Faire?</h1>
-        <p>an inclusive community of artists, makers, and vendors in San Francisco? ✨</p>
-        <p>people who have not had experience or space for vending before will be prioritized.</p>
+        <h1> 😱 did you say.. Queer Art Faire?! </h1>
+        <p>We are a community of artists, makers and vendors hosting fairs in San Francisco! ✨</p>
 
         <img src="/QueerArtFaireSF.jpg" style={Styles.posterImage}/>
 
 
-        <h3>Share your craft and meet local artists at our first event of 2023 on Saturday, 3/11/2023 </h3>
-        <h3> Location: 1417 15th St, San Francisco, CA 94103 </h3>
-        <h3> Time: 11am - 4pm </h3>
+        <h2>Apply to be a vendor! </h2>
+        <p>Our upcoming event on June 17 is accepting applications.</p>
+        <p> The $5 vendor fee helps us cover costs of organizing the event.</p>
+        <p> Location: To Be Announced (San Francisco Location) </p>
+        <p> Time: 1pm - 6pm </p>
+
+        <h3> <a href="https://forms.gle/Ada3uBFQoxUJk1ka7">Take me to the application</a> </h3>
+
+
 
         <br/>
-        <a style={Styles.link} href="/march-11-vendors"> Spring Vendor Roster 😍 </a>
 
-        <p><a style={Styles.link}href="https://www.eventbrite.com/e/2023-queer-art-faire-tickets-499055427217?aff=efbneb">Get Tickets 🥳</a></p>
+        <p><a style={Styles.link}href="https://www.eventbrite.com/e/2023-queer-art-faire-registration-590457001787?aff=ebdssbonlinesearch&_gl=1*txv8db*_up*MQ..&gclid=Cj0KCQjw2cWgBhDYARIsALggUhrWzWVaDRWb8d_xhvPbOs_gKwBQULjNI5zHg2N4Mc-3rSaasugAbKEaAuUsEALw_wcB">Register here 🥳</a></p>
         <br/> 
 
         <h4>Event Details</h4>
 
         <p><b>COVID Policy: </b>Please stay at home if you are experiencing COVID-19 symptoms. Please be up to date on vaccinations and boosters. Masks are encouraged, but the venue will have good ventilation, and doors will be open. Attendees will be required to sign a waiver on the day of the event.</p>
         <p><b>Pet Policy: </b>Dogs are allowed at the venue, as long as they are good with crowds.</p>
-        <p><b>Accessibility: </b>The venue is wheelchair accessible and has bathrooms.</p>
+        <p><b>Accessibility: </b>The venue is wheelchair accessible and has gender-neutral bathrooms.</p>
 
 
         <br/>
 
 
-        <p>To keep Queer Art Faire an accessible event by being free for attendees and vendors, we ask for a <b>$5-$15</b> sliding scale donation for vendors and attendees on the day of the event. If you'd like to donate in advance, you can do so on the link below! Thank you so much for supporting our mission to bring inclusive spaces for art and creativity in the SF Bay Area. </p>
-
-        <a style={Styles.link} href="https://www.gofundme.com/f/queer-art-faire?utm_source=facebook&utm_medium=social&utm_campaign=p_cf%20share-flow-1&fbclid=IwAR2AgoudjzRzqhv20nRF1eQuLQjybLwB8aQxPMbORKvZZnJOCf2pTpFBTNQ"
-        >Donate to Queer Art Faire here 💖</a>
-        
+     
         <p></p>
-        <hr/>
     
-       
-        <h2> (Accepting Vendors, Deadline to apply 5/17) Summer Fair: June 17, 2023</h2>
-        <p> Location: Sports Basement Presidio </p>
-
-        <hr/>
+     <br/>
+        <p> If you are interested in future dates, please email us <a href="mailto:michellurito@gmail.com">here</a> to express your interest.</p>
 
         <h2> (Accepting Vendors, Deadline to apply 8/16) Fall Fair: September 16, 2023</h2>
         <p> Location: Sports Basement Presidio </p>
@@ -61,9 +57,13 @@ export default function Index() {
 
         <Spacer height={2} />
         <h1>Apply to be a vendor!</h1> 
-      <p> Send a short description of your offering, a biography, and a link to your social platforms, including Instagram, Etsy, or personal website to <a href="mailto:m@ourquest.xyz"> michellurito@gmail.com. </a></p>
-      <p> If you don't have a personal website, please message us about opportunities in which the team can help you with building one. </p>
-      
+        <a href="https://forms.gle/Ada3uBFQoxUJk1ka7">Application Form Here</a>
+
+        <Spacer height={2} />
+
+        <a style={Styles.link} href="https://www.gofundme.com/f/queer-art-faire?utm_source=facebook&utm_medium=social&utm_campaign=p_cf%20share-flow-1&fbclid=IwAR2AgoudjzRzqhv20nRF1eQuLQjybLwB8aQxPMbORKvZZnJOCf2pTpFBTNQ"
+        >Donate to Queer Art Faire here 💖</a>
+        
       </div>
     </div>
   );

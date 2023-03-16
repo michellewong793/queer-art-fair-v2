@@ -60,11 +60,6 @@ export default function March11Vendors() {
      <p> 45. <a href="https://www.instagram.com/sodapaints"> alex sodari </a> - fine art prints, comix, zines, buttons, pins and shirts</p>
      <p> 46. <a href="https://www.instagram.com/wolfbabeshop"> wolfbabeshop </a> - polymer clay jewelry</p>
 
-        <Spacer height={2} />
-        <h1>Apply to be a vendor!</h1> 
-      <p> Send a short description of your offering, a biography, and a link to your social platforms, including Instagram, Etsy, or personal website to <a href="mailto:m@ourquest.xyz"> michellurito@gmail.com. </a></p>
-      <p> If you don't have a personal website, please message us about opportunities in which the team can help you with building one. </p>
-      
       
       </div>
     </div>
