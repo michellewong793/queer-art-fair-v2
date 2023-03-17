@@ -13,7 +13,7 @@ export default function About() {
         <p>We are based in San Francisco Bay Area, but are looking to expand to different venues in the city. If you are interested in hosting Queer Art Faire, please reach out! </p>
         <p>We are always looking for awesome community builders to help run Queer Art Faire - if you are interested in volunteering or working with us, let us know! Send us a message with your name and what you would like to offer the community here: <a href="mailto:michellurito@gmail.com"> michellurito@gmail.com. </a> </p>
 
-        <p>We are also always looking for feedback to make a more inclusive and accessible community - so if you have any feedback on what you would like to see, feel free to let us know in an <a href="mailto:michellurito@gmail.com">email. </a> </p>
+        <p>We are also always looking for ways to make a more inclusive and accessible community. If you have any feedback or suggestions, feel free to let us know in an <a href="mailto:michellurito@gmail.com">email. </a> </p>
 
 
       </div>

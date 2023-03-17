@@ -36,6 +36,11 @@ const footer = {
   justifyContent: "center",
 };
 
+const instagramLogo = {
+  width: "1rem",
+  height: "1rem"
+}
+
 const Header = () => (
   <div style={header}>
     <a style={linkStyle} href="/">
@@ -70,7 +75,7 @@ const Layout = () => {
 
 const Footer = () => (
   <div style={footer}>
-    <a href="https://www.instagram.com/queerartfairsf"> Instagram </a>
+  <a href="https://www.instagram.com/queerartfairsf"> <img style={instagramLogo} src="/instagram_logo.png"></img></a>
   </div>
 );
 
