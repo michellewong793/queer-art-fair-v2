@@ -19,7 +19,7 @@ const header = {
 };
 
 const body= {
-  fontFamily: 'poppins', 
+  fontFamily: 'poppins',
   margin: 0,
 }
 
@@ -46,6 +46,10 @@ const Header = () => (
       {" "}
       About Us{" "}
     </a>
+    <a style={linkStyle} href="/summer-vendors">
+      {" "}
+      Summer Vendors{" "}
+    </a>
     <a style={linkStyle} href="/march-11-vendors">
       {" "}
       Spring Vendors{" "}
@@ -58,7 +62,7 @@ const Layout = () => {
     <div style={body}>
       {" "}
       <Header />
-      
+
        <Footer />
     </div>
   );
