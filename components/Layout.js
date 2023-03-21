@@ -47,17 +47,9 @@ const Header = () => (
       {" "}
       Home{" "}
     </a>
-    <a style={linkStyle} href="/about">
-      {" "}
-      About Us{" "}
-    </a>
-    <a style={linkStyle} href="/summer-vendors">
-      {" "}
-      Summer Vendors{" "}
-    </a>
     <a style={linkStyle} href="/march-11-vendors">
       {" "}
-      Spring Vendors{" "}
+      Spring{" "}
     </a>
   </div>
 );
@@ -75,6 +67,10 @@ const Layout = () => {
 
 const Footer = () => (
   <div style={footer}>
+     <a style={linkStyle} href="/about">
+      {" "}
+      About Us{" "}
+    </a>
   <a href="https://www.instagram.com/queerartfairsf"> <img style={instagramLogo} src="/instagram_logo.png"></img></a>
   </div>
 );
