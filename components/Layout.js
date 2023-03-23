@@ -49,7 +49,11 @@ const Header = () => (
     </a>
     <a style={linkStyle} href="/march-11-vendors">
       {" "}
-      Spring{" "}
+      3.11.23{" "}
+    </a>
+    <a style={linkStyle} href="https://www.gofundme.com/f/queer-art-faire">
+      {" "}
+      Donate{" "}
     </a>
   </div>
 );
@@ -67,6 +71,10 @@ const Layout = () => {
 
 const Footer = () => (
   <div style={footer}>
+    <a style={linkStyle} href="https://www.gofundme.com/f/queer-art-faire">
+      {" "}
+      Donate{" "}
+    </a>
      <a style={linkStyle} href="/about">
       {" "}
       About Us{" "}
