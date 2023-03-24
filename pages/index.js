@@ -9,7 +9,7 @@ export default function Index() {
       <div style={Styles.content}>
         <h1> 😱 What is Queer Art Faire? </h1>
         <p>We are a community hosting art fairs in San Francisco for <strong>marginalized</strong> and queer folks who have not had a space to share their creations before. 
-          We are focused on creating spaces for people whose first language is not English, people of color, people who have not been in the game for very long, or have little to no experience vending or sharing their art. 
+          We are focused on creating spaces for people whose first language is not English, people of color, or have little to no experience vending or sharing their art. 
           We aim to create a welcoming environment for people who face imposter syndrome about sharing their art to begin their journeys. 
           We are a completely volunteer-run organization running on donations. If you want to support us, we will be offering collectible merch at our fairs, and we receive donations on Venmo: @queerartfair.
           </p>
