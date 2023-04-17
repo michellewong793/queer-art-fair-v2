@@ -67,50 +67,50 @@ export default function June17Vendors() {
  </p>
  <p> 20.<a href="https://www.instagram.com/reikii_love
 /"> Reiki Love
- </a> intuitive tarot + oracle readings to the collective 
+ </a> - intuitive tarot + oracle readings to the collective 
  </p>
  <p> 21.<a href="https://www.instagram.com/wolfbabeshop
 /"> Wolf Babe Shop polymer clay jewelry
- </a>polymer clay jewelry mostly tiny bongs and pipes and little boobies :)
+ </a> - polymer clay jewelry mostly tiny bongs and pipes and little boobies :)
  </p>
  <p> 22.<a href="https://www.instagram.com/mew.doodles
 /"> Mew Doodles
- </a>cute art, stationery, and apparel inspired by hedgehogs, plants, & asian food
+ </a> - cute art, stationery, and apparel inspired by hedgehogs, plants, & asian food
  </p>
  <p> 22.<a href="https://evy.garden/ 
 /"> evy
- </a>zines and collage art (some originals, some prints)
+ </a> - zines and collage art (some originals, some prints)
  </p>
  <p> 23.<a href="https://www.instagram.com/moodyzillenial
 /">moody zillenial
- </a>a variety of rave hair accessories both sourced and handmade 
+ </a> - a variety of rave hair accessories both sourced and handmade 
  </p>
  <p> 24.<a href="https://www.instagram.com/woodymakesthings
 /"> woodymakesthings
- </a>playful illustrations, stickers, and handmade ceramics
+ </a> - playful illustrations, stickers, and handmade ceramics
  </p>
  <p> 25.<a href="https://www.instagram.com/New_stitching
 /"> New_stitching
- </a>handmade embroidered bags
+ </a> - handmade embroidered bags
  </p>
  <p> 26.<a href="https://www.instagram.com/softgentlepancake
 /"> Soft Gentle Pancake
- </a> zines and comics about navigating sex work, grief, queer sex, and absurdism
+ </a> - zines and comics about navigating sex work, grief, queer sex, and absurdism
  </p>
  <p> 27.<a href="https://www.instagram.com/astuartdesign
 /"> Anna Stuart Design
- </a>  risograph prints and stickers
+ </a> - risograph prints and stickers
  </p>
      
      
      <br/>
      <p> <a href="https://www.instagram.com/flashbystace
 /"> Flash By Stace
- </a>flash tattoos! RSVP on Instagram for your tattoo :)
+ </a> - flash tattoos! RSVP on Instagram for your tattoo :)
  </p>
  <p> <a href="https://www.fluidcoopsf.com/
 /"> Drinks by Fluid Cooperative Cafe
- </a>coffee and drinks 
+ </a> - coffee and drinks 
  </p>
      
       
