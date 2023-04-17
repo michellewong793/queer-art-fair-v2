@@ -51,6 +51,10 @@ const Header = () => (
       {" "}
       3.11.23{" "}
     </a>
+    <a style={linkStyle} href="/june-17-vendors">
+      {" "}
+      6.17.23{" "}
+    </a>
     <a style={linkStyle} href="https://www.gofundme.com/f/queer-art-faire">
       {" "}
       Donate{" "}

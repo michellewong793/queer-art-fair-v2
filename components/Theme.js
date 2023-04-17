@@ -12,7 +12,7 @@ let styles = {
     },
 
     posterImage: {
-        height: '350px',
+        height: '450px',
 
     }   
     ,
