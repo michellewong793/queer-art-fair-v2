@@ -120,8 +120,22 @@ export default function June17Vendors() {
  </p></li>
    <li><p> <a href="https://www.instagram.com/astuartdesign
 /"> Anna Stuart Design
- </a> - risograph prints and stickers
+ </a> - risograph prints and stickers 
  </p></li>
+ <li><p> <a href="https://www.instagram.com/grimaceskate
+/"> Grimace Skate
+ </a> - Clothing, Crochet/knit, Accessories, Thrift, Skateboards
+ </p></li>
+ <li><p> <a href="https://www.instagram.com/nottherealdanlynch
+/"> Not The Real Dan Lynch
+ </a> - <a href="www.nottherealDanlynch.com">prints, stickers, shirts and pins </a>
+ </p></li>
+ <li><p> <a href="https://www.instagram.com/waste.astronaut 
+/"> Nyla
+ </a> - <a href="www.nottherealDanlynch.com">fun jewelry </a>
+ </p></li>
+     
+     
      
      
      <br/>
