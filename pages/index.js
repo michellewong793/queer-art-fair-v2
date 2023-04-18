@@ -19,7 +19,7 @@ export default function Index() {
         <p> A smaller event on Mother's Day weekend with 10+ vendors each day, popcorn machine, bubble wands, live saxophone by a queer Asian American artist, and more!</p>
         <p> <a href="https://www.eventbrite.com/e/queer-art-faire-at-indigo-vintage-popup-tickets-615347680477">RSVP on Eventbrite </a></p>
         <br/>
-        <h2> Next BIG Event!!! June 17th at Pebble Bed </h2>
+        <h2> Next BIG Faire - June 17th at Pebble Bed </h2>
           <img style={Styles.posterImage} src="/June17Faire.jpg"/>
   
         <p> <strong>What will be there?</strong> 30+ artists, makers, bakers, coffee makers, flash tattooists, photobooth, and more!</p>
@@ -34,23 +34,15 @@ export default function Index() {
 
     <br/>
         <h2>How do I apply for the next one?</h2>
-        <p>Our upcoming shows on May 13, May 14, and June 17 are filled. We can't wait to see you soon! </p> 
+        <p> For new and existing vendors, fill out an application here.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfM0sX4uZdsIkG5CqWn_OSlMDEm65vbDt3RIzaFTG7Y50Gkww/viewform">Take me to the form!</a>
 
-
-        <p>Our first outdoor event on <strong>July 8</strong> at Lakeside Village (2500 Ocean Ave, San Francisco, CA 94127) is accepting applications! </p>
-        <p> To apply, please fill out this form by May 18th and we will get back to you in 3-5 business days. </p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScjt2uFiUzX6xM0pyN0UitxA00_ZM5AfUwjmG14lNBDbwsKIg/viewform">Fill out an application here</a>
+        <p>Our upcoming shows on May 13, May 14, and June 17 are filled. We can't wait to see you soon. </p> 
+        <p>Our events on <strong>July 8</strong> at Lakeside Village (2500 Ocean Ave, San Francisco, CA 94127), September 16, and December 2 are accepting applications. </p>
+        
         <Spacer height={2}/>
-        <p> Our <strong>September 16th </strong> show is also available!</p>
-        <p> If you'd like to apply for the big show on September 16th, please fill out this form below. </p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfM0sX4uZdsIkG5CqWn_OSlMDEm65vbDt3RIzaFTG7Y50Gkww/viewform">Fill out an application for 9/16 here</a>
-
-        <Spacer height={2}/>
-
-        <p> We have one more show you can apply to. We know, we need a better way of receiving applications. Bear with us! </p>
-        <h4> (Open to applications, apply by 11/2) Holigay Winter Fair: December 2, 2023</h4>
-
-
+       
+       
       
 
 
