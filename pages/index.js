@@ -35,7 +35,7 @@ export default function Index() {
     <br/>
         <h2>How do I apply for the next one?</h2>
         <p> For new and existing vendors, fill out an application here.</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfM0sX4uZdsIkG5CqWn_OSlMDEm65vbDt3RIzaFTG7Y50Gkww/viewform">Take me to the form!</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSePS8SsNjo6JF0JvOVwPIYPIv-cc8VCp2ZLEC2u5cIkPKNodA/viewform">Take me to the form!</a>
 
         <p>Our upcoming shows on May 13, May 14, and June 17 are filled. We can't wait to see you soon. </p> 
         <p>Our events on <strong>July 8</strong> at Lakeside Village (2500 Ocean Ave, San Francisco, CA 94127), September 16, and December 2 are accepting applications. </p>
