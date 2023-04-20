@@ -13,6 +13,10 @@ export default function Index() {
           We aim to create a welcoming environment for people who face imposter syndrome about sharing their art to begin their journeys. 
           We are a completely volunteer-run organization running on donations. If you want to support us, we will be offering collectible stickers at our fairs for all donations above $5 and we receive donations on Venmo: @queerartfair.
           </p>
+    <Spacer height={1}/>
+          <p> Want to see your business ad here? We are actively looking for sponsorships! <a href="mailto:michellurito@gmail.com">Email us for inquiries.</a> </p>
+          <Spacer height={1}/>
+
             <h2> (Poster coming!) First Popup: Queer Art Faire at Indigo Vintage </h2>
             <h3> May 13, May 14 11-7pm </h3>
         <p> Location: 1649 Haight St, San Francisco, CA 94117</p>
