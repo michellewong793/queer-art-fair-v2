@@ -1,0 +1,19 @@
+.button {
+    width: 150px;
+    padding: 12px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: -1px 2px 5px 0px rgba(0, 0, 0, 0.5);
+    
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+.button:hover {
+    background-color: white !important;
+    color: black !important;
+}
+
+.button:active {
+    box-shadow: 0 0 0 0 !important;
+    translate: -3px 3px;
+}

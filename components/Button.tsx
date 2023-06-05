@@ -1,4 +1,5 @@
 import CSS from 'csstype'
+import Styles from './Button.module.css'
 
 interface ButtonProps {
     text?: string;
@@ -16,7 +17,7 @@ function Button({
         
     const ButtonStyles: CSS.Properties = {
         width: '150px',
-        padding: '10px',
+        padding: '12px',
         textAlign: 'center',
     
         color: textColor,
@@ -24,12 +25,13 @@ function Button({
         backgroundColor: backgroundColor,
         border: '2px solid ' + borderColor,
         borderRadius: '10px',
+        boxShadow: '-1px 2px 5px 0px rgba(0, 0, 0, 0.5)',
         
         cursor: 'pointer',
     };
 
     return (
-        <button style = {ButtonStyles}>
+        <button style = {ButtonStyles} className = {Styles.button} >
             {text}
         </button>
     ) 
