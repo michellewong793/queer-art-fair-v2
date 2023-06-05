@@ -16,18 +16,10 @@ function Button({
     }: ButtonProps) {
         
     const ButtonStyles: CSS.Properties = {
-        width: '150px',
-        padding: '12px',
-        textAlign: 'center',
-    
         color: textColor,
     
         backgroundColor: backgroundColor,
         border: '2px solid ' + borderColor,
-        borderRadius: '10px',
-        boxShadow: '-1px 2px 5px 0px rgba(0, 0, 0, 0.5)',
-        
-        cursor: 'pointer',
     };
 
     return (
