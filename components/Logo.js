@@ -1,5 +1,3 @@
-import Styles from './Theme.js';
-
 const Logo = (props) => {
     let divStyle = {
         display: 'flex',
@@ -7,7 +5,7 @@ const Logo = (props) => {
     }
     let imgStyle = {
         margin: 'auto',
-        width: '240px',
+        width: '150px',
     }
     return (
         <div style={divStyle}>
