@@ -2,3 +2,8 @@
     font-family: "Ilyas";
     src: url("/fonts/ilyas.woff2") format("woff2");
 }
+
+@font-face {
+    font-family: "ClementePDae";
+    src: url("/fonts/ClementePDae-Light.woff2") format("woff2");
+}
