@@ -1,10 +1,3 @@
-function numOfStrawberries(text) {
-    if (text.length < 10) {
-        
-    }
-}
-
-
 const Strawberry = (props) => {
     let strawberryStyles = {
         container: {
@@ -18,11 +11,14 @@ const Strawberry = (props) => {
             marginRight: 'auto',
         },
 
-        image: {
-            height: 80.62,
-            width: 64,
-            marginLeft: 15,
-            marginRight: 15
+        imageLeft: {
+            marginLeft: 100,
+            marginRight: 50
+        }, 
+
+        imageRight: {
+            marginLeft: 50,
+            marginRight: 100
         }, 
 
         text: {
@@ -36,11 +32,9 @@ const Strawberry = (props) => {
     };
     return ( 
             <div style = {strawberryStyles.container}>
-                <img style = {strawberryStyles.image} src = '/strawberry3.png'/>
-                <img style = {strawberryStyles.image} src = '/strawberry3.png'/>
+                <img style = {strawberryStyles.imageLeft} src = {props.imagePath} height={props.height} width = {props.width}/>
                 <p style = {strawberryStyles.text}>{props.heading}</p>
-                <img style = {strawberryStyles.image} src = '/strawberry3.png'/>
-                <img style = {strawberryStyles.image} src = '/strawberry3.png'/>
+                <img style = {strawberryStyles.imageRight} src = {props.imagePath} height={props.height} width = {props.width}/>
             </div>
     )
 };
