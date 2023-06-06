@@ -1,8 +1,10 @@
 let styles = {
      body: {
        fontSize: '16px',
+       position: 'absolute',
+       top: 0,
+       left: 0,
      },
-
 
     h2: {
         fontSize: '16px',
@@ -24,7 +26,7 @@ let styles = {
     },
 
     content: {
-        paddingTop: 100,
+        paddingTop: 20,
         paddingLeft: '10%',
         paddingRight: '10%',
         marginLeft: 'auto',

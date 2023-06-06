@@ -5,7 +5,7 @@ const Logo = (props) => {
     }
     let imgStyle = {
         margin: 'auto',
-        width: '150px',
+        width: '240px',
     }
     return (
         <div style={divStyle}>

@@ -1,0 +1,13 @@
+.body {
+    background-color: #FFE0CE;
+}
+
+.centerFlexParent {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.centerFlexChild {
+    margin: auto;
+}
