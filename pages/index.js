@@ -8,6 +8,7 @@ import HeaderDecoration from "../components/HeaderDecoration";
 import Button from "../components/Button"
 import Event from "../components/Event"
 import Footer from "../components/Footer"
+import Strawberry from "../components/Strawberry"
 
 export default function Index() {
   return (
@@ -18,8 +19,7 @@ export default function Index() {
           <Subheader />
           {/* Navigation bar */}
           <p>Nav bar</p>
-          {/* SSS NEXT SSS */}
-          <p>*** NEXT ***</p>
+          <Strawberry heading='NEXT' imagePath='strawberry3.png'/>
           <div className = {HomeStyles.centerFlexParent}>
             <div className = {HomeStyles.centerFlexChild}>
               <img src='./June17FaireSquare.png'></img>
@@ -32,20 +32,16 @@ export default function Index() {
               </div>
             </div>
           </div>
-
-          {/* SSS UPCOMING EVENTS SSS */}
-          <p>*** UPCOMING EVENTS ***</p>
-          <div className = {HomeStyles.centerFlexParent}>
+          
+          {/* <div className = {HomeStyles.centerFlexParent}>
             <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" date="12.1.23"/>
             <p className = {HomeStyles.centerFlexChild}>p</p>
             <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" date="12.1.23"/>
             <p className = {HomeStyles.centerFlexChild}>p</p>
             <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" date="12.1.23"/>
-          </div>
+          </div> */}
 
-          {/* SSS ABOUT SSS */}
-          <p>*** ABOUT ***</p>
-
+          <Strawberry heading='ABOUT' imagePath='strawberry3.png'/>
           <div className = {HomeStyles.centerFlexParent}>
             <img className = {HomeStyles.centerFlexChild} src='./PeachWithWater.png'></img>
             <p className= {HomeStyles.centerFlexChild}>
