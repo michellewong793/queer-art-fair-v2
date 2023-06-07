@@ -4,7 +4,7 @@ const Footer = (props) => {
     let footerDecorStyle = {
         width: '100%',
         height: '74px',
-        backgroundImage: "url('FooterEllipse.png')",
+        backgroundImage: "url('FooterEllipse.svg')",
         backgroundRepeat: 'repeat-x',
         filter: 'drop-shadow(0 -10px 5px rgba(0, 0, 0, 0.2))',
         

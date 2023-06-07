@@ -9,7 +9,7 @@ const Logo = (props) => {
     }
     return (
         <div style={divStyle}>
-            <img style={imgStyle} src='./QAFLogoOrangePuffy.png'></img>
+            <img style={imgStyle} src='./QAFLogoOrangePuffy.svg'></img>
         </div>
     )
 }

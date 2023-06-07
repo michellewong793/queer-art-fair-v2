@@ -22,7 +22,7 @@ export default function Index() {
           <Strawberry heading='NEXT' imagePath='strawberry3.png'/>
           <div className = {HomeStyles.centerFlexParent}>
             <div className = {HomeStyles.centerFlexChild}>
-              <img src='./June17FaireSquare.png'></img>
+              <img src='./June17FaireSquare.svg'></img>
 
               <div className = {HomeStyles.centerFlexParent}>
                 <Button className = {HomeStyles.centerFlexChild} text="Get your tickets!"/>
@@ -43,7 +43,7 @@ export default function Index() {
 
           <Strawberry heading='ABOUT' imagePath='strawberry3.png'/>
           <div className = {HomeStyles.centerFlexParent}>
-            <img className = {HomeStyles.centerFlexChild} src='./PeachWithWater.png'></img>
+            <img className = {HomeStyles.centerFlexChild} src='./PeachWithWater.svg'></img>
             <p className= {HomeStyles.centerFlexChild}>
             We are a community hosting art fairs in San Francisco for marginalized and queer folks who have not had a space to share their creations before. 
             We are completely a volunteer-run organization running on donations. 
