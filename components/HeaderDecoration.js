@@ -2,9 +2,9 @@ const HeaderDecoration = (props) => {
     let headerStyles = {
         width: '100%',
         height: '74px',
-        backgroundImage: "url('TopDecoration.png')",
+        backgroundImage: "url('HeaderEllipse.png')",
         backgroundRepeat: 'repeat-x',
-        filter: 'drop-shadow(0 0px 10px #000000)',
+        filter: 'drop-shadow(0 10px 5px rgba(0, 0, 0, 0.2))',
     }
     return (<div style={headerStyles}></div>)
 }
