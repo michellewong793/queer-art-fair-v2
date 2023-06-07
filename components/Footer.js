@@ -37,12 +37,19 @@ const Footer = (props) => {
                 <h3 style={centerText}>Get updates from us!</h3>
                 <div style = {centerFlexParent}>
                     <div style = {centerFlexChild}>
-                        <Button text='Join our email newsletter' backgroundColor="white" textColor="#002809" borderColor='#FF4C4C'/>
+                        <Button text='Join our email newsletter' 
+                        backgroundColor="white"
+                        textColor="#002809"
+                        borderColor='#FF4C4C'
+                        />
                     </div>
                 </div>
                 <div style = {centerFlexParent}>
                     <div style = {centerFlexChild}>
-                        <Button text='Follow us on Instagram' backgroundColor="white" textColor="#002809" borderColor='#FF4C4C'/>
+                        <Button text='Follow us on Instagram' 
+                        backgroundColor="white" 
+                        textColor="#002809" 
+                        borderColor='#FF4C4C'/>
                     </div>
                 </div>
                 
