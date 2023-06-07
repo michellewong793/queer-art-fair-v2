@@ -7,6 +7,7 @@ import Subheader from "../components/Subheader"
 import HeaderDecoration from "../components/HeaderDecoration";
 import Button from "../components/Button"
 import Event from "../components/Event"
+import Footer from "../components/Footer"
 
 export default function Index() {
   return (
@@ -55,8 +56,8 @@ export default function Index() {
             </p>
           </div>
           
-
         </div>
+        <Footer />
       </div>
   );
 }
