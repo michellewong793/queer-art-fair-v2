@@ -27,7 +27,7 @@ export default function Index() {
               <div className = {HomeStyles.centerFlexParent}>
                 <Button className = {HomeStyles.centerFlexChild} text="Get your tickets!"/>
                 {/* heart image */}
-                <p className = {HomeStyles.centerFlexChild}>&lt;3</p>
+                <img className = {HomeStyles.centerFlexChild} src='./heart.svg'></img>
                 <Button className = {HomeStyles.centerFlexChild} text="Vendor Application" backgroundColor="white" textColor="#002809" borderColor="#489056"/>
               </div>
             </div>
