@@ -7,7 +7,7 @@ const Footer = (props) => {
         backgroundImage: "url('FooterEllipse.svg')",
         backgroundRepeat: 'repeat-x',
         filter: 'drop-shadow(0 -10px 5px rgba(0, 0, 0, 0.2))',
-        
+        marginBottom: '-1px', // There is a space at the bottom for some reason
     }
     let footerStyle = {
         width: '100%',
