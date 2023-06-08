@@ -5,6 +5,7 @@ const HeaderDecoration = (props) => {
         backgroundImage: "url('HeaderEllipse.svg')",
         backgroundRepeat: 'repeat-x',
         filter: 'drop-shadow(0 10px 5px rgba(0, 0, 0, 0.2))',
+        marginBottom: '40px',
     }
     return (<div style={headerStyles}></div>)
 }
