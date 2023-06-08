@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Logo = (props) => {
     let divStyle = {
         display: 'flex',
@@ -10,7 +12,7 @@ const Logo = (props) => {
     }
     return (
         <div style={divStyle}>
-            <img style={imgStyle} src='./QAFLogoOrangePuffy.svg'></img>
+            <Link  style={imgStyle} href='/'><img src='./QAFLogoOrangePuffy.svg'></img></Link>
         </div>
     )
 }
