@@ -2,3 +2,14 @@
     font-family: "Ilyas";
     src: url("/fonts/ilyas.woff2") format("woff2");
 }
+
+
+
+
+
+
+
+@font-face{
+    font-family: "ClementePDak";
+    src: url("/fonts/ClementePDak.woff2") format("woff2");
+}
