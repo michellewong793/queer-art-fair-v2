@@ -16,10 +16,10 @@ type ButtonProps = {
 const Button: React.FC<ButtonProps> = ({
     text = 'Button Text', 
     textColor = 'white',
-    backgroundColor = 'black', 
+    backgroundColor = '#002809', 
     borderColor = backgroundColor,
     hoverBackgroundColor = 'white',
-    hoverTextColor = 'black',
+    hoverTextColor = '#002809',
     hoverBorderColor = hoverBackgroundColor,
     width,
 }) => {
