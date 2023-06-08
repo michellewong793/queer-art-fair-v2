@@ -41,7 +41,8 @@
 }
 
 .aboutContainer {
-    display: block;
+    display: flex;
+    flex-direction: column-reverse;
 }
 .aboutImage {
     max-width: 100%;
@@ -69,6 +70,7 @@
 
     .aboutContainer {
         display: flex;
+        flex-direction: row;
         justify-content: space-around;
     }
 
@@ -78,6 +80,7 @@
     }
     .aboutText {
         margin: auto;
+        margin-top: 20px;
         max-width: 60%;
     }
 }
