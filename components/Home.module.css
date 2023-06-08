@@ -15,6 +15,7 @@
 .nextContainer {
     max-width: 768px;
     margin: auto;
+    margin-top: 40px;
 }
 .nextPoster {
     width: 100%;
@@ -50,7 +51,6 @@
     .nextContainer {
         width: 600px;
         max-width: 100%;
-        margin-top: 40px;
     }
     .nextPoster {
         width: 100%;
