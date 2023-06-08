@@ -28,7 +28,14 @@ export default function Index() {
               <Button className = {HomeStyles.nextButton} text="Get your tickets!"/>
               {/* heart image */}
               <img className = {HomeStyles.nextHeart} src='./heart.svg'></img>
-              <Button className = {HomeStyles.nextButton} text="Vendor Application" backgroundColor="white" textColor="#002809" borderColor="#489056"/>
+              <Button className = {HomeStyles.nextButton} 
+              text="Vendor Application" 
+              backgroundColor="white" 
+              textColor="#002809" 
+              borderColor="#489056"
+              hoverBackgroundColor="#489056"
+              hoverTextColor="white"
+              />
             </div>
           </div>
           
