@@ -13,10 +13,11 @@
 }
 
 .nextContainer {
+    max-width: 768px;
     margin: auto;
 }
 .nextPoster {
-    max-width: 100%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -49,13 +50,16 @@
 }
 
 @media screen and (min-width: 768px) {
-    .nextPoster {
+    .nextContainer {
         width: 600px;
         max-width: 100%;
     }
+    .nextPoster {
+        width: 100%;
+    }
     .nextButtonContainer{
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-around;
     }
     .nextButton, .nextHeart {
         display: block;
