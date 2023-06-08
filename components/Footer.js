@@ -1,3 +1,4 @@
+import Link from "next/link"
 import Button from "./Button"
 
 const Footer = (props) => {
@@ -38,11 +39,13 @@ const Footer = (props) => {
                 <h3 style={centerText}>Get updates from us!</h3>
                 <div style = {centerFlexParent}>
                     <div style = {centerFlexChild}>
+                        <Link href='https://subscribepage.io/queerartfaire'>
                         <Button text='Join our email newsletter' 
                         backgroundColor="white"
                         textColor="#002809"
                         borderColor='#FF4C4C'
                         />
+                        </Link>
                     </div>
                 </div>
                 <div style = {centerFlexParent}>
