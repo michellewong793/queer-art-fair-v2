@@ -25,9 +25,12 @@
 }
 
 .nextButtonContainer {
+    margin-top: 10px;
     display: flex;
+    height: 100px;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 }
 
 .nextButton {
