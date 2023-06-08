@@ -9,6 +9,10 @@ const Subheader = (props) => {
         textDecoration: 'none',
     }
 
+    let linkStyle = {
+        textDecoration: 'none',
+    }
+
     let smallTextStyle = {
         margin: 'auto',
         marginTop: '20px',
@@ -21,7 +25,7 @@ const Subheader = (props) => {
 
     return (
         <div>
-            <Link href='/' style={QAFTextStyle}><h1>QUEER ART FAIRE</h1></Link>
+            <Link href='/' style={linkStyle}><h1 style={QAFTextStyle}>QUEER ART FAIRE</h1></Link>
             <p style={smallTextStyle}>FRESH ART FAIRS IN THE BAY AREA</p>
         </div>
     )
