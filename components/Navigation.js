@@ -1,54 +1,50 @@
 import {useRouter} from 'next/router';
 import Link from 'next/link';
-import activeStyle from './navigation.module.css';
+import style from './navigation.module.css';
+import React, {useState} from 'react';
 
 const Navigation = () => {
 
     const router = useRouter();
     const currentRoute = router.pathname;
 
-    let navigationStyles = {
-        container: {
-            display: 'flex',
-            flexDirection: 'row', 
-            justifyContent: 'center',
-            paddingTop: 50,
-            paddingLeft: '10%',
-            paddingRight: '10%',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-        },
-
-        image: {
-            height: 36,
-            width: 44, 
-            marginLeft: 20,
-            marginRight: 20
-        },
-
-        text: {
-            fontSize: 30,
-            fontFamily: "ClementePDae", 
-            margin: 0, 
-            color: '#113219', 
-            textDecoration: 'none', 
-            paddingBottom: 30, 
-            textAlign: 'center'
-        },
-
-    };
+    const [showNav, setShowNav] = useState(false);
 
     return (
-        <div style={navigationStyles.container}> 
-            <a style = {navigationStyles.text} href = "/" className = {currentRoute === '/' ? activeStyle.active : activeStyle.nonActive}>
-                ABOUT
-            </a>
-            <img style = {navigationStyles.image} src = '/heart.png'/>
-            <a style = {navigationStyles.text} href = "/events" className = {currentRoute === '/events' ? activeStyle.active : activeStyle.nonActive}>EVENTS</a>
-            <img style = {navigationStyles.image} src = '/heart.png'/>
-            <a style = {navigationStyles.text} href = "https://www.gofundme.com/f/queer-art-faire">DONATE</a>
+        <div className = {style.bigContainer}> 
+            <div className = {style.mobileContainer} style = {{display: showNav ? "flex" : "none"}}> 
+                <a  href = "/" className = {currentRoute === '/' ? style.active : style.nonActive}>
+                    ABOUT
+                </a>
+                <img className = {style.image} src = '/heart.png'/>
+                <a  href = "/events" className = {currentRoute === '/events' ? style.active : style.nonActive}>
+                    EVENTS
+                </a>
+                <img className = {style.image} src = '/heart.png'/>
+                <a  className = {style.nonActive} href = "https://www.gofundme.com/f/queer-art-faire">
+                    DONATE
+                </a>
+            </div>
+            <button className = {style.button} onClick = {() => setShowNav(!showNav)}>
+                <img className = {style.hamburger} src = "/hamburger.png"/>
+            </button>
+
+            <div className = {style.desktopContainer}> 
+                <a  href = "/" className = {currentRoute === '/' ? style.active : style.nonActive}>
+                    ABOUT
+                </a>
+                <img className = {style.image} src = '/heart.png'/>
+                <a  href = "/events" className = {currentRoute === '/events' ? style.active : style.nonActive}>
+                    EVENTS
+                </a>
+                <img className = {style.image} src = '/heart.png'/>
+                <a  className = {style.nonActive} href = "https://www.gofundme.com/f/queer-art-faire">
+                    DONATE
+                </a>
+            </div>
         </div>
     )
+
 };
 
 export default Navigation;

@@ -1,16 +1,127 @@
 
 
 .active {
-    font-size: 35;
+    font-size: 30px;
     font-family: "ClementePDae"; 
     margin: 0;
     color: #113219; 
+    text-decoration: none;
+    padding-bottom: 15px;
+    text-align: center;
     background-image: url("/heart-underline.png");
     background-position: 5px 35px;
     background-size: 76px 10px;
-    background-repeat: no-repeat
+    background-repeat: no-repeat;
+    justify-content: center;
+}
+
+@media (max-width: 780px) {
+    .active {
+        font-size: 25px;
+        padding-left: 5px;
+        padding-right: 5px;
+        background-position: 5px 30px;
+        background-size: 76px 10px;
+        justify-content: center;
+    }
 }
 
 .nonActive {
     text-decoration: none;
+    font-size: 30px;
+    font-family: 'ClementePDae';
+    margin: 0px; 
+    color: #113219; 
+    text-decoration: none; 
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+@media (max-width: 780px) {
+    .nonActive{
+        font-size: 25px;
+    }
+}
+
+.bigContainer{
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.button {
+    height: 40px;
+    width: 50px; 
+    margin-left: auto;
+    margin-bottom: 30px;
+    justify-content: center;
+    border-radius: 15px;
+    border: solid #FA7127;
+}
+
+@media(min-width: 780px){
+    .button {
+        display: none;
+    }
+}
+
+.mobileContainer {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+}
+
+@media(min-width: 780px) {
+    .mobileContainer {
+        display: none;
+    }
+    
+}
+
+.desktopContainer{
+    display: none;
+}
+
+@media(min-width: 780px) {
+    .desktopContainer {
+        display: flex;
+        flex-direction: row; 
+        justify-content: center;
+        align-items: center;
+        margin-top: 60px;
+        padding-left: 10%;
+        padding-right: 10%;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+    }
+    
+}
+
+.hamburger {
+    height: 35px;
+    width: 35px; 
+}
+
+.image {
+    height: 36px;
+    width: 44px; 
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 15px;
 }
