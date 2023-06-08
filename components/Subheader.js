@@ -10,6 +10,8 @@ const Subheader = (props) => {
         margin: 'auto',
         textAlign: 'center',
         fontStyle: 'italic',
+        fontFamily: 'Clemente',
+        fontWeight: 200,
         color: '#FF4D4D',
     }
 
