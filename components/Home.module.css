@@ -7,7 +7,7 @@
 
 .content {
     margin: auto;
-    width: 80%;
+    width: 70%;
     min-width: 360px;
     max-width: 1000px;
 }
@@ -45,14 +45,12 @@
     margin-right: auto;
     display: block;
 }
-.aboutText {
-    font-style: italic;
-}
 
 @media screen and (min-width: 768px) {
     .nextContainer {
         width: 600px;
         max-width: 100%;
+        margin-top: 40px;
     }
     .nextPoster {
         width: 100%;
@@ -71,8 +69,12 @@
         justify-content: space-around;
     }
 
-    .aboutImage, .aboutText {
+    .aboutImage {
         margin: auto;
-        max-width: 50%;
+        max-width: 40%;
+    }
+    .aboutText {
+        margin: auto;
+        max-width: 60%;
     }
 }
