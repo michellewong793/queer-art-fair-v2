@@ -25,7 +25,7 @@ const Footer = (props) => {
         },
 
         buttonContainer: {
-            height: 100,
+            height: 125,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -45,13 +45,20 @@ const Footer = (props) => {
                         backgroundColor="white"
                         textColor="#002809"
                         borderColor='#FF4C4C'
+                        hoverBackgroundColor="#002809"
+                        hoverTextColor="white"
+                        width='300px'
                         />
                     </Link>
 
                     <Button text='Follow us on Instagram' 
                         backgroundColor="white" 
                         textColor="#002809" 
-                        borderColor='#FF4C4C'/>
+                        borderColor='#FF4C4C'
+                        hoverBackgroundColor="#002809"
+                        hoverTextColor="white"
+                        width='300px'
+                        />
 
                 </div>
             </div>
