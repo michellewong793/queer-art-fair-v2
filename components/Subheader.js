@@ -8,6 +8,7 @@ const Subheader = (props) => {
 
     let smallTextStyle = {
         margin: 'auto',
+        marginTop: '20px',
         textAlign: 'center',
         fontStyle: 'italic',
         fontFamily: 'Clemente',
