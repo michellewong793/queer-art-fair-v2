@@ -7,6 +7,16 @@
     src: url("/fonts/Helvetica-Light.woff2");
 }
 /* All the versions of Clemente font */
+@font-face{
+    font-family: "ClementePDak";
+    src: url("/fonts/ClementePDak.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "ClementePDae";
+    src: url("/fonts/ClementePDae-Light.woff2") format("woff2");
+}
+
 @font-face {
     font-family: "Clemente";
     src: url("/fonts/clemente_pd/ClementePDaa-Hairline.ttf");

@@ -2,6 +2,7 @@ import Layout from "../components/Layout";
 import Styles from "../components/Theme";
 import HomeStyles from "../components/Home.module.css";
 import Spacer from "../components/Spacer";
+import Navigation from "../components/Navigation";
 import Logo from "../components/Logo";
 import Subheader from "../components/Subheader"
 import HeaderDecoration from "../components/HeaderDecoration";
@@ -17,8 +18,7 @@ export default function Index() {
         <div className={HomeStyles.content}>
           <Logo />
           <Subheader />
-          {/* Navigation bar */}
-          <p>Nav bar</p>
+          <Navigation />
           <Strawberry heading='NEXT' imagePath='strawberry3.png'/>
 
           <div className = {HomeStyles.nextContainer}>
