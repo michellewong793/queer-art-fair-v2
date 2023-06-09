@@ -1,14 +1,12 @@
 const Event = (Props) => {
-    let styles = {
-        centered: {
-            textAlign: 'center',
-        }
+    let centered = {
+        textAlign: 'center',
     }
 
     return (
         <div>
-            <h3 style = {styles.centered}>{Props.name}</h3>
-            <p style = {styles.centered}>{Props.date}</p>
+            <h3 style = {centered}>{Props.name}</h3>
+            <p style = {centered}>{Props.date}</p>
         </div>
     )
 }

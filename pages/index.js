@@ -6,6 +6,7 @@ import HeaderDecoration from "../components/HeaderDecoration";
 import Button from "../components/Button"
 import Footer from "../components/Footer"
 import Strawberry from "../components/Strawberry"
+import Navigation from "../components/Navigation"
 
 export default function Index() {
   return (
@@ -14,16 +15,13 @@ export default function Index() {
         <div className={HomeStyles.content}>
           <Logo />
           <Subheader />
-          {/* Navigation bar */}
-          <p>Nav bar</p>
-          <Strawberry heading='NEXT' imagePath='strawberry3.png'/>
-
+          <Navigation />
+          <Strawberry heading='NEXT' showStrawberry2='none'/>
           <div className = {HomeStyles.nextContainer}>
             <img className = {HomeStyles.nextPoster} src='./June17FaireSquare.svg'></img>
 
             <div className = {HomeStyles.nextButtonContainer}>
               <Button className = {HomeStyles.nextButton} text="Get your tickets!"/>
-              {/* heart image */}
               <img className = {HomeStyles.nextHeart} src='./heart.svg'></img>
               <Button className = {HomeStyles.nextButton} 
               text="Vendor Application" 
@@ -36,15 +34,7 @@ export default function Index() {
             </div>
           </div>
           
-          {/* <div className = {HomeStyles.centerFlexParent}>
-            <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" date="12.1.23"/>
-            <p className = {HomeStyles.centerFlexChild}>p</p>
-            <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" date="12.1.23"/>
-            <p className = {HomeStyles.centerFlexChild}>p</p>
-            <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" date="12.1.23"/>
-          </div> */}
-
-          <Strawberry heading='ABOUT' imagePath='strawberry3.png'/>
+          <Strawberry heading='ABOUT' showStrawberry2='none'/>
           <div className = {HomeStyles.aboutContainer}>
             <img className = {HomeStyles.aboutImage} src='./PeachWithWater.svg'></img>
             <p className= {HomeStyles.aboutText}>
