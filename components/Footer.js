@@ -40,13 +40,11 @@ const Footer = (props) => {
                 <h3 style={styles.centerText}>Get updates from us!</h3>
 
                 <div style = {styles.buttonContainer}>
-                    <Link href='https://subscribepage.io/queerartfaire'>
-                        <Button text='Join our email newsletter' 
+                    <Button text='Join our email newsletter' 
                         backgroundColor="white"
                         textColor="#002809"
                         borderColor='#FF4C4C'
                         />
-                    </Link>
 
                     <Button text='Follow us on Instagram' 
                         backgroundColor="white" 
