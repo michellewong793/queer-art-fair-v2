@@ -12,7 +12,6 @@ const Strawberry = (props) => {
             marginLeft: 'auto',
             marginRight: 'auto',
         },
-
         imageContainer: {
             display: 'flex',
             flexDirection: 'column'
