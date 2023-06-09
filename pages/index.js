@@ -5,15 +5,6 @@ import Navigation from "../components/Navigation";
 
 export default function Index() {
   return (
-<<<<<<< HEAD
-      <div className={HomeStyles.body} style={Styles.body}>
-        <HeaderDecoration />
-        <div className={HomeStyles.content}>
-          <Logo />
-          <Subheader />
-          <Navigation />
-          <Strawberry heading='NEXT' showStrawberry2='none'/>
-=======
     <div style={Styles.body}>
       <Layout />
       <Navigation />
@@ -30,7 +21,6 @@ export default function Index() {
           <h2>How do I apply for the next one?</h2>
         <p> For new and existing vendors, fill out an application here.</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSePS8SsNjo6JF0JvOVwPIYPIv-cc8VCp2ZLEC2u5cIkPKNodA/viewform">Take me to the form!</a>
->>>>>>> main
 
         <p>Our upcoming shows on May 13, May 14, and June 17 are filled. We can't wait to see you soon. </p> 
         <p>Our events on <strong>July 8</strong> at Lakeside Village (2500 Ocean Ave, San Francisco, CA 94127), September 16, and December 2 are accepting applications. </p>
@@ -61,24 +51,6 @@ export default function Index() {
        
       
 
-<<<<<<< HEAD
-          <Strawberry heading='ABOUT' showStrawberry2='none'/>
-          <div className = {HomeStyles.aboutContainer}>
-            <img className = {HomeStyles.aboutImage} src='./PeachWithWater.svg'></img>
-            <p className= {HomeStyles.aboutText}>
-            We are a community hosting art fairs in San Francisco for marginalized and queer folks who have not had a space to share their creations before. 
-            <br /> <br/>
-            We are completely a volunteer-run organization running on donations. 
-            <br/> <br/>
-            If you want to support us, we will be offering collectible merch at our fairs, and we receive donations via Venmo! 
-            <br/> <br/>
-            Venmo: @queerartfair
-            </p>
-          </div>
-          
-        </div>
-        <Footer />
-=======
 
       <Spacer height={2}/>
       <h2>How can I support?</h2>
@@ -98,7 +70,6 @@ export default function Index() {
 
         
         
->>>>>>> main
       </div>
     </div>
   );
