@@ -1,12 +1,9 @@
-import Layout from "../components/Layout";
 import Styles from "../components/Theme";
 import HomeStyles from "../components/Home.module.css";
-import Spacer from "../components/Spacer";
 import Logo from "../components/Logo";
 import Subheader from "../components/Subheader"
 import HeaderDecoration from "../components/HeaderDecoration";
 import Button from "../components/Button"
-import Event from "../components/Event"
 import Footer from "../components/Footer"
 import Strawberry from "../components/Strawberry"
 
