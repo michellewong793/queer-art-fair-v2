@@ -1,3 +1,5 @@
+import style from './strawberry.module.css';
+
 const Strawberry = (props) => {
     let strawberryStyles = {
         container: {
@@ -10,31 +12,33 @@ const Strawberry = (props) => {
             marginLeft: 'auto',
             marginRight: 'auto',
         },
+        imageContainer: {
+            display: 'flex',
+            flexDirection: 'column'
+        },
 
-        imageLeft: {
-            marginLeft: 100,
-            marginRight: 50
-        }, 
+        strawberry2: {
+            display: props.showStrawberry2, 
+        },
 
-        imageRight: {
-            marginLeft: 50,
-            marginRight: 100
-        }, 
+        strawberry3: {
+            display: props.showStrawberry3,
+        },
 
-        text: {
-            textAlign: 'center',
-            fontSize: 80, 
-            margin: 0,
-            color: '#1A361E', 
-            fontFamily: 'Ilyas'
-        }
-        
     };
     return ( 
             <div style = {strawberryStyles.container}>
-                <img style = {strawberryStyles.imageLeft} src = {props.imagePath} height={props.height} width = {props.width}/>
-                <p style = {strawberryStyles.text}>{props.heading}</p>
-                <img style = {strawberryStyles.imageRight} src = {props.imagePath} height={props.height} width = {props.width}/>
+                <div className = {style.imageLeft}>
+                    <img style = {strawberryStyles.strawberry2} className = {style.strawberry2} src = {'/strawberry2.png'} />
+                    <img style = {strawberryStyles.strawberry3} className = {style.strawberry3} src = {'/strawberry3.png'}/>
+                </div>
+                
+                <p className = {style.text}>{props.heading}</p>
+
+                <div className = {style.imageRight}>
+                    <img style = {strawberryStyles.strawberry2} className = {style.strawberry2} src = {'/strawberry2.png'} />
+                    <img style = {strawberryStyles.strawberry3} className = {style.strawberry3} src = {'/strawberry3.png'}/>
+                </div>
             </div>
     )
 };
