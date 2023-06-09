@@ -1,6 +1,7 @@
 import React from 'react'
 import CSS from 'csstype'
 import Styles from './Button.module.css'
+import { useRouter } from 'next/router';
 
 type ButtonProps = {
     text?: string;
@@ -11,6 +12,7 @@ type ButtonProps = {
     hoverTextColor?: string;
     hoverBorderColor?: string;
     width?: string;
+    url?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -22,6 +24,7 @@ const Button: React.FC<ButtonProps> = ({
     hoverTextColor = '#002809',
     hoverBorderColor = hoverBackgroundColor,
     width,
+    url = '/'
 }) => {
 
     /**Determine when the user is hovering over the button */
@@ -34,6 +37,11 @@ const Button: React.FC<ButtonProps> = ({
     const handleMouseLeave = () => {
         setIsHovered(false);
     };
+
+    const router = useRouter();
+    const handleClick = () => {
+        router.push(url);
+    }
 
     /**Set hover colors */
     const buttonStyle: CSS.Properties = {
@@ -51,7 +59,8 @@ const Button: React.FC<ButtonProps> = ({
         <button style={buttonStyle} 
         className={Styles.button}
         onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}>
+        onMouseLeave={handleMouseLeave}
+        onClick={handleClick}>
             {text}
         </button>
     );
