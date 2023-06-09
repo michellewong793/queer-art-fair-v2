@@ -5,23 +5,13 @@ import Navigation from "../components/Navigation";
 
 export default function Index() {
   return (
-    <div style={Styles.body}>
-      <Layout />
-      <Navigation />
-      <div style={Styles.content}>
-        <h1> what is... Queer Art Fair?  </h1>
-        <p>We are a community hosting art fairs for <strong>marginalized</strong> folks who have not had a space to share their creations before. 
-          We emphasize creating spaces for but not limited to people of color, queer community, people whose first language is not English, and people who have little to no experience vending or sharing their art. 
-          We aim to create a welcoming environment for people who face imposter syndrome about sharing their art to begin their journeys. 
-          We are a completely volunteer-run organization running on donations. To support us, we will be offering collectible stickers at our fairs for all donations above $5 and we receive donations / regularly post shoutouts to our supporters. Our Venmo: @queerartfair.
-          </p>
-    <Spacer height={1}/>
-          <p> Want to see your business ad here? We are actively looking for sponsorships! <a href="mailto:michellurito@gmail.com">Email us for inquiries.</a> </p>
-          <Spacer height={1}/>
-          <h2>How do I apply for the next one?</h2>
-        <p> For new and existing vendors, fill out an application here.</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSePS8SsNjo6JF0JvOVwPIYPIv-cc8VCp2ZLEC2u5cIkPKNodA/viewform">Take me to the form!</a>
-
+      <div className={HomeStyles.body} style={Styles.body}>
+        <HeaderDecoration />
+        <div className={HomeStyles.content}>
+          <Logo />
+          <Subheader />
+          <Navigation />
+          <Strawberry heading='NEXT' showStrawberry2='none'/>
         <p>Our upcoming shows on May 13, May 14, and June 17 are filled. We can't wait to see you soon. </p> 
         <p>Our events on <strong>July 8</strong> at Lakeside Village (2500 Ocean Ave, San Francisco, CA 94127), September 16, and December 2 are accepting applications. </p>
         <br/>
@@ -45,32 +35,23 @@ export default function Index() {
         <p><b>Accessibility: </b>The venue is wheelchair accessible and has gender-neutral bathrooms.</p></i>
 
     <br/>
-     
         <Spacer height={2}/>
-       
-       
-      
-
-
-      <Spacer height={2}/>
-      <h2>How can I support?</h2>
-        <p>If you want to support our mission, you can volunteer or donate below to help us cover the costs of making QAF happen. Our hearts will be very warm. We are in the process of filing for 501c3 status.</p>
-        <p>We are also looking for volunteer DJs, social media managers, day-of setup and tabling assistants. If you are interested, please get in touch <a href="mailto:michellurito@gmail.com">here.</a></p>
-       <Spacer height={1}/>
-         <a style={Styles.link} href="https://www.gofundme.com/f/queer-art-faire?utm_source=facebook&utm_medium=social&utm_campaign=p_cf%20share-flow-1&fbclid=IwAR2AgoudjzRzqhv20nRF1eQuLQjybLwB8aQxPMbORKvZZnJOCf2pTpFBTNQ"
-        >Our GoFundMe 💖</a>
-        <p> Venmo: @queerartfair</p>
-        <br/>
-        <br/>
-       
-      <br/>
-    
-  
-    
-
-        
-        
+          <Strawberry heading='ABOUT' showStrawberry2='none'/>
+          <div className = {HomeStyles.aboutContainer}>
+            <img className = {HomeStyles.aboutImage} src='./PeachWithWater.svg'></img>
+            <p className= {HomeStyles.aboutText}>
+            We are a community hosting art fairs in San Francisco for marginalized and queer folks who have not had a space to share their creations before. 
+            <br /> <br/>
+            We are completely a volunteer-run organization running on donations. 
+            <br/> <br/>
+            If you want to support us, we will be offering collectible merch at our fairs, and we receive donations via Venmo! 
+            <br/> <br/>
+            Venmo: @queerartfair
+            </p>
+          </div>
+          
+        </div>
+        <Footer />
       </div>
-    </div>
   );
 }
