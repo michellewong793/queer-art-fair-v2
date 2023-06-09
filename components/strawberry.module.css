@@ -1,0 +1,47 @@
+.text {
+    text-align: center;
+    font-size: 35px; 
+    margin: 0;
+    color: #1A361E; 
+    font-family: 'Ilyas';
+}
+
+@media (min-width: 780px) {
+    .text {
+        font-size: 60px; 
+    }
+}
+
+.imageLeft {
+    margin-left: 100px;
+    margin-right: 50px;
+}
+
+.imageRight {
+    margin-left: 50px;
+    margin-right: 100px;
+}
+
+.strawberry2 {
+    height: 41px;
+    width: 92px;
+}
+
+@media (min-width: 780px) {
+    .strawberry2 {
+        height: 82px;
+        width: 184px;
+    }
+}
+
+.strawberry3 {
+    height: 41px;
+    width: 152.5px;
+}
+
+@media (min-width: 780px) {
+    .strawberry3 {
+        height: 82px;
+        width: 305px;
+    }
+}
