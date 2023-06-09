@@ -1,11 +1,13 @@
 import Layout from "../components/Layout";
 import Styles from "../components/Theme";
 import Spacer from "../components/Spacer";
+import Navigation from "../components/Navigation";
 
 export default function Index() {
   return (
     <div style={Styles.body}>
       <Layout />
+      <Navigation />
       <div style={Styles.content}>
         <h1> what is... Queer Art Fair?  </h1>
         <p>We are a community hosting art fairs for <strong>marginalized</strong> folks who have not had a space to share their creations before. 
