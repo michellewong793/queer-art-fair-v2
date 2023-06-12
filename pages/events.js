@@ -17,7 +17,7 @@ export default function Events() {
         <Logo />
         <Subheader />
         <Navigation />
-        <Strawberry heading = {"PAST EVENTS"} showStrawberry3 = {'none'}/>
+        <Strawberry heading = {"PAST EVENTS"} showLargeStrawberry = {'none'}/>
         <Spacer height = {5}/>
         <ContentComponent 
             imageLeft = {true} 

@@ -22,10 +22,10 @@
     margin-right: 100px;
 }
 
-.strawberry2 {
+.mediumStrawberry {
     height: 41px;
     width: 32px;
-    background-image: url("/strawberry.png");
+    background-image: url("/smallStrawberryBorder.png");
     background-repeat: none;
     background-size: 32px 41px;
     border: none;
@@ -33,18 +33,18 @@
 }
 
 @media (min-width: 780px) {
-    .strawberry2 {
+    .mediumStrawberry {
         height: 82px;
         width: 184px;
-        background-image: url("/strawberry2.png");
+        background-image: url("/mediumStrawberryBorder.png");
         background-size: 184px 82px;
     }
 }
 
-.strawberry3 {
+.largeStrawberry {
     height: 41px;
     width: 32px;
-    background-image: url("/strawberry.png");
+    background-image: url("/smallStrawberryBorder.png");
     background-repeat: no-repeat;
     background-size: 32px 41px;
     border: none;
@@ -52,10 +52,10 @@
 }
 
 @media (min-width: 780px) {
-    .strawberry3 {
+    .largeStrawberry {
         height: 82px;
         width: 305px;
-        background-image: url("/strawberry3.png");
+        background-image: url("/largeStrawberryBorder.png");
         background-size: 305px 82px;
     }
 }
