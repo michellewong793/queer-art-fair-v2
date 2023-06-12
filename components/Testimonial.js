@@ -1,7 +1,6 @@
 const Testimonial = (Props) => {
     let Styles = {
         container: {
-            textAlign: 'center',
             display: 'flex',
             flexDirection: 'row',
             width: '100%',
@@ -11,19 +10,21 @@ const Testimonial = (Props) => {
             width: '60%',
             padding: '10px',
             margin: '10px',
-            border: '1px solid black'
+            border: '1px solid #FF4C4C',
+            backgroundColor: '#ffbec0',
+            boxShadow: '-1px 2px 5px 0px rgba(0, 0, 0, 0.5);'
+        },
+        source: {
+            textAlign: 'center'
         }
     }
 
     return (
         <div style={Styles.container}>
-            <img src='heart.svg'></img>
             <div style={Styles.textContainer}>
                 <p>"<em>{Props.testimonial}</em>"</p>
-                <p>-{Props.source}</p>
+                <p style={Styles.source}>-{Props.source}</p>
             </div>
-            
-            <img src='heart.svg'></img>
         </div>
     )
 }
