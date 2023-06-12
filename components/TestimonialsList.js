@@ -1,11 +1,11 @@
-const Testimonials = [
+const TestimonialsList = [
     {
         testimonial: "I really loved meeting the other vendors! I traded a pair of earrings for a hair clip from frootyshop, and traded another pair of earrings for a tattoo from flashedbystace. It was a beautiful day of sharing art with radical queer artists <3",
         source: "junenelsonx"
     },
-    {
-        testimonial: "The crowd was so nice! Even those who didn't purchase anything, they'd still showed appreciation for my work and that felt really good :) Meeting other artists were cool too - I didn't study art in school and so my community of art friends is mainly whoever I meet online - it was so nice to be among other artists in person!",
-        source: "Anonymous"
+ {
+        testimonial: "Community and talking to other artist were really amazing. The volunteers and organizers were all super helpful, kind, and accomodating",
+        source: "inkyfingersprintshop",
     },
     {
         testimonial: "It was nice reconnecting with people from my high school. I did not know that they also have art/craft hobbies too! I was also able to connect with a customer because they saw that I put \"K-Pop Lover\" on my IG bio. I asked them if they liked NewJeans (a newer kpop group, who has gained a lot of popularity), and they showed me their k-pop photocards from their bag! I love how we were able to connect on similar interests other than stationery too! Another cute story was when a customer came up to my shop, and they were already into sticker planning! The customer called me \"Sticker Costco\".",
@@ -47,4 +47,4 @@ const Testimonials = [
     // }
 ]
 
-export default Testimonials;
+export default TestimonialsList;
