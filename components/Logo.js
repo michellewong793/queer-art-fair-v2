@@ -4,6 +4,7 @@ const Logo = (props) => {
     let styles = {
         container: {
             display: 'flex',
+            justifyContent: 'center',
             width: '100%',
             marginBottom: '20px',
         },

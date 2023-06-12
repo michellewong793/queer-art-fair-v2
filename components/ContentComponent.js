@@ -3,15 +3,10 @@ import style from "./contentComponent.module.css";
 import Spacer from "./Spacer"
 
 const ContentComponent = (props) => {
+
+    const imageLeft = props.imageLeft;
+
     let contentStyles = {
-
-        imageRight: {
-            display: props.imageRight,
-        },
-
-        imageLeft: {
-            display: props.imageLeft,
-        },
 
         heading: {
             fontSize: '25px', 
@@ -23,11 +18,13 @@ const ContentComponent = (props) => {
             fontSize: '16px', 
             color: '#0C180E', 
             fontFamily: 'ClementePDae',
+            textAlign: 'center'
         }
     };
     return (
         <div>
-        <div style = {contentStyles.imageLeft} className = {style.container}>
+        {imageLeft ? (
+            <div className = {style.container}>
             <img className = {style.image} src = {props.imagePath}/>
             <div className = {style.smallContainer}>
                 <p style = {contentStyles.heading}>
@@ -36,26 +33,27 @@ const ContentComponent = (props) => {
                 <p style = {contentStyles.text}> 
                     {props.text}
                 </p>
-                <Button text = {props.buttonText1}/>
+                <Button text = {props.buttonText1} url = {props.url1}/>
                 <Spacer height = {1}/>
-                <Button text = {props.buttonText2}/>
+                <Button text = {props.buttonText2} url = {props.url2}/>
             </div>
         </div>
-
-        <div style = {contentStyles.imageRight} className = {style.container}>
-            <div className = {style.smallContainer}>
-                <p style = {contentStyles.heading}>
-                    {props.heading}
-                </p>
-                <p style = {contentStyles.text}> 
-                    {props.text}
-                </p>
-                <Button text = {props.buttonText}/>
-                <Spacer height = {1}/>
-                <Button text = {props.buttonText2}/>
+        ) : (
+            <div className = {style.container}>
+                <div className = {style.smallContainer}>
+                    <p style = {contentStyles.heading}>
+                        {props.heading}
+                    </p>
+                    <p style = {contentStyles.text}> 
+                        {props.text}
+                    </p>
+                    <Button text = {props.buttonText} url = {props.url1}/>
+                    <Spacer height = {1}/>
+                    <Button text = {props.buttonText2} url = {props.url2}/>
+                </div>
+                <img className = {style.image} src = {props.imagePath}/>
             </div>
-            <img className = {style.image} src = {props.imagePath}/>
-        </div>
+        )}
         </div>
     )
 };

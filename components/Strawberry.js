@@ -6,7 +6,7 @@ const Strawberry = (props) => {
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'center', 
-            paddingTop: 100,
+            paddingTop: 20,
             paddingLeft: '10%',
             paddingRight: '10%',
             marginLeft: 'auto',
@@ -29,15 +29,15 @@ const Strawberry = (props) => {
     return ( 
             <div style = {strawberryStyles.container}>
                 <div className = {style.imageLeft}>
-                    <img style = {strawberryStyles.strawberry2} className = {style.strawberry2} src = {'/strawberry2.png'} />
-                    <img style = {strawberryStyles.strawberry3} className = {style.strawberry3} src = {'/strawberry3.png'}/>
+                    <div style = {strawberryStyles.strawberry2} className = {style.strawberry2} />
+                    <div style = {strawberryStyles.strawberry3} className = {style.strawberry3} />
                 </div>
                 
                 <p className = {style.text}>{props.heading}</p>
 
                 <div className = {style.imageRight}>
-                    <img style = {strawberryStyles.strawberry2} className = {style.strawberry2} src = {'/strawberry2.png'} />
-                    <img style = {strawberryStyles.strawberry3} className = {style.strawberry3} src = {'/strawberry3.png'}/>
+                    <div style = {strawberryStyles.strawberry2} className = {style.strawberry2}  />
+                    <div style = {strawberryStyles.strawberry3} className = {style.strawberry3} />
                 </div>
             </div>
     )

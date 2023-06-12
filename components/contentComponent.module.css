@@ -9,12 +9,14 @@
     margin-left: auto;
     margin-right: auto;
     position: relative;
+    padding-bottom: 20px;
 }
 
 @media (min-width: 780px) {
     .container{
         flex-direction: row;
         margin-top: 0px;
+        padding-bottom: 50px;
     }
 }
 

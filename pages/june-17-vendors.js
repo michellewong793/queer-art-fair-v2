@@ -1,155 +1,202 @@
 import Layout from "../components/Layout";
 import Styles from "../components/Theme";
 import Spacer from "../components/Spacer";
+import Navigation from "../components/Navigation";
+import Strawberry from "../components/Strawberry";
+import HeaderDecoration from "../components/HeaderDecoration";
+import Logo from "../components/Logo";
+import Subheader from "../components/Subheader";
+import pageStyles from "../components/pages.module.css";
+import Footer from "../components/Footer";
+import PastVendor from "../components/PastVendor";
 
 export default function June17Vendors() {
   return (
-    <div>
-      <Layout />
-      <div style={Styles.content}>
-        <h1> Summer Queer Art Fair Vendors - June 17 2023 </h1>
-        <h2> Location: Pebble Bed 1417 15th St, San Francisco, CA 94103  </h2>
-        <h3> Time: 1pm-6pm </h3>
-        <p> $5 donation encouraged for attendees</p>
+    <div className = {pageStyles.pastVendorsBody}>
+      <HeaderDecoration />
+      <Logo />
+      <Subheader />
+      <Navigation />
+      <Strawberry heading = {"JUNE 17 VENDORS"} showStrawberry3 = {'none'}/>
+      <Spacer height = {2}/>
+      <PastVendor 
+        text1 = {"Perfectly Pinay"} 
+        url1 = {"https://www.instagram.com/perfectlypinay/"}
+        text2 = {"stationery, drinkware, and apparel that promote mental wellness, identity, and Filipinx culture"}
+        url2 = {"https://www.perfectlypinay.com"}
+      />
+      <PastVendor
+        text1 = {"Herbal Communion"}
+        url1 = {"https://www.instagram.com/herbalcommunion/"}
+        text2 = {"handcrafted herbal extracts and skincare products"}
+        url2 = {"https://www.herbalcommunion.com"}
+      /> 
+      <PastVendor
+        text1 = {"jun333"}
+        url1 = {"https://www.instagram.com/jun333designs/"}
+        text2 = {"handmade chainmail jewelry"}
+      /> 
+      <PastVendor
+        text1 = {"Babygirl Inc."}
+        url1 = {"https://www.instagram.com/babygirl.inc.xo/"}
+        text2 = {"jewelry, collars, cuffs, and chain chest harnesses"}
+      />
+      <PastVendor
+        text1 = {"Grxcelyn. Arts"}
+        url1 = {"https://www.instagram.com/gracelyn.__/"}
+        text2 = {"scrapbook pages, scrapbook page kits, stickers of digital art, and digital art prints"}
+        url2 = {"https://grxcelynarts.bigcartel.com/"}
+      />
+      <PastVendor
+        text1 = {"Heir Boots/Jsiuzmuidzinas"}
+        url1 = {"https://www.instagram.com/Jsiuzmuidzinas/"}
+        text2 = {"original paintings, t-shirts, and prints"}
+      />
+      <PastVendor
+        text1 = {"Ivana Makes Things"}
+        url1 = {"https://www.instagram.com/ivanamakesthings/"}
+        text2 = {"witty stickers"}
+      />
+      <PastVendor
+        text1 = {"Cody's Cookies and Treats"}
+        url1 = {"https://www.instagram.com/CodysTreats/"}
+        text2 = {"dehydrated cookies, treats, and chews for dogs and cats"}
+      />
+      <PastVendor
+        text1 = {"Studio Mitchii"}
+        url1 =  {"https://www.instagram.com/studio.mitchii/"}
+        text2 = {"ceramic items such as vases, pots, and mugs"}
+      />
+      <PastVendor
+        text1 = {"Inky Fingers Print Shop"}
+        url1 = {"https://www.instagram.com/inky.fingers.printshop/"}
+        text2 = {"Prints, Textiles, Patches"}
+      />
+      <PastVendor
+        text1 = {"TajiinMamii"}
+        url1 = {"https://www.instagram.com/tajiinmamii/"}
+        text2 = {"queer Latina artist who creates earrings, necklaces, and phone charms"}
+      />
+      <PastVendor
+        text1 = {"Sproessling Magick"}
+        url1 = {"https://www.instagram.com/sproessling.magick/"}
+        text2 = {"Cute stickers, magickal art and crystals!"}
+      />
+      <PastVendor
+        text1 = {"Asho's Prints"}
+        url1 = {"https://www.instagram.com/asho.prints/"}
+        text2 = {"lino cut prints and cards inspired by nature, queer identity, and the process of finding patience through the flow of printmaking"}
+      />
+      <PastVendor
+        text1 = {"Marion Vail"}
+        url1 = {"https://www.instagram.com/marionvailed/"}
+        text2 = {"toy keychains and apparel"}
+      />
+      <PastVendor
+        text1 = {"ai archives"}
+        url1 = {"https://www.instagram.com/ai.archives/"}
+        text2 = {"upcycled and vintage clothing"}
+      />
+      <PastVendor
+        text1 = {"Reiki Love"}
+        url1 = {"https://www.instagram.com/reikii_love/"}
+        text2 = {"intuitive tarot + oracle readings to the collective"}
+      />
+      <PastVendor
+        text1 = {"Wolf Babe Shop"}
+        url1 = {"https://www.instagram.com/wolfbabeshop/"}
+        text2 = {"polymer clay jewelry mostly tiny bongs and pipes and little boobies :)"}
+      />
+      <PastVendor
+        text1 = {"evy.garden"}
+        url1 = {"https://evy.garden/"}
+        text2 = {"zines and collage art (some originals, some prints)"}
+      />
+      <PastVendor
+        text1 = {"moody zillenial"}
+        url1 = {"https://www.instagram.com/moodyzillenial/"}
+        text2 = {"a variety of rave hair accessories both sourced and handmade"}
+      />
+      <PastVendor
+        text1 = {"woodymakesthings"}
+        url1 = {"https://www.instagram.com/woodymakesthings/"}
+        text2 = {"playful illustrations, stickers, and handmade ceramics"}
+      /> 
+      <PastVendor
+        text1 = {"Soft Gentle Pancake"}
+        url1 = {"https://www.instagram.com/softgentlepancake/"}
+        text2 = {"zines and comics about navigating sex work, grief, queer sex, and absurdism"}
+      />
+      <PastVendor
+        text1 = {"Anna Stuart Design"}
+        url1 = {"https://www.instagram.com/astuartdesign/"}
+        text2 = {"risograph prints and stickers"}
+      />
+      <PastVendor
+        text1 = {"Grimace Skate"}
+        url1 = {"https://www.instagram.com/grimaceskate/"}
+        text2 = {"Clothing, Crochet/knit, Accessories, Thrift, Skateboards"}
+      />
+      <PastVendor
+        text1 = {"Not The Real Dan Lynch"}
+        url1 = {"https://www.instagram.com/nottherealdanlynch/"}
+        text2 = {"prints, stickers, shirts and pins"}
+        url2 = {"www.nottherealDanlynch.com"}
+      />
+      <PastVendor
+        text1 = {"Flash By Stace"}
+        url1 = {"https://www.instagram.com/flashbystace/"}
+        text2 = {"flash tattoos! RSVP on Instagram for your tattoo :)"}
+      />
+      <PastVendor
+        text1 = {"We Are Fluid Coffee"}
+        url1 = {"https://www.fluidcoopsf.com//"}
+        text2 = {"coffee and drinks!"}
+      />
+      <PastVendor
+        text1 = {"Hyazinth"}
+        url1 = {"https://www.instagram.com/partyofimmortals/"}
+        text2 = {"multimedia zines oriented around queer mythology"}
+        url2 = {"https://www.hyazinths.com"}
+      />
+      <PastVendor
+        text1 = {"M. Suarez-Thai"}
+        url1 = {"https://www.instagram.com/msuarezthai/"}
+        text2 = {"comics, zines, stickers, and prints"}
+        url2 = {"https://msuarezthai.bigcartel.com/"}
+      />
+      <PastVendor
+        text1 = {"Alexa Kern"}
+        url1 = {"https://www.instagram.com/A.j.k.artist/"}
+        text2 = {"fun, psychedelic art"}
+      />
+      <PastVendor
+      text1 = {"Evelyn"}
+      url1 = {"https://www.instagram.com/by.evey/"}
+      text2 = {"crochet items, handmade earrings, and some vintage clothes"}
+      />
+      <PastVendor
+        text1 = {"v che"}
+        text2 = {"prints, art, ceramics, and more!"}
+      /> 
+      <PastVendor
+        text1 = {"Mew Doodles"}
+        url1 = {"https://www.instagram.com/mew.doodles/"}
+        text2 = {"cute art, stationery, and apparel inspired by hedgehogs, plants, & asian food"}
+      />
+      <PastVendor
+        text1 = {"New_stitching"}
+        url1 = {"https://www.instagram.com/New_stitching/"}
+        text2 = {"handmade embroidered bags"}
+      /> 
+      <PastVendor
+        text1 = {"Nyla"}
+        url1 = {"https://www.instagram.com/waste.astronaut/"}
+        text2 = {"fun jewelry"}
+      />    
 
-<ol>
-    <li><p> <a href="https://www.instagram.com/partyofimmortals/">Hyazinth
-    </a>- <a href="https://www.hyazinths.com">multimedia zines oriented around queer mythology</a></p>
-    </li>
-    <li><p> <a href="https://www.instagram.com/perfectlypinay/">Perfectly Pinay
- </a>- <a href="https://www.perfectlypinay.com">stationery, drinkware, and apparel that promote mental wellness, identity, and Filipinx culture
-</a></p> 
-</li>
-<li><p> <a href="https://www.instagram.com/herbalcommunion/">Herbal Communion
- </a>- <a href="https://www.herbalcommunion.com">handcrafted herbal extracts and skincare products
-</a></p> 
-</li>
-
-
-<li><p><a href="https://www.instagram.com/jun333designs/">Jun333Designs
- </a>- handmade chainmail jewelry</p>
- </li>
- <li><p><a href="https://www.instagram.com/babygirl.inc.xo/">Babygirl Inc.
- </a>-jewelry, collars, cuffs, and chain chest harnesses
-</p>
-</li>
-<li><p><a href="https://www.instagram.com/gracelyn.__/">Grxcelyn. Arts - Grace Birnam
- </a>- <a href="https://grxcelynarts.bigcartel.com/">scrapbook pages, scrapbook page kits, stickers of digital art, and digital art prints 
-</a></p>
-</li>
-  <li><p><a href="https://www.instagram.com/Jsiuzmuidzinas/">Heir Boots/ Jsiuzmuidzinas
- </a>-original paintings,  t-shirts, and prints </p>
- </li>
-  <li><p><a href="https://www.instagram.com/ivanamakesthings/">Ivana Makes Things
- </a>-witty stickers</p>
- </li>
-  <li><p><a href="https://www.instagram.com/CodysTreats
-/">Cody’s Cookies and Treats
- </a>- dehydrated cookies, treats, and chews for dogs and cats 
-</p>
-</li>
-  <li><p><a href="https://www.instagram.com/msuarezthai/">M. Suarez-Thai
- </a>- <a href="https://msuarezthai.bigcartel.com/">comics, zines, stickers, and prints
-</a></p>
-</li>
-  <li><p><a href="https://www.instagram.com/A.j.k.artist/">Alexa Kern
- </a>- fun, psychedelic art</p>
- </li>
-  <li><p><a href="https://www.instagram.com/studio.mitchii/">Studio Mitchii
- </a>-ceramic items such as vases, pots, and mugs</p>
- </li>
-  <li><p> <a href="https://www.instagram.com/by.evey/">Evelyn
- </a>- crochet items, handmade earrings, and some vintage clothes</p>
- </li>
-  <li><p> <a href="https://www.instagram.com/inky.fingers.printshop/">Inky Fingers Print Shop
- </a>- Prints, Textiles, Patches</p>
- </li>
-  <li><p> <a href="https://www.instagram.com/tajiinmamii/">TajiinMamii
- </a>- queer Latina artist who creates earrings, necklaces, and phone charms </p>
- </li>
-  <li><p> <a href="https://www.instagram.com/sproessling.magick
-/">Sproessling Magick
- </a>-Cute stickers, magickal art and crystals ! 
- </p></li>
-  <li> <p> <a href="https://www.instagram.com/asho.prints
-/">asho.prints
- </a>-lino cut prints and cards inspired by nature, queer identity, and the process of finding patience through the flow of printmaking
- </p></li>
-   <li><p><a href="https://www.instagram.com/marionvailed
-/"> marionvailed
- </a>- toy keychains and apparel</p>
- </li>
-  <li> <p> <a href="https://www.instagram.com/ai.archives
-/"> ai.archives
- </a>- upcycled and vintage clothing
- </p>
- </li>
-   <li><p>  v che
-- prints, art, ceramics, and more!
- </p></li>
-   <li><p> <a href="https://www.instagram.com/reikii_love
-/"> Reiki Love
- </a> - intuitive tarot + oracle readings to the collective 
- </p></li>
-   <li><p> <a href="https://www.instagram.com/wolfbabeshop
-/"> Wolf Babe Shop polymer clay jewelry
- </a> - polymer clay jewelry mostly tiny bongs and pipes and little boobies :)
- </p></li>
-  <li> <p> <a href="https://www.instagram.com/mew.doodles
-/"> Mew Doodles
- </a> - cute art, stationery, and apparel inspired by hedgehogs, plants, & asian food
- </p></li>
-  <li> <p> <a href="https://evy.garden/"> evy
- </a> - zines and collage art (some originals, some prints)
- </p></li>
-  <li> <p> <a href="https://www.instagram.com/moodyzillenial
-/">moody zillenial
- </a> - a variety of rave hair accessories both sourced and handmade 
- </p></li>
-   <li><p> <a href="https://www.instagram.com/woodymakesthings
-/"> woodymakesthings
- </a> - playful illustrations, stickers, and handmade ceramics
- </p></li>
-   <li><p> <a href="https://www.instagram.com/New_stitching
-/"> New_stitching
- </a> - handmade embroidered bags
- </p></li>
-   <li><p> <a href="https://www.instagram.com/softgentlepancake
-/"> Soft Gentle Pancake
- </a> - zines and comics about navigating sex work, grief, queer sex, and absurdism
- </p></li>
-   <li><p> <a href="https://www.instagram.com/astuartdesign
-/"> Anna Stuart Design
- </a> - risograph prints and stickers 
- </p></li>
- <li><p> <a href="https://www.instagram.com/grimaceskate
-/"> Grimace Skate
- </a> - Clothing, Crochet/knit, Accessories, Thrift, Skateboards
- </p></li>
- <li><p> <a href="https://www.instagram.com/nottherealdanlynch
-/"> Not The Real Dan Lynch
- </a> - <a href="www.nottherealDanlynch.com">prints, stickers, shirts and pins </a>
- </p></li>
- <li><p> <a href="https://www.instagram.com/waste.astronaut 
-/"> Nyla
- </a> - <a href="www.nottherealDanlynch.com">fun jewelry </a>
- </p></li>
-     
-     
-     
-     
-     <br/>
-     <p> <a href="https://www.instagram.com/flashbystace
-/"> Flash By Stace
- </a> - flash tattoos! RSVP on Instagram for your tattoo :)
- </p>
- <p> <a href="https://www.fluidcoopsf.com/
-/"> Drinks by Fluid Cooperative Cafe
- </a> - coffee and drinks 
- </p>
-     
-      </ol>
-      </div>
+      <Footer />
     </div>
+
   );
 }
