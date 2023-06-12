@@ -16,7 +16,8 @@ export default function Index() {
           <Logo />
           <Subheader />
           <Navigation />
-          <Strawberry heading='NEXT' showStrawberry2='none'/>
+          <Strawberry heading='NEXT' showMediumStrawberry = {'none'}/>
+
           <div className = {HomeStyles.nextContainer}>
             <img className = {HomeStyles.nextPoster} src='./June17FaireSquare.svg'></img>
 
@@ -34,7 +35,16 @@ export default function Index() {
             </div>
           </div>
           
-          <Strawberry heading='ABOUT' showStrawberry2='none'/>
+
+          {/* <div className = {HomeStyles.centerFlexParent}>
+            <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" date="12.1.23"/>
+            <p className = {HomeStyles.centerFlexChild}>p</p>
+            <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" date="12.1.23"/>
+            <p className = {HomeStyles.centerFlexChild}>p</p>
+            <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" date="12.1.23"/>
+          </div> */}
+
+          <Strawberry heading='ABOUT' showMediumStrawberry = {"none"}/>
           <div className = {HomeStyles.aboutContainer}>
             <img className = {HomeStyles.aboutImage} src='./PeachWithWater.svg'></img>
             <p className= {HomeStyles.aboutText}>

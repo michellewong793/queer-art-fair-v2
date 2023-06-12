@@ -3,6 +3,7 @@ import Link from "next/link";
 const Logo = (props) => {
     let divStyle = {
         display: 'flex',
+        justifyContent: 'center',
         width: '100%',
         marginBottom: '20px',
     }
