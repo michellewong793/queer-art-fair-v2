@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.logoImg {
+    margin: auto;
+    width: 100px;
+}
+
+@media screen and (min-width: 480px) {
+    .logoImg {
+        width: 180px;
+    }
+}

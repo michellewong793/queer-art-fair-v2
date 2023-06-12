@@ -1,19 +1,10 @@
 import Link from "next/link";
+import Styles from "./Logo.module.css"
 
 const Logo = (props) => {
-    let divStyle = {
-        display: 'flex',
-        justifyContent: 'center',
-        width: '100%',
-        marginBottom: '20px',
-    }
-    let imgStyle = {
-        margin: 'auto',
-        width: '240px',
-    }
     return (
-        <div style={divStyle}>
-            <img style={imgStyle} src='./QAFLogoOrangePuffy.png'></img>
+        <div className={Styles.container}>
+            <img className={Styles.logoImg} src='./QAFLogoOrangePuffy.png'></img>
         </div>
     )
 }
