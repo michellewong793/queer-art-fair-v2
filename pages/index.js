@@ -50,6 +50,7 @@ export default function Index() {
           <Strawberry heading={"TESTIMONIALS"} showLargeStrawberry={'none'} />
           {Quotes.map((quote) => (
             <Testimonial
+            key = {quote.testimonial}
             testimonial={quote.testimonial}
             source={quote.source}
             />
