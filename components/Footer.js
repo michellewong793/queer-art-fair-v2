@@ -57,6 +57,7 @@ const Footer = (props) => {
                         hoverBackgroundColor="#002809"
                         hoverTextColor="white"
                         width='300px'
+                        url='https://www.instagram.com/queerartfairsf/'
                         />
 
                 </div>
