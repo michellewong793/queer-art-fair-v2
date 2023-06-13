@@ -47,7 +47,7 @@ const ContentComponent = (props) => {
                     <p style = {contentStyles.text}> 
                         {props.text}
                     </p>
-                    <Button text = {props.buttonText} url = {props.url1}/>
+                    <Button text = {props.buttonText1} url = {props.url1}/>
                     <Spacer height = {1}/>
                     <Button text = {props.buttonText2} url = {props.url2}/>
                 </div>
