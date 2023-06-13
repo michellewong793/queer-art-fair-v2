@@ -4,9 +4,7 @@
 
 .content {
     margin: auto;
-    width: 70%;
-    min-width: 360px;
-    max-width: 1000px;
+    width: 95%;
 }
 
 .nextContainer {
@@ -46,6 +44,14 @@
     margin-left: auto;
     margin-right: auto;
     display: block;
+}
+
+@media screen and (min-width: 480px) {
+    .body {
+        width: 70%;
+        min-width: 360px;
+        max-width: 1000px;
+    }
 }
 
 @media screen and (min-width: 768px) {
