@@ -155,15 +155,15 @@ p {
 
 @media screen and (min-width: 480px) {
     h1 {
-        font-size: 90pt;
+        font-size: 90px;
     }
     h2 {
-        font-size: 80pt;
+        font-size: 80px;
     }
     h3 {
-        font-size: 20pt;
+        font-size: 27px;
     }
     p {
-        font-size: 16pt;
+        font-size: 21px;
     }
 }
