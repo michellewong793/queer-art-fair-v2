@@ -1,0 +1,65 @@
+.container {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding-left: 2.5%;
+    padding-right: 2.55%;
+    margin-left: 50px;
+    margin-right: 50px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+@media (min-width: 780px) {
+    .container {
+        flex-direction: row;
+    }
+}
+
+.bigContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.image {
+    width: auto;
+    height: 200px;
+    padding: 2.5%;
+}
+
+@media(min-width: 780px) {
+    .image {
+        width: auto;
+        height: 325px;
+        padding: 5%;
+    }
+}
+
+.bigImage {
+    width: auto;
+    height: 200px;
+    padding: 2.5%;
+}
+
+@media(min-width: 780px) {
+    .bigImage {
+        width: auto;
+        height: 700px;
+        padding: 5%;
+    }
+}
+
+.button {
+    height: 250px;
+    width: 325px;
+}
+
+@media (min-width: 780px) {
+    .button {
+        height: 325px;
+        width: 550px;
+    }
+}
+
