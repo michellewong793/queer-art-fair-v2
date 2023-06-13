@@ -1,15 +1,12 @@
-import Layout from "../components/Layout";
 import Styles from "../components/Theme";
 import HomeStyles from "../components/Home.module.css";
-import Spacer from "../components/Spacer";
-import Navigation from "../components/Navigation";
 import Logo from "../components/Logo";
 import Subheader from "../components/Subheader"
 import HeaderDecoration from "../components/HeaderDecoration";
 import Button from "../components/Button"
-import Event from "../components/Event"
 import Footer from "../components/Footer"
 import Strawberry from "../components/Strawberry"
+import Navigation from "../components/Navigation"
 
 export default function Index() {
   return (
@@ -19,19 +16,26 @@ export default function Index() {
           <Logo />
           <Subheader />
           <Navigation />
-          <Strawberry heading='NEXT' imagePath='strawberry3.png'/>
+          <Strawberry heading='NEXT' showMediumStrawberry = {'none'}/>
 
           <div className = {HomeStyles.nextContainer}>
             <img className = {HomeStyles.nextPoster} src='./June17FaireSquare.svg'></img>
 
             <div className = {HomeStyles.nextButtonContainer}>
               <Button className = {HomeStyles.nextButton} text="Get your tickets!"/>
-              {/* heart image */}
               <img className = {HomeStyles.nextHeart} src='./heart.svg'></img>
-              <Button className = {HomeStyles.nextButton} text="Vendor Application" backgroundColor="white" textColor="#002809" borderColor="#489056"/>
+              <Button className = {HomeStyles.nextButton} 
+              text="Vendor Application" 
+              backgroundColor="white" 
+              textColor="#002809" 
+              borderColor="#489056"
+              hoverBackgroundColor="#489056"
+              hoverTextColor="white"
+              />
             </div>
           </div>
           
+
           {/* <div className = {HomeStyles.centerFlexParent}>
             <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" date="12.1.23"/>
             <p className = {HomeStyles.centerFlexChild}>p</p>
@@ -40,7 +44,7 @@ export default function Index() {
             <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" date="12.1.23"/>
           </div> */}
 
-          <Strawberry heading='ABOUT' imagePath='strawberry3.png'/>
+          <Strawberry heading='ABOUT' showMediumStrawberry = {"none"}/>
           <div className = {HomeStyles.aboutContainer}>
             <img className = {HomeStyles.aboutImage} src='./PeachWithWater.svg'></img>
             <p className= {HomeStyles.aboutText}>

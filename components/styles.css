@@ -1,12 +1,12 @@
 @font-face {
     font-family: "Ilyas";
-    src: url("/fonts/ilyas.woff2");
+    src: url("/fonts/ilyas.woff2") format("woff2");
 }
 @font-face {
     font-family: "Helvetica Light";
     src: url("/fonts/Helvetica-Light.woff2");
 }
-/* All the versions of Clemente font */
+
 @font-face{
     font-family: "ClementePDak";
     src: url("/fonts/ClementePDak.woff2") format("woff2");
@@ -17,6 +17,7 @@
     src: url("/fonts/ClementePDae-Light.woff2") format("woff2");
 }
 
+/* All the versions of Clemente font */
 @font-face {
     font-family: "Clemente";
     src: url("/fonts/clemente_pd/ClementePDaa-Hairline.ttf");
@@ -131,23 +132,38 @@
 /*Global styles*/
 h1 {
     font-family: 'Ilyas';
-    font-size: 90pt;
+    font-size: 70px;
     font-weight: normal;
 }
 h2 {
     font-family: 'Ilyas';
-    font-size: 80pt;
+    font-size: 60px;
     font-weight: normal;
 }
 h3 {
     font-family: 'Clemente';
     font-style: normal;
     font-weight: 400;
-    font-size: 20pt;
+    font-size: 20px;
 }
 
 p {
     font-family: 'Helvetica Light';
-    font-size: 16pt;
+    font-size: 16px;
     font-weight: 200;
+}
+
+@media screen and (min-width: 480px) {
+    h1 {
+        font-size: 90pt;
+    }
+    h2 {
+        font-size: 80pt;
+    }
+    h3 {
+        font-size: 20pt;
+    }
+    p {
+        font-size: 16pt;
+    }
 }
