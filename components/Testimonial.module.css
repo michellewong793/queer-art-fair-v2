@@ -15,10 +15,3 @@
 .source {
     text-align: center;
 }
-
-@media screen and (min-width: 480px) {
-    .textContainer {
-        width: 60%;
-        min-width: 330px;
-    }
-}
