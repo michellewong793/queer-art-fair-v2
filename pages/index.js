@@ -7,6 +7,9 @@ import Button from "../components/Button"
 import Footer from "../components/Footer"
 import Strawberry from "../components/Strawberry"
 import Navigation from "../components/Navigation"
+import Testimonial from "../components/Testimonial";
+import Quotes from "../components/TestimonialsList";
+
 
 export default function Index() {
   return (
@@ -43,6 +46,14 @@ export default function Index() {
             <p className = {HomeStyles.centerFlexChild}>p</p>
             <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" date="12.1.23"/>
           </div> */}
+
+          <Strawberry heading={"TESTIMONIALS"} showLargeStrawberry={'none'} />
+          {Quotes.map((quote) => (
+            <Testimonial
+            testimonial={quote.testimonial}
+            source={quote.source}
+            />
+          ))}
 
           <Strawberry heading='ABOUT' showMediumStrawberry = {"none"}/>
           <div className = {HomeStyles.aboutContainer}>
