@@ -1,0 +1,15 @@
+.logoImg {
+    display: block;
+    margin: 0 auto;
+    width: 136px;
+    padding-top: 30px;
+    padding-bottom: 16px;
+}
+
+@media screen and (min-width: 480px) {
+    .logoImg {
+        width: 240px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+}
