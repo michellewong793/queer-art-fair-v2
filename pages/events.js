@@ -34,6 +34,7 @@ export default function Events() {
           buttonText1 = {'See Photos'}
           buttonText2 = {'See Past Vendors'}
           url1 = {'/march-11-gallery'}
+          url2 = {'/march-11-vendors'}
           heading = {'Queer Art Fair on March 11th'}
         />
         <Footer />
