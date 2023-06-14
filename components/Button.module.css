@@ -1,13 +1,16 @@
-.button {
-    width: 100px;
-    padding: 8px;
 
+/* Mobile + Desktop */
+.button {
     text-align: center;
     font-family: 'Clemente';
-    font-size: 12pt;
-    font-weight: 400;
+    font-weight: 600;
+    font-size: 18px;
+    
+    width: 100%;
+    padding: 23px 0;
 
-    border-radius: 10px;
+
+    border-radius: 12px;
     box-shadow: -1px 2px 5px 0px rgba(0, 0, 0, 0.5);
     
     cursor: pointer;
@@ -20,11 +23,9 @@
     box-shadow: 0 0 0 0 !important;
     translate: -3px 3px;
 }
-
+/* Desktop only */
 @media screen and (min-width: 480px) {
     .button {
-        width: auto;
-        min-width: 200px;
-        padding: 16px;
+        width: 218px;
     }
 }
