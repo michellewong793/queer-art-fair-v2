@@ -6,7 +6,7 @@
     margin: 0;
     color: #113219; 
     text-decoration: none;
-    padding-bottom: 15px;
+    padding-bottom: 25px;
     text-align: center;
     background-image: url("/heart-underline.png");
     background-position: 5px 35px;
@@ -71,6 +71,7 @@
     background-size: 30px 30px;
     background-position: 8px 4px;
     background-repeat: no-repeat;
+    position: initial;
 }
 
 @media(min-width: 780px){
@@ -84,7 +85,7 @@
     flex-direction: column; 
     justify-content: center;
     align-items: center;
-    margin-top: 60px;
+    margin-top: 0px;
     padding-left: 10%;
     padding-right: 10%;
     margin-left: auto;
