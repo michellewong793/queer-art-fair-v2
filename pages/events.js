@@ -33,7 +33,7 @@ export default function Events() {
           imagePath = {"/QueerArtFaireSF.jpg"}
           buttonText1 = {'See Photos'}
           buttonText2 = {'See Past Vendors'}
-          url1 = {'/gallery'}
+          url1 = {'/march-11-gallery'}
           heading = {'Queer Art Fair on March 11th'}
         />
         <Footer />
