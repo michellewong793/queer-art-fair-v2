@@ -134,23 +134,27 @@ h1 {
     font-family: 'Ilyas';
     font-size: 70px;
     font-weight: normal;
+    margin: 0;
 }
 h2 {
     font-family: 'Ilyas';
     font-size: 60px;
     font-weight: normal;
+    margin: 0;
 }
 h3 {
     font-family: 'Clemente';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
+    margin: 0;
 }
 
 p {
     font-family: 'Helvetica Light';
     font-size: 16px;
     font-weight: 200;
+    margin: 0;
 }
 
 @media screen and (min-width: 480px) {

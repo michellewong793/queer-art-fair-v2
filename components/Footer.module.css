@@ -15,11 +15,12 @@
 
 .centerText {
     text-align: center;
+    padding-bottom: 8px;
 }
 
 .buttonContainer {
     width: 100%;
-    padding-top: 8px;
+    padding-top: 24px;
 }
 
 @media screen and (min-width: 480px) {

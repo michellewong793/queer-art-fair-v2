@@ -6,7 +6,6 @@
     font-weight: 600;
     font-size: 18px;
     
-    width: 100%;
     padding: 23px 0;
 
 
@@ -23,6 +22,14 @@
     box-shadow: 0 0 0 0 !important;
     translate: -3px 3px;
 }
+
+/* Mobile only */
+@media screen and (max-width: 480px) {
+    .button {
+        width: 100% !important;
+    }
+}
+
 /* Desktop only */
 @media screen and (min-width: 480px) {
     .button {
