@@ -15,13 +15,13 @@ export default function Index() {
   return (
       <div className={HomeStyles.body} style={Styles.body}>
         <HeaderDecoration />
+        <Logo />
+        <Subheader />
+        <Navigation />
         <div className={HomeStyles.content}>
-          <Logo />
-          <Subheader />
-          <Navigation />
-          <Strawberry heading='NEXT' showMediumStrawberry = {'none'}/>
 
           <div className = {HomeStyles.nextContainer}>
+            <Strawberry heading='NEXT' showMediumStrawberry = {'none'}/>
             <img className = {HomeStyles.nextPoster} src='./June17FaireSquare.svg'></img>
 
             <div className = {HomeStyles.nextButtonContainer}>
@@ -29,7 +29,9 @@ export default function Index() {
               text="Get your tickets!"
               url="https://www.eventbrite.com/e/the-summer-queer-art-faire-2023-registration-590457242507?aff=ALLEVENTS"
               />
-              <img className = {HomeStyles.nextHeart} src='./heart.svg'></img>
+              <div className = {HomeStyles.nextHeartContainer} >
+                <img className = {HomeStyles.nextHeart} src='./heart.svg'></img>
+              </div>
               <Button className = {HomeStyles.nextButton} 
               text="Vendor Application" 
               backgroundColor="white" 
@@ -51,15 +53,21 @@ export default function Index() {
             <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" date="12.1.23"/>
           </div> */}
 
-          <Strawberry heading={"TESTIMONIALS"} showLargeStrawberry={'none'} />
-          {Quotes.map((quote) => (
-            <Testimonial
-            key = {quote.testimonial}
-            testimonial={quote.testimonial}
-            source={quote.source}
-            />
-          ))}
-
+          <div className = {HomeStyles.testimonialsContainer}>
+            <Strawberry heading={"TESTIMONIALS"} showLargeStrawberry={'none'} />
+            <div className = {HomeStyles.testimonials}>
+              {Quotes.map((quote) => (
+                <Testimonial
+                key = {quote.testimonial}
+                testimonial={quote.testimonial}
+                source={quote.source}
+                />
+              ))}
+            </div>
+            
+          </div>
+          
+          {/* TODO: Start styling again here! */}
           <Strawberry heading='ABOUT' showMediumStrawberry = {"none"}/>
           <div className = {HomeStyles.aboutContainer}>
             <img className = {HomeStyles.aboutImage} src='./PeachWithWater.svg'></img>
