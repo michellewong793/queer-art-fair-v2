@@ -34,8 +34,30 @@
     padding-top: 48px; /* Space between buttons and Testimonials heading*/
 }
 
+.testimonials {
+    padding-top: 0px; /* Space between TESTIMONIALS and quotes (+16px) */
+}
+
+.aboutContainer {
+    padding-top: 48px; /* Space between testimonials and About heading*/
+}
+
+.aboutSubContainer {
+    margin-top: 24px; /* Space between ABOUT and text/image */
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.aboutImage {
+    width: 100%;
+}
+
+.aboutText {
+    width: 100%;
+}
+
 /*Desktop only*/
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) {
     .content {
         margin-left: auto;
         margin-right: auto;
@@ -72,6 +94,26 @@
 
     .testimonials {
         padding-top: 16px; /* Space between TESTIMONIALS and quotes (+16px) */
+    }
+
+    .aboutContainer {
+        padding-top: 80px; /* Space between testimonials and About heading */
+    }
+
+    .aboutSubContainer {
+        margin-top: 56px; /* Space between ABOUT and text/image */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .aboutImage {
+        width: 420px;
+    }
+    .aboutText {
+        margin-top: auto;
+        margin-bottom: auto;
+        font-size: 24px;
     }
 }
 

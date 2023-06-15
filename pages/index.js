@@ -67,19 +67,21 @@ export default function Index() {
             
           </div>
           
-          {/* TODO: Start styling again here! */}
-          <Strawberry heading='ABOUT' showMediumStrawberry = {"none"}/>
           <div className = {HomeStyles.aboutContainer}>
-            <img className = {HomeStyles.aboutImage} src='./PeachWithWater.svg'></img>
-            <p className= {HomeStyles.aboutText}>
-            We are a community hosting art fairs in San Francisco for marginalized and queer folks who have not had a space to share their creations before. 
-            <br /> <br/>
-            We are completely a volunteer-run organization running on donations. 
-            <br/> <br/>
-            If you want to support us, we will be offering collectible merch at our fairs, and we receive donations via Venmo! 
-            <br/> <br/>
-            Venmo: @queerartfair
-            </p>
+            <Strawberry heading='ABOUT' showMediumStrawberry = {"none"}/>
+            <div className = {HomeStyles.aboutSubContainer}>
+              <img className = {HomeStyles.aboutImage} src='./PeachWithWater.svg'></img>
+              <p className= {HomeStyles.aboutText}>
+              We are a community hosting art fairs in San Francisco for marginalized and queer folks who have not had a space to share their creations before. 
+              <br /> <br/>
+              We are completely a volunteer-run organization running on donations. 
+              <br/> <br/>
+              If you want to support us, we will be offering collectible merch at our fairs, and we receive donations via Venmo! 
+              <br/> <br/>
+              Venmo: @queerartfair
+              </p>
+            </div>
+            
           </div>
           
         </div>
