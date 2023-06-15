@@ -132,21 +132,21 @@
 /*Global styles*/
 h1 {
     font-family: 'Ilyas';
-    font-size: 70px;
+    font-size: 36px;
     font-weight: normal;
     margin: 0;
 }
 h2 {
     font-family: 'Ilyas';
-    font-size: 60px;
+    font-size: 36px;
     font-weight: normal;
     margin: 0;
 }
 h3 {
     font-family: 'Clemente';
     font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
+    font-weight: 600;
+    font-size: 32px;
     margin: 0;
 }
 
@@ -159,15 +159,15 @@ p {
 
 @media screen and (min-width: 480px) {
     h1 {
-        font-size: 90pt;
+        font-size: 120px;
     }
     h2 {
-        font-size: 80pt;
+        font-size: 100px;
     }
     h3 {
-        font-size: 20pt;
+        font-size: 40px;
     }
     p {
-        font-size: 16pt;
+        font-size: 16px;
     }
 }
