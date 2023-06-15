@@ -1,0 +1,30 @@
+.footerDecor {
+    width: 100%;
+    height: 74px;
+    background-image: url('../public/FooterEllipse.svg');
+    background-repeat: repeat-x;
+    filter: drop-shadow(0 -10px 5px rgba(0, 0, 0, 0.2));
+    margin-bottom: -1px; /*There is space at the bottom for some reason*/
+    margin-top: 120px;
+}
+
+.footer {
+    background-color: #fff9ed;
+    padding: 16px 16px 40px 16px;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.buttonContainer {
+    width: 100%;
+    padding-top: 8px;
+}
+
+@media screen and (min-width: 480px) {
+    .buttonContainer {
+        width: fit-content;
+        margin: 0 auto;
+    }
+}
