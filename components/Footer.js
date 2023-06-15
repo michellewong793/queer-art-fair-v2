@@ -9,13 +9,14 @@ const Footer = (props) => {
                 <h3 className={Styles.centerText}>Get updates from us!</h3>
 
                 <div className={Styles.buttonContainer}>
-                    <Button text='Join our email list' 
+                    <Button text='Join our email newsletter' 
                         backgroundColor="white"
                         textColor="#002809"
                         borderColor='#FF4C4C'
                         hoverBackgroundColor="#002809"
                         hoverTextColor="white"
                         url='https://subscribepage.io/queerartfaire'
+                        width='304px'
                     />
                 </div>
                 <div className={Styles.buttonContainer}>    
@@ -26,6 +27,7 @@ const Footer = (props) => {
                         hoverBackgroundColor="#002809"
                         hoverTextColor="white"
                         url='https://www.instagram.com/queerartfairsf/'
+                        width='304px'
                         />
                 </div>
 
