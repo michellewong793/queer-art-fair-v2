@@ -16,7 +16,7 @@ const Footer = (props) => {
                         hoverBackgroundColor="#002809"
                         hoverTextColor="white"
                         url='https://subscribepage.io/queerartfaire'
-                        width='304px'
+                        width='432px'
                     />
                 </div>
                 <div className={Styles.buttonContainer}>    
@@ -27,7 +27,7 @@ const Footer = (props) => {
                         hoverBackgroundColor="#002809"
                         hoverTextColor="white"
                         url='https://www.instagram.com/queerartfairsf/'
-                        width='304px'
+                        width='432px'
                         />
                 </div>
 

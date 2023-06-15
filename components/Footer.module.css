@@ -16,6 +16,8 @@
 .centerText {
     text-align: center;
     padding-bottom: 8px;
+    padding-top: 16px;
+    font-weight: 400;
 }
 
 .buttonContainer {
