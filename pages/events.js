@@ -24,9 +24,23 @@ export default function Events() {
             imagePath = {'/poster.svg'}
             buttonText1 = {'See Photos'}
             buttonText2 = {'See Past Vendors'}
-            url2 = {'localhost:3000/events/june-17-vendors'}
-            heading = {'Queer Art Fair on June 17th'}
-            text = {'This event was held at Pebble Bed and had over 30 vendors in attendance'}
+            url2 = {'/june-17-vendors'}
+            heading = {'Summer Queer Art Faire'}
+            subheader = {"6.17.23 | 1-6pm | 1417 15th st San Francisco"}
+            text1 = {'30+ vendors selling crafts and creations'}
+            text2 = {'art prints, ceramics, crystals, tattoos, jewelry, a polaroid booth, and more!'}
+        />
+        <ContentComponent 
+            imageLeft = {false} 
+            imagePath = {'/QueerArtFaireSF.jpg'}
+            buttonText1 = {'See Photos'}
+            url1 = {"/march-11-gallery"}
+            buttonText2 = {'See Past Vendors'}
+            url2 = {'/march-11-vendors'}
+            heading = {'Spring Queer Art Faire'}
+            subheader = {'3.11.23 | 11-4pm | 1417 15th st San Francisco'}
+            text1 = {'30+ vendors selling crafts and creations'}
+            text2 = {'art prints, ceramics, crystals, tattoos, jewelry, a polaroid booth, and more!'}
         />
         <Footer />
     </div>
