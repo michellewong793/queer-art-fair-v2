@@ -25,7 +25,7 @@
     padding-top: 24px;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) {
     .buttonContainer {
         width: fit-content;
         margin: 0 auto;

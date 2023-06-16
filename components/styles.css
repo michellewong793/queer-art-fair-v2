@@ -166,7 +166,7 @@ p {
     color: #0C180E;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) {
     h1 {
         font-size: 120px;
     }
