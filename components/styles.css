@@ -140,12 +140,14 @@ h1 {
     font-size: 36px;
     font-weight: normal;
     margin: 0;
+    color: #1A361E;
 }
 h2 {
     font-family: 'Ilyas';
     font-size: 36px;
     font-weight: normal;
     margin: 0;
+    color: #1A361E;
 }
 h3 {
     font-family: 'Clemente';
@@ -153,6 +155,7 @@ h3 {
     font-weight: 600;
     font-size: 32px;
     margin: 0;
+    color: #1A361E;
 }
 
 p {
@@ -160,6 +163,7 @@ p {
     font-size: 16px;
     font-weight: 200;
     margin: 0;
+    color: #0C180E;
 }
 
 @media screen and (min-width: 480px) {
@@ -173,6 +177,6 @@ p {
         font-size: 40px;
     }
     p {
-        font-size: 16px;
+        font-size: 24px;
     }
 }
