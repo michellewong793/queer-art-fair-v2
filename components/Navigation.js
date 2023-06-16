@@ -11,9 +11,6 @@ const Navigation = () => {
     const [showNav, setShowNav] = useState(false);
 
     return (
-        <div className = {style.bigContainer}> 
-            
-
             <div className = {style.desktopContainer}> 
                 <a  href = "/" className = {currentRoute === '/' ? style.active : style.nonActive}>
                     ABOUT
@@ -27,7 +24,6 @@ const Navigation = () => {
                     DONATE
                 </a>
             </div>
-        </div>
     )
 
 };
