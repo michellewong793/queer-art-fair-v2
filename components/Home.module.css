@@ -54,10 +54,11 @@
 
 .aboutText {
     width: 100%;
+    font-family: "Helvetica";
 }
 
 /*Desktop only*/
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 480px) {
     .content {
         margin-left: auto;
         margin-right: auto;
@@ -95,7 +96,10 @@
     .testimonials {
         padding-top: 16px; /* Space between TESTIMONIALS and quotes (+16px) */
     }
+}
 
+/*Only change the about container for desktop size*/
+@media screen and (min-width: 1024px) {
     .aboutContainer {
         padding-top: 80px; /* Space between testimonials and About heading */
     }
@@ -113,7 +117,5 @@
     .aboutText {
         margin-top: auto;
         margin-bottom: auto;
-        font-size: 24px;
-        font-family: "Helvetica";
     }
 }
