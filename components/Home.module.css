@@ -63,6 +63,7 @@
         margin-left: auto;
         margin-right: auto;
         width: 70%; /* fix the width?*/
+        max-width: 1035px;
     }
 
     .nextContainer {
