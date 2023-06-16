@@ -1,8 +1,6 @@
 .qafTextStyle {
     margin: auto 0;
     text-align: center;
-    color: #1a361e;
-    font-size: 36px;
 }
 
 .smallTextStyle {
@@ -17,10 +15,6 @@
 }
 
 @media screen and (min-width: 480px) {
-    .qafTextStyle {
-        font-size: 120px;
-    }
-
     .smallTextStyle {
         padding: 16px 0 0 0;
         font-size: 25px;
