@@ -7,6 +7,11 @@
     src: url("/fonts/Helvetica-Light.woff2");
 }
 
+@font-face {
+    font-family: "Helvetica";
+    src: url("/fonts/Helvetica.woff") format("woff");
+}
+
 @font-face{
     font-family: "ClementePDak";
     src: url("/fonts/ClementePDak.woff2") format("woff2");
