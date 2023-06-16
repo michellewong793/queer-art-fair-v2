@@ -55,14 +55,16 @@
 }
 
 .orange {
-    width: 32px;
-    height: 41px;
-    padding-right: 24px; 
+    height: 32px;
+    width: auto;
+    padding-right: 16px; 
 }
 
 @media (min-width: 780px) {
     .orange {
-        padding-right: 48px;
+        width: auto;
+        height: 40px;
+        padding-right: 32px;
     }
 }
 
@@ -107,11 +109,5 @@
 
 .buttonContainer{
     display: flex;
-    flex-direction: column;
-}
-
-@media (min-width: 780px) {
-    .buttonContainer {
-        flex-direction: row;
-    }
+    flex-direction: row;
 }
