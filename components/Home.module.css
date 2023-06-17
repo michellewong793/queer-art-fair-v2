@@ -8,10 +8,6 @@
     margin-right: 16px;
 }
 
-.nextContainer {
-    padding-top: 32px; /*Space between navbar and next section*/
-}
-
 .nextPoster {
     padding-top: 8px; /*Space between NEXT and poster image*/
     width: 100%;
@@ -64,10 +60,6 @@
         margin-right: auto;
         width: 70%; /* fix the width?*/
         max-width: 1035px;
-    }
-
-    .nextContainer {
-        padding-top: 80px; /*Space between navbar and next section*/
     }
 
     .nextPoster {
