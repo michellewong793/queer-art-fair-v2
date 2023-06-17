@@ -35,7 +35,7 @@
 }
 
 .testimonials {
-    padding-top: 0px; /* Space between TESTIMONIALS and quotes (+16px) */
+    padding-top: 0px; /* Space between TESTIMONIALS and quotes (+36px) */
 }
 
 .aboutContainer {
@@ -95,7 +95,7 @@
     }
 
     .testimonials {
-        padding-top: 16px; /* Space between TESTIMONIALS and quotes (+16px) */
+        padding-top: 20px; /* Space between TESTIMONIALS and quotes (+36px) */
     }
 }
 
