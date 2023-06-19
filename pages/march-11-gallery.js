@@ -1,3 +1,4 @@
+import Styles from '../components/Theme.js';
 import Spacer from "../components/Spacer";
 import Navigation from "../components/Navigation";
 import Strawberry from "../components/Strawberry";
@@ -10,7 +11,7 @@ import GalleryPics from "../components/GalleryPics";
 
 export default function Gallery() {
     return (
-        <div className = {pageStyles.galleryBody}>
+        <div className = {pageStyles.galleryBody} style = {Styles.body}>
             <HeaderDecoration />
             <Logo />
             <Subheader />

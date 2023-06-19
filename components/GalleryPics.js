@@ -14,10 +14,9 @@ const GalleryPics = (props) => {
             backgroundSize: 'auto 325px',
             border: 'none',
             backgroundColor: '#E2F5F6',
-            backgroundPosition: 'center center',
-            width: '490px',
-            paddingLeft: '8px',
-            paddingRight: '8px',
+            backgroundPosition: 'center center',  
+            marginLeft: '8px',
+            marginRight: '8px',
         },
 
         button2: {
@@ -27,9 +26,8 @@ const GalleryPics = (props) => {
             border: 'none',
             backgroundColor: '#E2F5F6',
             backgroundPosition: 'center center',
-            width: '490px',
-            paddingLeft: '8px',
-            paddingRight: '8px',
+            marginLeft: '8px',
+            marginRight: '8px',
         }, 
 
         imageDiv1: {
@@ -56,11 +54,11 @@ const GalleryPics = (props) => {
     return (
         <div>
             <div style = {{display: showPic1 ? "block" : "none"}} >
-                <div style = {styles.imageDiv1} onClick = {() => setShowPic1(!showPic1)}></div>
+                <div className = {style.imageDiv} style = {styles.imageDiv1} onClick = {() => setShowPic1(!showPic1)}></div>
             </div>
             
             <div style = {{display: showPic2 ? "block" : "none"}}>
-                <div style = {styles.imageDiv2} onClick = {() => setShowPic2(!showPic2)}></div>
+                <div className = {style.imageDiv} style = {styles.imageDiv2} onClick = {() => setShowPic2(!showPic2)}></div>
             </div>
 
             <div className = {style.container}>
