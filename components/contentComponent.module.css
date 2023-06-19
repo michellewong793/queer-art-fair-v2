@@ -11,10 +11,25 @@
     .container{
         flex-direction: row;
         margin-top: 0px;
-        padding-left: 138px;
-        padding-right: 138px;
         justify-content: center;
         align-items: center;
+        max-width: 800px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media(min-width: 925px) {
+    .container{
+        flex-direction: row;
+        margin-top: 0px;
+        justify-content: center;
+        align-items: center;
+        max-width: 1160px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -30,9 +45,7 @@
 @media (min-width: 768px) {
     .smallContainer{
         align-items: flex-start;
-        justify-content: left;
-        padding-left: 32px;
-        padding-right: 32px;
+        justify-content: left;  
     }
 }
 

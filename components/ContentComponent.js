@@ -25,6 +25,7 @@ const ContentComponent = (props) => {
             <div className = {style.contentContainer}>
                 <div className = {style.container}>
                     <img className = {style.image} src = {props.imagePath}/>
+                    <Spacer width = {2}/>
                     <div className = {style.smallContainer}>
                         <p className = {style.heading} style = {contentStyles.heading}>
                             {props.heading}
@@ -84,6 +85,7 @@ const ContentComponent = (props) => {
                             <Button text = {props.buttonText2} url = {props.url2}/>
                         </div>
                     </div>
+                    <Spacer width = {2}/>
                     <img className = {style.image} src = {props.imagePath}/>
                 </div>
             </div>
