@@ -15,7 +15,7 @@ const ContentComponent = (props) => {
 
         text: { 
             color: '#0C180E', 
-            fontFamily: 'ClementePDae',
+            fontFamily: 'Helvetica Light',
             textAlign: 'left'
         }
     };
@@ -29,7 +29,7 @@ const ContentComponent = (props) => {
                         <p className = {style.heading} style = {contentStyles.heading}>
                             {props.heading}
                         </p>
-                        <p className = {style.text} style = {contentStyles.text}>
+                        <p className = {style.subheading} >
                             {props.subheader}
                         </p>
                         <div className = {style.textContainer}>
@@ -61,7 +61,7 @@ const ContentComponent = (props) => {
                         <p className = {style.heading} style = {contentStyles.heading}>
                             {props.heading}
                         </p>
-                        <p className = {style.text} style = {contentStyles.text}>
+                        <p className = {style.subheading} >
                             {props.subheader}
                         </p>
                         <div className = {style.textContainer}>
