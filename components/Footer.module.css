@@ -10,13 +10,11 @@
 
 .footer {
     background-color: #fff9ed;
-    padding: 16px 16px 40px 16px;
+    padding: 32px 16px;
 }
 
 .centerText {
     text-align: center;
-    padding-bottom: 8px;
-    padding-top: 16px;
     font-weight: 400;
 }
 
@@ -25,6 +23,14 @@
     padding-top: 24px;
 }
 
+/*Mobile only*/
+@media screen and (max-width: 768px) {
+    .centerText {
+        font-size: 24px;
+    }
+}
+
+/*Desktop only*/
 @media screen and (min-width: 768px) {
     .buttonContainer {
         width: fit-content;
