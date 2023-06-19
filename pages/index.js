@@ -9,6 +9,7 @@ import Strawberry from "../components/Strawberry"
 import Navigation from "../components/Navigation"
 import Testimonial from "../components/Testimonial";
 import Quotes from "../components/TestimonialsList";
+import Event from "../components/Event";
 
 
 export default function Index() {
@@ -44,14 +45,17 @@ export default function Index() {
             </div>
           </div>
           
-
-          {/* <div className = {HomeStyles.centerFlexParent}>
-            <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" date="12.1.23"/>
-            <p className = {HomeStyles.centerFlexChild}>p</p>
-            <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" date="12.1.23"/>
-            <p className = {HomeStyles.centerFlexChild}>p</p>
-            <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" date="12.1.23"/>
-          </div> */}
+          <div className = {HomeStyles.upcomingContainer}>
+            <Strawberry heading='UPCOMING EVENTS' showLargeStrawberry='none'/>
+            <div className = {HomeStyles.smallEventsContainer}>
+              <Event className = {HomeStyles.centerFlexChild} name="Lakeside Landing" info="July 8, 2023"/>
+              <img className = {HomeStyles.upcomingOrange} src='./puffyOrange.svg'></img>
+              <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" info={'12.1.23\nInfo TBA'}/>
+              <img className = {HomeStyles.upcomingOrange} src='./puffyOrange.svg'></img>
+              <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" info={'12.1.23\nInfo TBA'}/>
+            </div>
+          </div>
+          
 
           <div className = {HomeStyles.testimonialsContainer}>
             <Strawberry heading={"TESTIMONIALS"} showLargeStrawberry={'none'} />

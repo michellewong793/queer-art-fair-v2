@@ -26,8 +26,23 @@
     display: none;
 }
 
+.upcomingContainer {
+    padding-top: 48px; /*Space between UPCOMING and NEXT*/
+}
+
+.upcomingOrange {
+    display: none;
+}
+
+.smallEventsContainer {
+    margin-top: 16px; /*Space between UPCOMING and the small events*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .testimonialsContainer {
-    padding-top: 48px; /* Space between buttons and Testimonials heading*/
+    padding-top: 48px; /* Space between upcoming and Testimonials heading*/
 }
 
 .testimonials {
@@ -58,8 +73,8 @@
     .content {
         margin-left: auto;
         margin-right: auto;
-        width: 70%; /* fix the width?*/
-        max-width: 1035px;
+        width: 88%;
+        max-width: 1145px;
     }
 
     .nextPoster {
@@ -82,8 +97,25 @@
         margin: auto 24px auto 24px;
     }
 
+    .upcomingContainer {    
+        padding-top: 176px; /*Space between UPCOMING and NEXT section*/
+    }
+
+    .smallEventsContainer {
+        margin-top: 80px; /*Space between UPCOMING and the small events*/
+        flex-direction: row;
+    }
+
+    .upcomingOrange {
+        display: block;
+        width: 32px;
+        margin: auto 64px;
+    }
+
     .testimonialsContainer {
-        padding-top: 120px; /* Space between buttons and Testimonials heading*/
+        padding-top: 160px; /* Space between UPCOMING and Testimonials heading*/
+        max-width: 1035px;
+        margin: 0 auto;
     }
 
     .testimonials {
@@ -95,6 +127,8 @@
 @media screen and (min-width: 1024px) {
     .aboutContainer {
         padding-top: 80px; /* Space between testimonials and About heading */
+        max-width: 1035px;
+        margin: 0 auto;
     }
 
     .aboutSubContainer {
