@@ -7,7 +7,7 @@
     padding-top: 40px;
 }
 
-@media (min-width: 780px) {
+@media (min-width: 768px) {
     .container{
         max-width: 1000px;
         width: 100%;
@@ -24,7 +24,7 @@
     font-family: 'Ilyas';
 }
 
-@media (min-width: 780px) {
+@media (min-width: 768px) {
     .text {
         font-size: 100px; 
     }
@@ -50,7 +50,7 @@
     align-items: center;
 }
 
-@media (min-width: 780px) {
+@media (min-width: 768px) {
     .mediumStrawberry {
         height: 82px;
         width: 184px;
@@ -69,7 +69,16 @@
     align-items: center;
 }
 
-@media (min-width: 780px) {
+@media (min-width: 768px) {
+    .largeStrawberry {
+        height: 82px;
+        width: 184px;
+        background-image: url("/mediumStrawberryBorder.png");
+        background-size: 184px 82px;
+    }
+}
+
+@media (min-width: 925px) {
     .largeStrawberry {
         height: 82px;
         width: 305px;
