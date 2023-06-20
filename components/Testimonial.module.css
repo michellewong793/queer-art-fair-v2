@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+.textContainer {
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ff4c4c;
+    background-color: #ffbec0;
+    box-shadow: -1px 2px 5px 0px rgba(0, 0, 0, 0.5);
+}
+.source {
+    text-align: center;
+}
