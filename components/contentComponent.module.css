@@ -24,9 +24,9 @@
     .container{
         flex-direction: row;
         margin-top: 0px;
-        justify-content: center;
-        align-items: center;
-        max-width: 1160px;
+        justify-content: left;
+        align-items: flex-start;
+        max-width: 1032px;
         width: 100%;
         margin-left: auto;
         margin-right: auto;
@@ -46,6 +46,17 @@
     .smallContainer{
         align-items: flex-start;
         justify-content: left;  
+        max-width: 405px;
+        width: 100%;
+    }
+}
+
+@media (min-width: 925px) {
+    .smallContainer{
+        align-items: flex-start;
+        justify-content: left;  
+        max-width: 500px;
+        width: 100%;
     }
 }
 
@@ -56,15 +67,15 @@
 
 @media (min-width: 768px) {
     .image {
-        height: 260px;
-        width: auto;
+        height: auto;
+        width: 300px;
     }
 }
 
 @media (min-width: 925px) {
     .image {
-        height: 400px;
-        width: auto;
+        height: auto;
+        width: 500px;
     }
 }
 
@@ -137,10 +148,19 @@
         margin-left: auto;
         margin-right: auto;
         padding-bottom: 56px; 
+        justify-content: left;
     }
 }
 
 .buttonContainer{
     display: flex;
     flex-direction: row;
+    max-width: 450px;
+    width: 100%;
+}
+
+@media (min-width: 925px) {
+    .buttonContainer {
+        max-width: 500px;
+    }
 }

@@ -30,6 +30,7 @@ export default function Events() {
             text1 = {'30+ vendors selling crafts and creations'}
             text2 = {'art prints, ceramics, crystals, tattoos, jewelry, a polaroid booth, and more!'}
         />
+        <Spacer height = {5}/>
         <ContentComponent 
             imageLeft = {false} 
             imagePath = {'/QueerArtFaireSF.jpg'}

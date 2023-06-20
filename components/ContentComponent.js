@@ -22,7 +22,7 @@ const ContentComponent = (props) => {
     return (
         <div>
         {imageLeft ? (
-            <div className = {style.contentContainer}>
+            
                 <div className = {style.container}>
                     <img className = {style.image} src = {props.imagePath}/>
                     <Spacer width = {2}/>
@@ -54,9 +54,9 @@ const ContentComponent = (props) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            
         ) : (
-            <div className = {style.contentContainer}>
+            
                 <div className = {style.container}>
                     <div className = {style.smallContainer}>
                         <p className = {style.heading} style = {contentStyles.heading}>
@@ -88,7 +88,7 @@ const ContentComponent = (props) => {
                     <Spacer width = {2}/>
                     <img className = {style.image} src = {props.imagePath}/>
                 </div>
-            </div>
+            
         )}
         </div>
     )
