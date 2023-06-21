@@ -1,7 +1,11 @@
-import AccountButtons from '../components/accountButtons';
+import signInWithGoogle from "../utils/signInWithGoogle"
 
 export default function Login() {
     return(
-        <AccountButtons/>
+        <>
+        <h3>Login</h3>
+        <button onClick={() => signInWithGoogle()}>Sign in</button>
+        </>
+        
     )
 }

@@ -9,7 +9,7 @@ import Strawberry from "../components/Strawberry"
 import Navigation from "../components/Navigation"
 import Testimonial from "../components/Testimonial";
 import Quotes from "../components/TestimonialsList";
-
+import getUser from "../utils/getUser";
 
 export default function Index() {
   return (
@@ -20,7 +20,6 @@ export default function Index() {
           <Subheader />
           <Navigation />
           <Strawberry heading='NEXT' showMediumStrawberry = {'none'}/>
-
           <div className = {HomeStyles.nextContainer}>
             <img className = {HomeStyles.nextPoster} src='./June17FaireSquare.svg'></img>
 
