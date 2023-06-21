@@ -9,17 +9,8 @@ export default function Account () {
   const [loading, setLoading] = useState(true)
   const [username, setUsername] = useState(null)
   const [full_name, setFullName] = useState(null)
-  const [session, setSession] = useState(null)
-
   
   useEffect(() => {
-    supabaseClient.auth.getSession().then(({ data: { session } }) => {
-      setSession(session)
-    })
-
-    supabaseClient.auth.onAuthStateChange((_event, session) => {
-      setSession(session)
-    })
 
     async function getProfile() {
       setLoading(true)
