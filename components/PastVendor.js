@@ -7,12 +7,11 @@ const PastVendor = (props) => {
             display: 'flex',
             flexDirection: 'row', 
             justifyContent: 'center',
-            marginTop: '20px',
-            paddingLeft: '5%',
-            paddingRight: '5%',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            textAlign: 'center'
+            paddingTop: '16px',
+            paddingBottom: '0px',
+            paddingLeft: '16px',
+            paddingRight: '16px',
+            textAlign: 'center',
         }, 
 
         image: {

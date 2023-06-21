@@ -15,12 +15,12 @@ export default function Index() {
   return (
       <div className={HomeStyles.body} style={Styles.body}>
         <HeaderDecoration />
+        <Logo />
+        <Subheader />
+        <Navigation />
+        <Strawberry heading='NEXT' showMediumStrawberry = {'none'}/>
+        
         <div className={HomeStyles.content}>
-          <Logo />
-          <Subheader />
-          <Navigation />
-          <Strawberry heading='NEXT' showMediumStrawberry = {'none'}/>
-
           <div className = {HomeStyles.nextContainer}>
             <img className = {HomeStyles.nextPoster} src='./June17FaireSquare.svg'></img>
 

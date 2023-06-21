@@ -1,0 +1,70 @@
+.container {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        max-width: 1160px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.bigContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.overlayContainer{
+    position: relative;
+}
+
+.bigImage {
+    width: auto;
+    height: 200px;
+    padding: 2.5%;
+}
+
+@media(min-width: 768px) {
+    .bigImage {
+        width: auto;
+        height: 700px;
+        padding: 5%;
+    }
+}
+
+.button {
+    height: 250px;
+    width: 325px;
+}
+
+@media (min-width: 768px) {
+    .button {
+        height: 275px;
+        width: 350px;
+    }
+}
+
+@media (min-width: 925px) {
+    .button {
+        height: 325px;
+        width: 450px;
+    }
+}
+
+.button:hover {
+    cursor: pointer;
+    filter: blur(2px);
+}
+
+.imageDiv:hover {
+    cursor: pointer;
+}

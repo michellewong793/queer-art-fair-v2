@@ -2,16 +2,6 @@ import style from './strawberry.module.css';
 
 const Strawberry = (props) => {
     let strawberryStyles = {
-        container: {
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center', 
-            paddingTop: 20,
-            paddingLeft: '10%',
-            paddingRight: '10%',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-        },
 
         imageContainer: {
             display: 'flex',
@@ -28,7 +18,7 @@ const Strawberry = (props) => {
 
     };
     return ( 
-            <div style = {strawberryStyles.container}>
+            <div className = {style.container}>
                 <div className = {style.imageLeft}>
                     <div style = {strawberryStyles.mediumStrawberry} className = {style.mediumStrawberry} />
                     <div style = {strawberryStyles.largeStrawberry} className = {style.largeStrawberry} />
