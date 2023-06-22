@@ -20,7 +20,7 @@
     }
 }
 
-@media(min-width: 925px) {
+@media(min-width: 950px) {
     .container{
         flex-direction: row;
         margin-top: 0px;
@@ -51,7 +51,7 @@
     }
 }
 
-@media (min-width: 925px) {
+@media (min-width: 1032px) {
     .smallContainer{
         align-items: flex-start;
         justify-content: left;  
@@ -72,7 +72,9 @@
     }
 }
 
-@media (min-width: 925px) {
+
+
+@media (min-width: 950px) {
     .image {
         height: auto;
         width: 500px;
@@ -162,5 +164,15 @@
 @media (min-width: 925px) {
     .buttonContainer {
         max-width: 500px;
+    }
+}
+
+.nextEventContainer {
+    padding-bottom: 80px;
+}
+
+@media (min-width: 768px) {
+    .nextEventContainer {
+        padding-bottom: 120px;
     }
 }

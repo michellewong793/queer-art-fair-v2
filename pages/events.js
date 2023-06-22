@@ -9,6 +9,7 @@ import HeaderDecoration from "../components/HeaderDecoration";
 import Logo from "../components/Logo";
 import Subheader from "../components/Subheader";
 import Footer from "../components/Footer";
+import NextEvent from "../components/NextEvent";
 
 export default function Events() {
   return (
@@ -17,6 +18,18 @@ export default function Events() {
         <Logo />
         <Subheader />
         <Navigation />
+        <Strawberry heading = {"NEXT EVENT"} showLargeStrawberry = {'none'}/>
+        <Spacer height = {5}/>
+        <NextEvent
+          imageLeft = {true}
+          imagePath = {'/july8poster.jpg'}
+          buttonText1 = {"Vendor Application"}
+          url1 = {""}
+          heading = {"July Queer Art Faire"}
+          subheader = {"7.8.23 | 1-5pm | 2504 ocean ave San Francisco"}
+          text1 = {"$5 suggested donation to Queer Art Faire"}
+          text2 = {"Many local BIPOC and Queer artists selling theirs creations!"}
+        />
         <Strawberry heading = {"PAST EVENTS"} showLargeStrawberry = {'none'}/>
         <Spacer height = {5}/>
         <ContentComponent 
