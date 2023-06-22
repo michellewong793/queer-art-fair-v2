@@ -28,7 +28,7 @@ export default function Index() {
             <div className = {HomeStyles.nextButtonContainer}>
               <Button className = {HomeStyles.nextButton} 
               text="Get your tickets!"
-              url="https://www.eventbrite.com/e/the-summer-queer-art-faire-2023-registration-590457242507?aff=ALLEVENTS"
+              url="https://www.eventbrite.com/e/queer-art-faire-at-lakeside-landing-tickets-634996761407?aff=oddtdtcreator"
               />
               <div className = {HomeStyles.nextHeartContainer} >
                 <img className = {HomeStyles.nextHeart} src='./heart.svg'></img>
