@@ -4,7 +4,6 @@ const Testimonial = (Props) => {
     return (
         <div className={Styles.textContainer}>
             <p>"{Props.testimonial}"</p>
-            <p className={Styles.source}>-{Props.source}</p>
         </div>
     )
 }
