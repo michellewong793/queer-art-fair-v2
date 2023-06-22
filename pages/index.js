@@ -23,7 +23,7 @@ export default function Index() {
 
           <div className = {HomeStyles.nextContainer}>
             <Strawberry heading='NEXT' showMediumStrawberry = {'none'}/>
-            <img className = {HomeStyles.nextPoster} src='./June17FaireSquare.svg'></img>
+            <img className = {HomeStyles.nextPoster} src='./QAF Poster July 8.png'></img>
 
             <div className = {HomeStyles.nextButtonContainer}>
               <Button className = {HomeStyles.nextButton} 
@@ -50,9 +50,9 @@ export default function Index() {
             <div className = {HomeStyles.smallEventsContainer}>
               <Event className = {HomeStyles.centerFlexChild} name="Lakeside Landing" info="July 8, 2023"/>
               <img className = {HomeStyles.upcomingOrange} src='./puffyOrange.svg'></img>
-              <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" info={'12.1.23\nInfo TBA'}/>
+              <Event className = {HomeStyles.centerFlexChild} name="Pebblebed" info={'Sept 16, 2023\nInfo TBA'}/>
               <img className = {HomeStyles.upcomingOrange} src='./puffyOrange.svg'></img>
-              <Event className = {HomeStyles.centerFlexChild} name="TBA" info={'Info TBA'}/>
+              <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" info={'Dec 2, 2023'}/>
             </div>
           </div>
           
