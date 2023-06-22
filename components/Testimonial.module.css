@@ -12,3 +12,9 @@
 .source {
     text-align: center;
 }
+
+@media screen and (min-width: 768px) {
+    .textContainer {
+        padding: 32px;
+    }
+}
