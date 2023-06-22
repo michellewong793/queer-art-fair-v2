@@ -52,7 +52,7 @@ export default function Index() {
               <img className = {HomeStyles.upcomingOrange} src='./puffyOrange.svg'></img>
               <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" info={'12.1.23\nInfo TBA'}/>
               <img className = {HomeStyles.upcomingOrange} src='./puffyOrange.svg'></img>
-              <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" info={'12.1.23\nInfo TBA'}/>
+              <Event className = {HomeStyles.centerFlexChild} name="TBA" info={'Info TBA'}/>
             </div>
           </div>
           
