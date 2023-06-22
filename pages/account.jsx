@@ -7,25 +7,31 @@ import supabaseClient from "../utils/supabaseClient";
 export default function Account () {
 
   const [loading, setLoading] = useState(true)
-  const [username, setUsername] = useState(null)
-  const [full_name, setFullName] = useState(null)
+  const [name, setName] = useState(null)
+  const [email, setEmail] = useState(null)
+  const [venmo, setVenmo] = useState(null)
+  const [instagram, setInstagram] = useState(null)
+  const [signInEmail, setSignInEmail] = useState(null)
   
   useEffect(() => {
 
     async function getProfile() {
       setLoading(true)
       const user = await getUser()
+      setSignInEmail(user.email)
       let { data, error } = await supabaseClient
         .from('profiles')
-        .select('username, full_name')
+        .select('name, email, instagram, venmo')
         .eq('id', user.id)
         .single()
 
       if (error) {
         console.warn(error)
       } else if (data) {
-        setUsername(data.username)
-        setFullName(data.full_name)
+        setName(data.name)
+        setEmail(data.email)
+        setVenmo(data.venmo)
+        setInstagram(data.instagram)
       }
       setLoading(false)
     }
@@ -40,8 +46,10 @@ export default function Account () {
 
     const updates = {
       id: user.id,
-      username,
-      full_name,
+      name,
+      email,
+      venmo,
+      instagram,
       updated_at: new Date(),
     }
 
@@ -57,26 +65,45 @@ export default function Account () {
       <>
       <Navigation />
       <Strawberry heading="YOUR ACCOUNT" showLargeStrawberry='none'/>
+      <p>Email used to sign in: {signInEmail}</p>
       <form onSubmit={updateProfile} className="form-widget">
       <div>
-        <label htmlFor="username">Username</label>
+        <label htmlFor="name">Name</label>
         <input
-          id="username"
+          id="name"
           type="text"
-          required
-          value={username || ''}
-          onChange={(e) => setUsername(e.target.value)}
+          value={name || ''}
+          onChange={(e) => setName(e.target.value)}
         />
       </div>
 
       <div>
-        <label htmlFor="fullname">Full Name</label>
+        <label htmlFor="email">Email</label>
         <input
-          id="fullname"
+          id="email"
           type="text"
-          required
-          value={full_name || ''}
-          onChange={(e) => setFullName(e.target.value)}
+          value={email || ''}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="instagram">Instagram</label>
+        <input
+          id="instagram"
+          type="text"
+          value={instagram || ''}
+          onChange={(e) => setInstagram(e.target.value)}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="venmo">Venmo</label>
+        <input
+          id="venmo"
+          type="text"
+          value={venmo || ''}
+          onChange={(e) => setVenmo(e.target.value)}
         />
       </div>
 
