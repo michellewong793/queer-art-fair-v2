@@ -1,33 +1,29 @@
-import App from 'next/app'
+import { useState } from 'react'
+import font from "/components/styles.css";
+import { Analytics } from '@vercel/analytics/react';
 import Head from 'next/head'
 import React from 'react'
-import { Analytics } from '@vercel/analytics/react';
-import font from "/components/styles.css";
+import { createPagesBrowserClient } from '@supabase/auth-helpers-nextjs'
+import { SessionContextProvider } from '@supabase/auth-helpers-react'
 
 
-export default class MyApp extends App {
-    static async getInitialProps({ Component, ctx }) {
-        let pageProps = {}
+function App({ Component, pageProps }) {
+    const [supabaseClient] = useState(() => createPagesBrowserClient())
 
-        if (Component.getInitialProps) {
-            pageProps = await Component.getInitialProps(ctx)
-        }
-
-        return { pageProps }
-    }
-
-    render() {
-        const { Component, pageProps } = this.props
-
-        return (
-            <>
-                <Head>
-                    <title>an inclusive space to make, share, and sell your craft</title>
-                   
-                </Head>
-                <Component {...pageProps} />
-                <Analytics />
-            </>
-        )
-    }
+    return (
+        <SessionContextProvider
+        supabaseClient={supabaseClient}
+        initialSession={pageProps.initialSession}
+        >
+            <Head>
+                <title>
+                    an inclusive space to make, share, and sell your craft
+                </title>
+            </Head>
+            <Component {...pageProps} />
+            <Analytics />
+        </SessionContextProvider>
+    )
 }
+
+export default App
