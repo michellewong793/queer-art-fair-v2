@@ -1,8 +1,10 @@
+'use client'
+
 import { useEffect, useState } from "react";
-import Navigation from "../components/Navigation";
-import Strawberry from "../components/Strawberry";
-import getUser from "../utils/getUser";
-import supabaseClient from "../utils/supabaseClient";
+import Navigation from "../../components/Navigation";
+import Strawberry from "../../components/Strawberry";
+import getUser from "../../utils/getUser";
+import supabaseClient from "../../utils/supabaseClient";
 
 export default function Account () {
 

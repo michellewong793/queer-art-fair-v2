@@ -1,5 +1,5 @@
-import Styles from "../components/Theme";
-import Layout from "../components/Layout";
+import Styles from "../../components/Theme";
+import Layout from "../../components/Layout";
 
 
 export default function Custom404() {

@@ -1,7 +1,9 @@
+'use client'
 import React from 'react'
 import CSS from 'csstype'
 import Styles from './Button.module.css'
-import { useRouter } from 'next/router';
+import Link from 'next/link';
+import { useState } from 'react';
 
 type ButtonProps = {
     text?: string;
@@ -28,7 +30,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
 
     /**Determine when the user is hovering over the button */
-    const [isHovered, setIsHovered] = React.useState(false);
+    const [isHovered, setIsHovered] = useState(false);
 
     const handleMouseEnter = () => {
         setIsHovered(true);
@@ -37,11 +39,6 @@ const Button: React.FC<ButtonProps> = ({
     const handleMouseLeave = () => {
         setIsHovered(false);
     };
-
-    const router = useRouter();
-    const handleClick = () => {
-        router.push(url);
-    }
 
     /**Set hover colors */
     const buttonStyle: CSS.Properties = {
@@ -56,13 +53,15 @@ const Button: React.FC<ButtonProps> = ({
     }
 
     return (
-        <button style={buttonStyle} 
-        className={Styles.button}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        onClick={handleClick}>
-            {text}
-        </button>
+        <Link href={url}>
+            <button style={buttonStyle} 
+            className={Styles.button}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            /*onClick={handleClick}*/>
+                {text}
+            </button>
+        </Link>
     );
 };
 

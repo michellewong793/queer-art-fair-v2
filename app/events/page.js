@@ -1,14 +1,13 @@
-import Layout from "../components/Layout";
-import Styles from "../components/Theme";
-import Navigation from "../components/Navigation";
-import Strawberry from "../components/Strawberry";
-import ContentComponent from "../components/ContentComponent";
-import Spacer from "../components/Spacer";
-import pageStyles from '../components/pages.module.css';
-import HeaderDecoration from "../components/HeaderDecoration";
-import Logo from "../components/Logo";
-import Subheader from "../components/Subheader";
-import Footer from "../components/Footer";
+import Styles from "../../components/Theme";
+import Navigation from "../../components/Navigation";
+import Strawberry from "../../components/Strawberry";
+import ContentComponent from "../../components/ContentComponent";
+import Spacer from "../../components/Spacer";
+import pageStyles from '../../components/pages.module.css';
+import HeaderDecoration from "../../components/HeaderDecoration";
+import Logo from "../../components/Logo";
+import Subheader from "../../components/Subheader";
+import Footer from "../../components/Footer";
 
 export default function Events() {
   return (
