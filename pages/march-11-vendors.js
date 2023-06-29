@@ -17,7 +17,7 @@ export default function March11Vendors() {
       <Logo />
       <Subheader />
       <Navigation />
-      <Strawberry heading = {"MARCH VENDORS"} showLargeStrawberry = {'none'}/>
+      <Strawberry heading = {"VENDORS"} showLargeStrawberry = {'none'}/>
       <Spacer height = {2}/>
       <PastVendor
         text1 = {"created by Ev"}

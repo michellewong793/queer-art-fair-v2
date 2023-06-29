@@ -16,7 +16,7 @@ export default function Gallery() {
             <Logo />
             <Subheader />
             <Navigation />
-            <Strawberry heading = {"PHOTO GALLERY"} showLargeStrawberry = {"none"}/>
+            <Strawberry heading = {"PHOTOS"} showLargeStrawberry = {"none"}/>
             <Spacer height = {2}/>
             <GalleryPics imagePath1 = {"url('/photos/P3115740-min.JPG')"} imagePath2 = {"url('/photos/P3115759-min.JPG')"}/>
             <GalleryPics imagePath1 = {"url('/photos/P3115806-min.JPG')"} imagePath2 = {"url('/photos/P3115854-min.JPG')"}/>

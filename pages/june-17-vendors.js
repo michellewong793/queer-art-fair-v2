@@ -17,7 +17,7 @@ export default function June17Vendors() {
       <Logo />
       <Subheader />
       <Navigation />
-      <Strawberry heading = {"JUNE 17 VENDORS"} showLargeStrawberry = {'none'}/>
+      <Strawberry heading = {"VENDORS"} showLargeStrawberry = {'none'}/>
       <Spacer height = {2}/>
       <PastVendor 
         text1 = {"Perfectly Pinay"} 
