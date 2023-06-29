@@ -35,8 +35,8 @@ export default function Events() {
         <ContentComponent 
             imageLeft = {true} 
             imagePath = {'/poster.svg'}
-            buttonText1 = {'See Photos'}
-            buttonText2 = {'See Past Vendors'}
+            buttonText1 = {'Photos'}
+            buttonText2 = {'Vendors'}
             url2 = {'/june-17-vendors'}
             heading = {'Summer Queer Art Faire'}
             subheader = {"6.17.23 | 1-6pm | 1417 15th st San Francisco"}
@@ -45,11 +45,11 @@ export default function Events() {
         />
         <Spacer height = {5}/>
         <ContentComponent 
-            imageLeft = {false} 
+            imageLeft = {true} 
             imagePath = {'/QueerArtFaireSF.jpg'}
-            buttonText1 = {'See Photos'}
+            buttonText1 = {'Photos'}
             url1 = {"/march-11-gallery"}
-            buttonText2 = {'See Past Vendors'}
+            buttonText2 = {'Vendors'}
             url2 = {'/march-11-vendors'}
             heading = {'Spring Queer Art Faire'}
             subheader = {'3.11.23 | 11-4pm | 1417 15th st San Francisco'}
