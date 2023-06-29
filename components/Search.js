@@ -1,17 +1,22 @@
 import style from './search.module.css';
 import React, {useState} from 'react';
 
-let products = ["pants", "stickers", "cards", "postcards", "bracelets", "necklaces", "paintings", "pots", "knitting", "sweaters", "clothes", "cloth", "prints", "earrings", "stamps"];
 
+function autocompleteSearch() {
 
+    let products = ["pants", "stickers", "cards", "postcards", "bracelets", "necklaces", "paintings", "pots", "knitting", "sweaters", "clothes", "cloth", "prints", "earrings", "stamps"];
 
- function autocompleteSearch(products) {
     //gets the input from the text input field 
     let inp = document.getElementById("searchTerm").value;
     console.log(inp);
+    
+    let list = document.getElementById('list');
 
-    //initializes an empty array for the autocomplete suggestions
-    let suggestions = [];
+    let child = list.lastElementChild;
+    while (child) {
+        list.removeChild(child);
+        child = list.lastElementChild;
+    }
 
     if (inp == "") {
         console.log("nothing");
@@ -25,18 +30,17 @@ let products = ["pants", "stickers", "cards", "postcards", "bracelets", "necklac
             let inputReg = RegExp(userInput);
             let result = inputReg.test(wordToTest);
             if (result == true) {
-                suggestions.push(wordToTest);
+                let a = document.createElement("a");
+                a.innerText = wordToTest;
+                a.classList.add("listItem");
+                list.appendChild(a);
             }
-        }
-        console.log(suggestions);
+        } 
     }
-
-} 
+}
 
 export default function Search() {
     const [isempty, setIsEmpty] = useState(true);
-
-    let products = ["pants", "stickers", "cards", "postcards", "bracelets", "necklaces", "paintings", "pots", "knitting", "sweaters", "clothes", "cloth", "prints", "earrings", "stamps"]
 
     return(
         <div className = {style.container}>
@@ -45,15 +49,14 @@ export default function Search() {
                     <label htmlFor='searchTerm'></label>
                     <input 
                         className = {style.inputText} 
-                        onKeyUp = {() => autocompleteSearch(products)}
+                        onKeyUp = {() => autocompleteSearch()}
                         name = "searchTerm" 
                         id = "searchTerm"
                         type = "text" 
                         placeholder='search for products...'
                     />
                 </div>
-                <div>
-                    //put all of the suggestions here make it display or not based on if it is empty
+                <div className = {style.list} id = "list">
                 </div>
                 <input className = {style.inputSubmit} type = "submit"/>
             </form>
