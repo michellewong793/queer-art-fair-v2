@@ -20,8 +20,6 @@ export default function Index() {
         <Subheader />
         <Navigation />
         <div className={HomeStyles.content}>
-        <Strawberry heading='NEXT' showMediumStrawberry = {'none'}/>
-        <div className={HomeStyles.content}>
           <div className = {HomeStyles.nextContainer}>
             <Strawberry heading='NEXT' showMediumStrawberry = {'none'}/>
             <img className = {HomeStyles.nextPoster} src='./QAF Poster July 8.png'></img>
@@ -47,7 +45,7 @@ export default function Index() {
           </div>
           
           <div className = {HomeStyles.upcomingContainer}>
-            <Strawberry heading='UPCOMING EVENTS' showLargeStrawberry='none'/>
+            <Strawberry heading='UPCOMING' showLargeStrawberry='none'/>
             <div className = {HomeStyles.smallEventsContainer}>
               <Event className = {HomeStyles.centerFlexChild} name="Lakeside Landing" info="July 8, 2023"/>
               <img className = {HomeStyles.upcomingOrange} src='./puffyOrange.svg'></img>
@@ -93,4 +91,5 @@ export default function Index() {
         <Footer />
       </div>
   );
-}
+              }
+          
