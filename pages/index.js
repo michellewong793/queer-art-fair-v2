@@ -33,7 +33,7 @@ export default function Index() {
                 <img className = {HomeStyles.nextHeart} src='./heart.svg'></img>
               </div>
               <Button className = {HomeStyles.nextButton} 
-              text="Vendor Application" 
+              text="General Vendor Application" 
               backgroundColor="white" 
               textColor="#002809" 
               borderColor="#489056"
@@ -49,7 +49,7 @@ export default function Index() {
             <div className = {HomeStyles.smallEventsContainer}>
               <Event className = {HomeStyles.centerFlexChild} name="Lakeside Landing" info="July 8, 2023"/>
               <img className = {HomeStyles.upcomingOrange} src='./puffyOrange.svg'></img>
-              <Event className = {HomeStyles.centerFlexChild} name="Pebblebed" info={'Sept 16, 2023\nInfo TBA'}/>
+              <Event className = {HomeStyles.centerFlexChild} name="Fall Faire" info={'Sept 16, 2023'}/>
               <img className = {HomeStyles.upcomingOrange} src='./puffyOrange.svg'></img>
               <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" info={'Dec 2, 2023'}/>
             </div>

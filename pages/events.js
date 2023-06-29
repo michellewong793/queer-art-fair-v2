@@ -18,19 +18,19 @@ export default function Events() {
         <Logo />
         <Subheader />
         <Navigation />
-        <Strawberry heading = {"NEXT EVENT"} showLargeStrawberry = {'none'}/>
+        <Strawberry heading = {"NEXT"} showLargeStrawberry = {'none'}/>
         <Spacer height = {5}/>
         <NextEvent
           imageLeft = {true}
           imagePath = {'/july8poster.jpg'}
-          buttonText1 = {"Vendor Application"}
-          url1 = {""}
+          buttonText1 = {"RSVP here"}
+          url1 = {"https://www.eventbrite.com/e/queer-art-faire-at-lakeside-landing-tickets-634996761407?aff=ebdshpsearchautocomplete"}
           heading = {"July Queer Art Faire"}
-          subheader = {"7.8.23 | 1-5pm | 2504 ocean ave San Francisco"}
+          subheader = {"7.8.23 | 1-5pm | 2504 Ocean Ave San Francisco"}
           text1 = {"$5 suggested donation to Queer Art Faire"}
           text2 = {"Many local BIPOC and Queer artists selling theirs creations!"}
         />
-        <Strawberry heading = {"PAST EVENTS"} showLargeStrawberry = {'none'}/>
+        <Strawberry heading = {"PAST"} showLargeStrawberry = {'none'}/>
         <Spacer height = {5}/>
         <ContentComponent 
             imageLeft = {true} 
