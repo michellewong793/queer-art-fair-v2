@@ -1,84 +1,149 @@
+/*Mobile + Desktop*/
 .body {
     background-color: #FFE0CE;
 }
 
 .content {
-    margin: auto;
-    width: 70%;
-    min-width: 360px;
-    max-width: 1000px;
+    margin-left: 16px;
+    margin-right: 16px;
 }
 
-.nextContainer {
-    max-width: 768px;
-    margin: auto;
-    margin-top: 40px;
-}
 .nextPoster {
+    padding-top: 8px; /*Space between NEXT and poster image*/
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
 }
 
 .nextButtonContainer {
-    margin-top: 10px;
-    display: flex;
-    height: 120px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    margin-top: 24px; /*Space between buttons and poster image*/
+    width: 100%;
 }
 
-.nextButton {
-    padding-top: 100px;
+.nextHeartContainer {
+    height: 24px;
 }
+
 .nextHeart {
     display: none;
 }
 
+.upcomingContainer {
+    padding-top: 48px; /*Space between UPCOMING and NEXT*/
+}
+
+.upcomingOrange {
+    display: none;
+}
+
+.smallEventsContainer {
+    margin-top: 16px; /*Space between UPCOMING and the small events*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.testimonialsContainer {
+    padding-top: 48px; /* Space between upcoming and Testimonials heading*/
+}
+
+.testimonials {
+    padding-top: 0px; /* Space between TESTIMONIALS and quotes (+36px) */
+}
+
 .aboutContainer {
+    padding-top: 48px; /* Space between testimonials and About heading*/
+}
+
+.aboutSubContainer {
+    margin-top: 24px; /* Space between ABOUT and text/image */
     display: flex;
     flex-direction: column-reverse;
 }
+
 .aboutImage {
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+    width: 100%;
 }
 
+.aboutText {
+    width: 100%;
+    font-family: "Helvetica";
+}
+
+/*Desktop only*/
 @media screen and (min-width: 768px) {
-    .nextContainer {
-        width: 600px;
-        max-width: 100%;
-    }
-    .nextPoster {
-        width: 100%;
-    }
-    .nextButtonContainer{
-        flex-direction: row;
-        justify-content: space-around;
-        height: 100px;
-    }
-    .nextButton, .nextHeart {
-        display: block;
-        margin: 20px;
+    .content {
+        margin-left: auto;
+        margin-right: auto;
+        width: 88%;
+        max-width: 1145px;
     }
 
+    .nextPoster {
+        padding-top: 80px; /*Space between NEXT and poster image*/
+        width: 500px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .nextButtonContainer {
+        margin-top: 24px; /*Space between buttons and poster image*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nextHeart {
+        display: block;
+        width: 26px;
+        margin: auto 24px auto 24px;
+    }
+
+    .upcomingContainer {    
+        padding-top: 176px; /*Space between UPCOMING and NEXT section*/
+    }
+
+    .smallEventsContainer {
+        margin-top: 80px; /*Space between UPCOMING and the small events*/
+        flex-direction: row;
+    }
+
+    .upcomingOrange {
+        display: block;
+        width: 32px;
+        margin: auto 64px;
+    }
+
+    .testimonialsContainer {
+        padding-top: 160px; /* Space between UPCOMING and Testimonials heading*/
+        max-width: 1035px;
+        margin: 0 auto;
+    }
+
+    .testimonials {
+        padding-top: 20px; /* Space between TESTIMONIALS and quotes (+36px) */
+    }
+}
+
+/*Only change the about container for desktop size*/
+@media screen and (min-width: 1024px) {
     .aboutContainer {
+        padding-top: 80px; /* Space between testimonials and About heading */
+        max-width: 1035px;
+        margin: 0 auto;
+    }
+
+    .aboutSubContainer {
+        margin-top: 56px; /* Space between ABOUT and text/image */
         display: flex;
         flex-direction: row;
         justify-content: space-around;
     }
 
     .aboutImage {
-        margin: auto;
-        max-width: 40%;
+        width: 420px;
     }
     .aboutText {
-        margin: auto;
-        margin-top: 20px;
-        max-width: 60%;
+        margin-top: auto;
+        margin-bottom: auto;
     }
 }

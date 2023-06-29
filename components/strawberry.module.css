@@ -41,6 +41,7 @@
 }
 
 .mediumStrawberry {
+    display: none;
     height: 41px;
     width: 32px;
     background-image: url("/smallStrawberryBorder.png");
