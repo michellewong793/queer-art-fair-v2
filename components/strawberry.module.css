@@ -53,6 +53,7 @@
 
 @media (min-width: 768px) {
     .mediumStrawberry {
+        display: block;
         height: 82px;
         width: 184px;
         background-image: url("/mediumStrawberryBorder.png");

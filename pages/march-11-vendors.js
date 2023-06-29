@@ -12,7 +12,7 @@ import PastVendor from "../components/PastVendor";
 
 export default function March11Vendors() {
   return (
-    <div className = {pageStyles.pastVendorsBody}>
+    <div className = {pageStyles.pastVendorsBody} style = {Styles.body}>
       <HeaderDecoration />
       <Logo />
       <Subheader />
