@@ -20,7 +20,8 @@ export default function Index() {
         <Subheader />
         <Navigation />
         <div className={HomeStyles.content}>
-
+        <Strawberry heading='NEXT' showMediumStrawberry = {'none'}/>
+        <div className={HomeStyles.content}>
           <div className = {HomeStyles.nextContainer}>
             <Strawberry heading='NEXT' showMediumStrawberry = {'none'}/>
             <img className = {HomeStyles.nextPoster} src='./QAF Poster July 8.png'></img>

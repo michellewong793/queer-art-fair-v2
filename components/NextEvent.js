@@ -2,7 +2,7 @@ import Button from "./Button";
 import style from "./contentComponent.module.css";
 import Spacer from "./Spacer"
 
-const ContentComponent = (props) => {
+const NextEvent = (props) => {
 
     const imageLeft = props.imageLeft;
 
@@ -22,7 +22,7 @@ const ContentComponent = (props) => {
     return (
         <div>
         {imageLeft ? (
-            
+            <div className = {style.nextEventContainer}>
                 <div className = {style.container}>
                     <img className = {style.image} src = {props.imagePath}/>
                     <Spacer width = {2}/>
@@ -46,17 +46,12 @@ const ContentComponent = (props) => {
                             </p>
                         </div>
                         <Spacer height = {1.5}/>
-                        <div className = {style.buttonContainer}>
-                            <Button text = {props.buttonText1} url = {props.url1}/>
-                            <Spacer width = {3}/>
-                            <Spacer height = {1}/>
-                            <Button text = {props.buttonText2} url = {props.url2}/>
-                        </div>
+                        <Button text = {props.buttonText1} url = {props.url1}/>
                     </div>
                 </div>
-            
+            </div>
         ) : (
-            
+            <div className = {style.nextEventContainer}>
                 <div className = {style.container}>
                     <div className = {style.smallContainer}>
                         <p className = {style.heading} style = {contentStyles.heading}>
@@ -78,20 +73,15 @@ const ContentComponent = (props) => {
                             </p>
                         </div>
                         <Spacer height = {1.5}/>
-                        <div className = {style.buttonContainer}>
-                            <Button text = {props.buttonText1} url = {props.url1}/>
-                            <Spacer width = {3}/>
-                            <Spacer height = {1}/>
-                            <Button text = {props.buttonText2} url = {props.url2}/>
-                        </div>
+                        <Button text = {props.buttonText2} url = {props.url2}/>
                     </div>
                     <Spacer width = {2}/>
                     <img className = {style.image} src = {props.imagePath}/>
                 </div>
-            
+            </div>
         )}
         </div>
     )
 };
 
-export default ContentComponent;
+export default NextEvent;
