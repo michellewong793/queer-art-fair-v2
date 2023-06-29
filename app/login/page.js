@@ -1,6 +1,6 @@
 'use client'
 
-import signInWithGoogle from "../../utils/signInWithGoogle"
+import signInWithGoogle from "./signInWithGoogle"
 
 export default function Login() {
     return(
