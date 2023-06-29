@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.autoComplete {
+    position: relative;
+    display: inline-block;
+}
+
+.inputText {
+    border: 1px solid transparent;
+    background-color: whitesmoke;
+    padding: 10px;
+    font-size: 16px;
+    background-color: whitesmoke;
+    color: teal;
+}
+
+.inputSubmit {
+    border: 1px solid transparent;
+    background-color: whitesmoke;
+    padding: 10px;
+    font-size: 16px;
+    background-color: purple;
+    color: black;
+}
+
+.autoCompleteItems {
+    position: absolute;
+}
+
+.autoCompleteItemsDiv {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.autoCompleteItemsDiv:hover {
+    background-color: gray;
+}
+
+.autoCompleteActive {
+    background-color: blue;
+    color: white;
+}
