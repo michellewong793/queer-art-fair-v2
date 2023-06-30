@@ -33,7 +33,6 @@ export default function Page({params}) {
         await getShopId()
 
         if (!shopId) {
-            console.log("that shop doesn't exist")
             return
         }
 
