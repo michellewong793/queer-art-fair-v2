@@ -22,7 +22,7 @@ export default function Index() {
         <div className={HomeStyles.content}>
           <div className = {HomeStyles.nextContainer}>
             <Strawberry heading='NEXT' showMediumStrawberry = {'none'}/>
-            <img className = {HomeStyles.nextPoster} src='./QAF Poster July 8.png'></img>
+            <img className = {HomeStyles.nextPoster} src='./QAFPosterJuly8.png'></img>
 
             <div className = {HomeStyles.nextButtonContainer}>
               <Button className = {HomeStyles.nextButton} 

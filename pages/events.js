@@ -22,7 +22,7 @@ export default function Events() {
         <Spacer height = {5}/>
         <NextEvent
           imageLeft = {true}
-          imagePath = {'/july8poster.jpg'}
+          imagePath = {'/QAFPosterJuly8.png'}
           buttonText1 = {"RSVP here"}
           url1 = {"https://www.eventbrite.com/e/queer-art-faire-at-lakeside-landing-tickets-634996761407?aff=ebdshpsearchautocomplete"}
           heading = {"July Queer Art Faire"}
