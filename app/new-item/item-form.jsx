@@ -4,6 +4,7 @@
 // Info needed: updated_at, name, photos, description, price, quantity, expiration_date, key_words, shop_id
 
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function ItemForm({ session }) {
@@ -42,11 +43,15 @@ export default function ItemForm({ session }) {
     // how the item is created and saved to the database
     const createItem = async (e) => {
         e.preventDefault();
+        if (shops.length == 0) {
+            setFormError("You must create a shop before adding an item.");
+            return;
+        }
         if (!shopId || !itemName || !itemDescription || !itemPrice || !itemQuantity) {
             setFormError('Please fill in all required fields');
             return;
         }
-
+        
         const { data, error } = await supabase
             .from('items')
             .insert([{
@@ -58,8 +63,7 @@ export default function ItemForm({ session }) {
             }]).select()
 
         if (error) {
-            console.warn(error)
-            setFormError('Error! We could not save this item.')
+            setFormError(error.message)
         }
         if (data) {
             setFormError(null);
@@ -96,7 +100,9 @@ export default function ItemForm({ session }) {
                 }}
             />
             <input
-                type='number' // TODO: make this numeric, ensure it's a valid price
+                type='number'
+                min='0.01'
+                step='0.01'
                 placeholder='Price'
                 onChange={(e) => {
                     setPrice(e.target.value);
@@ -104,8 +110,6 @@ export default function ItemForm({ session }) {
             />
             <input
                 type='number'
-                min='0.01'
-                step='0.01'
                 placeholder='Item Quantity'
                 onChange={(e) => {
                     setQuantity(e.target.value);
