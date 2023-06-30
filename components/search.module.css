@@ -13,16 +13,15 @@
     padding: 10px;
     font-size: 16px;
     background-color: whitesmoke;
-    color: teal;
+    font-family: "ClementePDae";
 }
 
 .inputSubmit {
     border: 1px solid transparent;
-    background-color: whitesmoke;
+    background-color: #1A361E;
     padding: 10px;
     font-size: 16px;
-    background-color: purple;
-    color: black;
+    color: whitesmoke;
 }
 
 .list {
@@ -34,5 +33,10 @@
 }
 
 .listItem {
-    
+    font-family: "ClementePDae";
+    background-color: whitesmoke;
+}
+
+.listItem:hover {
+    background-color: gray;
 }

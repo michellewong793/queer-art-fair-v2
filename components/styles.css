@@ -153,6 +153,16 @@ p {
     font-weight: 200;
 }
 
+listItem {
+    font-family: "ClementePDae";
+    background-color: whitesmoke;
+}
+
+listItem:hover {
+    background-color: gray;
+    cursor: pointer;
+}
+
 @media screen and (min-width: 480px) {
     h1 {
         font-size: 90pt;

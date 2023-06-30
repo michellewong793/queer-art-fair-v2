@@ -1,6 +1,9 @@
 import style from './search.module.css';
 import React, {useState} from 'react';
 
+function populate(listItem) {
+    document.getElementById("searchTerm").value = listItem.innerText;
+}
 
 function autocompleteSearch() {
 
@@ -30,12 +33,13 @@ function autocompleteSearch() {
             let inputReg = RegExp(userInput);
             let result = inputReg.test(wordToTest);
             if (result == true) {
-                let a = document.createElement("a");
-                a.innerText = wordToTest;
-                a.classList.add("listItem");
-                list.appendChild(a);
+                let listItem = document.createElement("listItem");
+                listItem.innerText = wordToTest;
+                listItem.classList.add("listItem");
+                list.appendChild(listItem);
             }
-        } 
+        }
+        listItem.onclick = populate(listItem); 
     }
 }
 
