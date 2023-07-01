@@ -5,9 +5,14 @@ function populate(listItem) {
     document.getElementById("searchTerm").value = listItem.innerText;
 }
 
+function setClicked() {
+    let clicked = document.getElementById("selectedResult");
+    return clicked;
+}
+
 function autocompleteSearch() {
 
-    let products = ["pants", "stickers", "cards", "postcards", "bracelets", "necklaces", "paintings", "pots", "knitting", "sweaters", "clothes", "cloth", "prints", "earrings", "stamps"];
+    let products = ["pants", "dress pants", "stickers", "cards", "postcards", "bracelets", "necklaces", "paintings", "pots", "knitting", "sweaters", "clothes", "cloth", "prints", "earrings", "stamps"];
 
     //gets the input from the text input field 
     let inp = document.getElementById("searchTerm").value;
@@ -36,15 +41,20 @@ function autocompleteSearch() {
                 let listItem = document.createElement("listItem");
                 listItem.innerText = wordToTest;
                 listItem.classList.add("listItem");
-                list.appendChild(listItem);
+                listItem.addEventListener('click', () => listItem.id = "selectedResult");
+                listItem.addEventListener('click', () => populate(setClicked()));
+                list.appendChild(listItem); 
             }
         }
-        listItem.onclick = populate(listItem); 
     }
 }
 
+function searchProd(keyword) {
+
+}
+
 export default function Search() {
-    const [isempty, setIsEmpty] = useState(true);
+    const [clicked, setClicked] = useState(false);
 
     return(
         <div className = {style.container}>
@@ -62,7 +72,11 @@ export default function Search() {
                 </div>
                 <div className = {style.list} id = "list">
                 </div>
-                <input className = {style.inputSubmit} type = "submit"/>
+                <input 
+                    className = {style.inputSubmit} 
+                    type = "submit"
+                    onClick = {() => searchProd()}
+                />
             </form>
         </div>
     );   
