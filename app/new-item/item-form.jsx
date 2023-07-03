@@ -38,6 +38,7 @@ export default function ItemForm({ session }) {
         } else if (data) {
             setShops(data);
         }
+        setLoading(false);
     }
 
     useEffect(() => {
@@ -154,7 +155,7 @@ export default function ItemForm({ session }) {
                 })
             }
 
-            <button>Add</button>
+            <button disabled={loading}>Add</button>
 
             {formError && <p>{formError}</p>}
         </form>
