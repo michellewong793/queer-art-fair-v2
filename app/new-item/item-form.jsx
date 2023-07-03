@@ -3,6 +3,8 @@
 // the form to create a new item
 // Info needed: updated_at, name, photos, description, price, quantity, expiration_date, key_words, shop_id
 
+// TODO: limit number of images added, functionality to delete images
+
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from 'uuid';
@@ -99,8 +101,9 @@ export default function ItemForm({ session }) {
         <form onSubmit={createItem}>
             <select 
                 name='shops' 
-                onChange={(e)=> { setShopId(e.target.value)}}
+                onChange={(e)=> { setShopId(e.target.value) }}
             >
+                <option value={''}>--Select--</option>
                 {
                     shops.map(shop => {
                         return(
