@@ -74,7 +74,7 @@ export default function March11Vendors() {
       />
       <PastVendor
         text1 = {"planning with anna"}
-        url1 = {"/anna"}
+        url1 = {"/vendors/anna"}
         text2 = {"planner sticker shop"}
       />
       <PastVendor
@@ -184,7 +184,7 @@ export default function March11Vendors() {
       />
       <PastVendor
         text1 = {"Feral County Furniture"}
-        url1 = {"/feralCounty"}
+        url1 = {"/vendors/feralCounty"}
         text2 = {"Shou Sugi Ban wood burnt tables (Taking Preorders on Etsy!)"}
       />
       <PastVendor
@@ -201,7 +201,7 @@ export default function March11Vendors() {
         text1 = {"Charisma Butler"}
         url1 = {"https://www.instagram.com/dontbedumbo_"}
         text2 = {"vaporwave-psychadelic inspired zines"}
-        url2 = {"thequeenbysartexistsat.threadless.com"}
+        url2 = {"https://thequeenbysartexistsat.threadless.com"}
       />
       <PastVendor
         text1 = {"Lili Torres"}
@@ -235,13 +235,13 @@ export default function March11Vendors() {
         text1 = {"frootyshop"}
         url1 = {"https://www.instagram.com/frootyshop"}
         text2 = {"beaded jewelry"}
-        url2 = {"/frootyshop"}
+        url2 = {"/vendors/frootyshop"}
       />
       <PastVendor
         text1 = {"gaia"}
         url1 = {"https://www.instagram.com/fka.Gaia"}
         text2 = {"unique and colorful prints - CATBOY, handmade jewelry, hand-sculpted dishes, vases, and ashtrays"}
-        url2 = {"/gaia"}
+        url2 = {"/vendors/gaia"}
       />
       <PastVendor
         text1 = {"strawbs4lunch"}
