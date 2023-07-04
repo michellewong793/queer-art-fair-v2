@@ -51,7 +51,6 @@ const Button: React.FC<ButtonProps> = ({
 
     /**Only specify width if it was passed as a prop */
     if (width) {
-        console.log('setting wrapper width to ', width)
         wrapperStyle.width = width;
         buttonStyle.width = width;
     }
