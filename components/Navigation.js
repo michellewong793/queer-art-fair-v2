@@ -8,9 +8,6 @@ const Navigation = () => {
     const currentRoute = usePathname();
 
     return (
-        <div className = {style.bigContainer}> 
-            
-
             <div className = {style.desktopContainer}> 
                 <a  href = "/" className = {currentRoute === '/' ? style.active : style.nonActive}>
                     ABOUT
@@ -24,7 +21,6 @@ const Navigation = () => {
                     DONATE
                 </a>
             </div>
-        </div>
     )
 
 };

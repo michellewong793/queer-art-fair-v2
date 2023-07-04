@@ -47,13 +47,17 @@ const Button: React.FC<ButtonProps> = ({
         border: '2px solid ' + (isHovered ? hoverBorderColor : borderColor)
     }
 
+    const wrapperStyle: CSS.Properties = {}
+
     /**Only specify width if it was passed as a prop */
     if (width) {
+        console.log('setting wrapper width to ', width)
+        wrapperStyle.width = width;
         buttonStyle.width = width;
     }
 
     return (
-        <Link href={url}>
+        <Link href={url} style={wrapperStyle} className = {Styles.wrapperLink}>
             <button style={buttonStyle} 
             className={Styles.button}
             onMouseEnter={handleMouseEnter}

@@ -1,6 +1,3 @@
-
-
-
 const Spacer = (props) => {
     let spacerStyles = {
         height: props.height + 'rem',

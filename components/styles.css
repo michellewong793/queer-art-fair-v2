@@ -7,6 +7,11 @@
     src: url("/fonts/Helvetica-Light.woff2");
 }
 
+@font-face {
+    font-family: "Helvetica";
+    src: url("/fonts/Helvetica.woff") format("woff");
+}
+
 @font-face{
     font-family: "ClementePDak";
     src: url("/fonts/ClementePDak.woff2") format("woff2");
@@ -132,38 +137,46 @@
 /*Global styles*/
 h1 {
     font-family: 'Ilyas';
-    font-size: 70px;
+    font-size: 36px;
     font-weight: normal;
+    margin: 0;
+    color: #1A361E;
 }
 h2 {
     font-family: 'Ilyas';
-    font-size: 60px;
+    font-size: 36px;
     font-weight: normal;
+    margin: 0;
+    color: #1A361E;
 }
 h3 {
     font-family: 'Clemente';
     font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
+    font-weight: 600;
+    font-size: 32px;
+    margin: 0;
+    color: #1A361E;
 }
 
 p {
     font-family: 'Helvetica Light';
     font-size: 16px;
     font-weight: 200;
+    margin: 0;
+    color: #0C180E;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) {
     h1 {
-        font-size: 90pt;
+        font-size: 120px;
     }
     h2 {
-        font-size: 80pt;
+        font-size: 100px;
     }
     h3 {
-        font-size: 20pt;
+        font-size: 40px;
     }
     p {
-        font-size: 16pt;
+        font-size: 24px;
     }
 }
