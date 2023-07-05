@@ -6,7 +6,7 @@ export default async function signInWithMagicLink(props) {
     const { data, error } = await supabase.auth.signInWithOtp({
         email: props.email,
         options: {
-            emailRedirectTo: 'localhost:3000/account',
+            emailRedirectTo: 'http://localhost:3000/auth/callback',
         }
     })
 
