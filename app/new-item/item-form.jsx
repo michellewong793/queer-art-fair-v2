@@ -1,7 +1,7 @@
 'use client'
 
 // the form to create a new item
-// Info needed: updated_at, name, photos, description, price, quantity, expiration_date, key_words, shop_id
+// Info needed: name, photos, description, price, quantity, expiration_date, key_words, shop_id
 
 // TODO: limit number of images added, functionality to delete images
 
