@@ -163,6 +163,37 @@ listItem:hover {
     cursor: pointer;
 }
 
+resultContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    height: 144px;
+    width: auto;
+}
+
+result {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    display: flex;
+    flex-direction: row;
+}
+
+prodName {
+    font-family: 'ClementePDae';
+    font-size: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+prodPrice {
+    font-family: 'ClementePDae';
+    font-size: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
 @media screen and (min-width: 480px) {
     h1 {
         font-size: 90pt;
