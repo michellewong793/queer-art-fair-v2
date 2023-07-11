@@ -35,7 +35,7 @@ export default function Page({params}) {
 
             {item.image_urls.map(url => {
                 return (
-                    <img src={url} width='200px'></img>
+                    <img key={url} src={url} width='200px'></img>
                 )
             })}
         </> }
