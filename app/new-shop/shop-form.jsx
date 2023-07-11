@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 // the form to create a new shop
-// Info needed: owner_id, updated_at, name, description, items (just initialize the array)
+// Info needed: owner_id, name, description, items (just initialize the array)
 
 export default function ShopForm({ session }) {
     const supabase = createClientComponentClient()
@@ -37,7 +37,6 @@ export default function ShopForm({ session }) {
                 owner_id: ownerId,
                 name: shopName,
                 description: shopDescription,
-                updated_at: new Date()
             }])
             .select()
         

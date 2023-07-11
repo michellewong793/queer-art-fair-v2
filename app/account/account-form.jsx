@@ -7,8 +7,6 @@ export default function AccountForm({ session }) {
   const [loading, setLoading] = useState(true)
   const [name, setName] = useState(null)
   const [email, setEmail] = useState(null)
-  const [venmo, setVenmo] = useState(null)
-  const [instagram, setInstagram] = useState(null)
   const user = session?.user
 
   const getProfile = useCallback(async () => {
@@ -17,7 +15,7 @@ export default function AccountForm({ session }) {
 
       let { data, error, status } = await supabase
         .from('profiles')
-        .select(`name, email, instagram, venmo`)
+        .select(`name, email`)
         .eq('id', user?.id)
         .single()
 
@@ -28,8 +26,6 @@ export default function AccountForm({ session }) {
       if (data) {
         setName(data.name)
         setEmail(data.email)
-        setVenmo(data.venmo)
-        setInstagram(data.instagram)
       }
     } catch (error) {
       alert('Error loading user data!')
@@ -42,7 +38,7 @@ export default function AccountForm({ session }) {
     getProfile()
   }, [user, getProfile])
 
-  async function updateProfile({ name, email, venmo, instagram }) {
+  async function updateProfile({ name, email }) {
     try {
       setLoading(true)
 
@@ -50,9 +46,6 @@ export default function AccountForm({ session }) {
         id: user?.id,
         name,
         email: user?.email,
-        venmo,
-        instagram,
-        updated_at: new Date().toISOString(),
       })
       if (error) throw error
       alert('Profile updated!')
@@ -77,27 +70,10 @@ export default function AccountForm({ session }) {
           onChange={(e) => setName(e.target.value)}
         />
       </div>
-      <div>
-        <label htmlFor="instagram">Instagram</label>
-        <input
-          type="text"
-          value={instagram || ''}
-          onChange={(e) => setInstagram(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="venmo">Venmo</label>
-        <input
-          id="venmo"
-          type="text"
-          value={venmo || ''}
-          onChange={(e) => setVenmo(e.target.value)}
-        />
-      </div>
 
       <div>
         <button
-          onClick={() => updateProfile({ name, email, instagram, venmo })}
+          onClick={() => updateProfile({ name, email })}
           disabled={loading}
         >
           {loading ? 'Loading ...' : 'Update'}
