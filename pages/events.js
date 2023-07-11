@@ -18,11 +18,11 @@ export default function Events() {
         <Logo />
         <Subheader />
         <Navigation />
-        <Strawberry heading = {"NEXT"} showLargeStrawberry = {'none'}/>
+        <Strawberry heading = {"NEXT"} showMediumStrawberry = {'none'}/>
         <Spacer height = {5}/>
         <NextEvent
           imageLeft = {true}
-          imagePath = {'/july8poster.jpg'}
+          imagePath = {'/QAFPosterJuly8.png'}
           buttonText1 = {"RSVP here"}
           url1 = {"https://www.eventbrite.com/e/queer-art-faire-at-lakeside-landing-tickets-634996761407?aff=ebdshpsearchautocomplete"}
           heading = {"July Queer Art Faire"}
@@ -30,7 +30,7 @@ export default function Events() {
           text1 = {"$5 suggested donation to Queer Art Faire"}
           text2 = {"Many local BIPOC and Queer artists selling theirs creations!"}
         />
-        <Strawberry heading = {"PAST"} showLargeStrawberry = {'none'}/>
+        <Strawberry heading = {"PAST"} showMediumStrawberry = {'none'}/>
         <Spacer height = {5}/>
         <ContentComponent 
             imageLeft = {true} 

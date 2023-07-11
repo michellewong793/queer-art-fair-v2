@@ -2,7 +2,7 @@
 
 .active {
     font-size: 30px;
-    font-family: "ClementePDak"; 
+    font-family: 'ClementePDak';
     margin: 0;
     color: #113219; 
     text-decoration: none;
@@ -26,6 +26,10 @@
     }
 }
 
+.active:hover {
+    font-family: "ClementePDak"; 
+}
+
 .nonActive {
     text-decoration: none;
     font-size: 30px;
@@ -41,6 +45,10 @@
     .nonActive{
         font-size: 25px;
     }
+}
+
+.nonActive:hover {
+    font-family: "ClementePDak"; 
 }
 
 .bigContainer{

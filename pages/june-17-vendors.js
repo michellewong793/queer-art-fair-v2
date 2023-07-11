@@ -12,12 +12,12 @@ import PastVendor from "../components/PastVendor";
 
 export default function June17Vendors() {
   return (
-    <div className = {pageStyles.pastVendorsBody}>
+    <div className = {pageStyles.pastVendorsBody} style = {Styles.body}>
       <HeaderDecoration />
       <Logo />
       <Subheader />
       <Navigation />
-      <Strawberry heading = {"JUNE 17 VENDORS"} showLargeStrawberry = {'none'}/>
+      <Strawberry heading = {"VENDORS"} showLargeStrawberry = {'none'}/>
       <Spacer height = {2}/>
       <PastVendor 
         text1 = {"Perfectly Pinay"} 
