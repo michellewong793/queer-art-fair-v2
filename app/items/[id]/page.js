@@ -1,12 +1,13 @@
 'use client'
 import { useState, useEffect } from "react"
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import { redirect } from "next/navigation";
 
 export default function Page({params}) {
     const [item, setItem] = useState();
     const supabase = createClientComponentClient()
 
-    // function to find the shop id and make sure the shop exists
+    // function to find the item id and make sure the item exists
     async function getItem() {
         let { data, error } = await supabase
             .from('items')
@@ -15,7 +16,8 @@ export default function Page({params}) {
             .single()
         if (error) {
             console.warn(error)
-            setItems(null) // assuming the shop doesn't exist
+            setItem(null) // assuming the item doesn't exist
+            redirect('/') // redirect to home if the item doesn't exist
         } else if (data) {
             setItem(data)
         }
