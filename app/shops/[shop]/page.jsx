@@ -1,6 +1,7 @@
 'use client'
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 import Navigation from "../../../components/Navigation";
 import Strawberry from "../../../components/Strawberry";
@@ -32,9 +33,7 @@ export default function Page({params}) {
     async function getItems() {
         await getShopId()
 
-        if (!shopId) {
-            return
-        }
+        if (!shopId) return;
 
         let { data, error } = await supabase
             .from('items')
@@ -59,7 +58,7 @@ export default function Page({params}) {
         <Strawberry heading={shopName.toUpperCase()} showLargeStrawberry='none' />
         {items ? items.map((item) => (
             <div key={item.id}>
-                <h3>{item.name} - ${item.price}</h3>
+                <h3><Link href={'/items/'+item.id}>{item.name}</Link> - ${item.price}</h3>
                 <p>{item.description}</p>
             </div>
         )) : 
