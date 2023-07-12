@@ -23,6 +23,7 @@ export default function ItemForm({ session }) {
     const [itemDescription, setDescription] = useState();
     const [itemPrice, setPrice] = useState();
     const [itemQuantity, setQuantity] = useState();
+    const [keywords, setKeywords] = useState([]);
 
     const [images, setImages] = useState([]);
 
@@ -79,7 +80,8 @@ export default function ItemForm({ session }) {
                 name: itemName,
                 description: itemDescription,
                 price: itemPrice,
-                quantity: itemQuantity
+                quantity: itemQuantity,
+                keywords: keywords
             }]).select()
 
         if (error) {
@@ -208,7 +210,26 @@ export default function ItemForm({ session }) {
                     setQuantity(e.target.value);
                 }}
             />
+            <br/>
+            <label>Type keywords in the box below. Separate each keyword by hitting 'enter' and starting a new line.</label>
+            <textarea
+                type='text'
+                placeholder='keywords'
+                onChange={(e) => {
+                    setKeywords((e.target.value).split('\n').filter(keyword => keyword.match('[A-Za-z]'))); //keywords must contain letters
+                }}
+            />
+            <p>Your keywords: 
+                {keywords.map(keyword => {
+                    return(
+                        <>
+                        {keyword},
+                        </>
+                    )
+                })}
+            </p>
 
+            <br/>
             <input type="file" accept="image/png, image/jpeg, image/jpg" onChange={(e) => getImage(e)} />
             {
                 images.map(image => {
