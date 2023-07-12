@@ -26,6 +26,9 @@
 
 /* Mobile only */
 @media screen and (max-width: 768px) {
+    .wrapperLink {
+        width: 100% !important;
+    }
     .button {
         width: 100% !important;
     }
@@ -33,7 +36,10 @@
 
 /* Desktop only */
 @media screen and (min-width: 768px) {
-    .button {
+    .wrapperLink {
         width: 218px;
+    }
+    .button {
+        width: 100%;
     }
 }

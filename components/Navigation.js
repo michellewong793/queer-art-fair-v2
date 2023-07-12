@@ -1,14 +1,11 @@
-import {useRouter} from 'next/router';
-import Link from 'next/link';
+'use client'
+
 import style from './navigation.module.css';
-import React, {useState} from 'react';
+import { usePathname } from 'next/navigation'
 
 const Navigation = () => {
 
-    const router = useRouter();
-    const currentRoute = router.pathname;
-
-    const [showNav, setShowNav] = useState(false);
+    const currentRoute = usePathname();
 
     return (
             <div className = {style.desktopContainer}> 

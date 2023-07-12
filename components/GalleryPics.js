@@ -1,3 +1,5 @@
+'use client'
+
 import style from "./gallery.module.css";
 import {useState} from 'react';
 import Spacer from './Spacer';
