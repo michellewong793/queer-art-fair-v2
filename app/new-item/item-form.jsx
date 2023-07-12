@@ -223,7 +223,7 @@ export default function ItemForm({ session }) {
                 {keywords.map(keyword => {
                     return(
                         <>
-                        {keyword},
+                        <p style={{color: "red"}}><em>{keyword}</em></p>
                         </>
                     )
                 })}
