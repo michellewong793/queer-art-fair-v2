@@ -1,6 +1,7 @@
 import style from './search.module.css';
 import React, {useState, useEffect} from 'react';
-import supabaseClient from './supabaseClient';
+//import supabaseClient from './supabaseClient';
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 
 
 //populates search bar with clicked search term 
@@ -37,6 +38,7 @@ function searchProd(event) {
 export default function Search() {
     const [length, setLength] = useState(0);
     const [products, setProducts] = useState([]);
+    const supabaseClient = createClientComponentClient();
     let someProds = [];
     
     //initializes the product array 
@@ -158,6 +160,7 @@ export default function Search() {
                         let resultContainer = document.createElement('resultContainer');
                         resultContainer.classList.add("resultContainer");
                         searchResults.appendChild(resultContainer);
+                        resultContainer.addEventListener('click', href = "/items/"+row.id);
 
                         let resultImg = document.createElement('img');
                         resultImg.classList.add('resultImg');
