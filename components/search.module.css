@@ -10,18 +10,32 @@
 .inputText {
     border: 1px solid transparent;
     background-color: whitesmoke;
-    padding: 10px;
+    padding: 8px;
     font-size: 16px;
     font-family: "ClementePDae";
     width: auto;
+    height: 24px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+@media (min-width: 768px) {
+    .inputText {
+        width: 400px;
+    }
 }
 
 .inputSubmit {
     border: 1px solid transparent;
+    border-radius: 8%;
     background-color: #1A361E;
     padding: 10px;
     font-size: 16px;
     color: whitesmoke;
+    height: 40px;
+    width: 80px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 
 .list {
@@ -30,23 +44,34 @@
     background-color: whitesmoke;
     display: flex;
     flex-direction: column;
+    width: 180px;
+    margin-right: 8px;
+    margin-left: 8px;
 }
 
-.listItem {
-    font-family: "ClementePDae";
-    background-color: whitesmoke;
-}
-
-.listItem:hover {
-    background-color: gray;
+@media (min-width: 768px) {
+    .list {
+        width: 416px;
+    }
 }
 
 .searchResults {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
     gap: 8px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding: 8px;
+}
+
+@media (min-width: 768px) {
+    .searchResults {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 8px;
+        max-width: 1160px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .columnContainer {

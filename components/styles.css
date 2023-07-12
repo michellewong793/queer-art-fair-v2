@@ -156,21 +156,24 @@ p {
 listItem {
     font-family: "ClementePDae";
     background-color: whitesmoke;
+    padding: 4px;
 }
 
 listItem:hover {
     background-color: gray;
     cursor: pointer;
+    font-family: "ClementePDak";
 }
 
 resultContainer {
     display: flex;
     flex-direction: column;
+    width: 304px;
 }
 
 img {
-    height: 144px;
-    width: auto;
+    height: auto;
+    width: 304px;
 }
 
 result {
@@ -178,20 +181,21 @@ result {
     padding-bottom: 8px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    height: 32px;
 }
 
 prodName {
     font-family: 'ClementePDae';
-    font-size: 16px;
+    font-size: 24px;
     padding-left: 8px;
-    padding-right: 8px;
+    padding-right: 16px;
 }
 
 prodPrice {
-    font-family: 'ClementePDae';
+    font-family: 'ClementePDak';
     font-size: 16px;
-    padding-left: 8px;
-    padding-right: 8px;
+    padding: 8px;
 }
 
 @media screen and (min-width: 480px) {

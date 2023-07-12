@@ -22,7 +22,6 @@ function searchProd(event) {
 
     //gets the user input from the search bar
     let userInput = document.getElementById("searchTerm").value;
-    //console.log(userInput);
 
     let list = document.getElementById('list');
 
@@ -37,7 +36,13 @@ function searchProd(event) {
 //contains search functions as well structure of the page
 export default function Search() {
     const [length, setLength] = useState(0);
-    let products = [];
+    const [products, setProducts] = useState([]);
+    let someProds = [];
+    
+    //initializes the product array 
+    if (products.length == 0) {
+        getProducts();
+    }
 
     //sets length to be the number of rows in the database
     async function getCount() {
@@ -52,45 +57,38 @@ export default function Search() {
         }
     }
 
+    //sets products to be an array containing all keywords in the database
     async function getProducts() {
-        console.log("hi");
-        let { data: items, error} = await supabaseClient
-            .from('items')
-            .select('keywords')
-        if (error) {
-            console.warn(error);
-        }
-        else if (items) {
-            getCount();
-            console.log("hello");
-            for (let i = 0; i < length; i++) {
-                let row = items[i];
-                //console.log(row);
-                let arrayLen = row.keywords.length;
-                //console.log(arrayLen);
-                for (let j = 0; j < arrayLen; j++) {
-                    let prodToAdd = row.keywords[j];
-                    if (products.includes(prodToAdd) == false) {
-                        products.push(prodToAdd);
+            let { data: items, error} = await supabaseClient
+                .from('items')
+                .select('keywords, name')
+            if (error) {
+                console.warn(error);
+            }
+            else if (items) {
+                getCount();
+                for (let i = 0; i < length; i++) {
+                    let row = items[i];
+                    let arrayLen = row.keywords.length;
+                    let prodName = row.name;
+                    prodName = prodName.toLowerCase();
+                    someProds.push(prodName);
+                    for (let j = 0; j < arrayLen; j++) {
+                        let prodToAdd = row.keywords[j];
+                        if (someProds.includes(prodToAdd) == false) {
+                            someProds.push(prodToAdd);
+                        }
                     }
                 }
+                setProducts(someProds);
             }
-            
-        }
     }
 
     function autocompleteSearch() {
-
-        // if (document.getElementById('searchTerm').value == "") {
-        //     products = [];
-        // }
-        
-        getProducts();
-        console.log(products);
-        //let products = ["pants", "dress pants", "stickers", "cards", "postcards", "bracelets", "necklaces", "painting", "pots", "knitting", "sweaters", "clothes", "cloth", "prints", "earrings", "stamps"];
     
         //gets the input from the text input field 
         let inp = document.getElementById("searchTerm").value;
+        inp = inp.toLowerCase();
         
         let list = document.getElementById('list');
     
@@ -124,9 +122,9 @@ export default function Search() {
                 }
             }
         }
-        products = [];
     }
 
+    //retrieves and displays products matching the search term
     async function getItems(userInput) {
 
         let searchResults = document.getElementById('searchResults');
@@ -136,34 +134,24 @@ export default function Search() {
             searchResults.removeChild(searchChild);
             searchChild = searchResults.lastElementChild;
         }
-
-        //userInput = to_tsquery(userInput);
         
         let { data: items, error} = await supabaseClient
             .from('items')
             .select('name, price, keywords, image_urls')
-        // let {data: items, error} = await supabaseClient
-        //     .from('items')
-        //     .select()
-        //     .textSearch('keywords', userInput)
         
         if (error) {
             console.warn(error);
         }
         else if (items) {
-            
             getCount();
-            //console.log(length);
             for (let i = 0; i < length; i++) {
                 let row = items[i];
-                //console.log(row);
                 let arrayLen = row.keywords.length;
-                //console.log(arrayLen);
                 for (let j = 0; j < arrayLen; j++) {
                     let keywordToTest = row.keywords[j];
                     let singular = userInput.substring(0, userInput.length-1);
-                    //console.log(keywordToTest)
-                    if (keywordToTest.includes(userInput) || keywordToTest == singular) {
+                    let lowercase = row.name.toLowerCase();
+                    if (keywordToTest.includes(userInput) || keywordToTest == singular || userInput == lowercase) {
             
                         let searchResults = document.getElementById('searchResults');
 
@@ -190,6 +178,9 @@ export default function Search() {
                         prodPrice.innerText = "$" + row.price;
                         result.appendChild(prodPrice);
                     }
+                    if (userInput == lowercase) {
+                        break;
+                    }
                 }
             }
         }
@@ -212,10 +203,11 @@ export default function Search() {
                     <div className = {style.list} id = "list"></div>
                 </div>
                 
-                <input  
+                <input 
+                    className = {style.inputSubmit} 
                     id = "submit"
                     type = "submit"
-                    onClick = {() => getItems(document.getElementById('searchTerm').value)}
+                    onClick = {() => getItems(document.getElementById('searchTerm').value.toLowerCase())}
                 />
                 </div>
                 <div className = {style.searchResults} id = "searchResults"></div>
