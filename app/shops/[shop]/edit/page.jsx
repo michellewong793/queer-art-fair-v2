@@ -1,109 +1,17 @@
-'use client'
+import { cookies } from "next/headers";
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import ShopEditForm from './shop-edit-form'
 
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-import { useState, useEffect } from "react";
-import { redirect } from "next/navigation";
 // need everything about the shop, put it in form fields, allow user to edit and submit updates
 // initially, only dealing with shop stuff (not shop's items)
-export default function Page( {params} ) {
-    const supabase = createClientComponentClient()
-    const [name, setName] = useState()
-    const [description, setDescription] = useState()
-    const [instagram, setInstagram] = useState()
-    const [venmo, setVenmo] = useState()
-    const [id, setId] = useState();
-    const [formError, setFormError] = useState()
-    const [updated, setUpdated] = useState(false);
-
-    useEffect(() => {
-        async function getShop() {
-            const shopName = (params.shop).split('_').join(' ')
-            let { data, error } = await supabase
-                .from('shops')
-                .select()
-                .eq('name', shopName)
-                .single()
-            
-            if (error) {
-                console.warn(error)
-                return
-            }
-            if (data) {
-                setId(data.id)
-                setName(data.name)
-                setDescription(data.description)
-                setInstagram(data.instagram)
-                setVenmo(data.venmo)
-            }
-        }
-        getShop()
-    }, [])
-
-    async function updateShop(e) {
-        e.preventDefault()
-        if (!name) { setFormError("Your shop must have a unique name."); return; }
-        else if (!description) { setFormError("Your shop must have a description."); return; }
-        else if (!venmo) { setFormError("Your shop must have a venmo setup so you can receive payments."); return; }
-        else { setFormError(null) }
-
-        let { error } = await supabase
-            .from('shops')
-            .update({
-                name: name,
-                description: description,
-                instagram: instagram,
-                venmo: venmo
-            })
-            .eq('id', id)
-        
-        if (error) {
-            setFormError("Your shop could not be updated. Error: ", error.message)
-        } else {
-            setUpdated(true);
-        }
-    }
-
-    useEffect(() => {
-        if (updated) {
-            redirect('/shops/'+name.split(' ').join('_'))
-        }
-    }, [updated])
+export default async function Page( {params} ) {
+    const supabaseServer = createServerComponentClient({ cookies })
+    const {
+        data: { session },
+    } = await supabaseServer.auth.getSession()
 
     return (
-        <>
-        <form onSubmit={(e) => updateShop(e)}>
-            <label>Name: </label>
-            <input
-                type="text"
-                value={name || ''}
-                onChange={(e) => setName(e.target.value)}
-            />
-
-            <label>Description: </label>
-            <textarea
-                type="text"
-                value={description || ''}
-                onChange={(e) => setDescription(e.target.value)}
-            />
-
-            <label>Instagram: </label>
-            <input
-                type="text"
-                value={instagram || ''}
-                onChange={(e) => setInstagram(e.target.value)}
-            />
-
-            <label>Venmo: </label>
-            <input
-                type="text"
-                value={venmo || ''}
-                onChange={(e) => setVenmo(e.target.value)}
-            />
-
-            <button type="submit">Update</button>
-        </form>
-
-        {formError && <p>{formError}</p>}
-        </>
+        <ShopEditForm params={params} session={session}/>
     )
+    
 }
