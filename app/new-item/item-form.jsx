@@ -211,19 +211,19 @@ export default function ItemForm({ session }) {
                 }}
             />
             <br/>
-            <label>Type keywords in the box below. Separate each keyword by hitting 'enter' and starting a new line.</label>
+            <label>Type keywords in the box below. Separate keywords by commas or new lines.</label>
             <textarea
                 type='text'
                 placeholder='keywords'
                 onChange={(e) => {
-                    setKeywords((e.target.value).split('\n').filter(keyword => keyword.match('[A-Za-z]'))); //keywords must contain letters
+                    setKeywords((e.target.value).split(/ *, *|\n/).filter(keyword => keyword.match('[A-Za-z]'))); //keywords must contain letters
                 }}
             />
-            <p>Your keywords: 
+            <p>Your keywords:{" "}
                 {keywords.map(keyword => {
                     return(
                         <>
-                        <p style={{color: "red"}}><em>{keyword}</em></p>
+                        <u>{keyword}</u>,{" "}
                         </>
                     )
                 })}
