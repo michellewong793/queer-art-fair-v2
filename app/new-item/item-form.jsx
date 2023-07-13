@@ -216,14 +216,14 @@ export default function ItemForm({ session }) {
                 type='text'
                 placeholder='keywords'
                 onChange={(e) => {
-                    setKeywords((e.target.value).split(/ *, *|\n/).filter(keyword => keyword.match('[A-Za-z]'))); //keywords must contain letters
+                    setKeywords((e.target.value).split(/[ \n]*,[ \n]*|[, ]*\n[, ]*/).filter(keyword => keyword.match('[A-Za-z]'))); //keywords must contain letters
                 }}
             />
             <p>Your keywords:{" "}
                 {keywords.map(keyword => {
                     return(
                         <>
-                        <u>{keyword}</u>,{" "}
+                        {"*"}<u>{keyword}</u>,{" "}
                         </>
                     )
                 })}
