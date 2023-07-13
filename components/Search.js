@@ -1,6 +1,6 @@
 import style from './search.module.css';
 import React, {useState, useEffect} from 'react';
-//import supabaseClient from './supabaseClient';
+import supabaseClient from './supabaseClient';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 
 
@@ -38,7 +38,9 @@ function searchProd(event) {
 export default function Search() {
     const [length, setLength] = useState(0);
     const [products, setProducts] = useState([]);
-    const supabaseClient = createClientComponentClient();
+    const [showFilterOptions, setShowFilterOptions] = useState(false);
+    const [showFilterButton, setShowFilterButton] = useState(false);
+    //const supabaseClient = createClientComponentClient();
     let someProds = [];
     
     //initializes the product array 
@@ -127,7 +129,137 @@ export default function Search() {
     }
 
     //retrieves and displays products matching the search term
+    async function getItemsLowHigh(userInput) {
+
+        let searchResults = document.getElementById('searchResults');
+
+        let searchChild = searchResults.lastElementChild;
+        while (searchChild) {
+            searchResults.removeChild(searchChild);
+            searchChild = searchResults.lastElementChild;
+        }
+        
+        let { data: items, error} = await supabaseClient
+            .from('items')
+            .select('name, price, keywords, image_urls')
+            .order('price', {ascending: true})
+        
+        if (error) {
+            console.warn(error);
+        }
+        else if (items) {
+            getCount();
+            for (let i = 0; i < length; i++) {
+                let row = items[i];
+                let arrayLen = row.keywords.length;
+                for (let j = 0; j < arrayLen; j++) {
+                    let keywordToTest = row.keywords[j];
+                    let singular = userInput.substring(0, userInput.length-1);
+                    let lowercase = row.name.toLowerCase();
+                    if (keywordToTest.includes(userInput) || keywordToTest == singular || userInput == lowercase) {
+            
+                        let searchResults = document.getElementById('searchResults');
+
+                        let resultContainer = document.createElement('resultContainer');
+                        resultContainer.classList.add("resultContainer");
+                        searchResults.appendChild(resultContainer);
+                        //resultContainer.addEventListener('click', href = "/items/"+row.id);
+
+                        let resultImg = document.createElement('img');
+                        resultImg.classList.add('resultImg');
+                        resultImg.src = row.image_urls[0];
+                        resultContainer.appendChild(resultImg);
+
+                        let result = document.createElement("result");
+                        result.classList.add("result");
+                        resultContainer.appendChild(result);
+
+                        let prodName = document.createElement('prodName');
+                        prodName.classList.add('prodName');
+                        prodName.innerText = row.name;
+                        result.appendChild(prodName);
+
+                        let prodPrice = document.createElement('prodPrice');
+                        prodPrice.classList.add('prodPrice');
+                        prodPrice.innerText = "$" + row.price;
+                        result.appendChild(prodPrice);
+                    }
+                    if (userInput == lowercase) {
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    //retrieves and displays products matching the search term
+    async function getItemsHighLow(userInput) {
+
+        let searchResults = document.getElementById('searchResults');
+
+        let searchChild = searchResults.lastElementChild;
+        while (searchChild) {
+            searchResults.removeChild(searchChild);
+            searchChild = searchResults.lastElementChild;
+        }
+        
+        let { data: items, error} = await supabaseClient
+            .from('items')
+            .select('name, price, keywords, image_urls')
+            .order('price', {ascending: false})
+        
+        if (error) {
+            console.warn(error);
+        }
+        else if (items) {
+            getCount();
+            for (let i = 0; i < length; i++) {
+                let row = items[i];
+                let arrayLen = row.keywords.length;
+                for (let j = 0; j < arrayLen; j++) {
+                    let keywordToTest = row.keywords[j];
+                    let singular = userInput.substring(0, userInput.length-1);
+                    let lowercase = row.name.toLowerCase();
+                    if (keywordToTest.includes(userInput) || keywordToTest == singular || userInput == lowercase) {
+            
+                        let searchResults = document.getElementById('searchResults');
+
+                        let resultContainer = document.createElement('resultContainer');
+                        resultContainer.classList.add("resultContainer");
+                        searchResults.appendChild(resultContainer);
+                        //resultContainer.addEventListener('click', href = "/items/"+row.id);
+
+                        let resultImg = document.createElement('img');
+                        resultImg.classList.add('resultImg');
+                        resultImg.src = row.image_urls[0];
+                        resultContainer.appendChild(resultImg);
+
+                        let result = document.createElement("result");
+                        result.classList.add("result");
+                        resultContainer.appendChild(result);
+
+                        let prodName = document.createElement('prodName');
+                        prodName.classList.add('prodName');
+                        prodName.innerText = row.name;
+                        result.appendChild(prodName);
+
+                        let prodPrice = document.createElement('prodPrice');
+                        prodPrice.classList.add('prodPrice');
+                        prodPrice.innerText = "$" + row.price;
+                        result.appendChild(prodPrice);
+                    }
+                    if (userInput == lowercase) {
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    //retrieves and displays products matching the search term
     async function getItems(userInput) {
+
+        setShowFilterButton(!showFilterButton);
 
         let searchResults = document.getElementById('searchResults');
 
@@ -160,12 +292,17 @@ export default function Search() {
                         let resultContainer = document.createElement('resultContainer');
                         resultContainer.classList.add("resultContainer");
                         searchResults.appendChild(resultContainer);
-                        resultContainer.addEventListener('click', href = "/items/"+row.id);
+                        //resultContainer.addEventListener('click', href = "/items/"+row.id);
 
                         let resultImg = document.createElement('img');
                         resultImg.classList.add('resultImg');
                         resultImg.src = row.image_urls[0];
                         resultContainer.appendChild(resultImg);
+
+                        if (row.image_urls.length > 1) {
+                            resultImg.addEventListener('mouseover', () => resultImg.src = row.image_urls[1]);
+                            resultImg.addEventListener('mouseout', () => resultImg.src = row.image_urls[0]);
+                        }
 
                         let result = document.createElement("result");
                         result.classList.add("result");
@@ -188,6 +325,7 @@ export default function Search() {
             }
         }
     }
+
 
     return(
         <div className = {style.container}>
@@ -212,6 +350,19 @@ export default function Search() {
                     type = "submit"
                     onClick = {() => getItems(document.getElementById('searchTerm').value.toLowerCase())}
                 />
+                    <div className = {style.columnContainer}>
+                        <div 
+                            className = {style.filter}
+                            onClick = {() => setShowFilterOptions(!showFilterOptions)}
+                            style = {{display: showFilterButton ? 'block' : 'none'}}
+                        >
+                            Filter
+                        </div>
+                        <div className = {style.filterList} style = {{display: showFilterOptions ? "flex" : "none"}}>
+                            <div className = {style.listItem} onClick = {() => getItemsLowHigh(document.getElementById('searchTerm').value.toLowerCase())}>Price: Low to High</div>
+                            <div className = {style.listItem} onClick = {() => getItemsHighLow(document.getElementById('searchTerm').value.toLowerCase())}>Price: High to Low</div>
+                        </div>
+                    </div>
                 </div>
                 <div className = {style.searchResults} id = "searchResults"></div>
             </form>

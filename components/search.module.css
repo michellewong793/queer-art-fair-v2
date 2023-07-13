@@ -29,6 +29,7 @@
     border: 1px solid transparent;
     border-radius: 8%;
     background-color: #1A361E;
+    font-family: "ClementePDae";
     padding: 10px;
     font-size: 16px;
     color: whitesmoke;
@@ -83,4 +84,46 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+.filter {
+    border: 1px solid transparent;
+    font-family: "ClementePDae";
+    border-radius: 8%;
+    background-color: #1A361E;
+    padding: 10px;
+    font-size: 16px;
+    color: whitesmoke;
+    height: 16px;
+    width: 72px;
+    margin-left: 8px;
+    margin-right: 8px;
+
+}
+
+.filter:hover {
+    cursor: pointer;
+}
+
+.filterList {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    display: none;
+    flex-direction: column;
+    width: 100px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.listItem {
+    font-family: "ClementePDae";
+    background-color: whitesmoke;
+    padding: 4px;
+}
+
+.listItem:hover {
+    background-color: gray;
+    cursor: pointer;
+    font-family: "ClementePDak";
 }

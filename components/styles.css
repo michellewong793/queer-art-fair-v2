@@ -172,8 +172,9 @@ resultContainer {
 }
 
 img {
-    height: auto;
+    height: 304px;
     width: 304px;
+    object-fit: contain;
 }
 
 result {
