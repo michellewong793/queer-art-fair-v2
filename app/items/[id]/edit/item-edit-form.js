@@ -134,18 +134,29 @@ export default function ItemEditForm( props ) {
                 <label>Keywords: </label>
                 <textarea
                     type='text'
-                    value={keywords.map(keyword => {
+                    onChange={(e) => {
+                        setKeywords((e.target.value).split(/[ \n]*,[ \n]*|[, ]*\n[, ]*/).filter(keyword => keyword.match('[A-Za-z]'))); //keywords must contain letters
+                    }}
+                    >
+                    {keywords.map(keyword => {
                         return(
                             keyword
                         )
                     })}
-                    onChange={(e) => {
-                        setKeywords((e.target.value).split('\n').filter(keyword => keyword.match('[A-Za-z]'))); //keywords must contain letters
-                    }}
-                />
+                </textarea>
+                <p>Your keywords:{" "}
+                    {keywords.map(keyword => {
+                        return(
+                            <>
+                            <u>{keyword}</u>,{" "}
+                            </>
+                        )
+                    })}
+                </p>
 
                 <button type="submit">Update</button>
                 {formError && <p>{formError}</p>}
+                
             </form> : <div></div>
         }  
         </>
