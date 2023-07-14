@@ -16,7 +16,7 @@ export default function ItemEditForm( props ) {
     // TODO: how to deal with quantity without screwing up orders in progress
     const [quantity, setQuantity] = useState()
     const [keywords, setKeywords] = useState([])
-    // TODO: still need to deal with images
+     // TODO: still need to deal with images
     const [formError, setFormError] = useState()
     const [verifiedShopowner, setVerifiedShopowner] = useState(false)
     
@@ -138,11 +138,7 @@ export default function ItemEditForm( props ) {
                         setKeywords((e.target.value).split(/[ \n]*,[ \n]*|[, ]*\n[, ]*/).filter(keyword => keyword.match('[A-Za-z]'))); //keywords must contain letters
                     }}
                     >
-                    {keywords.map(keyword => {
-                        return(
-                            keyword
-                        )
-                    })}
+                    {keywords.join(', ')}
                 </textarea>
                 <p>Your keywords:{" "}
                     {keywords.map(keyword => {
