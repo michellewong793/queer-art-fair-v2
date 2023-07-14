@@ -125,6 +125,7 @@ export default function ItemEditForm( props ) {
                 <input
                     type='number'
                     min='1'
+                    value={quantity}
                     placeholder='Item Quantity'
                     onChange={(e) => {
                         setQuantity(e.target.value);
