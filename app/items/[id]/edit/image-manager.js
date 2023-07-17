@@ -9,65 +9,99 @@ export function ImageManager(props) {
 
     const supabase = createClientComponentClient();
     const [images, setImages] = useState([])
+    const [saved, setSaved] = useState(true)
     
-    async function getDatabaseImages(props) {
+    async function getDatabaseImages(itemId) {
         let imageNames;
 
         const { data, error } = await supabase
             .storage
             .from('item-photos')
-            .list(props.itemId + '/')
+            .list(itemId + '/')
         if (error) {
             console.warn (error)
             return;
         }
         imageNames = data;
         
+        let databaseImages = []
         for(let i = 0; i < imageNames.length; i ++){ 
             let name = imageNames[i].name
             const { data } = await supabase
                 .storage
                 .from('item-photos')
-                .getPublicUrl(props.itemId+'/'+name)
+                .getPublicUrl(itemId+'/'+name)
             let image = {
                 name: imageNames[i].name,
                 uploaded: true,
+                deleted: false,
                 file: null,
                 url: data?.publicUrl,
-                order: i,
+                // TODO: implement order somehow
             }
-            setImages(images => [...images, image])
+            databaseImages.push(image)
         }
+        setImages(databaseImages)
     }
 
-    async function getUploadedImage(e) {
+    async function getLocalImage(e) {
         let file = e.target.files[0];
         if (file) {
             let url = URL.createObjectURL(file)
             let image = {
                 name: uuidv4(),
                 uploaded: false,
+                deleted: false,
                 file: file,
                 url: url,
-                order: images.length
             }
             setImages(images => [ ...images, image]);
+            setSaved(false)
         }
     }
 
+    async function localDeleteImage(imageToDelete) {
+        const updatedImages = images.map((image) => {
+            if (image.name == imageToDelete.name) {
+                return {
+                    name: imageToDelete.name,
+                    uploaded: imageToDelete.uploaded,
+                    deleted: true,
+                    file: imageToDelete.file,
+                    url: imageToDelete.url,
+                }
+            } else {
+                return image
+            }
+        })
+
+        setImages(updatedImages);
+        setSaved(false)
+    }
+
     async function uploadImagesToDatabase() {
-        console.log('hello')
         // keep track of the public urls
         let publicUrls = []
-        console.log('There are ', images.length, ' images to upload')
         // upload the images
         for (let image of images) {
-            console.log('image!')
-            if (!image.uploaded) {
+
+            // if the image has been uploaded to the database, but the shopowner has deleted it
+            if (image.uploaded && image.deleted) {
                 const { data, error } = await supabase
                     .storage
                     .from('item-photos')
-                    .upload(props.itemId + '/' + image.name, image.file)
+                    .remove(props?.itemId+'/'+image.name)
+                
+                if (error) console.warn(error.message)
+                continue
+            }
+
+            // if the image hasn't been uploaded, and hasn't been deleted
+            if (!image.uploaded && !image.deleted) {
+                const { data, error } = await supabase
+                    .storage
+                    .from('item-photos')
+                    .upload(props?.itemId + '/' + image.name, image.file)
                 if (error) {
                     console.warn(error.message)
                     return
@@ -77,12 +111,11 @@ export function ImageManager(props) {
                     const {data} = await supabase
                         .storage
                         .from('item-photos')
-                        .getPublicUrl(props.itemId+'/'+image.name)
+                        .getPublicUrl(props?.itemId+'/'+image.name)
                     if (data) image.url = data.publicUrl
                 }
 
             }
-
             publicUrls.push(image.url)
         }
 
@@ -91,32 +124,37 @@ export function ImageManager(props) {
         const { error } = await supabase
             .from('items')
             .update({ image_urls: publicUrls })
-            .eq('id', props.itemId)
+            .eq('id', props?.itemId)
         
-        if (error) console.warn(error)
+        if (error) {console.warn(error); return; }
 
+        setSaved(true)
+
+        await getDatabaseImages(props?.itemId)
     }
 
     useEffect(() => {
-        getDatabaseImages({itemId: props.itemId})
-    }, [props.itemId])
+        getDatabaseImages(props?.itemId)
+    }, [props?.itemId])
 
     return (
         <>
         <h3>Images</h3>
         {images.map(image => {
+            if (image.deleted) {
+                return
+            }
             return (
-                <div key={image?.name}>
+                <div key={image.name}>
                     <img src={image?.url} width='300px'></img>
-                </div >
-                
+                    <button onClick={() => localDeleteImage(image)}>Delete</button>
+                </div >  
             )
         })}
 
-        <input type="file" accept="image/png, image/jpeg, image/jpg" onChange={(e) => getUploadedImage(e)} />
+        <input type="file" accept="image/png, image/jpeg, image/jpg" onChange={(e) => getLocalImage(e)} />
 
-        <button onClick={() => uploadImagesToDatabase()}>Save changes to images</button>
-
+        <button disabled={saved} onClick={() => uploadImagesToDatabase()}>Save changes to images</button>
         </>
     )
 }
