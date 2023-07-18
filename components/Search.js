@@ -2,6 +2,7 @@ import style from './search.module.css';
 import React, {useState, useEffect} from 'react';
 import supabaseClient from './supabaseClient';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import Collection from './Collection';
 
 
 //populates search bar with clicked search term 
@@ -259,6 +260,8 @@ export default function Search() {
     //retrieves and displays products matching the search term
     async function getItems(userInput) {
 
+        document.getElementById('searchTerm').value = userInput;
+
         setShowFilterButton(!showFilterButton);
 
         let searchResults = document.getElementById('searchResults');
@@ -323,49 +326,72 @@ export default function Search() {
                     }
                 }
             }
+            if (searchResults.childElementCount == 0) {
+                let noResults = document.createElement('noResults');
+                noResults.classList.add("noResults");
+                noResults.innerText = "we could not find a match for your search";
+                searchResults.appendChild(noResults);
+            }
         }
     }
 
 
     return(
-        <div className = {style.container}>
-            <form autoComplete = "off" id = "form">
-                <div className = {style.rowContainer}>
-                <div className = {style.columnContainer}>
-                    <label htmlFor='searchTerm'></label>
-                    <input 
-                        className = {style.inputText} 
-                        onKeyUp = {() => autocompleteSearch()}
-                        name = "searchTerm" 
-                        id = "searchTerm"
-                        type = "text" 
-                        placeholder='search for products...'
-                    />
-                    <div className = {style.list} id = "list"></div>
-                </div>
-                
-                <input 
-                    className = {style.inputSubmit} 
-                    id = "submit"
-                    type = "submit"
-                    onClick = {() => getItems(document.getElementById('searchTerm').value.toLowerCase())}
-                />
+        <div className = {style.columnContainer}>
+            <div className = {style.container}>
+                <form autoComplete = "off" id = "form">
+                    <div className = {style.rowContainer}>
                     <div className = {style.columnContainer}>
-                        <div 
-                            className = {style.filter}
-                            onClick = {() => setShowFilterOptions(!showFilterOptions)}
-                            style = {{display: showFilterButton ? 'block' : 'none'}}
-                        >
-                            Filter
-                        </div>
-                        <div className = {style.filterList} style = {{display: showFilterOptions ? "flex" : "none"}}>
-                            <div className = {style.listItem} onClick = {() => getItemsLowHigh(document.getElementById('searchTerm').value.toLowerCase())}>Price: Low to High</div>
-                            <div className = {style.listItem} onClick = {() => getItemsHighLow(document.getElementById('searchTerm').value.toLowerCase())}>Price: High to Low</div>
+                        <label htmlFor='searchTerm'></label>
+                        <input 
+                            className = {style.inputText} 
+                            onKeyUp = {() => autocompleteSearch()}
+                            name = "searchTerm" 
+                            id = "searchTerm"
+                            type = "text" 
+                            placeholder='search for products...'
+                        />
+                        <div className = {style.list} id = "list"></div>
+                    </div>
+                    
+                    <input 
+                        className = {style.inputSubmit} 
+                        id = "submit"
+                        type = "submit"
+                        onClick = {() => getItems(document.getElementById('searchTerm').value.toLowerCase())}
+                    />
+                        <div className = {style.columnContainer}>
+                            <div 
+                                className = {style.filter}
+                                onClick = {() => setShowFilterOptions(!showFilterOptions)}
+                                style = {{display: showFilterButton ? 'block' : 'none'}}
+                            >
+                                Filter
+                            </div>
+                            <div className = {style.filterList} style = {{display: showFilterOptions ? "flex" : "none"}}>
+                                <div className = {style.listItem} onClick = {() => getItemsLowHigh(document.getElementById('searchTerm').value.toLowerCase())}>Price: Low to High</div>
+                                <div className = {style.listItem} onClick = {() => getItemsHighLow(document.getElementById('searchTerm').value.toLowerCase())}>Price: High to Low</div>
+                            </div>
                         </div>
                     </div>
+                    <div className = {style.searchResults} id = "searchResults"></div>
+                </form>
+            </div>
+            <div className = {style.heading}>Shop Our Featured Categories</div>
+            <div className = {style.collectionContainer}>
+                <div onClick = {() => getItems("ceramics")}>
+                    <Collection image = {"url('/June17FaireSquare.png')"} text = {"Ceramics"}/>
                 </div>
-                <div className = {style.searchResults} id = "searchResults"></div>
-            </form>
+                <div onClick = {() => getItems("stickers")}>
+                    <Collection image = {"url('/June17FaireSquare.png')"} text = {"Stickers"}/>
+                </div>
+                <div onClick = {() => getItems("crochet")}>
+                    <Collection image = {"url('/June17FaireSquare.png')"} text = {"Crochet"}/>
+                </div>
+                <div onClick = {() => getItems("paintings")}>
+                    <Collection image = {"url('/June17FaireSquare.png')"} text = {"Paintings"}/>
+                </div>
+            </div>
         </div>
     );   
 }

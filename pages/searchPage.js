@@ -8,6 +8,8 @@ import Subheader from "../components/Subheader";
 import pageStyles from "../components/pages.module.css";
 import Footer from "../components/Footer";
 import Search from '../components/Search';
+import style from '../components/collection.module.css';
+import Collection from '../components/Collection.js';
 
 export default function SearchPage() {
     return (

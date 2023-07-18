@@ -199,6 +199,15 @@ prodPrice {
     padding: 8px;
 }
 
+noResults {
+    font-family: 'ClementePDae';
+    color: #1A361E;
+    font-size: 24px;
+    padding: 8px;
+    align-items: center;
+    text-align: center;
+}
+
 @media screen and (min-width: 480px) {
     h1 {
         font-size: 90pt;
