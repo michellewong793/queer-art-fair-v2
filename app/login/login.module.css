@@ -1,0 +1,18 @@
+.signInGoogle {
+    border-radius: 5%;
+    width: 400px;
+    height: 120px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.signInText {
+    font-family: 'ClementePDak';
+    font-size: 32px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
