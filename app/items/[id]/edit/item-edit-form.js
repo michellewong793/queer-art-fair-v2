@@ -3,6 +3,7 @@
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation";
+import { ImageManager } from "./image-manager";
 
 export default function ItemEditForm( props ) {
     const supabase = createClientComponentClient()
@@ -96,6 +97,7 @@ export default function ItemEditForm( props ) {
     return (
         <>
         {verifiedShopowner ?
+            <>
             <form onSubmit={(e) => updateItem(e)}>
                 <label>Name: </label>
                 <input
@@ -153,7 +155,10 @@ export default function ItemEditForm( props ) {
                 <button type="submit">Update</button>
                 {formError && <p>{formError}</p>}
                 
-            </form> : <div></div>
+            </form> 
+            <ImageManager itemId={props.params?.id} />
+            
+            </>: <div></div>
         }  
         </>
 
