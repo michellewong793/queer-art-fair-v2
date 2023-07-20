@@ -6,7 +6,6 @@
     -webkit-box-sizing: border-box;
 
     width: 100%;
-    margin-top: 20px;
 
     background-color: #FFF9ED;
     box-shadow: 0px 2px 8px 3px rgba(0, 0, 0, 0.15);
@@ -38,21 +37,29 @@
     font-family: ClementePDak
 }
 .textWrapper {
+    height: 40px;
     padding: 8px 8px 8px 8px;
     display: flex;
     justify-content: space-between;
 }
 
 .textWrapper p {
-    font-size: 24;
+    font-size: 16px;
 }
 
 /*desktop only*/
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) {
 
     .wrapper {
         width: 300px;
         max-width: 100%;
+    }
+    .textWrapper {
+        height: 60px;
+    }
+
+    .textWrapper p {
+        font-size: 24px;
     }
 
 }
