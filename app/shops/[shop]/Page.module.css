@@ -1,0 +1,24 @@
+/*Global styles*/
+.background {
+    background-color: #FFE0CE;
+}
+.content {
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 24px;
+}
+.description {
+    font-family: Helvetica;
+}
+
+/*Desktop only*/
+@media screen and (min-width: 768px) {
+    .content {
+        width: 1008px;
+        max-width: 88%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 80px;
+    }
+
+}

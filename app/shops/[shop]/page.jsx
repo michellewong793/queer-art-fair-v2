@@ -1,43 +1,50 @@
 'use client'
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useEffect, useState } from "react";
-import ItemCard from '../../components/ItemCard'
+import ItemCard from './ItemCard'
 import Navigation from "../../../components/Navigation";
 import Strawberry from "../../../components/Strawberry";
 import Logo from "../../../components/Logo";
+import Subheader from "../../../components/Subheader";
+import HeaderDecoration from "../../../components/HeaderDecoration";
+import Footer from "../../../components/Footer";
+import styles from "./Page.module.css";
+import theme from "../../../components/Theme";
+import Handles from "./Handles"
+
 
 // displays everything in one shop
 export default function Page({params}) {
     const shopName = (params.shop).split('_').join(' ');
     const supabase = createClientComponentClient()
     const [items, setItems] = useState([])
-    const [shopId, setShopId] = useState(null)
+    const [shop, setShop] = useState(null)
 
     // function to find the shop id and make sure the shop exists
-    async function getShopId() {
+    async function getShop() {
         let { data, error } = await supabase
             .from('shops')
-            .select('id')
+            .select()
             .eq('name', shopName)
             .single()
         if (error) {
             console.warn(error)
             setItems(null) // assuming the shop doesn't exist
         } else if (data) {
-            setShopId(data.id)
+            setShop(data)
         }
     }
 
     // function to find all the items in the shop based off the shop name (which should be unique) - uses foreign key relation
     async function getItems() {
-        await getShopId()
+        await getShop()
 
-        if (!shopId) return;
+        if (!shop) return;
 
         let { data, error } = await supabase
             .from('items')
             .select()
-            .eq('shop_id', shopId)
+            .eq('shop_id', shop?.id)
         
         if (error) {
             console.warn(error)
@@ -48,17 +55,25 @@ export default function Page({params}) {
 
     useEffect(() => {
         getItems();
-    }, [shopId])
+    }, [shop])
 
     return(
-        <>
+        <div style={theme.body} className={styles.background}>
+        <HeaderDecoration/>
         <Logo />
+        <Subheader />
         <Navigation />
         <Strawberry heading={shopName.toUpperCase()} showLargeStrawberry='none' />
-        {items ? items.map((item) => (
-            <ItemCard item={item}/>
-        )) : 
-        <p>Sorry, we can't find this shop in our database.</p>}
-        </>
+        <div className={styles.content}>
+            <p className={styles.description}>{shop?.description}</p>
+            <Handles props={shop}/>
+            {items ? items.map((item) => (
+                <ItemCard item={item}/>
+            )) : 
+            <p>Sorry, we can't find this shop in our database.</p>}
+        </div>
+        
+        <Footer/>
+        </div>
     )
 }
