@@ -8,7 +8,7 @@ const ItemCard = ({item}) => {
         
         <div className={styles.wrapper} title={item?.name}>
             <Link className={styles.link} href={'/items/'+item?.id}>
-                <img className={styles.image} src={item?.image_urls[0]} />
+                <img className={styles.image} src={item?.image_urls[0]} />  
                 <div className={styles.textWrapper}>
                     <p className={styles.itemName}>{item?.name}</p>
                     <p className={styles.itemPrice}>${item?.price}</p>
