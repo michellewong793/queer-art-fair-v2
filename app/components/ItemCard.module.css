@@ -24,6 +24,8 @@
 }
 .image {
     width: 100%;
+    height: 72vw;
+    object-fit: cover;
 }
 .itemName {
     font-family: ClementePDag;
