@@ -1,8 +1,7 @@
 'use client'
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useEffect, useState } from "react";
-import Link from "next/link";
-
+import ItemCard from '../../components/ItemCard'
 import Navigation from "../../../components/Navigation";
 import Strawberry from "../../../components/Strawberry";
 import Logo from "../../../components/Logo";
@@ -37,7 +36,7 @@ export default function Page({params}) {
 
         let { data, error } = await supabase
             .from('items')
-            .select('id, name, description, price')
+            .select()
             .eq('shop_id', shopId)
         
         if (error) {
@@ -57,10 +56,7 @@ export default function Page({params}) {
         <Navigation />
         <Strawberry heading={shopName.toUpperCase()} showLargeStrawberry='none' />
         {items ? items.map((item) => (
-            <div key={item.id}>
-                <h3><Link href={'/items/'+item.id}>{item.name}</Link> - ${item.price}</h3>
-                <p>{item.description}</p>
-            </div>
+            <ItemCard item={item}/>
         )) : 
         <p>Sorry, we can't find this shop in our database.</p>}
         </>
