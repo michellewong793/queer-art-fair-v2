@@ -36,35 +36,42 @@ const Input: React.FC<InputProps> = ({
         onChange: handleChange
     }
 
-    switch (type) {
-        case "text":
-
-        case "textarea":
-
-        case "number":
-
-
-    }
-
     const textarea = document.getElementById("textarea");
     textarea?.addEventListener("input", function (e){
         this.style.height = "auto";
         this.style.height = this.scrollHeight + "px";
     });
 
+    function inputSwitch() {
+        switch(type) {
+            case 'textarea':
+                return (
+                    <textarea 
+                        id="textarea"
+                        className={styles.input} 
+                        {...fieldProps} /> 
+                )
+            case 'number':
+                return (
+                    <input className={styles.input}
+                        type='number'
+                        min={min}
+                        max={max}
+                        step={step}
+                        {...fieldProps} />
+                )
+            default:
+                return (
+                    <input className={styles.input} {...fieldProps} />
+                )
+        }
+      }
+
     return (
         <>
         <div className={className}>
             <div className={styles.border}>
-                {type === "textarea" ? (
-                    <textarea 
-                        id="textarea"
-                        className={styles.input} 
-                        {...fieldProps} />
-                ) : (
-                    <input className={styles.input} {...fieldProps} />
-                )}
-                
+                {inputSwitch()}
             </div>
         </div>
         </>
