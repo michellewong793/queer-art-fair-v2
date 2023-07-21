@@ -1,0 +1,33 @@
+.border {
+    border-bottom: 2px solid #B0B0B0;
+    border-radius: 4px;
+    width: fit-content;
+}
+.input {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    vertical-align: top;
+
+    width: 100%;
+    height: fit-content;
+    background: white;
+    border: none;
+    outline: none;
+
+    padding: 16px;
+    border-radius: 4px;
+
+    font-size: 24px;
+    font-family: Helvetica;
+
+    resize: none;
+    overflow: visible;
+}
+
+.input:focus {
+    outline: #FE88CC 2px solid;
+    outline-offset: -3px;
+
+    transform: translate(0px, 2px);
+}
