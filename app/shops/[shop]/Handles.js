@@ -4,8 +4,8 @@ import styles from './Handles.module.css'
 const Handle = (props) => {
     return (
         <div className={styles.handle}>
-            <img className={styles.logo} src={props.logo}/>
-            <p>{props.handle}</p>
+            <img className={styles.logo} src={props?.logo}/>
+            <p>{props?.handle}</p>
         </div>
     )
     
