@@ -21,7 +21,7 @@ export default async function Page() {
         <Logo />
         <Subheader />
         <Navigation />
-        <Strawberry heading="NEW ITEM" showLargeStrawberry='none' />
+        <Strawberry heading="NEW SHOP" showLargeStrawberry='none' />
         <div className={styles.content}>
             <ShopForm session={session}/>
         </div>

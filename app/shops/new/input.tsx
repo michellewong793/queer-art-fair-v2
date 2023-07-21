@@ -5,6 +5,7 @@ type InputProps = {
     className?,
     type?: string;
     placeholder?: string;
+    value?: string;
     min?: number;
     max?: number;
     step?: number;
@@ -16,6 +17,7 @@ const Input: React.FC<InputProps> = ({
     className,
     type,
     placeholder,
+    value,
     min,
     max,
     step,
@@ -59,6 +61,13 @@ const Input: React.FC<InputProps> = ({
                         max={max}
                         step={step}
                         {...fieldProps} />
+                )
+            case 'submit':
+                return (
+                    <input className={styles.submit}
+                        type='submit'
+                        value={value}
+                    />
                 )
             default:
                 return (

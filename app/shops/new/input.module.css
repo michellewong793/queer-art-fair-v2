@@ -3,9 +3,9 @@
 .border {
     border-bottom: 3px solid #B0B0B0;
     border-radius: 4px;
-    width: fit-content;
+    width: 100%;
 }
-.input {
+.input, .submit {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -31,6 +31,11 @@
     outline-offset: -3px;
 
     transform: translate(0px, 2px);
+}
+
+.submit:hover {
+    cursor: pointer;
+    transform: translate(0px, 2px)
 }
 
 /*Desktop only*/
