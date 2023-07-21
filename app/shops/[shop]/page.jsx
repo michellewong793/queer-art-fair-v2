@@ -67,10 +67,16 @@ export default function Page({params}) {
         <div className={styles.content}>
             <p className={styles.description}>{shop?.description}</p>
             <Handles props={shop}/>
-            {items ? items.map((item) => (
-                <ItemCard item={item}/>
-            )) : 
-            <p>Sorry, we can't find this shop in our database.</p>}
+
+            <div className = {styles.productsContainer}>
+                <h3>Products</h3>
+                <div className = {styles.products}>
+                    {items ? items.map((item) => (
+                        <ItemCard item={item}/>
+                    )) : 
+                    <p>Sorry, we can't find this shop in our database.</p>}
+                </div>
+            </div>
         </div>
         
         <Footer/>
