@@ -36,8 +36,6 @@ export default function HomePage() {
             backgroundColor="white" 
             textColor="#002809" 
             borderColor="#489056"
-            hoverBackgroundColor="#489056"
-            hoverTextColor="white"
             url="https://docs.google.com/forms/d/e/1FAIpQLSePS8SsNjo6JF0JvOVwPIYPIv-cc8VCp2ZLEC2u5cIkPKNodA/viewform"
             />
           </div>
