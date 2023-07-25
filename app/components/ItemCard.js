@@ -10,7 +10,7 @@ const ItemCard = (props) => {
     return (
         
         <div className={styles.wrapper} title={props?.item?.name}>
-            <Link className={styles.link} href={url}>
+            <Link className={styles.link} href={url} rel="noopener noreferrer" target="_blank">
                 <img className={styles.image} src={props?.item?.image_urls[0]} />
                 <img className={props?.edit ? styles.editIcon : styles.hidden} src={'/PencilEditIcon.svg'}/>
                 <div className={styles.textWrapper}>
