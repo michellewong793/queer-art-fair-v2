@@ -1,0 +1,13 @@
+.label{
+    font-family: 'Helvetica';
+    font-size: 16px;
+    padding-bottom: 16px;
+    display: inline-block;
+}
+
+/*Desktop only*/
+@media screen and (min-width: 768px) {
+    .label {
+        font-size: 24px;
+    }
+}
