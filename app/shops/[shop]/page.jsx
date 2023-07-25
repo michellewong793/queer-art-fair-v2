@@ -63,8 +63,8 @@ export default function Page({params}) {
         <Logo />
         <Subheader />
         <Navigation />
-        <Strawberry heading={shopName.toUpperCase()} showLargeStrawberry='none' />
         <div className={styles.content}>
+            <h3>{shopName} </h3>
             <p className={styles.description}>{shop?.description}</p>
             <Handles props={shop}/>
 
