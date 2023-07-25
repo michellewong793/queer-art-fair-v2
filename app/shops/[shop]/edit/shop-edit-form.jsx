@@ -74,59 +74,62 @@ export default function ShopEditForm( props ) {
     }
 
     return (
-        <form onSubmit={(e) => updateShop(e)}>
-            <Label><strong>Name*</strong> Your shop name must be unique and may not contain underscores.</Label>
-            <Input
-                className={styles.input}
-                type='text'
-                value={name || ''}
-                onChange={(data) => setName(data.value)}
-                error={nameError}
-            />
+        <>
+            <h3>Your Shop Details</h3>
+            <form className={styles.form} onSubmit={(e) => updateShop(e)}>
+                <Label><strong>Name*</strong> Your shop name must be unique and may not contain underscores.</Label>
+                <Input
+                    className={styles.input}
+                    type='text'
+                    value={name || ''}
+                    onChange={(data) => setName(data.value)}
+                    error={nameError}
+                />
 
-            <Label><strong>Description*</strong></Label>
-            <Input
-                className={styles.input}
-                type='textarea'
-                value={description || ''}
-                onChange={(data) => setDescription(data.value)}
-                error={descriptionError}
-            />
+                <Label><strong>Description*</strong></Label>
+                <Input
+                    className={styles.input}
+                    type='textarea'
+                    value={description || ''}
+                    onChange={(data) => setDescription(data.value)}
+                    error={descriptionError}
+                />
 
-            <div className={styles.handleWrapper}>
-                <div>
-                    <Label><strong>Instagram</strong></Label>
-                    <div className={styles.handleInput}>
-                        <img className={styles.logo} src='/logos/Instagram.png'></img>
-                        <Input
-                            className={styles.input}
-                            type='text'
-                            value={instagram || ''}
-                            onChange={(data) => setInstagram(data.value)}
-                        />
+                <div className={styles.handleWrapper}>
+                    <div>
+                        <Label><strong>Instagram</strong></Label>
+                        <div className={styles.handleInput}>
+                            <img className={styles.logo} src='/logos/Instagram.png'></img>
+                            <Input
+                                className={styles.input}
+                                type='text'
+                                value={instagram || ''}
+                                onChange={(data) => setInstagram(data.value)}
+                            />
+                        </div>
+                    </div>
+
+                    <div>
+                        <Label><strong>Venmo*</strong></Label>
+                        <div className={styles.handleInput}>
+                            <img className={styles.logo} src='/logos/Venmo.png'></img>
+                            <Input
+                                className={styles.input}
+                                type='text'
+                                value={venmo || ''}
+                                onChange={(data) => setVenmo(data.value)}
+                                error={venmoError}
+                            />
+                        </div>
                     </div>
                 </div>
 
-                <div>
-                    <Label><strong>Venmo*</strong></Label>
-                    <div className={styles.handleInput}>
-                        <img className={styles.logo} src='/logos/Venmo.png'></img>
-                        <Input
-                            className={styles.input}
-                            type='text'
-                            value={venmo || ''}
-                            onChange={(data) => setVenmo(data.value)}
-                            error={venmoError}
-                        />
-                    </div>
-                </div>
-            </div>
-
-            <Input
-                type='submit'
-                value='Save changes'
-            />
-            {formError && <p>formError</p>}
-        </form>
+                <Input
+                    type='submit'
+                    value='Save changes'
+                />
+                {formError && <p>formError</p>}
+            </form>
+        </>
     )
 }

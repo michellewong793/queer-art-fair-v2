@@ -4,7 +4,7 @@ import NewItemCard from "./NewItemCard"
 
 export default async function ProductEditSection({items}) {    
     return (
-        <>
+        <div className={styles.wrapper}>
         <h3>Your Products</h3>
         <div className={styles.products}>
             <NewItemCard />
@@ -12,6 +12,6 @@ export default async function ProductEditSection({items}) {
                 <ItemCard item={item} edit={true}/>
             ))}
         </div>
-        </>
+        </div>
     )
 }

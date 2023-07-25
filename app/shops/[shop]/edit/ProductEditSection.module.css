@@ -1,4 +1,7 @@
 /*Global styles*/
+.wrapper {
+    margin-top: 48px;
+}
 .products {
     margin-top: 16px;
     display: flex;
