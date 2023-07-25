@@ -3,7 +3,6 @@ import { cookies } from 'next/headers'
 import styles from "./Page.module.css";
 import theme from "../../../components/Theme";
 import Navigation from "../../../components/Navigation";
-import Strawberry from "../../../components/Strawberry";
 import Logo from "../../../components/Logo";
 import Subheader from "../../../components/Subheader";
 import HeaderDecoration from "../../../components/HeaderDecoration";
