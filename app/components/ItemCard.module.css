@@ -36,7 +36,7 @@
     display: none;
 }
 
-.edit {
+.editIcon {
     display: block;
     position: absolute;
     top: 8px;
@@ -50,7 +50,7 @@
     -webkit-transition: opacity 0.15s ease-in-out;
 }
 
-.wrapper:hover .edit {
+.wrapper:hover .editIcon {
     opacity: 1.0;
 }
 
