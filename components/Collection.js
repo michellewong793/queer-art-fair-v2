@@ -7,7 +7,7 @@ const Collection = (props) => {
         image: {
             backgroundImage: props.image,
             backgroundRepeat: 'no-repeat', 
-            backgroundSize: 'auto 200px',
+            backgroundSize: 'auto 150px',
             border: 'none',
             backgroundColor: '#E2F5F6',
             backgroundPosition: 'center center',  

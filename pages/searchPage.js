@@ -18,7 +18,6 @@ export default function SearchPage() {
             <Logo />
             <Subheader />
             <Navigation />
-            <Strawberry heading = {"SEARCH"} showLargeStrawberry = {"none"}/>
             <Spacer height = {2}/>
             <Search/>
             <Footer />

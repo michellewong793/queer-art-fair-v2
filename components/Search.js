@@ -1,8 +1,9 @@
 import style from './search.module.css';
 import React, {useState, useEffect} from 'react';
-import supabaseClient from './supabaseClient';
+//import supabaseClient from './supabaseClient';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import Collection from './Collection';
+import Spacer from './Spacer';
 
 
 //populates search bar with clicked search term 
@@ -41,7 +42,7 @@ export default function Search() {
     const [products, setProducts] = useState([]);
     const [showFilterOptions, setShowFilterOptions] = useState(false);
     const [showFilterButton, setShowFilterButton] = useState(false);
-    //const supabaseClient = createClientComponentClient();
+    const supabaseClient = createClientComponentClient();
     let someProds = [];
     
     //initializes the product array 
@@ -164,12 +165,18 @@ export default function Search() {
                         let resultContainer = document.createElement('resultContainer');
                         resultContainer.classList.add("resultContainer");
                         searchResults.appendChild(resultContainer);
-                        //resultContainer.addEventListener('click', href = "/items/"+row.id);
+                        let itemUrl = "/items/" + row.id;
+                        resultContainer.onclick = function(){window.location = itemUrl};
 
                         let resultImg = document.createElement('img');
                         resultImg.classList.add('resultImg');
                         resultImg.src = row.image_urls[0];
                         resultContainer.appendChild(resultImg);
+
+                        if (row.image_urls.length > 1) {
+                            resultImg.addEventListener('mouseover', () => resultImg.src = row.image_urls[1]);
+                            resultImg.addEventListener('mouseout', () => resultImg.src = row.image_urls[0]);
+                        }
 
                         let result = document.createElement("result");
                         result.classList.add("result");
@@ -228,12 +235,18 @@ export default function Search() {
                         let resultContainer = document.createElement('resultContainer');
                         resultContainer.classList.add("resultContainer");
                         searchResults.appendChild(resultContainer);
-                        //resultContainer.addEventListener('click', href = "/items/"+row.id);
+                        let itemUrl = "/items/" + row.id;
+                        resultContainer.onclick = function(){window.location = itemUrl};
 
                         let resultImg = document.createElement('img');
                         resultImg.classList.add('resultImg');
                         resultImg.src = row.image_urls[0];
                         resultContainer.appendChild(resultImg);
+
+                        if (row.image_urls.length > 1) {
+                            resultImg.addEventListener('mouseover', () => resultImg.src = row.image_urls[1]);
+                            resultImg.addEventListener('mouseout', () => resultImg.src = row.image_urls[0]);
+                        }
 
                         let result = document.createElement("result");
                         result.classList.add("result");
@@ -262,7 +275,7 @@ export default function Search() {
 
         document.getElementById('searchTerm').value = userInput;
 
-        setShowFilterButton(!showFilterButton);
+        setShowFilterButton(true);
 
         let searchResults = document.getElementById('searchResults');
 
@@ -294,14 +307,15 @@ export default function Search() {
 
                         let resultContainer = document.createElement('resultContainer');
                         resultContainer.classList.add("resultContainer");
+                        let itemUrl = "/items/" + row.id;
+                        resultContainer.onclick = function(){window.location = itemUrl};
                         searchResults.appendChild(resultContainer);
-                        //resultContainer.addEventListener('click', href = "/items/"+row.id);
 
                         let resultImg = document.createElement('img');
                         resultImg.classList.add('resultImg');
                         resultImg.src = row.image_urls[0];
                         resultContainer.appendChild(resultImg);
-
+        
                         if (row.image_urls.length > 1) {
                             resultImg.addEventListener('mouseover', () => resultImg.src = row.image_urls[1]);
                             resultImg.addEventListener('mouseout', () => resultImg.src = row.image_urls[0]);
@@ -338,6 +352,8 @@ export default function Search() {
 
     return(
         <div className = {style.columnContainer}>
+            <div className = {style.searchHeader}>Search Products</div>
+            <Spacer height = {2}/>
             <div className = {style.container}>
                 <form autoComplete = "off" id = "form">
                     <div className = {style.rowContainer}>
@@ -374,24 +390,27 @@ export default function Search() {
                             </div>
                         </div>
                     </div>
+                    <Spacer height = {2}/>
+                    <div className = {style.heading}>Shop Our Featured Categories</div>
+                    <div className = {style.collectionContainer}>
+                        <div onClick = {() => getItems("ceramics")}>
+                            <Collection image = {"url('/June17FaireSquare.png')"} text = {"Ceramics"}/>
+                        </div>
+                        <div onClick = {() => getItems("stickers")}>
+                            <Collection image = {"url('/June17FaireSquare.png')"} text = {"Stickers"}/>
+                        </div>
+                        <div onClick = {() => getItems("crochet")}>
+                            <Collection image = {"url('/June17FaireSquare.png')"} text = {"Crochet"}/>
+                        </div>
+                        <div onClick = {() => getItems("paintings")}>
+                            <Collection image = {"url('/June17FaireSquare.png')"} text = {"Paintings"}/>
+                        </div>
+                    </div>
+
                     <div className = {style.searchResults} id = "searchResults"></div>
                 </form>
             </div>
-            <div className = {style.heading}>Shop Our Featured Categories</div>
-            <div className = {style.collectionContainer}>
-                <div onClick = {() => getItems("ceramics")}>
-                    <Collection image = {"url('/June17FaireSquare.png')"} text = {"Ceramics"}/>
-                </div>
-                <div onClick = {() => getItems("stickers")}>
-                    <Collection image = {"url('/June17FaireSquare.png')"} text = {"Stickers"}/>
-                </div>
-                <div onClick = {() => getItems("crochet")}>
-                    <Collection image = {"url('/June17FaireSquare.png')"} text = {"Crochet"}/>
-                </div>
-                <div onClick = {() => getItems("paintings")}>
-                    <Collection image = {"url('/June17FaireSquare.png')"} text = {"Paintings"}/>
-                </div>
-            </div>
+            
         </div>
     );   
 }

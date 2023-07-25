@@ -171,6 +171,10 @@ resultContainer {
     width: 304px;
 }
 
+resultContainer:hover {
+    cursor: pointer;
+}
+
 img {
     height: 304px;
     width: 304px;

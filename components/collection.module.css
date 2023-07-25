@@ -1,7 +1,7 @@
 .container {
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 150px;
     height: auto;
     align-items: center;
     background-color: #FFF9ED;
@@ -14,8 +14,9 @@
 }
 
 .image {
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
+    object-fit: contain;
 }
 
 .text{
