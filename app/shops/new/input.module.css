@@ -5,13 +5,18 @@
     border-radius: 4px;
     width: 100%;
 }
-.input, .submit {
+
+.inputError .border {
+    border-bottom: 3px solid #FF4D4D;
+}
+
+.input {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     vertical-align: top;
 
-    background: white;
+    background-color: white;
     border: none;
     outline: none;
     
@@ -33,14 +38,19 @@
     transform: translate(0px, 2px);
 }
 
-.submit:hover {
-    cursor: pointer;
-    transform: translate(0px, 2px)
+.errorText {
+    font-size: 16px;
+    font-family: 'Helvetica Light';
 }
+
 
 /*Desktop only*/
 @media screen and (min-width: 768px) {
     .input {
         font-size: 24px;
+    }
+
+    .errorText {
+        font-size: 20px;
     }
 }
