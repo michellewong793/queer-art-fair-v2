@@ -6,43 +6,26 @@ import { useRouter } from "next/navigation";
 
 export default function ShopEditForm( props ) {
     const supabase = createClientComponentClient()
-    const user = props.session?.user
     const router = useRouter()
 
-    const nameFromUrl = (props.params?.shop).split('_').join(' ')
     const [name, setName] = useState()
     const [description, setDescription] = useState()
     const [instagram, setInstagram] = useState()
     const [venmo, setVenmo] = useState()
     const [id, setId] = useState()
     const [formError, setFormError] = useState()
-    const [verifiedShopowner, setVerifiedShopowner] = useState(false)
 
-    // gets the shop and verifies that the user is the shopowner
-    const getShop = async() => {
-        let { data, error } = await supabase
-            .from('shops')
-            .select()
-            .eq('name', nameFromUrl)
-            .single()
-        
-        if (error) {
-            console.warn(error)
-            return
-        }
-        if (data && user?.id !== data.owner_id) {
-            router.replace('/shops/'+props.params.shop)
-        }
-        else if (data) {
-            setVerifiedShopowner(true)
-            setId(data.id)
-            setName(data.name)
-            setDescription(data.description)
-            setInstagram(data.instagram)
-            setVenmo(data.venmo)
-        }
-    }
+    // set all of the state variables
+    useEffect(() => {
+        let shop = props?.shop
+        setId(shop.id)
+        setName(shop.name)
+        setDescription(shop.description)
+        setInstagram(shop.instagram)
+        setVenmo(shop.venmo)
+    }, [props?.shop])
 
+    // how to update a shop
     async function updateShop(e) {
         e.preventDefault()
         if (!name) { setFormError("Your shop must have a unique name."); return; }
@@ -66,14 +49,8 @@ export default function ShopEditForm( props ) {
         }
     }
 
-    // retrieve the shop, check if the shopowner is logged in
-    useEffect(() => {
-        getShop()
-    }, [])
-
     return (
         <>
-        {verifiedShopowner ?
             <form onSubmit={(e) => updateShop(e)}>
                 <label>Name: </label>
                 <input
@@ -106,8 +83,7 @@ export default function ShopEditForm( props ) {
                 <button type="submit">Update</button>
 
                 {formError && <p>{formError}</p>}
-            </form> : <div></div>        
-        }
+            </form>     
         </>
     )
 }
