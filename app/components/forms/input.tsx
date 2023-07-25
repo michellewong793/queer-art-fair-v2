@@ -44,6 +44,7 @@ const Input: React.FC<InputProps> = ({
 
     const fieldProps = {
         placeholder,
+        value,
         onChange: handleChange
     }
     
