@@ -84,7 +84,7 @@ export default function ShopEditForm( props ) {
                 error={nameError}
             />
 
-            <Label><strong>*Description</strong></Label>
+            <Label><strong>Description*</strong></Label>
             <Input
                 className={styles.input}
                 type='textarea'
@@ -108,7 +108,7 @@ export default function ShopEditForm( props ) {
                 </div>
 
                 <div>
-                    <Label><strong>Venmo</strong></Label>
+                    <Label><strong>Venmo*</strong></Label>
                     <div className={styles.handleInput}>
                         <img className={styles.logo} src='/logos/Venmo.png'></img>
                         <Input

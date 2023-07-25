@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import ShopEditForm from "./shop-edit-form";
+import ProductEditSection from "./product-edit-section.jsx"
 import styles from "./Page.module.css";
 import theme from "../../../../components/Theme";
 import { redirect } from "next/navigation";
@@ -55,7 +56,7 @@ export default async function Page( {params} ) {
             return data
         }
     }
-    const items = getItems()
+    const items = await getItems()
     
     return (
         <div style={theme.body} className={styles.background}>
@@ -64,7 +65,8 @@ export default async function Page( {params} ) {
             <Subheader />
             <Navigation />
             <div className={styles.content}>
-                {shop && <ShopEditForm shop={shop} items={items}/>}
+                {shop && <ShopEditForm shop={shop}/>}
+                {shop && <ProductEditSection items={items}/>}
             </div>
             <Footer />
         </div>
