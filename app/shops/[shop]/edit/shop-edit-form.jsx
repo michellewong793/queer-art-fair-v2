@@ -3,6 +3,9 @@
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation";
+import Label from "../../../components/forms/label";
+import Input from "../../../components/forms/input";
+import styles from "./ShopEditForm.module.css"
 
 export default function ShopEditForm( props ) {
     const supabase = createClientComponentClient()
@@ -13,6 +16,10 @@ export default function ShopEditForm( props ) {
     const [instagram, setInstagram] = useState()
     const [venmo, setVenmo] = useState()
     const [id, setId] = useState()
+
+    const [nameError, setNameError] = useState(null)
+    const [descriptionError, setDescriptionError] = useState(null)
+    const [venmoError, setVenmoError] = useState(null)
     const [formError, setFormError] = useState()
 
     // set all of the state variables
@@ -28,9 +35,26 @@ export default function ShopEditForm( props ) {
     // how to update a shop
     async function updateShop(e) {
         e.preventDefault()
-        if (!name) { setFormError("Your shop must have a unique name."); return; }
-        else if (!description) { setFormError("Your shop must have a description."); return; }
-        else if (!venmo) { setFormError("Your shop must have a venmo setup so you can receive payments."); return; }
+        let formatError = false;
+        if (!name) { // can't allow shops with the name 'new'
+            setNameError('*Shop name is required.')
+            formatError = true;
+        } else { setNameError(null)}
+        if (name === 'new') {
+            setNameError('*That name is already taken.')
+            formatError = true;
+        }
+        if (!description) {
+            setDescriptionError('*Description is required.')
+            formatError = true;
+        } else {setDescriptionError(null)}
+        if (!venmo) {
+            setVenmoError('*Venmo handle is required.')
+            formatError = true;
+        } else {setVenmoError(null)}
+        if (formatError) {
+            return;
+        }
 
         let { error } = await supabase
             .from('shops')
@@ -50,40 +74,59 @@ export default function ShopEditForm( props ) {
     }
 
     return (
-        <>
-            <form onSubmit={(e) => updateShop(e)}>
-                <label>Name: </label>
-                <input
-                    type="text"
-                    value={name || ''}
-                    onChange={(e) => setName(e.target.value)}
-                />
+        <form onSubmit={(e) => updateShop(e)}>
+            <Label><strong>Name*</strong> Your shop name must be unique and may not contain underscores.</Label>
+            <Input
+                className={styles.input}
+                type='text'
+                value={name || ''}
+                onChange={(data) => setName(data.value)}
+                error={nameError}
+            />
 
-                <label>Description: </label>
-                <textarea
-                    type="text"
-                    value={description || ''}
-                    onChange={(e) => setDescription(e.target.value)}
-                />
+            <Label><strong>*Description</strong></Label>
+            <Input
+                className={styles.input}
+                type='textarea'
+                value={description || ''}
+                onChange={(data) => setDescription(data.value)}
+                error={descriptionError}
+            />
 
-                <label>Instagram: </label>
-                <input
-                    type="text"
-                    value={instagram || ''}
-                    onChange={(e) => setInstagram(e.target.value)}
-                />
+            <div className={styles.handleWrapper}>
+                <div>
+                    <Label><strong>Instagram</strong></Label>
+                    <div className={styles.handleInput}>
+                        <img className={styles.logo} src='/logos/Instagram.png'></img>
+                        <Input
+                            className={styles.input}
+                            type='text'
+                            value={instagram || ''}
+                            onChange={(data) => setInstagram(data.value)}
+                        />
+                    </div>
+                </div>
 
-                <label>Venmo: </label>
-                <input
-                    type="text"
-                    value={venmo || ''}
-                    onChange={(e) => setVenmo(e.target.value)}
-                />
+                <div>
+                    <Label><strong>Venmo</strong></Label>
+                    <div className={styles.handleInput}>
+                        <img className={styles.logo} src='/logos/Venmo.png'></img>
+                        <Input
+                            className={styles.input}
+                            type='text'
+                            value={venmo || ''}
+                            onChange={(data) => setVenmo(data.value)}
+                            error={venmoError}
+                        />
+                    </div>
+                </div>
+            </div>
 
-                <button type="submit">Update</button>
-
-                {formError && <p>{formError}</p>}
-            </form>     
-        </>
+            <Input
+                type='submit'
+                value='Save changes'
+            />
+            {formError && <p>formError</p>}
+        </form>
     )
 }
