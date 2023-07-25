@@ -1,6 +1,7 @@
 import React from "react";
 import styles from './input.module.css'
 import Button from "../../../components/Button";
+import TextareaAutosize from 'react-textarea-autosize';
 
 //TODO: Fix id/eventlistener issue
 
@@ -45,30 +46,16 @@ const Input: React.FC<InputProps> = ({
         placeholder,
         onChange: handleChange
     }
-
-    const textarea = document.getElementById("textarea");
-    textarea?.addEventListener("input", function (e){
-        this.style.height = "auto";
-        this.style.height = this.scrollHeight + "px";
-    });
     
     function inputSwitch() {
         switch(type) {
             case 'textarea':
-                const textarea = (
-                    <textarea 
-                        id={id || "textarea"}
-                        className={styles.input} 
-                        {...fieldProps} /> 
-                );
-                // (textarea as unknown as HTMLTextAreaElement).addEventListener("input", function(e){
-                //     this.style.height = "auto";
-                //     this.style.height = this.scrollHeight + "px";
-                // })
-
                 return (
                     <div className={styles.border}>
-                    {textarea}
+                    <TextareaAutosize 
+                        id={id}
+                        className={styles.input} 
+                        {...fieldProps} /> 
                     </div>
                 )
             case 'number':
