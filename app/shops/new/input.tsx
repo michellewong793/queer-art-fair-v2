@@ -1,7 +1,11 @@
 import React from "react";
 import styles from './input.module.css'
+import Button from "../../../components/Button";
+
+//TODO: Fix id/eventlistener issue
 
 type InputProps = {
+    id?,
     className?,
     type?: string;
     placeholder?: string;
@@ -10,10 +14,13 @@ type InputProps = {
     max?: number;
     step?: number;
 
+    error?: string;
+
     onChange?;
 }
 
 const Input: React.FC<InputProps> = ({
+    id,
     className,
     type,
     placeholder,
@@ -21,6 +28,7 @@ const Input: React.FC<InputProps> = ({
     min,
     max,
     step,
+    error,
     onChange,
 }) => {
     
@@ -43,45 +51,57 @@ const Input: React.FC<InputProps> = ({
         this.style.height = "auto";
         this.style.height = this.scrollHeight + "px";
     });
-
+    
     function inputSwitch() {
         switch(type) {
             case 'textarea':
-                return (
+                const textarea = (
                     <textarea 
-                        id="textarea"
+                        id={id || "textarea"}
                         className={styles.input} 
                         {...fieldProps} /> 
+                );
+                // (textarea as unknown as HTMLTextAreaElement).addEventListener("input", function(e){
+                //     this.style.height = "auto";
+                //     this.style.height = this.scrollHeight + "px";
+                // })
+
+                return (
+                    <div className={styles.border}>
+                    {textarea}
+                    </div>
                 )
             case 'number':
                 return (
+                    <div className={styles.border}>
                     <input className={styles.input}
                         type='number'
                         min={min}
                         max={max}
                         step={step}
                         {...fieldProps} />
+                    </div>
                 )
             case 'submit':
                 return (
-                    <input className={styles.submit}
-                        type='submit'
-                        value={value}
+                    <Button
+                        text={value}
                     />
                 )
             default:
                 return (
+                    <div className={styles.border}>
                     <input className={styles.input} {...fieldProps} />
+                    </div>
                 )
         }
       }
 
     return (
         <>
-        <div className={className}>
-            <div className={styles.border}>
-                {inputSwitch()}
-            </div>
+        <div className={[className, error && styles.inputError].join(" ")}>
+            {inputSwitch()}
+            {error && <p className={styles.errorText}>{error}</p>}
         </div>
         </>
     );
