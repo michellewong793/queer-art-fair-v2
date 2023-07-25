@@ -1,7 +1,7 @@
 'use client'
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useEffect, useState } from "react";
-import ItemCard from './ItemCard'
+import ItemCard from '../../components/ItemCard'
 import Navigation from "../../../components/Navigation";
 import Strawberry from "../../../components/Strawberry";
 import Logo from "../../../components/Logo";
