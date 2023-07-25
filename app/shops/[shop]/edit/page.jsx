@@ -1,7 +1,14 @@
 import { cookies } from "next/headers";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import ShopEditForm from "./shop-edit-form";
+import styles from "./Page.module.css";
+import theme from "../../../../components/Theme";
 import { redirect } from "next/navigation";
+import HeaderDecoration from "../../../../components/HeaderDecoration";
+import Logo from "../../../../components/Logo";
+import Subheader from "../../../../components/Subheader";
+import Navigation from "../../../../components/Navigation";
+import Footer from "../../../../components/Footer";
 
 export default async function Page( {params} ) {
     const supabase = createServerComponentClient({ cookies })
@@ -51,9 +58,16 @@ export default async function Page( {params} ) {
     const items = getItems()
     
     return (
-        <>
-        {shop && <ShopEditForm shop={shop} items={items}/>}
-        </>
+        <div style={theme.body} className={styles.background}>
+            <HeaderDecoration />
+            <Logo />
+            <Subheader />
+            <Navigation />
+            <div className={styles.content}>
+                {shop && <ShopEditForm shop={shop} items={items}/>}
+            </div>
+            <Footer />
+        </div>
     )
     
 }
