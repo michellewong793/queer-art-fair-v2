@@ -21,13 +21,21 @@ export default function ImageSlideshow(props) {
     return (
         <>
         <div className={styles.slideContainer}>
-            <button className={styles.button+' '+styles.left} onClick={()=>previousImage()}>
+            <button 
+                name={'View previous image'}
+                className={styles.button+' '+styles.left} 
+                onClick={()=>previousImage()
+                }>
                 <img src={'/LeftArrow.svg'}/>
             </button>   
             <img className={styles.image} src={imageUrls[slideIndex]}/>
 
-            <button className={styles.button+' '+styles.right} onClick={()=>nextImage()}>
-                <img src={'/RightArrow.svg'}/>
+            <button 
+                name={'View next image'}
+                className={styles.button+' '+styles.right} 
+                onClick={()=>nextImage()}>
+                <img src={'/RightArrow.svg'}
+                />
             </button>
 
             <div className={styles.dotContainer}>
@@ -36,7 +44,7 @@ export default function ImageSlideshow(props) {
                         let selected = slideIndex === k;
                         return (
                             <button key={k}
-                                title={'Jump to image '+k}
+                                name={'Jump to image '+k}
                                 className={styles.dot + (selected ? (' '+styles.selected) : '')} 
                                 onClick={() => setSlideIndex(k)}></button>
                         )
