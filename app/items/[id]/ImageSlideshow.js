@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import styles from './ImageSlideshow.module.css'
-import Button from '../../../components/Button';
 
 export default function ImageSlideshow(props) {
     let imageUrls = props?.imageUrls
