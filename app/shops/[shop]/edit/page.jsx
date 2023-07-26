@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import ShopEditForm from "./shop-edit-form";
-import ProductEditSection from "./ProductEditSection.jsx/index.js"
+import ShopEditForm from "./ShopEditForm";
+import ProductEditSection from "./ProductEditSection"
 import styles from "./page.module.css";
 import theme from "../../../../components/Theme";
 import { redirect } from "next/navigation";

@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import ItemEditForm from './item-edit-form'
+import ItemEditForm from './ItemEditForm'
 
 export default async function Page( {params} ) {
     const supabase = createServerComponentClient({ cookies })

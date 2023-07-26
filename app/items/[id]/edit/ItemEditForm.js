@@ -3,7 +3,7 @@
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation";
-import { ImageManager } from "./image-manager";
+import { ImageManager } from "./ImageManager";
 
 export default function ItemEditForm( props ) {
     const supabase = createClientComponentClient()

@@ -1,6 +1,6 @@
 // the form to add a new item
 
-import ItemForm from './item-form'
+import ItemForm from './ItemForm'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 
