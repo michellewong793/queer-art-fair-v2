@@ -7,6 +7,7 @@ import Logo from "../../../components/Logo";
 import Subheader from "../../../components/Subheader";
 import HeaderDecoration from "../../../components/HeaderDecoration";
 import Footer from "../../../components/Footer";
+import ItemDisplay from "./ItemDisplay"
 import { redirect } from 'next/navigation';
 
 export default async function Page({params}) {
@@ -54,7 +55,7 @@ export default async function Page({params}) {
         <Subheader />
         <Navigation />
         <div className={styles.content}>
-            <h3>Item!</h3>
+            <ItemDisplay item={item} shop={shop}/>
         </div>
         
         <Footer/>
