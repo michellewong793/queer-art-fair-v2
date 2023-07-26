@@ -7,7 +7,7 @@ import Logo from "../../../components/Logo";
 import Subheader from "../../../components/Subheader";
 import HeaderDecoration from "../../../components/HeaderDecoration";
 import Footer from "../../../components/Footer";
-import ShopForm from './shop-form'
+import ShopForm from './ShopForm'
 
 export default async function Page() {
     const supabase = createServerComponentClient({ cookies })

@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import styles from './label.module.css';
+import styles from './Label.module.css';
 
 type LabelProps = {
     className?,
