@@ -9,10 +9,17 @@
     position: relative;
 }
 
+.dotContainer {
+    display: none;
+}
+
 .button {
+    opacity: 0;
+}
+
+.left, .right {
     height: 100%;
     width: 50%;
-
     position: absolute;
     top: 0;
 }
@@ -33,11 +40,10 @@
 
 /*Anything larger than a phone screen*/
 @media screen and (min-width: 480px) {
+
     .button {
         display: flex;
         align-items: center;
-
-        width: 100px;
 
         background-color: rgba(64, 64, 64, 0.5);
         backdrop-filter: blur(2px);
@@ -47,20 +53,8 @@
         transition: opacity 0.4s ease-in-out;
     }
 
-    .left {
-        justify-content: left;
-    }
-
-    .right {
-        justify-content: right;
-    }
-
     .slideContainer:hover .button {
         opacity: 1.0;
-    }
-
-    .button:hover {
-        cursor: pointer;
     }
 
     .button img {
@@ -73,5 +67,60 @@
         opacity: 1.0;
     }
 
+    .left, .right {
+        width: 100px;
+    }
+
+    .left:hover, .right:hover {
+        cursor: pointer;
+    }
+
+    .left {
+        justify-content: left;
+    }
+
+    .right {
+        justify-content: right;
+    }
+
+    .dotContainer {
+        position: absolute;
+        bottom: 16px;
+        right: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .dotBackdrop {
+        width: fit-content;
+        padding: 8px 24px;
+        border-radius: 16px;
+
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .dot {
+        width: 20px;
+        height: 20px;
+
+        /* border: 1px solid rgba(255, 255, 255, 0.275); */
+        border: none;
+        border-radius: 50%;
+
+        background-color: rgba(255, 255, 255, 0.3);
+
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    .dot:hover {
+        background: rgba(255, 255, 255, 0.7);
+        cursor:pointer;
+    }
     
+    .selected {
+        background: rgba(255, 255, 255, 1) !important;
+    }
 }

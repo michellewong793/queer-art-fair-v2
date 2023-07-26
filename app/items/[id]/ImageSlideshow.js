@@ -29,6 +29,20 @@ export default function ImageSlideshow(props) {
             <button className={styles.button+' '+styles.right} onClick={()=>nextImage()}>
                 <img src={'/RightArrow.svg'}/>
             </button>
+
+            <div className={styles.dotContainer}>
+                <div className={styles.button+' '+styles.dotBackdrop}>
+                    {imageUrls.map((url, k) => {
+                        let selected = slideIndex === k;
+                        return (
+                            <button key={k}
+                                title={'Jump to image '+k}
+                                className={styles.dot + (selected ? (' '+styles.selected) : '')} 
+                                onClick={() => setSlideIndex(k)}></button>
+                        )
+                    })}
+                </div>
+            </div>
         </div>
         </>
     )
