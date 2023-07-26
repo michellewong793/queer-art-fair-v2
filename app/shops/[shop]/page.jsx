@@ -3,12 +3,11 @@ import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useEffect, useState } from "react";
 import ItemCard from '../../components/ItemCard'
 import Navigation from "../../../components/Navigation";
-import Strawberry from "../../../components/Strawberry";
 import Logo from "../../../components/Logo";
 import Subheader from "../../../components/Subheader";
 import HeaderDecoration from "../../../components/HeaderDecoration";
 import Footer from "../../../components/Footer";
-import styles from "./Page.module.css";
+import styles from "./page.module.css";
 import theme from "../../../components/Theme";
 import Handles from "./Handles"
 

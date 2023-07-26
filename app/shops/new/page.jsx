@@ -1,6 +1,6 @@
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
-import styles from "./Page.module.css";
+import styles from "./page.module.css";
 import theme from "../../../components/Theme";
 import Navigation from "../../../components/Navigation";
 import Logo from "../../../components/Logo";
