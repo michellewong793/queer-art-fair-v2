@@ -6,7 +6,7 @@ import CSS from 'csstype'
 import styles from './Button.module.css'
 
 type ButtonProps = {
-    className?,
+    name?,
 
     text?: string;
     textColor?: string;
@@ -20,6 +20,7 @@ type ButtonProps = {
 
 const Button: React.FC<ButtonProps> = ({
     text = 'Button Text', 
+    name = text,
     textColor = 'white',
     backgroundColor = '#002809', 
     borderColor = backgroundColor,
@@ -48,13 +49,6 @@ const Button: React.FC<ButtonProps> = ({
         }
     }
 
-    /**Set hover colors */
-    // const buttonStyle: CSS.Properties = {
-    //     backgroundColor: isHovered ? hoverBackgroundColor : backgroundColor,
-    //     color: isHovered ? hoverTextColor : textColor,
-    //     border: '2px solid ' + (isHovered ? hoverBorderColor : borderColor)
-    // }
-
     const buttonStyle: CSS.Properties = {
         backgroundColor: backgroundColor,
         color: textColor,
@@ -67,6 +61,7 @@ const Button: React.FC<ButtonProps> = ({
 
     return (
         <button style={buttonStyle}
+            name={name}
             className={styles.button}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
