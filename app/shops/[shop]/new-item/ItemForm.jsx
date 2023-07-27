@@ -11,13 +11,10 @@ import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
 
-export default function ItemForm({ session }) {
+export default function ItemForm(props) {
     const supabase = createClientComponentClient()
-    const user = session?.user
+    const shopId = props?.shop.id;
 
-    const [loading, setLoading] = useState(true);
-    const [shops, setShops] = useState([]);
-    const [shopId, setShopId] = useState();
     const [itemId, setId] = useState();
     const [itemName, setName] = useState();
     const [itemDescription, setDescription] = useState();
@@ -31,26 +28,6 @@ export default function ItemForm({ session }) {
 
     const [formError, setFormError] = useState(null);
 
-
-    // get all of the seller's shops
-    useEffect(() => {
-        async function getShops() {
-            setLoading(true);
-            let { data, error } = await supabase
-                .from('shops')
-                .select('id, name')
-                .eq('owner_id', user?.id)
-            if (error) {
-                console.warn(error);
-            } else if (data) {
-                setShops(data);
-            }
-            setLoading(false);
-        }
-
-        getShops();
-    }, [])
-
     async function getImage(e) {
         let file = e.target.files[0];
         if (file) {
@@ -61,7 +38,6 @@ export default function ItemForm({ session }) {
     // adds a new row to the "items" table with the new item info (except the image urls)
     const createItem = async (e) => {
         e.preventDefault();
-        if (shops.length == 0)  { setFormError("You must create a shop before adding an item.");  return; }
         if (!shopId)            { setFormError('You must select a shop or create a new one.');    return; }
         if (!itemName)          { setFormError('You must add a name for your item.');             return; }
         if (!itemDescription)   { setFormError('You must give a description of your item.');      return; }
@@ -161,24 +137,11 @@ export default function ItemForm({ session }) {
         updateItemImageUrls();
 
         // redirect to the new item
-        redirect('items/' + itemId.toString(), 'push');
+        redirect('/items/' + itemId.toString(), 'push');
     }, [imageUrls])
 
     return (
         <form onSubmit={createItem}>
-            <select 
-                name='shops' 
-                onChange={(e)=> { setShopId(e.target.value)}}
-            >
-                <option value={''}>--Select--</option>
-                {
-                    shops.map(shop => {
-                        return(
-                            <option key={shop.id} value={shop.id}>{shop.name}</option>
-                        )   
-                    })
-                }
-            </select>
             <input
                 type='text'
                 placeholder='Item Name'
@@ -241,7 +204,7 @@ export default function ItemForm({ session }) {
                 })
             }
 
-            <button disabled={loading}>Add</button>
+            <button>Add</button>
             {formError && <p>{formError}</p>}
         </form>
     )
