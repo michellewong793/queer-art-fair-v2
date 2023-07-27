@@ -55,7 +55,10 @@ export default async function Page({params}) {
         <Subheader />
         <Navigation />
         <div className={styles.content}>
+            {item ? 
             <ItemDisplay item={item} shop={shop}/>
+            :
+            <p>Sorry, we couldn't find this item.</p>}
         </div>
         
         <Footer/>

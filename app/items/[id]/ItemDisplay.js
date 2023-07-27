@@ -18,8 +18,19 @@ export default function ItemDisplay(props) {
 
             <h3>Details</h3>
             <p className={styles.description}>{item?.description}</p>
-            <Button text='Order Now'/>
+            <Button
+                className={styles.orderButton}
+                text='Order Now'
+                />
             <h3>Tags</h3>
+            <p>
+            {
+                item?.keywords.map((word, k) => (
+                    // TODO: make this link to search for word
+                    <span><Link href='/'>{word}</Link>, </span>
+                ))
+            }
+            </p>
         </div>
     )
 }
