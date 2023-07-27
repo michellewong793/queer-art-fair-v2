@@ -29,6 +29,13 @@ export default function ItemForm(props) {
 
     const [imageUrls, setImageUrls] = useState([]);
 
+    const [nameError, setNameError] = useState(null);
+    const [descriptionError, setDescriptionError] = useState(null);
+    const [priceError, setPriceError] = useState(null);
+    const [quantityError, setQuantityError] = useState(null);
+    const [keywordError, setKeywordError] = useState(null);
+    const [imageError, setImageError] = useState(null);
+
     const [formError, setFormError] = useState(null);
 
     async function getImage(data) {
@@ -41,12 +48,36 @@ export default function ItemForm(props) {
     // adds a new row to the "items" table with the new item info (except the image urls)
     const createItem = async (e) => {
         e.preventDefault();
-        if (!shopId)            { setFormError('You must select a shop or create a new one.');    return; }
-        if (!itemName)          { setFormError('You must add a name for your item.');             return; }
-        if (!itemDescription)   { setFormError('You must give a description of your item.');      return; }
-        if (!itemPrice)         { setFormError('Your item must have a price.');                   return; }
-        if (!itemQuantity)      { setFormError('You must provide a quantity for your item.');     return; }
-        if (images.length == 0) { setFormError('You must add at least one image of your item. '); return; }
+
+        let formatError = false;
+        if (!itemName){ 
+            setNameError('*You must add a name for your item.');
+            formatError = true;
+        } else { setNameError(false); }
+        if (!itemDescription){ 
+            setDescriptionError('*You must add a description for your item.');
+            formatError = true;
+        } else { setDescriptionError(false); }
+        if (!itemPrice){ 
+            setPriceError('*You must add a price for your item.');
+            formatError = true;
+        } else { setQuantityError(false); }
+        if (!itemQuantity){ 
+            setQuantityError('*You must add a quantity for your item.');
+            formatError = true;
+        } else { setQuantityError(false); }
+        if (keywords.length === 0){ 
+            setKeywordError('*You must add keywords for your item.');
+            formatError = true;
+        } else { setKeywordError(false); }
+        if (images.length == 0){ 
+            setImageError('*You must add at least one image of your item.');
+            formatError = true;
+        } else { setImageError(false); }
+
+        if (formatError) {
+            return;
+        }
         
         // reset imageUrls
         setImageUrls([]);
@@ -155,6 +186,7 @@ export default function ItemForm(props) {
                 onChange={(data)=>{
                     setName(data.value);
                 }}
+                error={nameError}
             />
 
         <Label><strong>Description* </strong>Write a description for your item. Include all details you think a customer would need to know, for instance size/dimensions, materials, what's included in the purchase, etc.</Label>
@@ -164,6 +196,7 @@ export default function ItemForm(props) {
             onChange={(data)=>{
                 setDescription(data.value);
             }}
+            error={descriptionError}
         />
 
         <Label><strong>Price* </strong>Add the price of your item in USD. Consider factoring in additional costs such as shipping when setting a price.</Label>
@@ -175,6 +208,7 @@ export default function ItemForm(props) {
             onChange={(data) => {
                 setPrice(data.value);
             }}
+            error={priceError}
         />
 
         <Label><strong>Quantity* </strong>Add the quantity of your item--how many of this item would you be able to sell?</Label>
@@ -185,6 +219,7 @@ export default function ItemForm(props) {
             onChange={(data) => {
                 setQuantity(data.value);
             }}
+            error={quantityError}
         />
 
         <Label><strong>Keywords*</strong> Add keywords for your item. Separate keywords with commas or new lines. We use keywords to determine whether your item matches a users' search, so add all relevant search terms and check your spelling.</Label>
@@ -194,12 +229,14 @@ export default function ItemForm(props) {
             onChange={(data) => {
                 setKeywords((data.value).split(/[ \n]*,[ \n]*|[, ]*\n[, ]*/).filter(keyword => keyword.match('[A-Za-z]'))); //keywords must contain letters
             }}
+            error={keywordError}
         />
 
         <Input
             type='file'
             accept="image/png, image/jpeg, image/jpg"
             onChange={(data) => getImage(data)} 
+            error={imageError}
         />
         {
             images.map((image, k) => {
