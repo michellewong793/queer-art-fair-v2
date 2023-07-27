@@ -11,7 +11,8 @@ import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import Label from "../../../components/forms/Label";
 import Input from "../../../components/forms/Input";
-
+import Button from "../../../../components/Button";
+import styles from "./ItemForm.module.css"
 
 export default function ItemForm(props) {
     const supabase = createClientComponentClient()
@@ -30,8 +31,8 @@ export default function ItemForm(props) {
 
     const [formError, setFormError] = useState(null);
 
-    async function getImage(e) {
-        let file = e.target.files[0];
+    async function getImage(data) {
+        let file = data.files[0]
         if (file) {
             setImages(arr => [ ...arr, file]);
         }
@@ -195,6 +196,28 @@ export default function ItemForm(props) {
             }}
         />
 
+        <Input
+            type='file'
+            accept="image/png, image/jpeg, image/jpg"
+            onChange={(data) => getImage(data)} 
+        />
+        {
+            images.map((image, k) => {
+                return(
+                    <div key={k} className={styles.imageContainer}>
+                        <img 
+                            src={URL.createObjectURL(image)} 
+                            width='100px'
+                            />
+                        <Button 
+                            className={styles.deleteButton}
+                            text='x'
+                            onClick={() => {setImages(images.slice(0, k).concat(images.slice(k + 1, images.length)))}} 
+                        />                      
+                    </div>
+                )        
+            })
+        }
 
         <Input
             type='submit'
