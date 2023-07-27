@@ -7,6 +7,7 @@ import styles from './Button.module.css'
 
 type ButtonProps = {
     name?,
+    className?,
 
     text?: string;
     textColor?: string;
@@ -19,6 +20,7 @@ type ButtonProps = {
 }
 
 const Button: React.FC<ButtonProps> = ({
+    className,
     text = 'Button Text', 
     name = text,
     textColor = 'white',
@@ -62,7 +64,7 @@ const Button: React.FC<ButtonProps> = ({
     return (
         <button style={buttonStyle}
             name={name}
-            className={styles.button}
+            className={styles.button + ' ' + className}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={handleOnClick}>
