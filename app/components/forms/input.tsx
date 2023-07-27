@@ -14,6 +14,7 @@ type InputProps = {
     min?: number;
     max?: number;
     step?: number;
+    accept?: string;
 
     error?: string;
 
@@ -29,6 +30,7 @@ const Input: React.FC<InputProps> = ({
     min,
     max,
     step,
+    accept,
     error,
     onChange,
 }) => {
@@ -37,7 +39,8 @@ const Input: React.FC<InputProps> = ({
     const handleChange = (event) => {
         if (typeof onChange === "function") {
             onChange({
-                value: event.target.value
+                value: event.target.value,
+                files: event.target.files
             })
         }
     }
@@ -69,6 +72,28 @@ const Input: React.FC<InputProps> = ({
                         step={step}
                         {...fieldProps} />
                     </div>
+                )
+            case 'file':
+                return (
+                    <>
+                    <label className={styles.fileInputLabel}>
+                        <div className={styles.fileInputBorder}>
+                            <div className={styles.fileInputWrapper}>
+                                <input 
+                                    className={styles.fileInput}
+                                    type='file'
+                                    accept={accept}
+                                    {...fieldProps} />
+                                    <img src='/PlusIcon.svg'/>
+                            </div>
+                        </div>
+                    </label>
+                    </>
+                    // <div className={styles.fileBorder}>
+                    //     <input className={styles.fileInput}
+                    //         type='file'
+                    //         {...fieldProps} />
+                    // </div>
                 )
             case 'submit':
                 return (

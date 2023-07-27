@@ -1,16 +1,28 @@
 /*Global styles*/
 
-.border {
+.fileInputLabel {
+    width: fit-content;
+    display: inline-block;
+}
+
+.border, .fileInputBorder {
     border-bottom: 3px solid #B0B0B0;
     border-radius: 4px;
+}
+
+.border {
     width: 100%;
+}
+
+.fileInputBorder {
+    width: fit-content;
 }
 
 .inputError .border {
     border-bottom: 3px solid #FF4D4D;
 }
 
-.input {
+.input, .fileInputWrapper {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -19,10 +31,13 @@
     background-color: white;
     border: none;
     outline: none;
-    
+
+    border-radius: 4px;
+}
+
+.input {
     width: 100%;
     padding: 16px;
-    border-radius: 4px;
 
     font-size: 16px;
     font-family: Helvetica;
@@ -38,6 +53,24 @@
     transform: translate(0px, 2px);
 }
 
+.fileInputWrapper {
+    width: 96px;
+    height: 96px;
+    position: relative;
+}
+
+.fileInputWrapper:hover {
+    cursor: pointer;
+    transform: translate(0px, 2px);
+}
+
+.fileInput {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+}
+
 .errorText {
     font-size: 16px;
     font-family: 'Helvetica Light';
@@ -48,6 +81,12 @@
 @media screen and (min-width: 768px) {
     .input {
         font-size: 24px;
+    }
+
+    .fileInputWrapper {
+        width: 200px;
+        height: 200px;
+        position: relative;
     }
 
     .errorText {
