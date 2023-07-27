@@ -2,13 +2,20 @@
     background-color: #FFF9ED;
     z-index: 1;
     height: 120px;
-    width: 400px;
+    width: 360px;
     position: fixed;
     top: 50%;
     left: 50%;
     border-radius: 5px;
     margin-top: -60px;
-    margin-left: -200px;
+    margin-left: -180px;
+}
+
+@media(min-width: 768px) {
+    .bigContainer{
+        width: 400px;
+        margin-left: -200px;
+    }
 }
 
 .overlayContent {
@@ -35,12 +42,21 @@
 
 .shareOptions {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 100px 100px 100px;
     gap: 8px;
     text-align: center;
-    margin-left: 16px;
-    margin-right: 16px;
-    width: 368px
+    margin-left: auto;
+    margin-right: auto;
+    width: 320px
+}
+
+@media (min-width: 768px) {
+    .shareOptions {
+        grid-template-columns: auto auto auto;
+        margin-left: 16px;
+        margin-right: 16px;
+        width: 368px;
+    }
 }
 
 .option {
@@ -100,9 +116,18 @@
     justify-content: space-between;
     height: 36px;
     margin: 8px;
+    width: 350px
+}
+
+@media (min-width: 768px) {
+    .rowContainer {
+        width: 390px;
+    }
 }
 
 .shareHeading {
     font-size: 24px;
     font-family: "ClementePDae";
+    margin-top: auto;
+    margin-bottom: auto;
 }
