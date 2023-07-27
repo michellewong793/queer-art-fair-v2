@@ -18,6 +18,8 @@ export default function ItemDisplay(props) {
 
             <h3>Details</h3>
             <p className={styles.description}>{item?.description}</p>
+
+            {/* TODO: actually have button do something */}
             <Button
                 className={styles.orderButton}
                 text='Order Now'
