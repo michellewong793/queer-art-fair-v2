@@ -21,9 +21,12 @@ export default function Login() {
         <Logo />
         <Subheader />
         <Navigation />
-        <Strawberry heading = {"LOGIN"} showMediumStrawberry = {"none"}/>
-        <Spacer height = {4}/>
+        <Spacer height = {3}/>
         <div className = {style.columnContainer}>
+            <div className = {style.heading}>
+                Login
+            </div>
+            <Spacer height = {3}/>
             <button className = {style.signInGoogle} onClick={() => signInWithGoogle()}>
                 <img className = {style.googleLogo} src = {"../../googleLogo.svg"}/>
                 <Spacer width = {1}/>
@@ -34,7 +37,7 @@ export default function Login() {
             <Spacer height = {2} />
             <div className = {style.bold}>OR</div>
             <Spacer height = {2}/>
-            <input placeholder='enter your email...' className = {style.enterEmail} onChange={(e) => setEmail(e.target.value)}></input>
+            <input placeholder='Enter your email...' className = {style.enterEmail} onChange={(e) => setEmail(e.target.value)}></input>
             <Spacer height = {1}/>
             <button className = {style.emailSignIn} onClick={() => signInWithMagicLink({email: email})}>
                 <div className = {style.signInText}>
