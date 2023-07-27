@@ -1,0 +1,108 @@
+.bigContainer {
+    background-color: #FFF9ED;
+    z-index: 1;
+    height: 120px;
+    width: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border-radius: 5px;
+    margin-top: -60px;
+    margin-left: -200px;
+}
+
+.overlayContent {
+    position: relative;
+}
+
+.shareButton {
+    height: 40px;
+    width: auto;
+}
+
+.shareButton:hover {
+    cursor: pointer;
+}
+
+.close {
+    height: 32px;
+    width: auto;
+}
+
+.close:hover {
+    cursor: pointer;
+}
+
+.shareOptions {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 8px;
+    text-align: center;
+    margin-left: 16px;
+    margin-right: 16px;
+    width: 368px
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+}
+
+.option:hover {
+    cursor: pointer;
+}
+
+.shareText {
+    font-size: 16px;
+    font-family: "Helvetica";
+}
+
+.shareImages {
+    height: 32px;
+    width: auto;
+}
+
+.linkCopied {
+    background-color: #FFF9ED;
+    z-index: 1;
+    height: 36px;
+    width: 200px;
+    position: fixed;
+    top: 90%;
+    left: 2.5%;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.linkCopiedText {
+    font-size: 16px;
+    font-family: "Helvetica";
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.wholePage {
+    height: 1000px;
+    width: 100%;
+    opacity: 0.5;
+    background-color: gray;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.rowContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 36px;
+    margin: 8px;
+}
+
+.shareHeading {
+    font-size: 24px;
+    font-family: "ClementePDae";
+}
