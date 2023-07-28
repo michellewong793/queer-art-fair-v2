@@ -238,6 +238,8 @@ export default function ItemForm(props) {
             error={keywordError}
         />
 
+        <Label><strong>Images*</strong> Add images of your item. Consider adding images taken from a variety of angles that illustrate important aspects of your item like size, shape, color, and texture.</Label>
+
         <div className={styles.imageContainer}>
         
         {
