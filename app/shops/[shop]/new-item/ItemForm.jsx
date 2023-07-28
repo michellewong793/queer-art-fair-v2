@@ -232,16 +232,12 @@ export default function ItemForm(props) {
             error={keywordError}
         />
 
-        <Input
-            type='file'
-            accept="image/png, image/jpeg, image/jpg"
-            onChange={(data) => getImage(data)} 
-            error={imageError}
-        />
+        <div className={styles.imageContainer}>
+        
         {
             images.map((image, k) => {
                 return(
-                    <div key={k} className={styles.imageContainer}>
+                    <div key={k} className={styles.imageWrapper}>
                         <img 
                             src={URL.createObjectURL(image)} 
                             width='100px'
@@ -249,12 +245,21 @@ export default function ItemForm(props) {
                         <Button 
                             className={styles.deleteButton}
                             text='x'
+                            backgroundColor='#666'
                             onClick={() => {setImages(images.slice(0, k).concat(images.slice(k + 1, images.length)))}} 
                         />                      
                     </div>
                 )        
             })
         }
+
+        <Input
+            type='file'
+            accept="image/png, image/jpeg, image/jpg"
+            onChange={(data) => getImage(data)} 
+            error={imageError}
+        />
+        </div>
 
         <Input
             type='submit'
