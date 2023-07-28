@@ -1,20 +1,22 @@
+.link {
+    width: 100%;
+}
 .wrapper {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
 
     width: 100%;
+    height: fit-content;
     position: relative;
 
     background-color: #FFF9ED;
 }
 
-.wrapper a {
-    text-decoration: none;
-}
-
 .wrapper img {
+    display: block;
     opacity: 0.4;
+    width: 100%;
     transition: opacity 0.15s ease-in-out;
     -moz-transition: opacity 0.15s ease-in-out;
     -webkit-transition: opacity 0.15s ease-in-out;
@@ -26,7 +28,9 @@
 
 /*desktop only*/
 @media screen and (min-width: 768px) {
-
+    .link {
+        width: fit-content;
+    }
     .wrapper {
         width: 320px;
         height: 320px;

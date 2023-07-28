@@ -4,14 +4,12 @@ import Link from 'next/link'
 
 export default function NewItemCard() {
     return (
-        <Clickable>
-        <div className={styles.wrapper} title='New item'>
-            <Link href='./new-item' target="_blank" rel="noopener noreferrer">
-                <div className={styles.plus}>
-                    <img src='/PlusIcon.svg' />
-                </div>
-            </Link>
-        </div>
-        </Clickable>
+        <Link className={styles.link} href='./new-item' target="_blank" rel="noopener noreferrer">
+            <Clickable className={styles.wrapper}>
+                    <div className={styles.plus}>
+                        <img src='/PlusIcon.svg' />
+                    </div>
+            </Clickable>
+        </Link>
     )
 }
