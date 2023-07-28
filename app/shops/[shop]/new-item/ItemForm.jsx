@@ -261,7 +261,7 @@ export default function ItemForm(props) {
         }
 
         <Input
-            className={styles.input}
+            className={styles.input + ' ' + styles.fileInput}
             type='file'
             accept="image/png, image/jpeg, image/jpg"
             onChange={(data) => getImage(data)} 

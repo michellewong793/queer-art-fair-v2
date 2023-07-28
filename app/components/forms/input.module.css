@@ -5,24 +5,17 @@
     display: inline-block;
 }
 
-.border, .fileInputBorder {
+.border {
+    width: 100%;
     border-bottom: 3px solid #B0B0B0;
     border-radius: 4px;
 }
 
-.border {
-    width: 100%;
-}
-
-.fileInputBorder {
-    width: fit-content;
-}
-
-.inputError .border, .inputError .fileInputBorder {
+.inputError .border {
     border-bottom: 3px solid #FF4D4D;
 }
 
-.input, .fileInputWrapper {
+.input {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -33,9 +26,7 @@
     outline: none;
 
     border-radius: 4px;
-}
 
-.input {
     width: 100%;
     padding: 16px;
 
@@ -50,17 +41,6 @@
     outline: #FE88CC 2px solid;
     outline-offset: -3px;
 
-    transform: translate(0px, 2px);
-}
-
-.fileInputWrapper {
-    width: 96px;
-    height: 96px;
-    position: relative;
-}
-
-.fileInputWrapper:hover {
-    cursor: pointer;
     transform: translate(0px, 2px);
 }
 
@@ -81,12 +61,6 @@
 @media screen and (min-width: 768px) {
     .input {
         font-size: 24px;
-    }
-
-    .fileInputWrapper {
-        width: 200px;
-        height: 200px;
-        position: relative;
     }
 
     .errorText {

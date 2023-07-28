@@ -2,6 +2,7 @@ import React from "react";
 import styles from './Input.module.css'
 import Button from "../../../components/Button";
 import TextareaAutosize from 'react-textarea-autosize';
+import NewCard from "../NewCard";
 
 //TODO: Fix id/eventlistener issue
 
@@ -77,23 +78,14 @@ const Input: React.FC<InputProps> = ({
                 return (
                     <>
                     <label className={styles.fileInputLabel}>
-                        <div className={styles.fileInputBorder}>
-                            <div className={styles.fileInputWrapper}>
-                                <input 
-                                    className={styles.fileInput}
-                                    type='file'
-                                    accept={accept}
-                                    {...fieldProps} />
-                                    <img src='/PlusIcon.svg'/>
-                            </div>
-                        </div>
+                        <NewCard />
+                        <input 
+                            className={styles.fileInput}
+                            type='file'
+                            accept={accept}
+                            {...fieldProps} />
                     </label>
                     </>
-                    // <div className={styles.fileBorder}>
-                    //     <input className={styles.fileInput}
-                    //         type='file'
-                    //         {...fieldProps} />
-                    // </div>
                 )
             case 'submit':
                 return (

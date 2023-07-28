@@ -27,6 +27,12 @@
     height: 96px;
     object-fit: cover;
     border-radius: 4px;
+    display: block;
+}
+
+.fileInput {
+    width: 96px;
+    height: 96px;
 }
 
 .deleteButton {
@@ -47,8 +53,8 @@
 
 /*Desktop only*/
 @media screen and (min-width: 768px) {
-    .image {
+    .image, .fileInput {
         width: 200px;
         height: 200px;
-    }
-}  
+    } 
+}
