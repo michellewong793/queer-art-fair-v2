@@ -11,7 +11,6 @@ import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import Label from "../../../components/forms/Label";
 import Input from "../../../components/forms/Input";
-import Button from "../../../../components/Button";
 import styles from "./ItemForm.module.css"
 import Clickable from "../../../components/Clickable";
 
