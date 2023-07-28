@@ -16,7 +16,45 @@ export default async function Page( {params} ) {
     const {
         data: { session },
     } = await supabase.auth.getSession()
+
+    const user = session?.user
     
+    // function to retrieve the item and all its data
+    async function getItem() {
+        let { data, error } = await supabase
+            .from('items')
+            .select()
+            .eq('id', params?.id)
+            .single()
+        if (error) {
+            return
+        }
+        else if (data) {
+            return data;
+        }
+    }
+
+    const item = await getItem();
+
+    // function to check who owns the shop the item is from, and if it's the same person that's currently logged in. If not, the user is redirected from this page.
+    async function verifyShopowner() {
+        if (!item) return;
+
+        let { data, error } = await supabase
+            .from('shops')
+            .select('owner_id')
+            .eq('id', item.shop_id)
+            .single()
+        
+        if (error || (data && data.owner_id !== user?.id)) {
+            //redirect('/items/'+item.id)
+        }
+        else {
+            return true;
+        }
+    }
+
+    const verifiedShopowner = await verifyShopowner();
     
     return (
         <div style={theme.body} className={styles.background}>
@@ -25,7 +63,7 @@ export default async function Page( {params} ) {
             <Subheader />
             <Navigation />
             <div className={styles.content}>
-                <ItemEditForm params={params} session={session}/>
+                {item && <ItemEditForm item={item}/>}
             </div>
             <Footer />
         </div>

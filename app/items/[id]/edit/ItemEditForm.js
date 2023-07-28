@@ -6,57 +6,18 @@ import { useRouter } from "next/navigation";
 import { ImageManager } from "./ImageManager";
 
 export default function ItemEditForm( props ) {
+    const item = props?.item
     const supabase = createClientComponentClient()
-    const user = props.session?.user
     const router = useRouter();
 
-    const [shopId, setShopId] = useState()
-    const [name, setName] = useState()
-    const [description, setDescription] = useState()
-    const [price, setPrice] = useState()
+    const [name, setName] = useState(item?.name)
+    const [description, setDescription] = useState(item?.description)
+    const [price, setPrice] = useState(item?.price)
     // TODO: how to deal with quantity without screwing up orders in progress
-    const [quantity, setQuantity] = useState()
-    const [keywords, setKeywords] = useState([])
+    const [quantity, setQuantity] = useState(item?.quantity)
+    const [keywords, setKeywords] = useState(item?.keywords)
      // TODO: still need to deal with images
     const [formError, setFormError] = useState()
-    const [verifiedShopowner, setVerifiedShopowner] = useState(false)
-    
-    // function to retrieve the item and all its data
-    const getItem = async() => {
-        let { data, error } = await supabase
-            .from('items')
-            .select()
-            .eq('id', props.params?.id)
-            .single()
-        if (error) {
-            console.warn(error)
-            return
-        }
-        else if (data) {
-            setShopId(data.shop_id)
-            setName(data.name)
-            setDescription(data.description)
-            setPrice(data.price)
-            setQuantity(data.quantity)
-            setKeywords(data.keywords)
-        }
-    }
-
-    // function to check who owns the shop the item is from, and if it's the same person that's currently logged in. If not, the user is redirected from this page.
-    const checkShopowner = async() => {
-        let { data, error } = await supabase
-            .from('shops')
-            .select('owner_id')
-            .eq('id', shopId)
-            .single()
-        
-        if (error || (data && data.owner_id !== user?.id)) {
-            router.replace('/items/'+props.params.id)
-        } 
-        else if (data) {
-            setVerifiedShopowner(true)
-        }
-    }
 
     // what happens when we can't update the item
     async function updateItem(e) {
@@ -75,28 +36,17 @@ export default function ItemEditForm( props ) {
                 quantity: quantity,
                 keywords: keywords
             })
-            .eq('id', props.params.id)
+            .eq('id', item?.id)
         
         if (error) {
             setFormError("Your item could not be updated. Error: ", error.message)
         } else {
-            router.push('/items/'+props.params.id)
+            router.push('/items/'+item?.id)
         }
     }
 
-    // retrieve the item (including its shop id)
-    useEffect(() => {
-        getItem()
-    }, [])
-
-    // once we know what the shop id is, check who the shopowner is
-    useEffect(() => {
-        if (shopId) checkShopowner()
-    }, [shopId])
-
     return (
         <>
-        {verifiedShopowner ?
             <>
             <form onSubmit={(e) => updateItem(e)}>
                 <label>Name: </label>
@@ -158,8 +108,7 @@ export default function ItemEditForm( props ) {
             </form> 
             <ImageManager itemId={props.params?.id} />
             
-            </>: <div></div>
-        }  
+            </>
         </>
 
     )
