@@ -1,5 +1,13 @@
 import { cookies } from "next/headers";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import styles from "./page.module.css";
+import theme from "../../../../components/Theme";
+import { redirect } from "next/navigation";
+import HeaderDecoration from "../../../../components/HeaderDecoration";
+import Logo from "../../../../components/Logo";
+import Subheader from "../../../../components/Subheader";
+import Navigation from "../../../../components/Navigation";
+import Footer from "../../../../components/Footer";
 import ItemEditForm from './ItemEditForm'
 
 export default async function Page( {params} ) {
@@ -11,9 +19,16 @@ export default async function Page( {params} ) {
     
     
     return (
-        <>
-        <ItemEditForm params={params} session={session}/>
-        </>
+        <div style={theme.body} className={styles.background}>
+            <HeaderDecoration />
+            <Logo />
+            <Subheader />
+            <Navigation />
+            <div className={styles.content}>
+                <ItemEditForm params={params} session={session}/>
+            </div>
+            <Footer />
+        </div>
     )
     
-}
+} 
