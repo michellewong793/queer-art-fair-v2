@@ -1,4 +1,13 @@
 /*Global styles*/
+.instructions {
+    font-family: Helvetica;
+    margin-bottom: 32px;
+    margin-top: 8px;
+}
+.input {
+    margin-bottom: 32px;
+}
+
 .imageContainer {
     display: flex;
     flex-wrap: wrap;

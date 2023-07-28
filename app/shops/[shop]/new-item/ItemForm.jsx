@@ -178,10 +178,11 @@ export default function ItemForm(props) {
     return (
         <>
         <h3>Create Item</h3>
-        <p>You're adding an item to your shop <b>{props?.shop.name}</b>. Fill out the form fields below.</p>
+        <p className={styles.instructions}>You're adding an item to your shop <b>{props?.shop.name}</b>. Fill out the form fields below.</p>
         <form onSubmit={createItem}>
             <Label><strong>Name* </strong>Give your item a concise, descriptive name.</Label>
             <Input
+                className={styles.input}
                 type='text'
                 placeholder='eg. Mini Pink Panda Crocheted Plush'
                 onChange={(data)=>{
@@ -192,6 +193,7 @@ export default function ItemForm(props) {
 
         <Label><strong>Description* </strong>Write a description for your item. Include all details you think a customer would need to know, for instance size/dimensions, materials, what's included in the purchase, etc.</Label>
         <Input
+            className={styles.input}
             type='textarea'
             placeholder='Description'
             onChange={(data)=>{
@@ -202,6 +204,7 @@ export default function ItemForm(props) {
 
         <Label><strong>Price* </strong>Add the price of your item in USD. Consider factoring in additional costs such as shipping when setting a price.</Label>
         <Input
+            className={styles.input}
             type='number'
             min='0.01'
             step='0.01'
@@ -214,6 +217,7 @@ export default function ItemForm(props) {
 
         <Label><strong>Quantity* </strong>Add the quantity of your item--how many of this item would you be able to sell?</Label>
         <Input
+            className={styles.input}
             type='number'
             min='1'
             placeholder='Item Quantity'
@@ -225,6 +229,7 @@ export default function ItemForm(props) {
 
         <Label><strong>Keywords*</strong> Add keywords for your item. Separate keywords with commas or new lines. We use keywords to determine whether your item matches a users' search, so add all relevant search terms and check your spelling.</Label>
         <Input
+            className={styles.input}
             type='textarea'
             placeholder='eg. stuffed animal, plush, plushie, panda, pink panda, toy, pink, crochet'
             onChange={(data) => {
@@ -256,6 +261,7 @@ export default function ItemForm(props) {
         }
 
         <Input
+            className={styles.input}
             type='file'
             accept="image/png, image/jpeg, image/jpg"
             onChange={(data) => getImage(data)} 
@@ -267,65 +273,8 @@ export default function ItemForm(props) {
             type='submit'
             value='Create item'
         />
-
+        {formError && <p>formError</p>}
         </form>
         </>
-        // <form onSubmit={createItem}>
-        //     <input
-        //         type='text'
-        //         placeholder='Item Name'
-        //         onChange={(e)=>{
-        //             setName(e.target.value);
-        //         }}
-        //     />
-        //     <input
-        //         type='text'
-        //         placeholder='Description'
-        //         onChange={(e) => {
-        //             setDescription(e.target.value);
-        //         }}
-        //     />
-        //     <input
-        //         type='number'
-        //         min='0.01'
-        //         step='0.01'
-        //         placeholder='Price'
-        //         onChange={(e) => {
-        //             setPrice(e.target.value);
-        //         }}
-        //     />
-        //     <input
-        //         type='number'
-        //         min='1'
-        //         placeholder='Item Quantity'
-        //         onChange={(e) => {
-        //             setQuantity(e.target.value);
-        //         }}
-        //     />
-        //     <br/>
-        //     <label>Type keywords in the box below. Separate keywords by commas or new lines.</label>
-        //     <textarea
-        //         type='text'
-        //         placeholder='keywords'
-        //         onChange={(e) => {
-        //             setKeywords((e.target.value).split(/[ \n]*,[ \n]*|[, ]*\n[, ]*/).filter(keyword => keyword.match('[A-Za-z]'))); //keywords must contain letters
-        //         }}
-        //     />
-
-        //     <br/>
-        //     <input type="file" accept="image/png, image/jpeg, image/jpg" onChange={(e) => getImage(e)} />
-        //     {
-        //         images.map(image => {
-        //             return(
-        //                 <div>
-        //                     <img src={URL.createObjectURL(image)} width='100px'/>                            
-        //                 </div>
-        //             )        
-        //         })
-        //     }
-
-        //     <button>Add</button>
-        //     {formError && <p>{formError}</p>}
-        // </form>
     )
 }   
