@@ -13,6 +13,7 @@ import Label from "../../../components/forms/Label";
 import Input from "../../../components/forms/Input";
 import Button from "../../../../components/Button";
 import styles from "./ItemForm.module.css"
+import Clickable from "../../../components/Clickable";
 
 export default function ItemForm(props) {
     const supabase = createClientComponentClient()
@@ -237,18 +238,19 @@ export default function ItemForm(props) {
         {
             images.map((image, k) => {
                 return(
-                    <div key={k} className={styles.imageWrapper}>
+                    <Clickable key={k} className={styles.imageWrapper}>
                         <img 
+                            className={styles.image}
                             src={URL.createObjectURL(image)} 
                             width='100px'
                             />
-                        <Button 
+
+                        <img
                             className={styles.deleteButton}
-                            text='x'
-                            backgroundColor='#666'
-                            onClick={() => {setImages(images.slice(0, k).concat(images.slice(k + 1, images.length)))}} 
-                        />                      
-                    </div>
+                            src='/TrashIcon.svg'
+                            onClick={() => {setImages(images.slice(0, k).concat(images.slice(k + 1, images.length)))}}
+                        />                
+                    </Clickable>
                 )        
             })
         }

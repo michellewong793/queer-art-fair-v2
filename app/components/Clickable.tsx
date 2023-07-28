@@ -16,3 +16,5 @@ const Clickable: React.FC<ClickableProps> = ({
         </div>
     )
 }
+
+export default Clickable;

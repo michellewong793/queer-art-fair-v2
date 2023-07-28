@@ -4,6 +4,8 @@
     cursor: pointer;
 
     transition: translate 0.05s ease-in-out;
+    width: fit-content;
+    height: fit-content;
 }
 
 .clickable:hover {
