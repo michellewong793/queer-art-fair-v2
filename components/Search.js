@@ -356,27 +356,29 @@ export default function Search() {
             <Spacer height = {2}/>
             <div className = {style.container}>
                 <form autoComplete = "off" id = "form">
-                    <div className = {style.rowContainer}>
-                    <div className = {style.columnContainer}>
-                        <label htmlFor='searchTerm'></label>
-                        <input 
-                            className = {style.inputText} 
-                            onKeyUp = {() => autocompleteSearch()}
-                            name = "searchTerm" 
-                            id = "searchTerm"
-                            type = "text" 
-                            placeholder='search for products...'
-                        />
-                        <div className = {style.list} id = "list"></div>
-                    </div>
-                    
-                    <input 
-                        className = {style.inputSubmit} 
-                        id = "submit"
-                        type = "submit"
-                        onClick = {() => getItems(document.getElementById('searchTerm').value.toLowerCase())}
-                    />
+                    <div className = {style.gridContainer}>
+
                         <div className = {style.columnContainer}>
+                            <label htmlFor='searchTerm'></label>
+                            <input 
+                                className = {style.inputText} 
+                                onKeyUp = {() => autocompleteSearch()}
+                                name = "searchTerm" 
+                                id = "searchTerm"
+                                type = "text" 
+                                placeholder='search for products...'
+                            />
+                            <div className = {style.list} id = "list"></div>
+                        </div>
+                        
+                        <input 
+                            className = {style.inputSubmit} 
+                            id = "submit"
+                            type = "submit"
+                            onClick = {() => getItems(document.getElementById('searchTerm').value.toLowerCase())}
+                        />
+
+                        <div className = {style.filterColumnContainer}>
                             <div 
                                 className = {style.filter}
                                 onClick = {() => setShowFilterOptions(!showFilterOptions)}
@@ -389,6 +391,7 @@ export default function Search() {
                                 <div className = {style.listItem} onClick = {() => getItemsHighLow(document.getElementById('searchTerm').value.toLowerCase())}>Price: High to Low</div>
                             </div>
                         </div>
+
                     </div>
                     <Spacer height = {2}/>
                     <div className = {style.heading}>Shop Our Featured Categories</div>

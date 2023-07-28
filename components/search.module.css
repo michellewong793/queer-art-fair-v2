@@ -13,7 +13,7 @@
     padding: 8px;
     font-size: 16px;
     font-family: "ClementePDae";
-    width: auto;
+    width: 225px;
     height: 24px;
     margin-left: 8px;
     margin-right: 8px;
@@ -45,7 +45,7 @@
     background-color: whitesmoke;
     display: flex;
     flex-direction: column;
-    width: 180px;
+    width: 240px;
     margin-right: 8px;
     margin-left: 8px;
 }
@@ -92,20 +92,40 @@
 .filter {
     border: 1px solid transparent;
     font-family: "ClementePDae";
-    border-radius: 8%;
+    border-radius: 5px;
     background-color: #1A361E;
     padding: 10px;
     font-size: 16px;
     color: whitesmoke;
     height: 18px;
-    width: 58px;
-    margin-left: 8px;
-    margin-right: 8px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
 }
 
 .filter:hover {
     cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .filter {
+        width: 58px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+}
+
+.filterColumnContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .filterColumnContainer {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
 }
 
 .filterList {
@@ -114,9 +134,17 @@
     background-color: whitesmoke;
     display: none;
     flex-direction: column;
-    width: 100px;
-    margin-right: 8px;
-    margin-left: 8px;
+    width: 220px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media(min-width: 768px) {
+    .filterList {
+        width: 100px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
 }
 
 .listItem {
@@ -133,8 +161,8 @@
 
 .collectionContainer {
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    gap: 24px;
+    grid-template-columns: auto auto;
+    gap: 16px;
     padding: 8px;
     align-items: center;
     justify-content: center;
@@ -143,13 +171,26 @@
     margin-right: auto;
 }
 
+@media (min-width: 768px) {
+    .collectionContainer {
+        grid-template-columns: auto auto auto auto;
+        gap: 24px;
+    }
+}
+
 .heading {
     font-family: "ClementePDak";
     color: #1A361E;
-    font-size: 32px;
+    font-size: 24px;
     padding: 4px;
     justify-content: center;
     text-align: center;
+}
+
+@media (min-width: 768px) {
+    .heading {
+        font-size: 32px;
+    }
 }
 
 .searchHeader {
@@ -158,4 +199,19 @@
     color: #1A361E;
     margin-left: auto;
     margin-right: auto;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .gridContainer {
+        grid-template-columns: auto auto auto;
+    }
 }
