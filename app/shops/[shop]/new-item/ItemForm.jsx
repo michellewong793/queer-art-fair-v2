@@ -195,7 +195,7 @@ export default function ItemForm(props) {
         <Input
             className={styles.input}
             type='textarea'
-            placeholder='Description'
+            placeholder='eg. This hand-crocheted panda is made of cotton yarn and measures 3"...'
             onChange={(data)=>{
                 setDescription(data.value);
             }}
@@ -204,11 +204,11 @@ export default function ItemForm(props) {
 
         <Label><strong>Price* </strong>Add the price of your item in USD. Consider factoring in additional costs such as shipping when setting a price.</Label>
         <Input
-            className={styles.input}
+            className={styles.input + ' ' + styles.number}
             type='number'
             min='0.01'
             step='0.01'
-            placeholder='Price'
+            placeholder='eg. 28.50'
             onChange={(data) => {
                 setPrice(data.value);
             }}
@@ -217,10 +217,10 @@ export default function ItemForm(props) {
 
         <Label><strong>Quantity* </strong>Add the quantity of your item--how many of this item would you be able to sell?</Label>
         <Input
-            className={styles.input}
+            className={styles.input + ' ' + styles.number}
             type='number'
             min='1'
-            placeholder='Item Quantity'
+            placeholder='eg. 15'
             onChange={(data) => {
                 setQuantity(data.value);
             }}

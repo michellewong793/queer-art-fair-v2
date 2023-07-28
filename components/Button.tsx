@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import CSS from 'csstype'
 import styles from './Button.module.css'
+import Clickable from "../app/components/Clickable";
 
 type ButtonProps = {
     name?,
@@ -62,14 +63,16 @@ const Button: React.FC<ButtonProps> = ({
     }
 
     return (
-        <button style={buttonStyle}
-            name={name}
-            className={styles.button + ' ' + className}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            onClick={handleOnClick}>
-                {text}
-        </button>
+        <Clickable className={styles.clickable}>
+            <button style={buttonStyle}
+                name={name}
+                className={styles.button + ' ' + className}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onClick={handleOnClick}>
+                    {text}
+            </button>
+        </Clickable>
     )
 }
 

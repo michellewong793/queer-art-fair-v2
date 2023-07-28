@@ -7,19 +7,6 @@
     position: relative;
 
     background-color: #FFF9ED;
-    box-shadow: -3px 4px 12px -1px rgba(0, 0, 0, 0.25);
-
-    transition: translate 0.05s ease-in-out;
-}
-
-.wrapper:hover {
-    translate: 0px -2px;
-    box-shadow: -3px 6px 12px -1px rgba(0, 0, 0, 0.4);
-}
-
-.wrapper:active {
-    box-shadow: 0 0 0 0;
-    translate: 0px 2px;
 }
 
 .wrapper a {
@@ -42,6 +29,7 @@
 
     .wrapper {
         width: 320px;
+        height: 320px;
         max-width: 100%;
     }
 }

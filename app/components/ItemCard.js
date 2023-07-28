@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import styles from './ItemCard.module.css'
+import Clickable from './Clickable'
 
 // props = item
 const ItemCard = (props) => {
@@ -8,7 +9,7 @@ const ItemCard = (props) => {
     const url = props?.edit ? editUrl : viewUrl
     
     return (
-        
+        <Clickable>
         <div className={styles.wrapper} title={props?.item?.name}>
             <Link className={styles.link} href={url} rel="noopener noreferrer" target="_blank">
                 <img className={styles.image} src={props?.item?.image_urls[0]} />
@@ -19,6 +20,7 @@ const ItemCard = (props) => {
                 </div>
             </Link>
         </div>
+        </Clickable>
     )
 }
 

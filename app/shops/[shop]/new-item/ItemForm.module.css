@@ -8,6 +8,10 @@
     margin-bottom: 32px;
 }
 
+.number {
+    width: 150px;
+}
+
 .imageContainer {
     display: flex;
     flex-wrap: wrap;
