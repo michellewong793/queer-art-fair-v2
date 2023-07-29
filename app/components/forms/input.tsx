@@ -12,6 +12,7 @@ type InputProps = {
     type?: string;
     placeholder?: string;
     value?: string;
+    defaultValue?: string;
     min?: number;
     max?: number;
     step?: number;
@@ -28,6 +29,7 @@ const Input: React.FC<InputProps> = ({
     type,
     placeholder,
     value,
+    defaultValue,
     min,
     max,
     step,
@@ -60,6 +62,7 @@ const Input: React.FC<InputProps> = ({
                     <TextareaAutosize 
                         id={id}
                         className={styles.input} 
+                        defaultValue={defaultValue}
                         {...fieldProps} /> 
                     </div>
                 )

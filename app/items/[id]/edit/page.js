@@ -47,7 +47,7 @@ export default async function Page( {params} ) {
             .single()
         
         if (error || (data && data.owner_id !== user?.id)) {
-            //redirect('/items/'+item.id)
+            redirect('/items/'+item.id)
         }
         else {
             return true;
