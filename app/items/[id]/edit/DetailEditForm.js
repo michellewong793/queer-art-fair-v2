@@ -2,11 +2,11 @@
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 import Label from '../../../components/forms/Label'
 import Input from '../../../components/forms/Input'
-import styles from './ItemEditForm.module.css'
+import styles from './DetailEditForm.module.css'
 import { useState } from 'react'
 // TODO: other errors, non numeric quantities/prices
 
-export default function ItemEditForm( props ) {
+export default function DetailEditForm( props ) {
     const item = props?.item
     const supabase = createClientComponentClient()
 
@@ -16,14 +16,12 @@ export default function ItemEditForm( props ) {
     // TODO: how to deal with quantity without screwing up orders in progress
     const [quantity, setQuantity] = useState(item?.quantity)
     const [keywords, setKeywords] = useState(item?.keywords || [])
-    const [images, setImages] = useState([])
 
     const [nameError, setNameError] = useState(null)
     const [descriptionError, setDescriptionError] = useState(null)
     const [priceError, setPriceError] = useState(null)
     const [quantityError, setQuantityError] = useState(null)
     const [keywordError, setKeywordError] = useState(null)
-    const [imageError, setImageError] = useState(null)
 
     function checkFields() {
         let error = false;
@@ -64,8 +62,12 @@ export default function ItemEditForm( props ) {
         e.preventDefault()
         if (checkFields()) return
 
+        // TODO: actually update the item
+
     }
     return (
+        <div>
+        <h3>Item Details</h3>
         <form onSubmit={(e) => updateItem(e)}>
             <Label><strong>Name*</strong></Label>
             <Input
@@ -117,19 +119,12 @@ export default function ItemEditForm( props ) {
                 error={keywordError}
             />
 
-            <Label><strong>Images*</strong></Label>
-            <Input
-                className={styles.input + ' ' + styles.fileInput}
-                type='file'
-                accept="image/png, image/jpeg, image/jpg"
-                error={imageError}
-            />
-
             <Input 
                 type="submit"
-                value="Update"
+                value="Update details"
             />
         </form>
+        </div>
     )
 }
 

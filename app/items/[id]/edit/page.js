@@ -8,7 +8,8 @@ import Logo from "../../../../components/Logo";
 import Subheader from "../../../../components/Subheader";
 import Navigation from "../../../../components/Navigation";
 import Footer from "../../../../components/Footer";
-import ItemEditForm from './ItemEditForm'
+import DetailEditForm from './DetailEditForm'
+import ImageEditForm from './ImageEditForm'
 
 export default async function Page( {params} ) {
     const supabase = createServerComponentClient({ cookies })
@@ -63,7 +64,11 @@ export default async function Page( {params} ) {
             <Subheader />
             <Navigation />
             <div className={styles.content}>
-                {item && <ItemEditForm item={item}/>}
+                {item && 
+                <>
+                    <DetailEditForm item={item}/>
+                    <ImageEditForm />
+                </>}
             </div>
             <Footer />
         </div>
