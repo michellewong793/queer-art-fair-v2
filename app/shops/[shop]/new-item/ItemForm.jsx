@@ -12,7 +12,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Label from "../../../components/forms/Label";
 import Input from "../../../components/forms/Input";
 import styles from "./ItemForm.module.css"
-import Clickable from "../../../components/Clickable";
+import DeleteableImage from "../../../components/DeletableImage"
 
 export default function ItemForm(props) {
     const supabase = createClientComponentClient()
@@ -244,19 +244,10 @@ export default function ItemForm(props) {
         {
             images.map((image, k) => {
                 return(
-                    <Clickable key={k} className={styles.imageWrapper}>
-                        <img 
-                            className={styles.image}
-                            src={URL.createObjectURL(image)} 
-                            width='100px'
-                            />
-
-                        <img
-                            className={styles.deleteButton}
-                            src='/TrashIcon.svg'
-                            onClick={() => {setImages(images.slice(0, k).concat(images.slice(k + 1, images.length)))}}
-                        />                
-                    </Clickable>
+                    <DeleteableImage
+                        imageUrl={URL.createObjectURL(image)}
+                        deleteFunction={() => {setImages(images.slice(0, k).concat(images.slice(k + 1, images.length)))}}
+                    />
                 )        
             })
         }
