@@ -67,7 +67,7 @@ export default async function Page( {params} ) {
                 {item && 
                 <>
                     <DetailEditForm item={item}/>
-                    <ImageEditForm />
+                    <ImageEditForm item={item}/>
                 </>}
             </div>
             <Footer />

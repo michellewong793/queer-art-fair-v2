@@ -50,11 +50,6 @@ export default function DetailEditForm( props ) {
             error = true;
         }
 
-        if (!images || images?.length == 0) {
-            setImageError('*Images are required.')
-            error = true;
-        }
-
         return error
     }
 
@@ -63,7 +58,22 @@ export default function DetailEditForm( props ) {
         if (checkFields()) return
 
         // TODO: actually update the item
+        let { error } = await supabase
+            .from('items')
+            .update({
+                name: name,
+                description: description,
+                price: price,
+                quantity: quantity,
+                keywords: keywords
+            })
+            .eq('id', item.id)
 
+        if (error) {
+            console.warn(error)
+            return
+        }
+        alert("Successfully updated item details.")
     }
     return (
         <div>
