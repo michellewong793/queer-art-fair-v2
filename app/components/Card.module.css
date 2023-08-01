@@ -1,0 +1,73 @@
+/*global styles*/
+
+.wrapper {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    width: 100%;
+    position: relative;
+
+    background-color: #FFF9ED;
+}
+
+.link {
+    text-decoration: none
+}
+.image {
+    width: 100%;
+    aspect-ratio: 10/7.2;
+    object-fit: cover;
+}
+
+.hidden {
+    display: none;
+}
+
+.editIcon {
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 72px;
+    height: 72px;
+
+    opacity: 0.8;
+    transition: opacity 0.15s ease-in-out;
+    -moz-transition: opacity 0.15s ease-in-out;
+    -webkit-transition: opacity 0.15s ease-in-out;
+}
+
+.editIcon:hover {
+    opacity: 1.0;
+}
+
+.textWrapper {
+    height: 50px;
+    padding: 8px 8px 8px 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.textWrapper p {
+    font-size: 20px;
+}
+
+/*desktop only*/
+@media screen and (min-width: 768px) {
+
+    .wrapper {
+        width: 320px;
+        height: 320px;
+        max-width: 100%;
+    }
+    
+    .textWrapper {
+        height: 60px;
+    }
+
+    .textWrapper p {
+        font-size: 24px;
+    }
+
+}
