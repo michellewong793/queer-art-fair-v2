@@ -12,6 +12,8 @@ import theme from '../../components/Theme';
 import Label from '../components/forms/Label';
 import Link from 'next/link';
 import Input from '../components/forms/Input';
+import ShopCard from './ShopCard'
+import NewCard from '../components/NewCard';
 
 
 export default async function Account() {
@@ -89,28 +91,21 @@ export default async function Account() {
                 </form>
 
 
-                <div className={styles.shops}>
+                <div className={styles.shopSection}>
                   <h3>Your Shops</h3>
-                  
-                  {shops?.map((shop, k) => {
-                    let urlName = shop.name.split(' ').join('_')
-                    return (
-                      <div 
-                        key={k}
-                        className={styles.shop}
-                      >
-                        <p>{shop.name}</p>
-                        <div className={styles.shopLinks}>
-                          <Link href={'/shops/'+urlName} target="_blank" rel="noopener noreferrer" >View</Link>
-                          <Link href={'/shops/'+urlName+'/edit'} target="_blank" rel="noopener noreferrer" >Edit</Link>
-                        </div>
-                      </div>
-                    )
-                  })}
 
-                  <div className={styles.rightAlign}>
-                    <Link href='/shops/new'>New Shop</Link>
+                  <div className={styles.shops}>
+                    <div className={styles.new}>
+                      <Link href='./new-item' target="_blank" rel="noopener noreferrer">
+                        <NewCard url='/shops/new' />
+                      </Link>
+                    </div>
+                    
+                    {shops?.map((shop, k) => (
+                      <ShopCard shop={shop} />
+                    ))}
                   </div>
+
                 </div>
 
                 <div>

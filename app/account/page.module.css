@@ -12,7 +12,7 @@
     margin-bottom: 16px;
 }
 
-.details, .shops {
+.details, .shopSection {
     /* background-color: #fff5f0;
     padding: 16px; */
     margin-bottom: 24px;
@@ -31,6 +31,16 @@
 .content a {
     font-family: Helvetica;
     font-size: 16px;
+}
+
+.shops {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.new {
+    width: 100%;
 }
 
 .shop {
@@ -62,5 +72,10 @@
 
     .content a {
         font-size: 24px;
+    }
+
+    .new {
+        max-width: 100%;
+        width: 320px;
     }
 }
