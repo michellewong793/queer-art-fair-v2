@@ -2,43 +2,13 @@
 import { useCallback, useEffect, useState } from 'react'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 
-export default function AccountForm({ session }) {
+export default function AccountForm( props ) {
   const supabase = createClientComponentClient()
-  const [loading, setLoading] = useState(true)
-  const [name, setName] = useState(null)
-  const [email, setEmail] = useState(null)
-  const user = session?.user
-
-  const getProfile = useCallback(async () => {
-    try {
-      setLoading(true)
-
-      let { data, error, status } = await supabase
-        .from('profiles')
-        .select(`name, email`)
-        .eq('id', user?.id)
-        .single()
-
-      if (error && status !== 406) {
-        throw error
-      }
-
-      if (data) {
-        setName(data.name)
-        setEmail(data.email)
-      }
-    } catch (error) {
-      alert('Error loading user data!')
-    } finally {
-      setLoading(false)
-    }
-  }, [user, supabase])
-
-  useEffect(() => {
-    getProfile()
-  }, [user, getProfile])
-
-  async function updateProfile({ name, email }) {
+  const profile = props?.profile
+  const [name, setName] = useState(profile?.name)
+  const [email, setEmail] = useState(profile?.email)
+  
+  async function updateProfile() {
     try {
       setLoading(true)
 
@@ -60,7 +30,7 @@ export default function AccountForm({ session }) {
     <>
       <div>
         <label htmlFor="email">Email</label>
-        <input type="text" value={session?.user.email} disabled />
+        <input type="text" value={email} disabled />
       </div>
       <div>
         <label htmlFor="name">Name</label>
@@ -73,10 +43,8 @@ export default function AccountForm({ session }) {
 
       <div>
         <button
-          onClick={() => updateProfile({ name, email })}
-          disabled={loading}
-        >
-          {loading ? 'Loading ...' : 'Update'}
+          onClick={() => updateProfile({ name, email })}>
+          Update Profile
         </button>
       </div>
 
