@@ -76,7 +76,7 @@ export default function DetailEditForm( props ) {
             setNotifications([...notifications, { type: 'error', value: error.message }])
             return
         }
-        setNotifications([...notifications, { type: 'success', value: 'Your item was updated.'}])
+        setNotifications([...notifications, { type: 'success', value: 'Details were updated.'}])
     }
     return (
         <div>
