@@ -6,14 +6,15 @@ import styles from './ImageEditForm.module.css'
 import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import DeletableImage from "../../../components/DeletableImage"
+import BannerNotification from "../../../components/BannerNotification"
 
 export default function DetailEditForm( props ) {
     const item = props?.item
     const supabase = createClientComponentClient()
 
     const [images, setImages] = useState([])
-    const [saved, setSaved] = useState(true)
     const [imageError, setImageError] = useState(null)
+    const [notifications, setNotifications] = useState([])
 
     // run this when the page is loaded, to get the images that are already in the database
     async function getDatabaseImages() {
@@ -24,8 +25,7 @@ export default function DetailEditForm( props ) {
             .list(item?.id + '/')
         
         if (error) {
-            // TODO: use a popup and/or prevent user from adding new images
-            console.warn(error)
+            setNotifications([...notifications, { type: error, value: error.message }])
             return []
         }
         
@@ -72,7 +72,6 @@ export default function DetailEditForm( props ) {
                 url: url,
             }
             setImages(images => [ ...images, image]);
-            setSaved(false)
         }
     }
 
@@ -92,7 +91,6 @@ export default function DetailEditForm( props ) {
         })
 
         setImages(updatedImages)
-        setSaved(false)
     }
 
     async function saveChangesToDatabase() {
@@ -108,7 +106,9 @@ export default function DetailEditForm( props ) {
                     .from('item-photos')
                     .remove(item?.id+'/'+image.name)
                 
-                if (error) console.warn(error.message)
+                if (error) {
+                    setNotifications([...notifications, { type: error, value: error.message }])
+                }
                 continue
             }
 
@@ -119,8 +119,7 @@ export default function DetailEditForm( props ) {
                     .from('item-photos')
                     .upload(item?.id + '/' + image.name, image.file)
                 if (error) {
-                    console.warn(error.message)
-                    return
+                    setNotifications([...notifications, { type: error, value: error.message }])
                 }
                 else if (data) {
                     // get the public url
@@ -142,9 +141,11 @@ export default function DetailEditForm( props ) {
             .update({ image_urls: publicUrls })
             .eq('id', item?.id)
         
-        if (error) {console.warn(error); return; }
+        if (error) {
+            setNotifications([...notifications, { type: 'error', value: error.message }])
+        }
 
-        setSaved(true)
+        setNotifications([...notifications, { type: 'success', value: 'Images were saved.' }])
 
         await getDatabaseImages()
     }
@@ -164,13 +165,17 @@ export default function DetailEditForm( props ) {
         e.preventDefault()
         if (checkFields()) return
 
-        // TODO: actually update the item
-        saveChangesToDatabase()
-
+        await saveChangesToDatabase()
+        
     }
     return (
         <div>
         <h3>Item Images</h3>
+        { notifications?.map (notification => (
+            <BannerNotification type={notification.type}>
+                {notification.value}
+            </BannerNotification>
+        ))}
         <form onSubmit={(e) => updateItem(e)}>
             <Label><strong>Images*</strong></Label>
             

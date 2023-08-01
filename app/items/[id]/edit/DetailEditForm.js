@@ -4,6 +4,7 @@ import Label from '../../../components/forms/Label'
 import Input from '../../../components/forms/Input'
 import styles from './DetailEditForm.module.css'
 import { useState } from 'react'
+import BannerNotification from "../../../components/BannerNotification"
 // TODO: other errors, non numeric quantities/prices
 
 export default function DetailEditForm( props ) {
@@ -22,6 +23,8 @@ export default function DetailEditForm( props ) {
     const [priceError, setPriceError] = useState(null)
     const [quantityError, setQuantityError] = useState(null)
     const [keywordError, setKeywordError] = useState(null)
+
+    const [notifications, setNotifications] = useState([])
 
     function checkFields() {
         let error = false;
@@ -70,14 +73,21 @@ export default function DetailEditForm( props ) {
             .eq('id', item.id)
 
         if (error) {
-            console.warn(error)
+            setNotifications([...notifications, { type: 'error', value: error.message }])
             return
         }
-        alert("Successfully updated item details.")
+        setNotifications([...notifications, { type: 'success', value: 'Your item was updated.'}])
     }
     return (
         <div>
         <h3>Item Details</h3>
+
+        { notifications?.map (notification => (
+            <BannerNotification type={notification.type}>
+                {notification.value}
+            </BannerNotification>
+        ))}
+        
         <form onSubmit={(e) => updateItem(e)}>
             <Label><strong>Name*</strong></Label>
             <Input
