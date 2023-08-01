@@ -1,0 +1,66 @@
+/*Global styles*/
+.background {
+    background-color: #ffe4ec;
+}
+.content {
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 24px;
+}
+
+.content h3 {
+    margin-bottom: 16px;
+}
+
+.details, .shops {
+    /* background-color: #fff5f0;
+    padding: 16px; */
+    margin-bottom: 24px;
+}
+
+.details p {
+    margin-bottom: 16px;
+}
+
+.rightAlign {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+}
+.content a {
+    font-family: Helvetica;
+    font-size: 16px;
+}
+
+.shop {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 8px;
+    background-color: #fff;
+    margin-bottom: 2px;
+    border-bottom: 2px solid #e5c7cf;
+
+}
+
+.shopLinks {
+    display: flex;
+    gap: 16px;
+}
+
+
+/*Desktop only*/
+@media screen and (min-width: 768px) {
+    .content {
+        width: 1008px;
+        max-width: 88%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 80px;
+        gap: 80px;
+    }
+
+    .content a {
+        font-size: 24px;
+    }
+}
