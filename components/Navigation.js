@@ -17,7 +17,7 @@ const Navigation = () => {
                     EVENTS
                 </a>
                 <img className = {style.image} src = '/heart.png'/>
-                <a  className = {style.nonActive} href = "https://www.gofundme.com/f/queer-art-faire">
+                <a href = "/donate" className = {currentRoute === '/donate' ? style.active : style.nonActive}>
                     DONATE
                 </a>
             </div>
