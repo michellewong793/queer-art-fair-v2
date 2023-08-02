@@ -352,7 +352,7 @@ export default function Search() {
 
     return(
         <div className = {style.columnContainer}>
-            <div className = {style.searchHeader}>Search Products</div>
+            <div className = {style.searchHeader}>Online Marketplace</div>
             <Spacer height = {2}/>
             <div className = {style.container}>
                 <form autoComplete = "off" id = "form">
@@ -366,7 +366,7 @@ export default function Search() {
                                 name = "searchTerm" 
                                 id = "searchTerm"
                                 type = "text" 
-                                placeholder='search for products...'
+                                placeholder='Search products...'
                             />
                             <div className = {style.list} id = "list"></div>
                         </div>
