@@ -30,8 +30,6 @@ export default function AccountEditForm( props ) {
     }
   }
 
-  console.log(profile)
-
   return (
     <>
       <form 
