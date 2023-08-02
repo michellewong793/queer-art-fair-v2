@@ -23,11 +23,10 @@ export default function AccountEditForm( props ) {
       .eq('id', profile.id)
 
       if (error) throw error
+      alert('Your profile was updated.')
 
-      alert('Profile updated!')
-      
     } catch (error) {
-      alert('Error updating the data!' + error.message)
+      alert('Error. We could not update your profile.')
     }
   }
 
