@@ -22,19 +22,18 @@ const Card: React.FC<CardProps> = ({
     children
 }) => {
     return (
-        <Clickable className={className}>
-            <div className={styles.wrapper}>
-                <Link className={styles.link} href={url} rel="noopener noreferrer" target="_blank">
-                    <img className={styles.image} src={image} />
-                </Link>
-                <Link className={styles.link} href={editUrl} rel="noopener noreferrer" target="blank">
+        <Clickable className={styles.wrapper + ' ' + className}>
+            <Link className={styles.link} href={editUrl} rel="noopener noreferrer" target="blank">
                     <img className={edit ? styles.editIcon : styles.hidden} src={'/PencilEditIcon.svg'} />
-                </Link>
+            </Link>
 
+            <Link className={styles.link} href={url} rel="noopener noreferrer" target="_blank">
+                <img className={styles.image} src={image} />
                 <div className={styles.textWrapper}>
                     {children}
                 </div>
-            </div>
+            </Link>
+
         </Clickable>
     )
 }
