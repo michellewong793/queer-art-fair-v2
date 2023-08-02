@@ -12,12 +12,6 @@
     margin-bottom: 16px;
 }
 
-.details, .shopSection {
-    /* background-color: #fff5f0;
-    padding: 16px; */
-    margin-bottom: 24px;
-}
-
 .details p {
     margin-bottom: 16px;
 }
@@ -31,6 +25,10 @@
 .content a {
     font-family: Helvetica;
     font-size: 16px;
+}
+
+.shopSection {
+    margin-bottom: 24px;
 }
 
 .shops {

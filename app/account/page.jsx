@@ -1,6 +1,6 @@
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
-import AccountForm from './AccountForm'
+import AccountEditForm from './AccountEditForm'
 import HeaderDecoration from "../../components/HeaderDecoration";
 import Logo from "../../components/Logo";
 import Subheader from "../../components/Subheader";
@@ -9,11 +9,10 @@ import Footer from "../../components/Footer";
 import { redirect } from 'next/navigation'
 import styles from "./page.module.css";
 import theme from '../../components/Theme';
-import Label from '../components/forms/Label';
 import Link from 'next/link';
-import Input from '../components/forms/Input';
 import ShopCard from './ShopCard'
 import NewCard from '../components/NewCard';
+import Input from '../components/forms/Input';
 
 
 export default async function Account() {
@@ -30,7 +29,7 @@ export default async function Account() {
     try {
       let { data, error, status } = await supabase
         .from('profiles')
-        .select('name, email')
+        .select()
         .eq('id', user?.id)
         .single()
       
@@ -75,20 +74,11 @@ export default async function Account() {
         <div className={styles.content}>
             {profile && 
             <>
-                {/* <AccountForm profile={profile}/> */}
-                <form className={styles.details}>
-                  <h3>Account Details</h3>
-
-                  <Label><strong>Email</strong></Label>
-                  <p>{profile.email}</p>
-
-                  <Label><strong>Name</strong></Label>
-                  <p>{profile.name}</p>
-
-                  <div className={styles.rightAlign}>
-                    <Link href={''}>Edit Details</Link>
-                  </div>
-                </form>
+                
+                <div className={styles.details}>
+                  
+                  <AccountEditForm profile={profile}/>
+                </div>
 
 
                 <div className={styles.shopSection}>
