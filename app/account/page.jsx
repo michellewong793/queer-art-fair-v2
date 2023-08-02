@@ -96,7 +96,7 @@ export default async function Account() {
 
                   <div className={styles.shops}>
                     <div className={styles.new}>
-                      <Link href='./new-item' target="_blank" rel="noopener noreferrer">
+                      <Link href='./shops/new' target="_blank" rel="noopener noreferrer">
                         <NewCard url='/shops/new' />
                       </Link>
                     </div>
