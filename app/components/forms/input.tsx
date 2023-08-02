@@ -9,18 +9,18 @@ import NewCard from "../NewCard";
 type InputProps = {
     id?,
     className?,
-    type?: string;
-    placeholder?: string;
-    value?: string;
-    defaultValue?: string;
-    min?: number;
-    max?: number;
-    step?: number;
-    accept?: string;
+    type?: string,
+    placeholder?: string,
+    value?: string,
+    defaultValue?: string,
+    min?: number,
+    max?: number,
+    step?: number,
+    accept?: string,
 
-    error?: string;
-
-    onChange?;
+    error?: string,
+    disabled?,
+    onChange?,
 }
 
 const Input: React.FC<InputProps> = ({
@@ -35,6 +35,7 @@ const Input: React.FC<InputProps> = ({
     step,
     accept,
     error,
+    disabled,
     onChange,
 }) => {
     
@@ -51,6 +52,7 @@ const Input: React.FC<InputProps> = ({
     const fieldProps = {
         placeholder,
         value,
+        disabled,
         onChange: handleChange
     }
     

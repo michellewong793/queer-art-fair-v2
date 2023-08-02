@@ -44,6 +44,11 @@
     transform: translate(0px, 2px);
 }
 
+.input:disabled {
+    transform: translate(0px, 2px);
+    cursor: not-allowed;
+}
+
 .fileInput {
     opacity: 0;
     width: 0.1px;
