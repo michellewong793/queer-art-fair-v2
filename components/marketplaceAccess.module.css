@@ -1,0 +1,36 @@
+.button {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .button {
+        display: block;
+        margin-left: auto;
+        margin-right: 16px;
+        width: 200px;
+        height: 32px;
+        border-radius: 5px;
+        border: 2px solid #113219;
+        background-color: #113219;
+        transition: background-color 0.3s ease-in-out;
+    }
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: #FFF9ED;
+}
+
+.text {
+    font-size: 16px;
+    color: #FFF9ED;
+    font-family: "ClementePDae";
+    text-align: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    transition: color 0.3s ease-in-out;
+}
+
+.text:hover {
+    color: #113219;
+}
