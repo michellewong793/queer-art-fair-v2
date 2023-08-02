@@ -38,11 +38,12 @@ export default function AccountEditForm( props ) {
         <h3>Account Details</h3>
 
         <Label>Email</Label>
-        <Input 
+        {/* <Input 
         className={styles.input}
         type="text" 
         value={email} 
-        disabled={true} />
+        disabled={true} /> */}
+        <p className={styles.input}>{email}</p>
 
         <Label>Name</Label>
         <Input
