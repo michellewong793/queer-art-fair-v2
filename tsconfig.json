@@ -30,7 +30,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "app/home-page.js"  ],
+, "app/home-page.js", "app/components/ItemCard.js"  ],
   "exclude": [
     "node_modules"
   ]
