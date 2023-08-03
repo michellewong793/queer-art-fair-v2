@@ -9,7 +9,7 @@ export default async function ProductEditSection({items}) {
         <div className={styles.products}>
             <NewItemCard />
             {items?.map(item => (
-                <ItemCard item={item} edit={true}/>
+                <ItemCard item={item} edit={true} delete={true}/>
             ))}
         </div>
         </div>
