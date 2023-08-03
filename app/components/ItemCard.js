@@ -57,7 +57,7 @@ const ItemCard = (props) => {
                 <p className={styles.modalText}>Are you sure you want to delete {item?.name} (item #{item?.id})? <br/> <br/>This cannot be undone.</p>
                 <br/>
                 <Button
-                    text='Delete'
+                    text='Permanently Delete'
                     onClick={() => trash()}
                 />
             </Modal>
