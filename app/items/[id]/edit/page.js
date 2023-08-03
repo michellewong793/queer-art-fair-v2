@@ -44,7 +44,7 @@ export default async function Page( {params} ) {
 
         let { data, error } = await supabase
             .from('shops')
-            .select('owner_id')
+            .select('owner_id, name')
             .eq('id', item.shop_id)
             .single()
         
@@ -52,11 +52,11 @@ export default async function Page( {params} ) {
             redirect('/items/'+item.id)
         }
         else {
-            return true;
+            return data; // returns the shop
         }
     }
 
-    const verifiedShopowner = await verifyShopowner();
+    const shop = await verifyShopowner();
     
     return (
         <div style={theme.body} className={styles.background}>
@@ -69,7 +69,7 @@ export default async function Page( {params} ) {
                 <>
                     <DetailEditForm item={item}/>
                     <ImageEditForm item={item}/>
-                    <DeleteForm item={item}/>
+                    <DeleteForm item={item} shop={shop}/>
                 </>}
             </div>
             <Footer />

@@ -9,6 +9,8 @@ import { useRouter } from 'next/navigation'
 
 export default function DeleteForm(props) {
     const item = props?.item
+    const shop = props?.shop
+    const shopUrlName = shop?.name?.split(' ').join('_')
     const [trashConfirmation, setTrashConfirmation] = useState(false)
     
     const supabase = createClientComponentClient()
@@ -23,7 +25,7 @@ export default function DeleteForm(props) {
             alert(error.message)
         } else {
             alert('Your item was deleted.')
-            router.replace('/account')
+            router.replace('/shops/'+shopUrlName)
         }
     }
 
