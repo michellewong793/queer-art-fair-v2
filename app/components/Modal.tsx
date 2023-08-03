@@ -1,6 +1,6 @@
 import { ReactNode } from "react"
 import styles from './Modal.module.css'
-import Clickable from "../../components/Clickable"
+import Clickable from "./Clickable"
 
 type ModalProps = {
     className?,
@@ -26,8 +26,13 @@ const Modal: React.FC<ModalProps> = ({
     const visibility = isOpen ? styles.show : styles.hidden;
 
     return (
-        <div className={styles.backdrop + ' ' + visibility}>
-            <Clickable className={styles.container + ' ' + className}>
+        <div 
+            className={styles.backdrop + ' ' + visibility}
+            onClick={handleClose}
+        >
+            <div 
+                className={styles.container + ' ' + className}
+                onClick={(e)=> {e.stopPropagation()}}>
                 <button 
                     className={styles.close}
                     onClick={handleClose}
@@ -38,7 +43,7 @@ const Modal: React.FC<ModalProps> = ({
                 <div className={styles.content}>
                     {children}
                 </div>
-            </Clickable>
+            </div>
             
         </div>
     )
