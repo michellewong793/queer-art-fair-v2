@@ -18,6 +18,14 @@
     margin-bottom: 24px;
 }
 
+.orderDirections, .orderDirections p {
+    font-family: Helvetica;
+}
+
+.orderDirections li {
+    margin-bottom: 8px;
+}
+
 .orderButton {
     margin-top: 32px;
     margin-bottom: 32px;

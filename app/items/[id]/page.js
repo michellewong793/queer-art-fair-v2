@@ -48,6 +48,24 @@ export default async function Page({params}) {
 
     const shop = await getShop()
 
+    async function getShopowner() {
+        if (!shop) return;
+
+        const { data, error } = await supabase
+            .from('profiles')
+            .select()
+            .eq('id', shop.owner_id)
+            .single()
+        if (error) {
+            console.warn(error)
+            return
+        } else if (data) {
+            return data
+        }
+    }
+
+    const shopOwner = await getShopowner()
+
     return(
         <div style={theme.body} className={styles.background}>
         <HeaderDecoration/>
@@ -56,7 +74,7 @@ export default async function Page({params}) {
         <Navigation />
         <div className={styles.content}>
             {item ? 
-            <ItemDisplay item={item} shop={shop}/>
+            <ItemDisplay item={item} shop={shop} shopOwner={shopOwner}/>
             :
             <p>Sorry, we couldn't find this item.</p>}
         </div>
