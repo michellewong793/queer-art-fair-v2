@@ -22,26 +22,35 @@
     object-fit: cover;
 }
 
-.hidden {
-    display: none;
-}
-
-.editIcon {
-    display: block;
+.icons {
     position: absolute;
     top: 8px;
     right: 8px;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.icon {
     width: 72px;
     height: 72px;
 
+    display: block;
+    
     opacity: 0.8;
     transition: opacity 0.15s ease-in-out;
     -moz-transition: opacity 0.15s ease-in-out;
     -webkit-transition: opacity 0.15s ease-in-out;
 }
 
-.editIcon:hover {
+.icon:hover {
     opacity: 1.0;
+}
+
+.hidden {
+    display: none;
+    
 }
 
 .textWrapper {

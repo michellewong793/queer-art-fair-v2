@@ -11,6 +11,10 @@
     font-family: ClementePDak
 }
 
+.modalText {
+    font-family: Helvetica;
+}
+
 /*desktop only*/
 @media screen and (min-width: 768px) {
 
