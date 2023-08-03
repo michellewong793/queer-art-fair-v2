@@ -36,6 +36,16 @@ function searchProd(event) {
 
 }
 
+//randomly shuffles the array of product indices
+function shuffle(indexArray) {
+    for (let k = indexArray.length - 1; k > 0; k--) {
+        let l = Math.floor(Math.random() * (k+1));
+        let indexToSwap = indexArray[k];
+        indexArray[k] = indexArray[l];
+        indexArray[l] = indexToSwap;
+    }
+}
+
 //contains search functions as well structure of the page
 export default function Search() {
     const [length, setLength] = useState(0);
@@ -272,9 +282,8 @@ export default function Search() {
 
     //retrieves and displays products matching the search term
     async function getItems(userInput) {
-
-        document.getElementById('searchTerm').value = userInput;
-
+        let prodIndex = [];
+    
         setShowFilterButton(true);
 
         let searchResults = document.getElementById('searchResults');
@@ -302,43 +311,54 @@ export default function Search() {
                     let singular = userInput.substring(0, userInput.length-1);
                     let lowercase = row.name.toLowerCase();
                     if (keywordToTest.includes(userInput) || keywordToTest == singular || userInput == lowercase) {
+
+                        //creates an array of the indices of rows that matched the search term
+                        prodIndex.push(i);
+                        console.log(prodIndex);
             
-                        let searchResults = document.getElementById('searchResults');
-
-                        let resultContainer = document.createElement('resultContainer');
-                        resultContainer.classList.add("resultContainer");
-                        let itemUrl = "/items/" + row.id;
-                        resultContainer.onclick = function(){window.location = itemUrl};
-                        searchResults.appendChild(resultContainer);
-
-                        let resultImg = document.createElement('img');
-                        resultImg.classList.add('resultImg');
-                        resultImg.src = row.image_urls[0];
-                        resultContainer.appendChild(resultImg);
-        
-                        if (row.image_urls.length > 1) {
-                            resultImg.addEventListener('mouseover', () => resultImg.src = row.image_urls[1]);
-                            resultImg.addEventListener('mouseout', () => resultImg.src = row.image_urls[0]);
-                        }
-
-                        let result = document.createElement("result");
-                        result.classList.add("result");
-                        resultContainer.appendChild(result);
-
-                        let prodName = document.createElement('prodName');
-                        prodName.classList.add('prodName');
-                        prodName.innerText = row.name;
-                        result.appendChild(prodName);
-
-                        let prodPrice = document.createElement('prodPrice');
-                        prodPrice.classList.add('prodPrice');
-                        prodPrice.innerText = "$" + row.price;
-                        result.appendChild(prodPrice);
                     }
                     if (userInput == lowercase) {
                         break;
                     }
                 }
+            }
+            shuffle(prodIndex);
+            console.log(prodIndex);
+
+            for (let m = 0; m < prodIndex.length; m++) {
+                let index = prodIndex[m];
+                let row = items[index];
+                let searchResults = document.getElementById('searchResults');
+
+                let resultContainer = document.createElement('resultContainer');
+                resultContainer.classList.add("resultContainer");
+                let itemUrl = "/items/" + row.id;
+                resultContainer.onclick = function(){window.location = itemUrl};
+                searchResults.appendChild(resultContainer);
+
+                let resultImg = document.createElement('img');
+                resultImg.classList.add('resultImg');
+                resultImg.src = row.image_urls[0];
+                resultContainer.appendChild(resultImg);
+        
+                if (row.image_urls.length > 1) {
+                    resultImg.addEventListener('mouseover', () => resultImg.src = row.image_urls[1]);
+                    resultImg.addEventListener('mouseout', () => resultImg.src = row.image_urls[0]);
+                }
+
+                let result = document.createElement("result");
+                result.classList.add("result");
+                resultContainer.appendChild(result);
+
+                let prodName = document.createElement('prodName');
+                prodName.classList.add('prodName');
+                prodName.innerText = row.name;
+                result.appendChild(prodName);
+
+                let prodPrice = document.createElement('prodPrice');
+                prodPrice.classList.add('prodPrice');
+                prodPrice.innerText = "$" + row.price;
+                result.appendChild(prodPrice);
             }
             if (searchResults.childElementCount == 0) {
                 let noResults = document.createElement('noResults');
@@ -387,6 +407,7 @@ export default function Search() {
                                 Filter
                             </div>
                             <div className = {style.filterList} style = {{display: showFilterOptions ? "flex" : "none"}}>
+                                <div className = {style.listItem} onClick = {() => getItems(document.getElementById('searchTerm').value.toLowerCase())}>Clear Filters</div>
                                 <div className = {style.listItem} onClick = {() => getItemsLowHigh(document.getElementById('searchTerm').value.toLowerCase())}>Price: Low to High</div>
                                 <div className = {style.listItem} onClick = {() => getItemsHighLow(document.getElementById('searchTerm').value.toLowerCase())}>Price: High to Low</div>
                             </div>
