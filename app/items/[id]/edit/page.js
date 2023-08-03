@@ -10,6 +10,7 @@ import Navigation from "../../../../components/Navigation";
 import Footer from "../../../../components/Footer";
 import DetailEditForm from './DetailEditForm'
 import ImageEditForm from './ImageEditForm'
+import DeleteForm from './DeleteForm'
 
 export default async function Page( {params} ) {
     const supabase = createServerComponentClient({ cookies })
@@ -68,6 +69,7 @@ export default async function Page( {params} ) {
                 <>
                     <DetailEditForm item={item}/>
                     <ImageEditForm item={item}/>
+                    <DeleteForm item={item}/>
                 </>}
             </div>
             <Footer />
