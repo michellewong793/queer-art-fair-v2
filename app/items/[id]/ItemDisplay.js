@@ -5,7 +5,7 @@ import styles from './ItemDisplay.module.css'
 import Button from '../../../components/Button'
 import ImageSlideshow from './ImageSlideshow'
 import { useState } from 'react'
-import Modal from '../../../components/Modal'
+import Modal from '../../components/Modal'
 
 // props: item, shop
 export default function ItemDisplay(props) {
