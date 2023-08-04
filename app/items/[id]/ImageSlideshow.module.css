@@ -9,27 +9,92 @@
     position: relative;
 }
 
-.dotContainer {
-    display: none;
+.button {
+    display: flex;
+    align-items: center;
+
+    background-color: rgba(64, 64, 64, 0.5);
+    backdrop-filter: blur(2px);
+    border: none;
+    opacity: 0.0;
+
+    transition: opacity 0.4s ease-in-out;
 }
 
-.button {
-    opacity: 0;
+.slideContainer:hover .button {
+    opacity: 1.0;
+}
+
+.button img {
+    width: 75px;
+    opacity: 0.3;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.button:hover img {
+    opacity: 1.0;
 }
 
 .left, .right {
     height: 100%;
-    width: 50%;
     position: absolute;
     top: 0;
+    width: 100px;
+}
+
+.left:hover, .right:hover {
+    cursor: pointer;
 }
 
 .left {
     left: 0;
+    justify-content: left;
 }
 
 .right {
     right: 0;
+    justify-content: right;
+}
+
+.dotContainer {
+    position: absolute;
+    bottom: 16px;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dotBackdrop {
+    width: fit-content;
+    padding: 8px 24px;
+    border-radius: 16px;
+
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+
+    /* border: 1px solid rgba(255, 255, 255, 0.275); */
+    border: none;
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.3);
+
+    transition: background-color 0.2s ease-in-out;
+}
+
+.dot:hover {
+    background: rgba(255, 255, 255, 0.7);
+    cursor:pointer;
+}
+
+.selected {
+    background: rgba(255, 255, 255, 1) !important;
 }
 
 .image {
@@ -38,89 +103,14 @@
     object-fit: contain;
 }
 
-/*Anything larger than a phone screen*/
-@media screen and (min-width: 480px) {
-    .button {
-        display: flex;
-        align-items: center;
-
-        background-color: rgba(64, 64, 64, 0.5);
-        backdrop-filter: blur(2px);
-        border: none;
-        opacity: 0.0;
-
-        transition: opacity 0.4s ease-in-out;
-    }
-
-    .slideContainer:hover .button {
-        opacity: 1.0;
-    }
-
-    .button img {
-        width: 75px;
-        opacity: 0.3;
-        transition: opacity 0.2s ease-in-out;
-    }
-
-    .button:hover img {
-        opacity: 1.0;
-    }
-
+/*Mobile only*/
+@media screen and (max-width: 480px) {
     .left, .right {
-        width: 100px;
+        opacity: 0 !important;
     }
 
-    .left:hover, .right:hover {
-        cursor: pointer;
-    }
-
-    .left {
-        justify-content: left;
-    }
-
-    .right {
-        justify-content: right;
-    }
-
-    .dotContainer {
-        position: absolute;
-        bottom: 16px;
-        right: 0;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-    .dotBackdrop {
-        width: fit-content;
-        padding: 8px 24px;
-        border-radius: 16px;
-
-        display: flex;
-        justify-content: center;
-        gap: 16px;
-    }
-
-    .dot {
-        width: 20px;
-        height: 20px;
-
-        /* border: 1px solid rgba(255, 255, 255, 0.275); */
-        border: none;
-        border-radius: 50%;
-
-        background-color: rgba(255, 255, 255, 0.3);
-
-        transition: background-color 0.2s ease-in-out;
-    }
-
-    .dot:hover {
-        background: rgba(255, 255, 255, 0.7);
-        cursor:pointer;
-    }
-    
-    .selected {
-        background: rgba(255, 255, 255, 1) !important;
+    .dotContainer * {
+        opacity: 1.0 !important;
     }
 }
 
