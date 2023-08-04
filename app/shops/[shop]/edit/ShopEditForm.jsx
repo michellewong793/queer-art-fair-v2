@@ -99,7 +99,7 @@ export default function ShopEditForm( props ) {
                     <div>
                         <Label><strong>Instagram</strong></Label>
                         <div className={styles.handleInput}>
-                            <img className={styles.logo} src='/logos/Instagram.png'></img>
+                            <img className={styles.logo} src='/logos/Instagram.png' alt='Instagram logo'/>
                             <Input
                                 className={styles.input}
                                 type='text'
@@ -112,7 +112,7 @@ export default function ShopEditForm( props ) {
                     <div>
                         <Label><strong>Venmo*</strong></Label>
                         <div className={styles.handleInput}>
-                            <img className={styles.logo} src='/logos/Venmo.png'></img>
+                            <img className={styles.logo} src='/logos/Venmo.png' alt='Venmo logo'/>
                             <Input
                                 className={styles.input}
                                 type='text'
