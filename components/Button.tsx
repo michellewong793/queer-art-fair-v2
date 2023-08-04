@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import CSS from 'csstype'
 import styles from './Button.module.css'
+import Link from "next/link";
 
 type ButtonProps = {
     name?,
@@ -41,16 +42,6 @@ const Button: React.FC<ButtonProps> = ({
         setIsHovered(false);
     }
 
-    const handleOnClick = (event) => {
-        if (typeof onClick === "function") {
-            onClick({
-                value: event.target.value
-            })
-        } else if (url) {
-            router.push(url)
-        }
-    }
-
     const buttonStyle: CSS.Properties = {
         backgroundColor: backgroundColor,
         color: textColor,
@@ -61,6 +52,24 @@ const Button: React.FC<ButtonProps> = ({
         buttonStyle.width = width;
     }
 
+    if (url) return (
+        <Link href={url}
+            style={buttonStyle}
+            className={styles.button + ' ' + styles.link + ' ' + className}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave} >
+            {text}
+        </Link>
+    )
+
+    const handleOnClick = (event) => {
+        if (typeof onClick === "function") {
+            onClick({
+                value: event.target.value
+            })
+        }
+    }
+    
     return (
         <button style={buttonStyle}
             name={name}

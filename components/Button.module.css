@@ -1,4 +1,10 @@
 /*Global styles*/
+.link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .button {
     text-align: center;
     font-family: 'ClementePDak';
