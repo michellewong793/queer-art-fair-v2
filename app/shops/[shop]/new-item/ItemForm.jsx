@@ -261,6 +261,7 @@ export default function ItemForm(props) {
         />
         </div>
 
+        <Label>Hit this button to create your item. After it's created, it will be publicly viewable and searchable. Customers will send their orders directly to your account email<strong>{' '+props?.email}</strong>, so be sure to check it periodically.</Label>
         <Input
             type='submit'
             value='Create item'

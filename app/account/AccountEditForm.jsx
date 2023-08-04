@@ -37,6 +37,8 @@ export default function AccountEditForm( props ) {
       >
         <h3>Account Details</h3>
 
+        <Label>The following account details (name and email address) are by default not shown to other users. If you list items for sale, your name (if entered) and email address will be shown to customers looking to order your items.</Label>
+
         <Label>Email</Label>
         {/* <Input 
         className={styles.input}

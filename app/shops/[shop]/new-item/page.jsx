@@ -49,7 +49,7 @@ export default async function Page({params}) {
             <Subheader />
             <Navigation />
             <div className={styles.content}>
-                {shop && <ItemForm shop={shop}/>}
+                {shop && <ItemForm shop={shop} email={user?.email} />}
             </div>
             <Footer />
         </div>
