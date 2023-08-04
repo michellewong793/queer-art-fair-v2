@@ -21,19 +21,17 @@ export default function ImageSlideshow(props) {
         <>
         <div className={styles.slideContainer}>
             <button 
-                name={'View previous image'}
                 className={styles.button+' '+styles.left} 
                 onClick={()=>previousImage()
                 }>
-                <img src={'/LeftArrow.svg'}/>
+                <img src={'/LeftArrow.svg'} alt='View previous image'/>
             </button>   
             <img className={styles.image} src={imageUrls[slideIndex]}/>
 
             <button 
-                name={'View next image'}
                 className={styles.button+' '+styles.right} 
                 onClick={()=>nextImage()}>
-                <img src={'/RightArrow.svg'}
+                <img src={'/RightArrow.svg'} alt='View next image'
                 />
             </button>
 
