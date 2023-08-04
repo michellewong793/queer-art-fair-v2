@@ -34,13 +34,13 @@ const NextEvent = (props) => {
                             {props.subheader}
                         </p>
                         <div className = {style.textContainer}>
-                            <img className = {style.orange} src = {"/orange.svg"}/>
+                            <img className = {style.orange} src = {"/orange.svg"} alt='inflatable orange bullet point'/>
                             <p className = {style.text} style = {contentStyles.text}> 
                                 {props.text1}
                             </p>
                         </div>
                         <div className = {style.textContainer}>
-                            <img className = {style.orange} src = {"/orange.svg"}/>
+                            <img className = {style.orange} src = {"/orange.svg"} alt='inflatable orange bullet point'/>
                             <p className = {style.text} style = {contentStyles.text}> 
                                 {props.text2}
                             </p>
@@ -61,13 +61,13 @@ const NextEvent = (props) => {
                             {props.subheader}
                         </p>
                         <div className = {style.textContainer}>
-                            <img className = {style.orange} src = {"/orange.svg"}/>
+                            <img className = {style.orange} src = {"/orange.svg"} alt='inflatable orange bullet point'/>
                             <p className = {style.text} style = {contentStyles.text}> 
                                 {props.text1}
                             </p>
                         </div>
                         <div className = {style.textContainer}>
-                            <img className = {style.orange} src = {"/orange.svg"}/>
+                            <img className = {style.orange} src = {"/orange.svg"} alt='inflatable orange bullet point'/>
                             <p className = {style.text} style = {contentStyles.text}> 
                                 {props.text2}
                             </p>
