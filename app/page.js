@@ -21,7 +21,10 @@ export default function HomePage() {
       <div className={HomeStyles.content}>
         <div className = {HomeStyles.nextContainer}>
           <Strawberry heading='NEXT' showMediumStrawberry = {'none'}/>
-          <img className = {HomeStyles.nextPoster} src='./QAF Poster July 8.png'></img>
+          <img 
+            className = {HomeStyles.nextPoster} 
+            src='./QAF Poster July 8.png'
+            alt='Poster for Summer Queer Art Faire. Poster text reads July 8, 1-5pm. Summer Queer Art Faire, an outdoor event. Local BIPOC, queer artists and vendors. Raffle, outdoor games, snacks and drinks. $5 suggested donation to Queer Art Faire for creating more spaces for BIPOC and queer artists! <3 Lakeside Landing, 2504 ocean ave, San Francisco.'/>
 
           <div className = {HomeStyles.nextButtonContainer}>
             <Button className = {HomeStyles.nextButton} 
@@ -29,7 +32,10 @@ export default function HomePage() {
             url="https://www.eventbrite.com/e/queer-art-faire-at-lakeside-landing-tickets-634996761407?aff=oddtdtcreator"
             />
             <div className = {HomeStyles.nextHeartContainer} >
-              <img className = {HomeStyles.nextHeart} src='./heart.svg'></img>
+              <img 
+                className = {HomeStyles.nextHeart} 
+                src='./heart.svg'
+                alt='inflatable heart'/>
             </div>
             <Button className = {HomeStyles.nextButton} 
             text="General Vendor Application" 
@@ -45,9 +51,9 @@ export default function HomePage() {
           <Strawberry heading='UPCOMING' showLargeStrawberry='none'/>
           <div className = {HomeStyles.smallEventsContainer}>
             <Event className = {HomeStyles.centerFlexChild} name="Lakeside Landing" info="July 8, 2023"/>
-            <img className = {HomeStyles.upcomingOrange} src='./puffyOrange.svg'></img>
+            <img className = {HomeStyles.upcomingOrange} src='./puffyOrange.svg' alt='inflatable orange'/>
             <Event className = {HomeStyles.centerFlexChild} name="Fall Faire" info={'Sept 16, 2023'}/>
-            <img className = {HomeStyles.upcomingOrange} src='./puffyOrange.svg'></img>
+            <img className = {HomeStyles.upcomingOrange} src='./puffyOrange.svg'  alt='inflatable orange'/>
             <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" info={'Dec 2, 2023'}/>
           </div>
         </div>
@@ -70,7 +76,7 @@ export default function HomePage() {
         <div className = {HomeStyles.aboutContainer}>
           <Strawberry heading='ABOUT' showMediumStrawberry = {"none"}/>
           <div className = {HomeStyles.aboutSubContainer}>
-            <img className = {HomeStyles.aboutImage} src='./PeachWithWater.svg'></img>
+            <img className = {HomeStyles.aboutImage} src='./PeachWithWater.svg' alt="peach with water droplets and a sticker reading 'queer art faire QUEER AF! fresh and fruity!'"/>
             <p className= {HomeStyles.aboutText}>
             We are a community hosting art fairs in San Francisco for marginalized and queer folks who have not had a space to share their creations before. 
             <br /> <br/>
