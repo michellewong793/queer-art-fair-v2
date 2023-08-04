@@ -19,6 +19,7 @@ export default function DeletableImage ( props ) {
                 className={styles.deleteButton}
                 src='/TrashIcon.svg'
                 onClick={handleOnClick}
+                alt='Delete this image'
             />                
         </Clickable>
     )
