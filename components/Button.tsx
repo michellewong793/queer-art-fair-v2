@@ -1,6 +1,5 @@
 'use client'
 
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import CSS from 'csstype'
 import styles from './Button.module.css'
@@ -33,7 +32,6 @@ const Button: React.FC<ButtonProps> = ({
     onClick,
 
 }) => {
-    const router = useRouter()
     const [isHovered, setIsHovered] = useState(false);
     const handleMouseEnter = () => {
         setIsHovered(true);
