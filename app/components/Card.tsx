@@ -40,10 +40,10 @@ const Card: React.FC<CardProps> = ({
         <Clickable className={styles.wrapper + ' ' + className}>
             <div className={styles.icons}>
                 <Link className={styles.link} href={editUrl} rel="noopener noreferrer" target="_blank">
-                        <img className={edit ? styles.icon : styles.hidden} src={'/PencilEditIcon.svg'} />
+                        <img className={edit ? styles.icon : styles.hidden} src={'/PencilEditIcon.svg'} alt='Open new page to edit'/>
                 </Link>
 
-                <img className={trash ? styles.icon : styles.hidden} src={'/TrashIcon.svg'} onClick={handleOnTrash}/>
+                <img className={trash ? styles.icon : styles.hidden} src={'/TrashIcon.svg'} onClick={handleOnTrash} alt='Delete'/>
             </div>
 
             <Link className={styles.link} href={url} rel="noopener noreferrer" target="_blank">
