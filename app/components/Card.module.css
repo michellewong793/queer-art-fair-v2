@@ -44,7 +44,7 @@
     -webkit-transition: opacity 0.15s ease-in-out;
 }
 
-.icon:hover {
+.icon:hover, .icon:focus {
     opacity: 1.0;
 }
 

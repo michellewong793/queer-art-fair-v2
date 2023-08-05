@@ -31,7 +31,7 @@
     transition: opacity 0.2s ease-in-out;
 }
 
-.deleteButton:hover {
+.deleteButton:hover, .deleteButton:focus {
     opacity: 1;
 }
 
