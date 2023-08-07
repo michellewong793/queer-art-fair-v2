@@ -1,4 +1,11 @@
 import "../components/styles.css";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Queer Art Faire',
+  description:
+    'Fresh art fairs in the bay area',
+};
 
 export default function RootLayout({
     // Layouts must accept a children prop.
