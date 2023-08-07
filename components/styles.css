@@ -259,17 +259,30 @@
 /*Fallback fonts*/
 @font-face {
     font-family: 'Ilyas-fallback';
-    src: local("Verdana");
+    src: local("Arial Narrow");
+}
+
+@font-face {
+    font-family: 'ClementePDak-fallback';
+    src: local("Arial");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'ClementePDae-fallback';
+    src: local("Arial Narrow");
+    font-weight: lighter;
 }
 
 @font-face {
     font-family: 'Clemente-fallback';
-    src: local("Tahoma");
+    src: local("Arial");
 }
 
 @font-face {
     font-family: 'Helvetica-Light-fallback';
-    src: local("Arial")
+    src: local("Arial");
+    font-weight: lighter;
 }
 
 @font-face {
@@ -280,14 +293,14 @@
 
 /*Global styles*/
 h1 {
-    font-family: 'Ilyas', 'Ilyas-fallback', serif;
+    font-family: 'Ilyas', 'Ilyas-fallback', sans-serif;
     font-size: 36px;
     font-weight: normal;
     margin: 0;
     color: #1A361E;
 }
 h2 {
-    font-family: 'Ilyas', 'Ilyas-fallback', serif;
+    font-family: 'Ilyas', 'Ilyas-fallback', sans-serif;
     font-size: 36px;
     font-weight: normal;
     margin: 0;
