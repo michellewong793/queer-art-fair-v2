@@ -32,6 +32,13 @@
     gap: 8px;
 }
 
+.button {
+    border: none;
+    background-color: #00000000;
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+}
 .icon {
     width: 72px;
     height: 72px;
@@ -46,11 +53,6 @@
 
 .icon:hover, .icon:focus {
     opacity: 1.0;
-}
-
-.hidden {
-    display: none;
-    
 }
 
 .textWrapper {
