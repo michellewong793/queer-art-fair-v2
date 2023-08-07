@@ -1,6 +1,6 @@
 'use client'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-import Label from '../components/forms/Label'
+import {Label} from '../components/forms/label'
 import Input from '../components/forms/Input'
 import { useState } from 'react'
 import styles from './AccountEditForm.module.css'
