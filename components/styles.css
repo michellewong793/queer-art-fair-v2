@@ -256,24 +256,45 @@
     font-display: swap;
 }
 
+/*Fallback fonts*/
+@font-face {
+    font-family: 'Ilyas-fallback';
+    src: local("Verdana");
+}
+
+@font-face {
+    font-family: 'Clemente-fallback';
+    src: local("Tahoma");
+}
+
+@font-face {
+    font-family: 'Helvetica-Light-fallback';
+    src: local("Arial")
+}
+
+@font-face {
+    font-family: "Helvetica-fallback";
+    src: local("Arial");
+}
+
 
 /*Global styles*/
 h1 {
-    font-family: 'Ilyas';
+    font-family: 'Ilyas', 'Ilyas-fallback', serif;
     font-size: 36px;
     font-weight: normal;
     margin: 0;
     color: #1A361E;
 }
 h2 {
-    font-family: 'Ilyas';
+    font-family: 'Ilyas', 'Ilyas-fallback', serif;
     font-size: 36px;
     font-weight: normal;
     margin: 0;
     color: #1A361E;
 }
 h3 {
-    font-family: 'Clemente';
+    font-family:'Clemente', 'Clemente-fallback', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
@@ -282,7 +303,7 @@ h3 {
 }
 
 p {
-    font-family: 'Helvetica Light';
+    font-family: 'Helvetica Light', 'Helvetica-Light-fallback', sans-serif;
     font-size: 16px;
     font-weight: 200;
     margin: 0;
