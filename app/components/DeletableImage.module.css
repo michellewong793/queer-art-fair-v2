@@ -10,6 +10,7 @@
     height: fit-content;
     background-color: white;
     position: relative;
+    cursor: default;
 }
 
 .image {
@@ -24,14 +25,22 @@
     position: absolute;
     top: 2px;
     right: 2px;
+    width: fit-content;
+    height: fit-content;
+    z-index: 100;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+.deleteButton img {
     width: 32px;
     height: 32px;
-    z-index: 100;
     opacity: 0.7;
     transition: opacity 0.2s ease-in-out;
+    display: block;
 }
 
-.deleteButton:hover, .deleteButton:focus {
+.deleteButton:hover img, .deleteButton:focus img{
     opacity: 1;
 }
 
