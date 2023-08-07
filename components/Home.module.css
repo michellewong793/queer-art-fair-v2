@@ -65,7 +65,7 @@
 
 .aboutText {
     width: 100%;
-    font-family: "Helvetica";
+    font-family: "Helvetica", "Helvetica-fallback", sans-serif;
 }
 
 /*Desktop only*/
