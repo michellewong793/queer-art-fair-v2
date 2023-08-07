@@ -2,7 +2,7 @@
 
 .active {
     font-size: 30px;
-    font-family: "ClementePDak", "Clemente-fallback", sans-serif; 
+    font-family: "ClementePDak", "ClementePDak-fallback", sans-serif; 
     margin: 0;
     color: #113219; 
     text-decoration: none;
@@ -29,7 +29,7 @@
 .nonActive {
     text-decoration: none;
     font-size: 30px;
-    font-family: 'ClementePDae', 'Clemente-fallback', sans-serif;
+    font-family: 'ClementePDae', 'ClementePDae-fallback', sans-serif;
     margin: 0px; 
     color: #113219; 
     text-decoration: none; 
