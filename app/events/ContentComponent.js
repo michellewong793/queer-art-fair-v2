@@ -27,9 +27,9 @@ const ContentComponent = (props) => {
                     <img className = {style.image} src = {props.imagePath} alt={props?.alt}/>
                     <Spacer width = {2}/>
                     <div className = {style.smallContainer}>
-                        <p className = {style.heading} style = {contentStyles.heading}>
+                        <h3 className = {style.heading} style = {contentStyles.heading}>
                             {props.heading}
-                        </p>
+                        </h3>
                         <p className = {style.subheading} >
                             {props.subheader}
                         </p>
@@ -59,9 +59,9 @@ const ContentComponent = (props) => {
             
                 <div className = {style.container}>
                     <div className = {style.smallContainer}>
-                        <p className = {style.heading} style = {contentStyles.heading}>
+                        <h3 className = {style.heading} style = {contentStyles.heading}>
                             {props.heading}
-                        </p>
+                        </h3>
                         <p className = {style.subheading} >
                             {props.subheader}
                         </p>
