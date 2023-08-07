@@ -1,0 +1,15 @@
+.form {
+    margin-top: 32px;
+}
+.input, .handleInput {
+    margin-bottom: 32px;
+}
+
+.handleInput {
+    display: flex;
+    gap: 24px;
+}
+.logo {
+    width: 56px;
+    height: 56px;
+}

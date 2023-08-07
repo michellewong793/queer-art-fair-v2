@@ -1,0 +1,45 @@
+/*Global styles*/
+.wrapper h3 {
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+.namePriceWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.shop {
+    font-family: ClementePDae;
+}
+
+.description {
+    font-family: Helvetica;
+    margin-bottom: 24px;
+}
+
+.orderDirections, .orderDirections p {
+    font-family: Helvetica;
+}
+
+.orderDirections li {
+    margin-bottom: 8px;
+}
+
+.orderButton {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+/*Desktop only*/
+@media screen and (min-width: 768px) {
+    .wrapper h3 {
+        margin-top: 40px;
+        margin-bottom: 24px;
+    }
+
+    .orderButton {
+        margin-top: 56px;
+        margin-bottom: 40px;
+    }
+}

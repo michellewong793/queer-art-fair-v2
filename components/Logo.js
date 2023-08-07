@@ -2,7 +2,7 @@ import Styles from './Logo.module.css'
 
 const Logo = (props) => {
     return (
-        <img className={Styles.logoImg} src='./QAFLogoOrangePuffy.png'></img>
+        <img className={Styles.logoImg} src='/./QAFLogoOrangePuffy.png'></img>
     )
 }
 

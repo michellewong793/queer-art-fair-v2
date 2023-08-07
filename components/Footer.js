@@ -13,8 +13,6 @@ const Footer = (props) => {
                         backgroundColor="white"
                         textColor="#002809"
                         borderColor='#FF4C4C'
-                        hoverBackgroundColor="#002809"
-                        hoverTextColor="white"
                         url='https://subscribepage.io/queerartfaire'
                         width='432px'
                     />
@@ -24,8 +22,6 @@ const Footer = (props) => {
                         backgroundColor="white" 
                         textColor="#002809" 
                         borderColor='#FF4C4C'
-                        hoverBackgroundColor="#002809"
-                        hoverTextColor="white"
                         url='https://www.instagram.com/queerartfairsf/'
                         width='432px'
                         />
