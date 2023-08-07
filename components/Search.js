@@ -46,6 +46,51 @@ function shuffle(indexArray) {
     }
 }
 
+//creates a new product card to be displayed when searched
+function createProduct(name, price, imageUrls, id) {
+    let searchResults = document.getElementById('searchResults');
+
+    let resultContainer = document.createElement('resultContainer');
+    resultContainer.classList.add("resultContainer");
+    searchResults.appendChild(resultContainer);
+    let itemUrl = "/items/" + id;
+    resultContainer.onclick = function(){window.location = itemUrl};
+
+    let resultImg = document.createElement('img');
+    resultImg.classList.add('resultImg');
+    resultImg.src = imageUrls[0];
+    resultContainer.appendChild(resultImg);
+
+    if (imageUrls.length > 1) {
+        resultImg.addEventListener('mouseover', () => resultImg.src = imageUrls[1]);
+        resultImg.addEventListener('mouseout', () => resultImg.src = imageUrls[0]);
+    }
+
+    let result = document.createElement("result");
+    result.classList.add("result");
+    resultContainer.appendChild(result);
+
+    let prodName = document.createElement('prodName');
+    prodName.classList.add('prodName');
+    prodName.innerText = name;
+    result.appendChild(prodName);
+
+    let prodPrice = document.createElement('prodPrice');
+    prodPrice.classList.add('prodPrice');
+    prodPrice.innerText = "$" + price;
+    result.appendChild(prodPrice);
+}
+
+//deletes child elements
+function deleteElements(itemId) {
+    let parentElement = document.getElementById(itemId);
+    let searchChild = parentElement.lastElementChild;
+    while (searchChild) {
+        parentElement.removeChild(searchChild);
+        searchChild = parentElement.lastElementChild;
+    }
+}
+
 //contains search functions as well structure of the page
 export default function Search() {
     const [length, setLength] = useState(0);
@@ -142,14 +187,17 @@ export default function Search() {
 
     //retrieves and displays products matching the search term
     async function getItemsLowHigh(userInput) {
+        let prodIndex = [];
+        let firstWord;
+        let secondWord;
 
-        let searchResults = document.getElementById('searchResults');
-
-        let searchChild = searchResults.lastElementChild;
-        while (searchChild) {
-            searchResults.removeChild(searchChild);
-            searchChild = searchResults.lastElementChild;
+        if (userInput.includes(" ")) {
+            let indexOfSpace = userInput.indexOf(" ");
+            firstWord = userInput.slice(0, indexOfSpace);
+            secondWord = userInput.slice(indexOfSpace + 1);
         }
+
+        deleteElements("searchResults");
         
         let { data: items, error} = await supabaseClient
             .from('items')
@@ -164,62 +212,53 @@ export default function Search() {
             for (let i = 0; i < length; i++) {
                 let row = items[i];
                 let arrayLen = row.keywords.length;
+                if (row.keywords.includes(firstWord) && row.keywords.includes(secondWord)){
+                    prodIndex.push(i);
+                }
                 for (let j = 0; j < arrayLen; j++) {
                     let keywordToTest = row.keywords[j];
                     let singular = userInput.substring(0, userInput.length-1);
                     let lowercase = row.name.toLowerCase();
                     if (keywordToTest.includes(userInput) || keywordToTest == singular || userInput == lowercase) {
-            
-                        let searchResults = document.getElementById('searchResults');
-
-                        let resultContainer = document.createElement('resultContainer');
-                        resultContainer.classList.add("resultContainer");
-                        searchResults.appendChild(resultContainer);
-                        let itemUrl = "/items/" + row.id;
-                        resultContainer.onclick = function(){window.location = itemUrl};
-
-                        let resultImg = document.createElement('img');
-                        resultImg.classList.add('resultImg');
-                        resultImg.src = row.image_urls[0];
-                        resultContainer.appendChild(resultImg);
-
-                        if (row.image_urls.length > 1) {
-                            resultImg.addEventListener('mouseover', () => resultImg.src = row.image_urls[1]);
-                            resultImg.addEventListener('mouseout', () => resultImg.src = row.image_urls[0]);
+                        if (prodIndex.includes(i)) {
+                            break;
                         }
-
-                        let result = document.createElement("result");
-                        result.classList.add("result");
-                        resultContainer.appendChild(result);
-
-                        let prodName = document.createElement('prodName');
-                        prodName.classList.add('prodName');
-                        prodName.innerText = row.name;
-                        result.appendChild(prodName);
-
-                        let prodPrice = document.createElement('prodPrice');
-                        prodPrice.classList.add('prodPrice');
-                        prodPrice.innerText = "$" + row.price;
-                        result.appendChild(prodPrice);
+                        else {
+                            prodIndex.push(i);
+                        }
                     }
                     if (userInput == lowercase) {
                         break;
                     }
                 }
+
+            }
+
+            for (let m = 0; m < prodIndex.length; m++) {
+                let index = prodIndex[m];
+                let row = items[index];
+                let prodName = row.name;
+                let prodPrice = row.price;
+                let prodImages = row.image_urls;
+                let prodId = row.id;
+                createProduct(prodName, prodPrice, prodImages, prodId);
             }
         }
     }
 
     //retrieves and displays products matching the search term
     async function getItemsHighLow(userInput) {
+        let prodIndex = [];
+        let firstWord;
+        let secondWord;
 
-        let searchResults = document.getElementById('searchResults');
-
-        let searchChild = searchResults.lastElementChild;
-        while (searchChild) {
-            searchResults.removeChild(searchChild);
-            searchChild = searchResults.lastElementChild;
+        if (userInput.includes(" ")) {
+            let indexOfSpace = userInput.indexOf(" ");
+            firstWord = userInput.slice(0, indexOfSpace);
+            secondWord = userInput.slice(indexOfSpace + 1);
         }
+
+        deleteElements("searchResults");
         
         let { data: items, error} = await supabaseClient
             .from('items')
@@ -234,48 +273,36 @@ export default function Search() {
             for (let i = 0; i < length; i++) {
                 let row = items[i];
                 let arrayLen = row.keywords.length;
+                if (row.keywords.includes(firstWord) && row.keywords.includes(secondWord)){
+                    prodIndex.push(i);
+                }
                 for (let j = 0; j < arrayLen; j++) {
                     let keywordToTest = row.keywords[j];
                     let singular = userInput.substring(0, userInput.length-1);
                     let lowercase = row.name.toLowerCase();
                     if (keywordToTest.includes(userInput) || keywordToTest == singular || userInput == lowercase) {
-            
-                        let searchResults = document.getElementById('searchResults');
-
-                        let resultContainer = document.createElement('resultContainer');
-                        resultContainer.classList.add("resultContainer");
-                        searchResults.appendChild(resultContainer);
-                        let itemUrl = "/items/" + row.id;
-                        resultContainer.onclick = function(){window.location = itemUrl};
-
-                        let resultImg = document.createElement('img');
-                        resultImg.classList.add('resultImg');
-                        resultImg.src = row.image_urls[0];
-                        resultContainer.appendChild(resultImg);
-
-                        if (row.image_urls.length > 1) {
-                            resultImg.addEventListener('mouseover', () => resultImg.src = row.image_urls[1]);
-                            resultImg.addEventListener('mouseout', () => resultImg.src = row.image_urls[0]);
+                        if (prodIndex.includes(i)) {
+                            break;
                         }
-
-                        let result = document.createElement("result");
-                        result.classList.add("result");
-                        resultContainer.appendChild(result);
-
-                        let prodName = document.createElement('prodName');
-                        prodName.classList.add('prodName');
-                        prodName.innerText = row.name;
-                        result.appendChild(prodName);
-
-                        let prodPrice = document.createElement('prodPrice');
-                        prodPrice.classList.add('prodPrice');
-                        prodPrice.innerText = "$" + row.price;
-                        result.appendChild(prodPrice);
+                        else {
+                            prodIndex.push(i);
+                        }
                     }
                     if (userInput == lowercase) {
                         break;
                     }
                 }
+
+            }
+
+            for (let m = 0; m < prodIndex.length; m++) {
+                let index = prodIndex[m];
+                let row = items[index];
+                let prodName = row.name;
+                let prodPrice = row.price;
+                let prodImages = row.image_urls;
+                let prodId = row.id;
+                createProduct(prodName, prodPrice, prodImages, prodId);
             }
         }
     }
@@ -283,16 +310,19 @@ export default function Search() {
     //retrieves and displays products matching the search term
     async function getItems(userInput) {
         let prodIndex = [];
+        let firstWord = "";
+        let secondWord = "";
     
         setShowFilterButton(true);
 
-        let searchResults = document.getElementById('searchResults');
-
-        let searchChild = searchResults.lastElementChild;
-        while (searchChild) {
-            searchResults.removeChild(searchChild);
-            searchChild = searchResults.lastElementChild;
+        if (userInput.includes(" ")) {
+            let indexOfSpace = userInput.indexOf(" ");
+            firstWord = userInput.slice(0, indexOfSpace);
+            secondWord = userInput.slice(indexOfSpace + 1);
         }
+
+        deleteElements("searchResults");
+        deleteElements("noResultsContainer");
         
         let { data: items, error} = await supabaseClient
             .from('items')
@@ -306,65 +336,79 @@ export default function Search() {
             for (let i = 0; i < length; i++) {
                 let row = items[i];
                 let arrayLen = row.keywords.length;
+
+                if (row.keywords.includes(firstWord) && row.keywords.includes(secondWord)){
+                    prodIndex.push(i);
+                }
                 for (let j = 0; j < arrayLen; j++) {
                     let keywordToTest = row.keywords[j];
                     let singular = userInput.substring(0, userInput.length-1);
                     let lowercase = row.name.toLowerCase();
-                    if (keywordToTest.includes(userInput) || keywordToTest == singular || userInput == lowercase) {
+                    if (keywordToTest.includes(userInput) || keywordToTest == singular || userInput == lowercase || singular == lowercase) {
 
                         //creates an array of the indices of rows that matched the search term
-                        prodIndex.push(i);
-                        console.log(prodIndex);
+                        if (prodIndex.includes(i)) {
+                            break;
+                        }
+                        else {
+                            prodIndex.push(i);
+                            console.log(prodIndex);
+                        }
             
                     }
-                    if (userInput == lowercase) {
+                    
+                    if (userInput == lowercase || singular == lowercase) {
                         break;
                     }
                 }
             }
-            shuffle(prodIndex);
-            console.log(prodIndex);
 
-            for (let m = 0; m < prodIndex.length; m++) {
-                let index = prodIndex[m];
-                let row = items[index];
-                let searchResults = document.getElementById('searchResults');
+            if (prodIndex.length > 0){
+                shuffle(prodIndex);
 
-                let resultContainer = document.createElement('resultContainer');
-                resultContainer.classList.add("resultContainer");
-                let itemUrl = "/items/" + row.id;
-                resultContainer.onclick = function(){window.location = itemUrl};
-                searchResults.appendChild(resultContainer);
-
-                let resultImg = document.createElement('img');
-                resultImg.classList.add('resultImg');
-                resultImg.src = row.image_urls[0];
-                resultContainer.appendChild(resultImg);
-        
-                if (row.image_urls.length > 1) {
-                    resultImg.addEventListener('mouseover', () => resultImg.src = row.image_urls[1]);
-                    resultImg.addEventListener('mouseout', () => resultImg.src = row.image_urls[0]);
+                for (let m = 0; m < prodIndex.length; m++) {
+                    let index = prodIndex[m];
+                    let row = items[index];
+                    let prodName = row.name;
+                    let prodPrice = row.price;
+                    let prodImages = row.image_urls;
+                    let prodId = row.id;
+                    createProduct(prodName, prodPrice, prodImages, prodId);
                 }
-
-                let result = document.createElement("result");
-                result.classList.add("result");
-                resultContainer.appendChild(result);
-
-                let prodName = document.createElement('prodName');
-                prodName.classList.add('prodName');
-                prodName.innerText = row.name;
-                result.appendChild(prodName);
-
-                let prodPrice = document.createElement('prodPrice');
-                prodPrice.classList.add('prodPrice');
-                prodPrice.innerText = "$" + row.price;
-                result.appendChild(prodPrice);
             }
+    
             if (searchResults.childElementCount == 0) {
                 let noResults = document.createElement('noResults');
+                let noResultsContainer = document.getElementById('noResultsContainer');
                 noResults.classList.add("noResults");
                 noResults.innerText = "we could not find a match for your search";
-                searchResults.appendChild(noResults);
+                noResultsContainer.appendChild(noResults);
+
+                let newText = "here are results matching " + firstWord + " or " + secondWord;
+
+                for (let i = 0; i < length; i++) {
+                    let row = items[i];
+                    if (row.keywords.includes(firstWord) || row.keywords.includes(secondWord)){
+                        prodIndex.push(i);
+                    }
+                }
+                if (prodIndex.length > 0){
+                    shuffle(prodIndex);
+                    let otherOptions = document.createElement('otherOptions');
+                    otherOptions.classList.add("otherOptions");
+                    otherOptions.innerText = newText;
+                    noResultsContainer.appendChild(otherOptions);
+    
+                    for (let m = 0; m < prodIndex.length; m++) {
+                        let index = prodIndex[m];
+                        let row = items[index];
+                        let prodName = row.name;
+                        let prodPrice = row.price;
+                        let prodImages = row.image_urls;
+                        let prodId = row.id;
+                        createProduct(prodName, prodPrice, prodImages, prodId);
+                    }
+                }
             }
         }
     }
@@ -430,7 +474,7 @@ export default function Search() {
                             <Collection image = {"url('/June17FaireSquare.png')"} text = {"Paintings"}/>
                         </div>
                     </div>
-
+                    <div className = {style.noResults} id = "noResultsContainer"></div>
                     <div className = {style.searchResults} id = "searchResults"></div>
                 </form>
             </div>

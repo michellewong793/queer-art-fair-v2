@@ -206,7 +206,16 @@ prodPrice {
 noResults {
     font-family: 'ClementePDae';
     color: #1A361E;
-    font-size: 24px;
+    font-size: 16px;
+    padding: 8px;
+    align-items: center;
+    text-align: center;
+}
+
+otherOptions {
+    font-family: 'ClementePDae';
+    color: #1A361E;
+    font-size: 32px;
     padding: 8px;
     align-items: center;
     text-align: center;
