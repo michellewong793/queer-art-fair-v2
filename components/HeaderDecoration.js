@@ -5,7 +5,6 @@ import { usePathname } from 'next/navigation'
 import React, {useState} from 'react';
 import style from "./navigation.module.css";
 import headerStyle from "./headerDecoration.module.css";
-import MarketplaceAccess from "./MarketplaceAccess"
 
 const HeaderDecoration = (props) => {
 
@@ -28,13 +27,11 @@ const HeaderDecoration = (props) => {
                     <a  className = {style.nonActive} href = "https://www.gofundme.com/f/queer-art-faire">
                         DONATE
                     </a>
-                    <a href = "/marketplace" className = {currentRoute === '/marketplace' ? style.active : style.nonActive}>
-                        ONLINE MARKETPLACE
-                    </a>
                 </div>
-                <MarketplaceAccess />
             </div>
-            <div className = {headerStyle.header}></div>
+            <div className = {headerStyle.header}>
+                
+            </div>
         </div>
     )
 }

@@ -9,11 +9,9 @@ export default function MarketplaceAccess() {
     async function checkLoggedIn() {
         const { data: { user } } = await supabase.auth.getUser();
         if (user) {
-            console.log("hi");
             window.location.href = "/marketplace";
         }
         else {
-            console.log("bye");
             window.location.href = "/login";
         }
     }
@@ -21,7 +19,7 @@ export default function MarketplaceAccess() {
     return(
         <div className = {style.button} onClick = {checkLoggedIn}>
             <div className = {style.text}>
-                Online Marketplace
+                Go to Market
             </div>
         </div>
     );
