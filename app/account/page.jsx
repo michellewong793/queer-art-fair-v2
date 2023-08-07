@@ -82,7 +82,7 @@ export default async function Account() {
 
 
                 <div className={styles.shopSection}>
-                  <h3>Your Shops</h3>
+                  <h2>Your Shops</h2>
 
                   <div className={styles.shops}>
                     <div className={styles.new}>

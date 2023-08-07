@@ -8,7 +8,7 @@ export default function Login() {
     const [email, setEmail] = useState();
     return(
         <>
-        <h3>Login</h3>
+        <h2>Login</h2>
         <button onClick={() => signInWithGoogle()}>Sign in with Google</button>
 
         <br/>

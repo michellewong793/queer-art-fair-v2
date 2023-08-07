@@ -80,7 +80,7 @@ export default function DetailEditForm( props ) {
     }
     return (
         <div>
-        <h3>Item Details</h3>
+        <h2>Item Details</h2>
 
         { notifications?.map (notification => (
             <BannerNotification type={notification.type}>

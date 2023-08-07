@@ -35,7 +35,7 @@ export default function AccountEditForm( props ) {
       <form 
         onSubmit={(e) => updateProfile(e)}
       >
-        <h3>Account Details</h3>
+        <h2>Account Details</h2>
 
         <Label>The following account details (name and email address) are by default not shown to other users. If you list items for sale, your name (if entered) and email address will be shown to customers looking to order your items.</Label>
 

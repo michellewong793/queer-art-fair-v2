@@ -6,7 +6,7 @@ const Footer = (props) => {
         <div>
             <div className={Styles.footerDecor}></div>
             <div className={Styles.footer}>
-                <h3 className={Styles.centerText}>Get updates from us!</h3>
+                <h2 className={Styles.centerText}>Get updates from us!</h2>
 
                 <div className={Styles.buttonContainer}>
                     <Button text='Join our email newsletter' 

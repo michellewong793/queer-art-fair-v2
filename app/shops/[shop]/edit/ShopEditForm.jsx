@@ -75,7 +75,7 @@ export default function ShopEditForm( props ) {
 
     return (
         <>
-            <h3>Your Shop Details</h3>
+            <h2>Your Shop Details</h2>
             <form className={styles.form} onSubmit={(e) => updateShop(e)}>
                 <Label><strong>Name*</strong> Your shop name must be unique and may not contain underscores.</Label>
                 <Input

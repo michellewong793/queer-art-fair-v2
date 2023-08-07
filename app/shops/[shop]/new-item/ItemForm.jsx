@@ -176,7 +176,7 @@ export default function ItemForm(props) {
 
     return (
         <>
-        <h3>Create Item</h3>
+        <h2>Create Item</h2>
         <p className={styles.instructions}>You're adding an item to your shop <b>{props?.shop.name}</b>. Fill out the form fields below.</p>
         <form onSubmit={createItem}>
             <Label><strong>Name* </strong>Give your item a concise, descriptive name.</Label>

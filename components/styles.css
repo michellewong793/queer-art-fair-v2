@@ -229,13 +229,6 @@ h1 {
     color: #1A361E;
 }
 h2 {
-    font-family: 'Ilyas';
-    font-size: 36px;
-    font-weight: normal;
-    margin: 0;
-    color: #1A361E;
-}
-h3 {
     font-family: 'Clemente';
     font-style: normal;
     font-weight: 600;
@@ -257,9 +250,6 @@ p {
         font-size: 120px;
     }
     h2 {
-        font-size: 100px;
-    }
-    h3 {
         font-size: 40px;
     }
     p, li {

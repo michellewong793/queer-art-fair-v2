@@ -31,7 +31,7 @@ export default function DeleteForm(props) {
 
     return (
         <div>
-            <h3>Delete Item</h3>
+            <h2>Delete Item</h2>
             <Label>Click the button below only if you want to permanently delete this item.</Label>
             <Button text='Delete' onClick={() => setTrashConfirmation(true)} />
 

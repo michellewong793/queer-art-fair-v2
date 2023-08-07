@@ -170,7 +170,7 @@ export default function DetailEditForm( props ) {
     }
     return (
         <div>
-        <h3>Item Images</h3>
+        <h2>Item Images</h2>
         { notifications?.map (notification => (
             <BannerNotification type={notification.type}>
                 {notification.value}
