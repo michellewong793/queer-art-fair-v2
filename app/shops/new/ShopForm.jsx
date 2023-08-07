@@ -1,7 +1,7 @@
 'use client'
 import { useState } from "react";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-import Input from "../../components/forms/Input";
+import Input from "../../components/forms/input";
 import styles from "./ShopForm.module.css";
 import { useRouter } from "next/navigation";
 import { Label } from "../../components/forms/label";

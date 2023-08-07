@@ -1,6 +1,6 @@
 'use client'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-import Label from '../../../components/forms/Label'
+import Label from '../../../components/forms/label'
 import styles from './DeleteForm.module.css'
 import { useState } from 'react'
 import Modal from '../../../components/Modal'

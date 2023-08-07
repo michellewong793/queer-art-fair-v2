@@ -3,8 +3,8 @@
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation";
-import Label from "../../../components/forms/Label";
-import Input from "../../../components/forms/Input";
+import Label from "../../../components/forms/label";
+import Input from "../../../components/forms/input";
 import styles from "./ShopEditForm.module.css"
 
 export default function ShopEditForm( props ) {

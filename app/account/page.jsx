@@ -12,7 +12,7 @@ import theme from '../../components/Theme';
 import Link from 'next/link';
 import ShopCard from './ShopCard'
 import NewCard from '../components/NewCard';
-import Input from '../components/forms/Input';
+import Input from '../components/forms/input';
 
 
 export default async function Account() {
