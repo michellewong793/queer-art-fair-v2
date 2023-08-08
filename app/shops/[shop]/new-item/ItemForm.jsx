@@ -7,10 +7,10 @@
 
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { redirect } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useId } from "react";
 import { v4 as uuidv4 } from 'uuid';
-import Label from "../../../components/forms/Label";
-import Input from "../../../components/forms/Input";
+import Label from "../../../components/forms/label";
+import Input from "../../../components/forms/input";
 import styles from "./ItemForm.module.css"
 import DeleteableImage from "../../../components/DeletableImage"
 
@@ -37,6 +37,12 @@ export default function ItemForm(props) {
     const [imageError, setImageError] = useState(null);
 
     const [formError, setFormError] = useState(null);
+
+    const nameId = useId()
+    const descriptionId = useId()
+    const priceId = useId()
+    const quantityId = useId()
+    const keywordId = useId()
 
     async function getImage(data) {
         let file = data.files[0]
@@ -179,8 +185,9 @@ export default function ItemForm(props) {
         <h2>Create Item</h2>
         <p className={styles.instructions}>You're adding an item to your shop <b>{props?.shop.name}</b>. Fill out the form fields below.</p>
         <form onSubmit={createItem}>
-            <Label><strong>Name* </strong>Give your item a concise, descriptive name.</Label>
+            <Label htmlFor={nameId}><strong>Name* </strong>Give your item a concise, descriptive name.</Label>
             <Input
+                id={nameId}
                 className={styles.input}
                 type='text'
                 placeholder='eg. Mini Pink Panda Crocheted Plush'
@@ -190,8 +197,9 @@ export default function ItemForm(props) {
                 error={nameError}
             />
 
-        <Label><strong>Description* </strong>Write a description for your item. Include all details you think a customer would need to know, for instance size/dimensions, materials, what's included in the purchase, etc.</Label>
+        <Label htmlFor={descriptionId}><strong>Description* </strong>Write a description for your item. Include all details you think a customer would need to know, for instance size/dimensions, materials, what's included in the purchase, etc.</Label>
         <Input
+            id={descriptionId}
             className={styles.input}
             type='textarea'
             placeholder='eg. This hand-crocheted panda is made of cotton yarn and measures 3"...'
@@ -201,8 +209,9 @@ export default function ItemForm(props) {
             error={descriptionError}
         />
 
-        <Label><strong>Price* </strong>Add the price of your item in USD. Consider factoring in additional costs such as shipping when setting a price.</Label>
+        <Label htmlFor={priceId}><strong>Price* </strong>Add the price of your item in USD. Consider factoring in additional costs such as shipping when setting a price.</Label>
         <Input
+            id={priceId}
             className={styles.input + ' ' + styles.number}
             type='number'
             min='0.01'
@@ -214,8 +223,9 @@ export default function ItemForm(props) {
             error={priceError}
         />
 
-        <Label><strong>Quantity* </strong>Add the quantity of your item--how many of this item would you be able to sell?</Label>
+        <Label htmlFor={quantityId}><strong>Quantity* </strong>Add the quantity of your item--how many of this item would you be able to sell?</Label>
         <Input
+            id={quantityId}
             className={styles.input + ' ' + styles.number}
             type='number'
             min='1'
@@ -226,8 +236,9 @@ export default function ItemForm(props) {
             error={quantityError}
         />
 
-        <Label><strong>Keywords*</strong> Add keywords for your item. Separate keywords with commas or new lines. We use keywords to determine whether your item matches a users' search, so add all relevant search terms and check your spelling.</Label>
+        <Label htmlFor={keywordId}><strong>Keywords*</strong> Add keywords for your item. Separate keywords with commas or new lines. We use keywords to determine whether your item matches a users' search, so add all relevant search terms and check your spelling.</Label>
         <Input
+            id={keywordId}
             className={styles.input}
             type='textarea'
             placeholder='eg. stuffed animal, plush, plushie, panda, pink panda, toy, pink, crochet'
@@ -253,6 +264,7 @@ export default function ItemForm(props) {
         }
 
         <Input
+            ariaLabel="Upload new image"
             className={styles.input + ' ' + styles.fileInput}
             type='file'
             accept="image/png, image/jpeg, image/jpg"

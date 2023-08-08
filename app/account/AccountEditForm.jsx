@@ -1,8 +1,8 @@
 'use client'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-import Label from '../components/forms/Label'
-import Input from '../components/forms/Input'
-import { useState } from 'react'
+import Label from '../components/forms/label'
+import Input from '../components/forms/input'
+import { useId, useState } from 'react'
 import styles from './AccountEditForm.module.css'
 
 
@@ -11,6 +11,8 @@ export default function AccountEditForm( props ) {
   const profile = props?.profile
   const [name, setName] = useState(profile?.name)
   const [email, setEmail] = useState(profile?.email)
+
+  const nameId = useId()
   
   async function updateProfile(e) {
     e.preventDefault()
@@ -47,8 +49,9 @@ export default function AccountEditForm( props ) {
         disabled={true} /> */}
         <p className={styles.input}>{email}</p>
 
-        <Label>Name</Label>
+        <Label htmlFor={nameId}>Name</Label>
         <Input
+          id={nameId}
           className={styles.input}
           type="text"
           placeholder='Your name'

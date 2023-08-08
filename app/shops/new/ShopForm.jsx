@@ -1,10 +1,10 @@
 'use client'
-import { useState } from "react";
+import { useState, useId } from "react";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-import Input from "../../components/forms/Input";
+import Input from "../../components/forms/input";
 import styles from "./ShopForm.module.css";
 import { useRouter } from "next/navigation";
-import Label from "../../components/forms/Label";
+import Label from "../../components/forms/label";
 // the form to create a new shop
 // Info needed: owner_id, name, description, items (just initialize the array)
 
@@ -24,6 +24,11 @@ export default function ShopForm({ session }) {
     const [nameError, setNameError] = useState(null);
     const [descriptionError, setDescriptionError] = useState(null);
     const [venmoError, setVenmoError] = useState(null);
+
+    const nameId = useId()
+    const descriptionId = useId()
+    const instagramId = useId()
+    const venmoId = useId()
 
     const createShop = async(e) => {
         e.preventDefault()
@@ -80,8 +85,9 @@ export default function ShopForm({ session }) {
 
     return (
         <form className={styles.form} onSubmit={createShop}>
-            <Label><strong>Name*</strong> Select a unique name for your shop. Your shop name must contain letters, may include spaces, and may not include underscores.</Label>
+            <Label htmlFor={nameId}><strong>Name*</strong> Select a unique name for your shop. Your shop name must contain letters, may include spaces, and may not include underscores.</Label>
             <Input
+                id={nameId}
                 className={styles.input}
                 type='text'
                 placeholder='Shop name'
@@ -89,8 +95,9 @@ export default function ShopForm({ session }) {
                 error={nameError}
             />
 
-            <Label><strong>Description*</strong> Write a description for your shop. Consider describing what you sell, what differentiates your shop from others, and what your brand values are.</Label>
+            <Label htmlFor={descriptionId}><strong>Description*</strong> Write a description for your shop. Consider describing what you sell, what differentiates your shop from others, and what your brand values are.</Label>
             <Input
+                id={descriptionId}
                 className={styles.input}
                 type='textarea'
                 placeholder='Shop description'
@@ -98,10 +105,11 @@ export default function ShopForm({ session }) {
                 error={descriptionError}
             />
 
-            <Label><strong>Venmo*</strong> Add your shop's Venmo handle so your customers can pay you.</Label>
+            <Label htmlFor={venmoId}><strong>Venmo*</strong> Add your shop's Venmo handle so your customers can pay you.</Label>
             <div className={styles.handleInput}>
                 <img className={styles.logo} src='/logos/Venmo.png' alt='Venmo logo'/>
                 <Input
+                    id={venmoId}
                     type='text'
                     placeholder='Venmo handle'
                     onChange={(data) => { setVenmo(data.value)}}
@@ -109,10 +117,11 @@ export default function ShopForm({ session }) {
                 />  
             </div>
 
-            <Label>Instagram (optional): Add your shop's Instagram handle.</Label>
+            <Label htmlFor={instagramId}>Instagram (optional): Add your shop's Instagram handle.</Label>
             <div className={styles.handleInput}>
                 <img className={styles.logo} src='/logos/Instagram.png' alt='Instagram logo'/>
                 <Input
+                    id={instagramId}
                     type='text'
                     placeholder='Instagram handle'
                     onChange={(data) => { setInstagram(data.value)}}
