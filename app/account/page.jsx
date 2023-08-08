@@ -12,7 +12,7 @@ import theme from '../../components/Theme';
 import Link from 'next/link';
 import ShopCard from './ShopCard'
 import NewCard from '../components/NewCard';
-import Input from '../components/forms/Input';
+import Input from '../components/forms/input';
 
 
 export default async function Account() {
@@ -87,7 +87,7 @@ export default async function Account() {
                   <div className={styles.shops}>
                     <div className={styles.new}>
                       <Link href='./shops/new' target="_blank" rel="noopener noreferrer">
-                        <NewCard url='/shops/new' />
+                        <NewCard/>
                       </Link>
                     </div>
                     
