@@ -1,7 +1,7 @@
 'use client'
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
-import Label from '../../../components/forms/Label'
-import Input from '../../../components/forms/Input'
+import Label from '../../../components/forms/label'
+import Input from '../../../components/forms/input'
 import styles from './ImageEditForm.module.css'
 import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
@@ -192,6 +192,7 @@ export default function DetailEditForm( props ) {
                 )
             })}
             <Input
+                ariaLabel='Upload new image'
                 className={styles.fileInput}
                 type='file'
                 accept="image/png, image/jpeg, image/jpg"
