@@ -86,15 +86,15 @@ const Input: React.FC<InputProps> = ({
             case 'file':
                 return (
                     <>
-                    <label className={styles.fileInputLabel}>
-                        <NewCard />
-                        <input 
-                            className={styles.fileInput}
-                            type='file'
-                            accept={accept}
-                            aria-label={ariaLabel}
-                            {...fieldProps} />
-                    </label>
+                        <label className={styles.fileInputLabel}>
+                            <NewCard className={styles.fileInputBorder}/>
+                            <input 
+                                className={styles.fileInput}
+                                type='file'
+                                accept={accept}
+                                aria-label={ariaLabel}
+                                {...fieldProps} />
+                        </label>
                     </>
                 )
             case 'submit':

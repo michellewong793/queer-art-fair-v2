@@ -2,7 +2,11 @@
 
 .fileInputLabel {
     width: fit-content;
-    display: inline-block;
+}
+
+.fileInputLabel:focus-within .fileInputBorder{
+    outline: #0071cd 2px solid;
+    outline-offset: -3px;
 }
 
 .border {
