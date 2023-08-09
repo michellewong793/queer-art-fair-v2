@@ -15,11 +15,10 @@ export default function DeletableImage ( props ) {
                 src={props?.imageUrl} 
                 />
 
-            <button className={styles.deleteButton}>
+            <button type='button' className={styles.deleteButton} onClick={handleOnClick}>
                 <img
                     className={styles.icon}
                     src='/TrashIcon.svg'
-                    onClick={handleOnClick}
                     alt='Delete this image'
                 />  
             </button>              
