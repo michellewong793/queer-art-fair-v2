@@ -11,6 +11,7 @@ export default function DetailEditForm( props ) {
     const [images, setImages] = useState([])
     const [imageError, setImageError] = useState(null)
 
+    // load the images as soon as the item is loaded, or if the item changes for some reason
     useEffect(() => {
         if (!item) return;
 
@@ -22,6 +23,7 @@ export default function DetailEditForm( props ) {
     }, [item])
 
 
+    // form validation
     function checkFields() {
         let error = false;
         if (!images || images?.length == 0) {
