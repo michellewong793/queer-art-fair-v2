@@ -14,6 +14,15 @@ export default function DetailEditForm( props ) {
     const [images, setImages] = useState([])
     const [imageError, setImageError] = useState(null)
 
+    // finds an uploaded images alt text based on its url
+    function findAltFromUrl(url) {
+        let index = item?.image_urls.indexOf(url)
+
+        if (index < item?.alt_text.length) return item?.alt_text[index]
+
+        return ''
+    }
+
     // run this when the page is loaded, to get the images that are already in the database
     async function getDatabaseImages() {
         // get a list of the images in the database
@@ -42,7 +51,8 @@ export default function DetailEditForm( props ) {
                 uploaded: true,
                 deleted: false,
                 file: null,
-                url: data?.publicUrl
+                url: data?.publicUrl,
+                alt: findAltFromUrl(data?.publicUrl)
             }
             databaseImages.push(image)
         }
@@ -68,6 +78,7 @@ export default function DetailEditForm( props ) {
                 deleted: false,
                 file: file,
                 url: url,
+                alt: ''
             }
             setImages(images => [ ...images, image]);
         }
@@ -82,6 +93,7 @@ export default function DetailEditForm( props ) {
                     deleted: true,
                     file: imageToDelete.file,
                     url: imageToDelete.url,
+                    alt: imageToDelete.alt
                 }
             } else {
                 return image
@@ -92,8 +104,10 @@ export default function DetailEditForm( props ) {
     }
 
     async function saveChangesToDatabase() {
-        // keep track of the public urls
+        // keep track of the public urls and alt text
         let publicUrls = []
+        let altText = []
+
         // upload the images
         for (let image of images) {
 
@@ -130,13 +144,18 @@ export default function DetailEditForm( props ) {
 
             }
             publicUrls.push(image.url)
+            altText.push(image.alt)
+            console.log(image.alt)
         }
 
         // create the new url array
         // replace the old public urls with the new ones
         const { error } = await supabase
             .from('items')
-            .update({ image_urls: publicUrls })
+            .update({ 
+                image_urls: publicUrls,
+                alt_text: altText
+            })
             .eq('id', item?.id)
         
         if (error) {
@@ -178,10 +197,33 @@ export default function DetailEditForm( props ) {
                     return
                 }
                 return (
+                    <div>
                     <DeletableImage
                         imageUrl={image.url}
                         deleteFunction={() => {localDeleteImage(image)}}
                     />
+                    <Input
+                        type='textarea'
+                        placeholder='alt text for image'
+                        defaultValue={image.alt}
+                        onChange={(data) => 
+                            setImages(images.map((i) => {
+                                if (i.name == image.name) {
+                                    return {
+                                        name: image.name,
+                                        uploaded: image.uploaded,
+                                        deleted: image.deleted,
+                                        file: image.file,
+                                        url: image.url,
+                                        alt: data.value
+                                    }
+                                } else {
+                                    return i
+                                }
+                            })
+                        )}
+                    />
+                    </div>
                 )
             })}
             <Input
