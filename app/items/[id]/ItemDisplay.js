@@ -43,7 +43,7 @@ export default function ItemDisplay(props) {
                 <h2>How to order</h2>
                 <p>All Queer Art Faire Online orders are placed directly with sellers via email. To place an order:</p>
                 <ol>
-                    <li>Click the button below to write an email to the seller{shopOwner?.name && <span>{', '+shopOwner.name+','}</span>} at {shopOwner?.email}. We'll draft an order message for you.</li>
+                    <li>Click the button below to write an email to the seller{shopOwner?.name && <span>{', '+shopOwner.name+','}</span>} at {shopOwner?.email && <span>{shopOwner.email}</span>}. We'll draft an order message for you.</li> 
                     
                     <li>Add any details you have for the order, for instance, order quantity (if more than one), measurements (if ordering something customizable), etc. Additionally, you can ask {shopOwnerName} questions about this product before finalizing your order.
                     </li>
