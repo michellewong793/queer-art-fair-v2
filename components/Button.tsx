@@ -8,6 +8,7 @@ import Link from "next/link";
 type ButtonProps = {
     name?,
     className?,
+    type?,
 
     text?: string;
     textColor?: string;
@@ -22,6 +23,7 @@ type ButtonProps = {
 const Button: React.FC<ButtonProps> = ({
     className,
     text = 'Button Text', 
+    type = 'button',
     name = text,
     textColor = 'white',
     backgroundColor = '#002809', 
@@ -70,6 +72,7 @@ const Button: React.FC<ButtonProps> = ({
     
     return (
         <button style={buttonStyle}
+            type={type}
             name={name}
             className={styles.button + ' ' + className}
             onMouseEnter={handleMouseEnter}
