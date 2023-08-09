@@ -56,6 +56,7 @@ const Card: React.FC<CardProps> = ({
 
                 { trash && 
                     <button 
+                        type='button'
                         onClick={handleOnTrash}
                         className={styles.button}
                     >
