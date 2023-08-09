@@ -5,7 +5,6 @@ export default function NewCard(props) {
     return (
         <Clickable 
         className={styles.wrapper + ' ' + props?.className}
-        onClick={props?.onClick}
         >
             <div className={styles.plus}>
                 <img src='/PlusIcon.svg' alt='Add new'/>
