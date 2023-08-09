@@ -100,6 +100,7 @@ const Input: React.FC<InputProps> = ({
             case 'submit':
                 return (
                     <Button
+                        type='submit'
                         text={value}
                     />
                 )
