@@ -63,7 +63,7 @@ export default function ItemDisplay(props) {
             {
                 item?.keywords.map((word, k) => (
                     // TODO: make this link to search for word
-                    <span><Link href='/'>{word}</Link>, </span>
+                    <span key={k}><Link href='/'>{word}</Link>, </span>
                 ))
             }
             </p>
