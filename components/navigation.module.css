@@ -43,6 +43,25 @@
     }
 }
 
+.homeNonActive {
+    text-decoration: none;
+    font-size: 30px;
+    font-family: 'ClementePDae';
+    margin: 0px; 
+    color: #113219; 
+    text-decoration: none; 
+    padding-bottom: 16px;
+    text-align: center;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+@media (max-width: 780px) {
+    .homeNonActive{
+        font-size: 25px;
+    }
+}
+
 .bigContainer{
     display: flex;
     flex-direction: row; 
