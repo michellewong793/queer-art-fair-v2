@@ -6,7 +6,6 @@ import styles from './ImageEditForm.module.css'
 import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import DeletableImage from "../../../components/DeletableImage"
-import BannerNotification from "../../../components/BannerNotification"
 
 export default function DetailEditForm( props ) {
     const item = props?.item
@@ -14,7 +13,6 @@ export default function DetailEditForm( props ) {
 
     const [images, setImages] = useState([])
     const [imageError, setImageError] = useState(null)
-    const [notifications, setNotifications] = useState([])
 
     // run this when the page is loaded, to get the images that are already in the database
     async function getDatabaseImages() {
@@ -25,7 +23,7 @@ export default function DetailEditForm( props ) {
             .list(item?.id + '/')
         
         if (error) {
-            setNotifications([...notifications, { type: error, value: error.message }])
+            alert(error.message)
             return []
         }
         
@@ -107,7 +105,7 @@ export default function DetailEditForm( props ) {
                     .remove(item?.id+'/'+image.name)
                 
                 if (error) {
-                    setNotifications([...notifications, { type: error, value: error.message }])
+                    alert(error.message)
                 }
                 continue
             }
@@ -119,7 +117,7 @@ export default function DetailEditForm( props ) {
                     .from('item-photos')
                     .upload(item?.id + '/' + image.name, image.file)
                 if (error) {
-                    setNotifications([...notifications, { type: error, value: error.message }])
+                    alert(error.message)
                 }
                 else if (data) {
                     // get the public url
@@ -142,10 +140,10 @@ export default function DetailEditForm( props ) {
             .eq('id', item?.id)
         
         if (error) {
-            setNotifications([...notifications, { type: 'error', value: error.message }])
+            alert(error.message)
         }
 
-        setNotifications([...notifications, { type: 'success', value: 'Images were saved.' }])
+        alert('Changes to images were successfully saved.')
 
         await getDatabaseImages()
     }
@@ -171,11 +169,6 @@ export default function DetailEditForm( props ) {
     return (
         <div>
         <h2>Item Images</h2>
-        { notifications?.map (notification => (
-            <BannerNotification type={notification.type}>
-                {notification.value}
-            </BannerNotification>
-        ))}
         <form onSubmit={(e) => updateItem(e)}>
             <Label><strong>Images*</strong></Label>
             
