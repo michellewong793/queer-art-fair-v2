@@ -1,0 +1,22 @@
+.qafTextStyle {
+    margin: auto 0;
+    text-align: center;
+}
+
+.smallTextStyle {
+    margin: auto 0;
+    padding: 8px 0 0 0;
+    text-align: center;
+    font-style: italic;
+    font-size: 16px;
+    font-family: 'Clemente';
+    font-weight: 350;
+    color: #ff4d4d;
+}
+
+@media screen and (min-width: 768px) {
+    .smallTextStyle {
+        padding: 16px 0 0 0;
+        font-size: 25px;
+    }
+}

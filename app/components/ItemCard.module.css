@@ -1,0 +1,22 @@
+/*global styles*/
+.itemName {
+    font-family: ClementePDag;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.itemPrice {
+    font-family: ClementePDak
+}
+
+.modalText {
+    font-family: Helvetica;
+}
+
+/*desktop only*/
+@media screen and (min-width: 768px) {
+
+
+}

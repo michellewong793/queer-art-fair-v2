@@ -1,69 +1,76 @@
-import React from 'react'
+'use client'
+
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import CSS from 'csstype'
-import Styles from './Button.module.css'
-import { useRouter } from 'next/router';
+import styles from './Button.module.css'
 
 type ButtonProps = {
+    name?,
+    className?,
+
     text?: string;
     textColor?: string;
     backgroundColor?: string;
     borderColor?: string;
-    hoverBackgroundColor?: string;
-    hoverTextColor?: string;
-    hoverBorderColor?: string;
     width?: string;
+
     url?: string;
+    onClick?
 }
 
 const Button: React.FC<ButtonProps> = ({
+    className,
     text = 'Button Text', 
+    name = text,
     textColor = 'white',
     backgroundColor = '#002809', 
     borderColor = backgroundColor,
-    hoverBackgroundColor = 'white',
-    hoverTextColor = '#002809',
-    hoverBorderColor = hoverBackgroundColor,
     width,
-    url = '/'
+
+    url,
+    onClick,
+
 }) => {
-
-    /**Determine when the user is hovering over the button */
-    const [isHovered, setIsHovered] = React.useState(false);
-
+    const router = useRouter()
+    const [isHovered, setIsHovered] = useState(false);
     const handleMouseEnter = () => {
         setIsHovered(true);
     };
-
     const handleMouseLeave = () => {
         setIsHovered(false);
-    };
-
-    const router = useRouter();
-    const handleClick = () => {
-        router.push(url);
     }
 
-    /**Set hover colors */
+    const handleOnClick = (event) => {
+        if (typeof onClick === "function") {
+            onClick({
+                value: event.target.value
+            })
+        } else if (url) {
+            router.push(url)
+        }
+    }
+
     const buttonStyle: CSS.Properties = {
-        backgroundColor: isHovered ? hoverBackgroundColor : backgroundColor,
-        color: isHovered ? hoverTextColor : textColor,
-        border: '2px solid ' + (isHovered ? hoverBorderColor : borderColor)
+        backgroundColor: backgroundColor,
+        color: textColor,
+        border: '2px solid' + borderColor,
     }
 
-    /**Only specify width if it was passed as a prop */
     if (width) {
         buttonStyle.width = width;
     }
 
     return (
-        <button style={buttonStyle} 
-        className={Styles.button}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        onClick={handleClick}>
-            {text}
+        <button style={buttonStyle}
+            name={name}
+            className={styles.button + ' ' + className}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onClick={handleOnClick}>
+                {text}
         </button>
-    );
-};
+    )
+}
 
 export default Button;

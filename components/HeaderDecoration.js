@@ -1,12 +1,14 @@
-import { useRouter } from "next/router";
+'use client'
+
+import { usePathname } from 'next/navigation'
+
 import React, {useState} from 'react';
 import style from "./navigation.module.css";
 import headerStyle from "./headerDecoration.module.css";
 
 const HeaderDecoration = (props) => {
 
-    const router = useRouter();
-    const currentRoute = router.pathname;
+    const currentRoute = usePathname();
 
     const [showNav, setShowNav] = useState(false);
 
@@ -22,7 +24,7 @@ const HeaderDecoration = (props) => {
                     <a  href = "/events" className = {currentRoute === '/events' ? style.active : style.nonActive}>
                         EVENTS
                     </a>
-                    <a  className = {style.nonActive} href = "https://www.gofundme.com/f/queer-art-faire">
+                    <a  href = "/donate" className = {currentRoute === '/donate' ? style.active : style.nonActive}>
                         DONATE
                     </a>
                 </div>

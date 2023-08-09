@@ -1,12 +1,10 @@
-const Event = (Props) => {
-    let centered = {
-        textAlign: 'center',
-    }
+import EventStyles from "./Event.module.css"
 
+const Event = (Props) => {
     return (
-        <div>
-            <h3 style = {centered}>{Props.name}</h3>
-            <p style = {centered}>{Props.date}</p>
+        <div className = {EventStyles.container}>
+            <h3 className = {EventStyles.title}>{Props.name}</h3>
+            <p className = {EventStyles.info}>{Props.info}</p>
         </div>
     )
 }

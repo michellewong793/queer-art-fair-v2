@@ -1,6 +1,7 @@
-import Link from "next/link";
+import Styles from './Logo.module.css'
 
 const Logo = (props) => {
+
     let divStyle = {
         display: 'flex',
         justifyContent: 'center',
@@ -12,10 +13,9 @@ const Logo = (props) => {
         width: '240px',
         height: 'auto'
     }
+
     return (
-        <div style={divStyle}>
-            <img style={imgStyle} src='./QAFLogoOrangePuffy.png'></img>
-        </div>
+        <img className={Styles.logoImg} src='/./QAFLogoOrangePuffy.png'></img>
     )
 }
 

@@ -2,14 +2,14 @@
 
 .active {
     font-size: 30px;
-    font-family: "ClementePDae"; 
+    font-family: "ClementePDak"; 
     margin: 0;
     color: #113219; 
     text-decoration: none;
     padding-bottom: 16px;
     text-align: center;
     background-image: url("/heart-underline.png");
-    background-position: 5px 35px;
+    background-position: 9px 35px;
     background-size: 76px 10px;
     background-repeat: no-repeat;
     justify-content: center;

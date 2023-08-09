@@ -1,14 +1,11 @@
-import {useRouter} from 'next/router';
-import Link from 'next/link';
+'use client'
+
 import style from './navigation.module.css';
-import React, {useState} from 'react';
+import { usePathname } from 'next/navigation'
 
 const Navigation = () => {
 
-    const router = useRouter();
-    const currentRoute = router.pathname;
-
-    const [showNav, setShowNav] = useState(false);
+    const currentRoute = usePathname();
 
     return (
             <div className = {style.desktopContainer}> 
@@ -20,7 +17,7 @@ const Navigation = () => {
                     EVENTS
                 </a>
                 <img className = {style.image} src = '/heart.png'/>
-                <a  className = {style.nonActive} href = "https://www.gofundme.com/f/queer-art-faire">
+                <a href = "/donate" className = {currentRoute === '/donate' ? style.active : style.nonActive}>
                     DONATE
                 </a>
             </div>

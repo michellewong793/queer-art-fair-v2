@@ -1,0 +1,27 @@
+.form {
+    margin-top: 32px;
+}
+.input, .handleInput {
+    margin-bottom: 32px;
+}
+
+.handleWrapper {
+    display: flex;
+    flex-direction: column;
+}
+.handleInput {
+    display: flex;
+    gap: 24px;
+}
+.logo {
+    width: 56px;
+    height: 56px;
+}
+
+/*Desktop only*/
+@media screen and (min-width: 768px) {
+    .handleWrapper {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
