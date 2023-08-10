@@ -52,7 +52,6 @@ export function deleteLocalImage(imageToDelete, images) {
             return image
         }
     })
-
     return updatedImages
 }
 
@@ -133,6 +132,8 @@ export async function updateDatabaseImages(itemId, images) {
             alt_text: altText
         })
         .eq('id', itemId)
+    
+    alert('Successfully uploaded images')
 }
 
 // given the item id and the name of an image, this function removes the image from the database

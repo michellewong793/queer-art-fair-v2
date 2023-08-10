@@ -3,22 +3,22 @@
 // the form to create a new item
 // Info needed: name, photos, description, price, quantity, expiration_date, key_words, shop_id
 
-// TODO: limit number of images added, functionality to delete images
+// TODO: limit number of images added, limit image size
 
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-import { redirect } from "next/navigation";
-import { useState, useEffect, useId } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { useState, useId } from "react";
 import Label from "../../../components/forms/label";
 import Input from "../../../components/forms/input";
 import styles from "./ItemForm.module.css"
 import DeleteableImage from "../../../components/DeletableImage"
+import { deleteLocalImage, getLocalImage, updateDatabaseImages } from '../../../components/imageHandler'
+import { useRouter } from "next/navigation";
 
 export default function ItemForm(props) {
     const supabase = createClientComponentClient()
+    const router = useRouter()
     const shopId = props?.shop.id;
 
-    const [itemId, setId] = useState();
     const [itemName, setName] = useState();
     const [itemDescription, setDescription] = useState();
     const [itemPrice, setPrice] = useState();
@@ -26,8 +26,6 @@ export default function ItemForm(props) {
     const [keywords, setKeywords] = useState([]);
 
     const [images, setImages] = useState([]);
-
-    const [imageUrls, setImageUrls] = useState([]);
 
     const [nameError, setNameError] = useState(null);
     const [descriptionError, setDescriptionError] = useState(null);
@@ -43,13 +41,6 @@ export default function ItemForm(props) {
     const priceId = useId()
     const quantityId = useId()
     const keywordId = useId()
-
-    async function getImage(data) {
-        let file = data.files[0]
-        if (file) {
-            setImages(arr => [ ...arr, file]);
-        }
-    }
 
     // adds a new row to the "items" table with the new item info (except the image urls)
     const createItem = async (e) => {
@@ -85,9 +76,6 @@ export default function ItemForm(props) {
             return;
         }
         
-        // reset imageUrls
-        setImageUrls([]);
-
         // put the item in the database
         const { data, error } = await supabase
             .from('items')
@@ -105,80 +93,12 @@ export default function ItemForm(props) {
             return;
         }
         if (data) {
-            setId(data[0].id)
+            let itemId = data[0].id
+            // add the images and alt text
+            await updateDatabaseImages(itemId, images)
+            router.replace('/items/'+itemId)
         }
     }
-    // itemId is set after the item has been added to the database via createItem.
-    useEffect (() => {
-
-        // uploads the image to supabase storage and adds the image's public url to imageUrls[]
-        async function uploadImage(image, itemId) {
-            const imageId = uuidv4();
-
-            const { data, error } = await supabase
-                    .storage
-                    .from('item-photos')
-                    .upload(itemId + '/' + imageId, image)
-            if (error) {
-                setFormError(error.message)
-                return
-            }
-            if (data) {
-                addImageUrl(data.path);
-            }
-        }
-
-        async function addImageUrl(path) {
-            // Add the image url to the item
-            const { data } = supabase
-                .storage
-                .from('item-photos')
-                .getPublicUrl(path)
-            if (data) {
-                setImageUrls( arr => [ ...arr, data.publicUrl])
-            }
-        }
-
-        async function uploadImages() {
-            // upload the images to supabase storage
-            await images.forEach(async image => {
-                await uploadImage(image, itemId)
-            })
-
-        }
-        
-        if (!itemId || imageUrls.length > 0) return;
-        // upload the images to item-photos bucket under folder [itemId]
-        uploadImages();
-        
-    }, [itemId])
-
-    // when all the image urls have been created (as uploadImages runs), add them to the items table
-    useEffect(() => {
-
-        async function updateItemImageUrls() {
-            // set the imageUrls
-            const { data, error } = await supabase
-                .from('items')
-                .update({ image_urls: imageUrls })
-                .eq('id', itemId)
-                .select()
-            
-
-            if(error) {
-                console.warn(error)
-            }
-            if (data) {
-            }
-        }
-
-        if (imageUrls.length !== images.length) return;
-        if (imageUrls.length == 0) return;
-        updateItemImageUrls();
-
-        // redirect to the new item
-        redirect('/items/' + itemId.toString(), 'push');
-    }, [imageUrls])
 
     return (
         <>
@@ -253,12 +173,38 @@ export default function ItemForm(props) {
         <div className={styles.imageContainer}>
         
         {
-            images.map((image, k) => {
+            images.map((image) => {
+                if (image.deleted) return
                 return(
-                    <DeleteableImage
-                        imageUrl={URL.createObjectURL(image)}
-                        deleteFunction={() => {setImages(images.slice(0, k).concat(images.slice(k + 1, images.length)))}}
-                    />
+                    <div key={image.name}>
+                        <DeleteableImage
+                            imageUrl={image.url}
+                            deleteFunction={() => {setImages(deleteLocalImage(image, images))}}
+                        />
+                        <Input
+                            type='textarea'
+                            placeholder='alt text for image'
+                            defaultValue={image.alt}
+                            onChange={(data) => 
+                                // updates the alt text
+                                setImages(images.map((i) => {
+                                    if (i.name == image.name) {
+                                        return {
+                                            name: image.name,
+                                            uploaded: image.uploaded,
+                                            deleted: image.deleted,
+                                            file: image.file,
+                                            url: image.url,
+                                            alt: data.value
+                                        }
+                                    } else {
+                                        return i
+                                    }
+                                }))
+                            }
+                        />
+                    </div>
+                    
                 )        
             })
         }
@@ -268,7 +214,7 @@ export default function ItemForm(props) {
             className={styles.input + ' ' + styles.fileInput}
             type='file'
             accept="image/png, image/jpeg, image/jpg"
-            onChange={(data) => getImage(data)} 
+            onChange={(data) => setImages([...images, getLocalImage(data)])} 
             error={imageError}
         />
         </div>
