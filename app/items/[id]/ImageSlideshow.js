@@ -5,6 +5,9 @@ import styles from './ImageSlideshow.module.css'
 
 export default function ImageSlideshow(props) {
     let imageUrls = props?.imageUrls
+    let altText = props?.altText
+    let hasAltText = props?.altText && props?.altText?.length === imageUrls?.length
+
     const [slideIndex, setSlideIndex] = useState(0);
 
     function previousImage() {
@@ -26,7 +29,11 @@ export default function ImageSlideshow(props) {
                 }>
                 <img src={'/LeftArrow.svg'} alt='View previous image'/>
             </button>   
-            <img className={styles.image} src={imageUrls[slideIndex]}/>
+            <img 
+                className={styles.image} 
+                src={imageUrls[slideIndex]}
+                alt={hasAltText && altText[slideIndex]}
+                />
 
             <button 
                 className={styles.button+' '+styles.right} 

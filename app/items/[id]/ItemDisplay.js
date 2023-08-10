@@ -20,7 +20,10 @@ export default function ItemDisplay(props) {
 
     return (
         <div className={styles.wrapper}>
-            <ImageSlideshow imageUrls={item.image_urls}/>
+            <ImageSlideshow 
+                imageUrls={item.image_urls}
+                altText={item.alt_text}
+            />
             <div className={styles.namePriceWrapper}>
                 <h2>{item?.name}</h2>
                 <h2>${item?.price}</h2>
