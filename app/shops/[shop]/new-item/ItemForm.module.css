@@ -1,4 +1,5 @@
 /*Global styles*/
+
 .instructions {
     font-family: Helvetica;
     margin-bottom: 32px;
@@ -16,6 +17,11 @@
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
+}
+
+.fileInput {
+    width: 250px;
+    margin-bottom: 32px;
 }
 
 .deleteButton {
@@ -51,23 +57,11 @@
         justify-content: center;
     }
     
-    .image img {
-        width: 250px;
-        height: 250px;
-    }
-    
-    /*the trash icon*/
-    .image button img {
-        width: 56px;
-        height: 56px;
-    }
-    
     .altTextWrapper {
         width: 100%;
     }
     
     .fileInput {
-        width: 300px;
         margin: auto;
     }
 }
@@ -87,6 +81,10 @@
     .altTextWrapper {
         width: 100%;
     }
+
+    .fileInput {
+        width: 150px;
+    }
 }
 
 /*Desktop only*/
@@ -95,19 +93,7 @@
         font-size: 20px;
     }
 
-    .fileInput, .image img {
-        width: 250px;
-        height: 250px;
-    }
-
-    /*the trash icon*/
-    .image button img {
-        width: 56px;
-        height: 56px;
-    }
-    
-    .deleteButton {
-        width: 56px;
-        height: 56px;
+    .fileInput {
+        width: 200px;
     }
 }

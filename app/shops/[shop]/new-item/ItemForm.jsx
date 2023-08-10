@@ -191,7 +191,7 @@ export default function ItemForm(props) {
                                 ariaLabel={'Alt text for image ' + {k}}
                                 class={styles.altText}
                                 type='textarea'
-                                placeholder='alt text for above image'
+                                placeholder="alt text, eg 'front view of panda showing purple body, pink ears, and embroidered smile'"
                                 onChange={(data) => 
                                     // updates the alt text
                                     setImages(images.map((i) => {
