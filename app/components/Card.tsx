@@ -9,6 +9,7 @@ import { ReactNode } from 'react'
 type CardProps = {
     className?,
     image?,
+    altText,
     url?,
     edit?,
     editUrl?,
@@ -20,6 +21,7 @@ type CardProps = {
 const Card: React.FC<CardProps> = ({
     className,
     image,
+    altText,
     url,
     edit,
     editUrl,
@@ -70,7 +72,11 @@ const Card: React.FC<CardProps> = ({
             </div>
 
             <Link className={styles.link} href={url} rel="noopener noreferrer" target="_blank">
-                <img className={styles.image} src={image} />
+                <img 
+                    className={styles.image} 
+                    src={image} 
+                    alt={altText}
+                />
                 <div className={styles.textWrapper}>
                     {children}
                 </div>
