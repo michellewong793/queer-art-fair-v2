@@ -1,0 +1,16 @@
+.link {
+    width: 100%;
+}
+
+/*desktop only*/
+@media screen and (min-width: 768px) {
+    .link {
+        width: fit-content;
+    }
+
+    .card {
+        width: 320px;
+        height: 320px;
+        max-width: 100%;
+    }
+}

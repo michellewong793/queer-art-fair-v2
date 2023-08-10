@@ -1,45 +1,39 @@
-
-/* Mobile + Desktop */
+/*Global styles*/
 .button {
     text-align: center;
-    font-family: 'Clemente';
-    font-weight: 600;
+    font-family: 'ClementePDak';
     font-size: 18px;
-    
     height: 64px;
     padding: auto 0;
 
-
     border-radius: 12px;
-    box-shadow: -1px 2px 5px 0px rgba(0, 0, 0, 0.5);
-    
+    box-shadow: -3px 4px 12px -1px rgba(0, 0, 0, 0.25);
+
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-    transition: border-color 0.3s ease-in-out;
-    transition: color 0.3s ease-in-out;
+
+    transition: translate 0.05s ease-in-out;
+}
+
+.button:hover {
+    translate: 0px -2px;
+    box-shadow: -3px 6px 12px -1px rgba(0, 0, 0, 0.4)
 }
 
 .button:active {
-    box-shadow: 0 0 0 0 !important;
-    translate: -3px 3px;
+    box-shadow: 0 0 0 0;
+    translate: 0px 2px;
 }
 
-/* Mobile only */
+/*Mobile only*/
 @media screen and (max-width: 768px) {
-    .wrapperLink {
-        width: 100% !important;
-    }
     .button {
         width: 100% !important;
     }
 }
 
-/* Desktop only */
+/*Desktop only*/
 @media screen and (min-width: 768px) {
-    .wrapperLink {
-        width: 218px;
-    }
     .button {
-        width: 100%;
+        width: 218px;
     }
 }

@@ -1,0 +1,35 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    
+    margin: auto;
+    width: fit-content;
+}
+
+.handle {
+    display: flex;
+    align-items: center;
+}
+
+.handle p {
+    font-family: "Helvetica Light";
+}
+
+
+.logo {
+    width: 36px;
+    margin-right: 16px;
+}
+
+@media screen and (min-width: 768px) {
+    .wrapper {
+        width: 50%;
+        flex-direction: row;
+        gap: 40px;
+    }
+    .logo {
+        width: 48px;
+        margin-right: 16px;
+    }
+}
