@@ -39,7 +39,7 @@ const GalleryPics = (props) => {
             backgroundSize: 'auto 500px',
             border: 'none',
             backgroundColor: '#E2F5F6',
-            backgroundPosition: 'center center'
+            backgroundPosition: 'center center',
         },
 
         imageDiv2: {
@@ -49,24 +49,24 @@ const GalleryPics = (props) => {
             backgroundSize: 'auto 500px',
             border: 'none',
             backgroundColor: '#E2F5F6',
-            backgroundPosition: 'center center'
+            backgroundPosition: 'center center',
         }
     }
 
     return (
         <div>
-            <div style = {{display: showPic1 ? "block" : "none"}} >
-                <div className = {style.imageDiv} style = {styles.imageDiv1} onClick = {() => setShowPic1(!showPic1)}></div>
+            <div style = {{display: showPic1 ? "block" : "none"}} loading = "lazy">
+                <div className = {style.imageDiv} style = {styles.imageDiv1} onClick = {() => setShowPic1(!showPic1)} loading = "lazy"></div>
             </div>
             
-            <div style = {{display: showPic2 ? "block" : "none"}}>
-                <div className = {style.imageDiv} style = {styles.imageDiv2} onClick = {() => setShowPic2(!showPic2)}></div>
+            <div style = {{display: showPic2 ? "block" : "none"}} loading = "lazy">
+                <div className = {style.imageDiv} style = {styles.imageDiv2} onClick = {() => setShowPic2(!showPic2)} loading = "lazy"></div>
             </div>
 
             <div className = {style.container}>
-                <button className = {style.button} style = {styles.button1} onClick = {() => setShowPic1(!showPic1)}></button>
+                <button className = {style.button} style = {styles.button1} onClick = {() => setShowPic1(!showPic1)} loading = "lazy"></button>
                 <Spacer height = {2.5}/>
-                <button className = {style.button} style = {styles.button2} onClick = {() => setShowPic2(!showPic2)}></button>
+                <button className = {style.button} style = {styles.button2} onClick = {() => setShowPic2(!showPic2)} loading = "lazy"></button>
             </div>
             
         </div>
