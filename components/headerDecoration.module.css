@@ -11,14 +11,10 @@
 .headerFill {
     width: 100%;
     background-color: #FFF9ED;
-    padding-top: 10px;
 }
 
 @media (min-width: 780px) {
     .header {
         padding-bottom: 24px;
-    }
-    .headerFill {
-        display: none;
     }
 }

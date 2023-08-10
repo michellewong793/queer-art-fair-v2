@@ -1,0 +1,74 @@
+/*Global styles*/
+
+.fileInputLabel {
+    width: fit-content;
+    display: inline-block;
+}
+
+.border {
+    width: 100%;
+    border-bottom: 3px solid #B0B0B0;
+    border-radius: 4px;
+}
+
+.inputError .border {
+    border-bottom: 3px solid #FF4D4D;
+}
+
+.input {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    vertical-align: top;
+
+    background-color: white;
+    border: none;
+    outline: none;
+
+    border-radius: 4px;
+
+    width: 100%;
+    padding: 16px;
+
+    font-size: 16px;
+    font-family: Helvetica;
+
+    resize: none;
+    overflow: visible;
+}
+
+.input:focus {
+    outline: #FE88CC 2px solid;
+    outline-offset: -3px;
+
+    transform: translate(0px, 2px);
+}
+
+.input:disabled {
+    transform: translate(0px, 2px);
+    cursor: not-allowed;
+}
+
+.fileInput {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+}
+
+.errorText {
+    font-size: 16px;
+    font-family: 'Helvetica Light';
+}
+
+
+/*Desktop only*/
+@media screen and (min-width: 768px) {
+    .input {
+        font-size: 24px;
+    }
+
+    .errorText {
+        font-size: 20px;
+    }
+}

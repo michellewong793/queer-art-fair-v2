@@ -1,0 +1,105 @@
+.signInGoogle {
+    border-radius: 5px;
+    width: 300px;
+    height: 68px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #FFF9ED;
+    border: 2px solid #113219;
+    color: #113219;
+    transition: background-color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+}
+
+@media (min-width: 768px) {
+    .signInGoogle {
+        width: 400px;
+    }
+}
+
+.signInGoogle:hover {
+    cursor: pointer;
+    background-color: #113219;
+    color: #FFF9ED;
+}
+
+.signInText {
+    font-family: 'ClementePDae';
+    font-size: 24px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.googleLogo {
+    height: 40px;
+    width: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.columnContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.enterEmail {
+    font-family: 'ClementePDak';
+    font-size: 24px;
+    width: 264px;
+    height: 32px;
+    background-color: #FFF9ED;
+    border: 2px solid #113219;
+    border-radius: 5px;
+    padding: 16px;
+}
+
+@media (min-width: 768px) {
+    .enterEmail {
+        width: 364px;
+    }
+}
+
+.emailSignIn {
+    background-color: #FFF9ED;
+    border: 2px solid #113219;
+    border-radius: 5px;
+    color: #113219;
+    transition: background-color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+    width: 300px;
+    height: 68px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .emailSignIn{
+        width: 400px;
+    }
+}
+
+.emailSignIn:hover {
+    cursor: pointer;
+    background-color: #113219;
+    color: #FFF9ED;
+}
+
+.bodyBackground {
+    background-color: #FFE0CE;
+}
+
+.bold {
+    font-family: 'ClementePDak';
+    font-size: 24px;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: #113219
+}
+
+.heading {
+    font-size: 48px;
+    font-family: "ClementePDae";
+    color: #113219;
+}

@@ -1,0 +1,20 @@
+.clickable {
+    display: block;
+    box-shadow: -3px 4px 12px -1px rgba(0, 0, 0, 0.25);
+
+    cursor: pointer;
+
+    transition: translate 0.05s ease-in-out;
+    width: fit-content;
+    height: fit-content;
+}
+
+.clickable:hover {
+    translate: 0px -2px;
+    box-shadow: -3px 6px 12px -1px rgba(0, 0, 0, 0.4)
+}
+
+.clickable:active {
+    box-shadow: 0 0 0 0;
+    translate: 0px 2px;
+}
