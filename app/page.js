@@ -35,7 +35,7 @@ export default function HomePage() {
               <img 
                 className = {HomeStyles.nextHeart} 
                 src='./heart.svg'
-                alt='inflatable heart'/>
+                alt=""/>
             </div>
             <Button className = {HomeStyles.nextButton} 
             text="General Vendor Application" 
@@ -51,9 +51,9 @@ export default function HomePage() {
           <Strawberry heading='UPCOMING' showLargeStrawberry='none'/>
           <div className = {HomeStyles.smallEventsContainer}>
             <Event className = {HomeStyles.centerFlexChild} name="Lakeside Landing" info="July 8, 2023"/>
-            <img className = {HomeStyles.upcomingOrange} src='./puffyOrange.svg' alt='inflatable orange'/>
+            <img className = {HomeStyles.upcomingOrange} src='./puffyOrange.svg' alt=""/>
             <Event className = {HomeStyles.centerFlexChild} name="Fall Faire" info={'Sept 16, 2023'}/>
-            <img className = {HomeStyles.upcomingOrange} src='./puffyOrange.svg'  alt='inflatable orange'/>
+            <img className = {HomeStyles.upcomingOrange} src='./puffyOrange.svg'  alt=""/>
             <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" info={'Dec 2, 2023'}/>
           </div>
         </div>
@@ -76,7 +76,7 @@ export default function HomePage() {
         <div className = {HomeStyles.aboutContainer}>
           <Strawberry heading='ABOUT' showMediumStrawberry = {"none"}/>
           <div className = {HomeStyles.aboutSubContainer}>
-            <img className = {HomeStyles.aboutImage} src='./PeachWithWater.svg' alt="peach with water droplets and a sticker reading 'queer art faire QUEER AF! fresh and fruity!'"/>
+            <img className = {HomeStyles.aboutImage} src='./PeachWithWater.svg' alt=""/>
             <p className= {HomeStyles.aboutText}>
             We are a community hosting art fairs in San Francisco for marginalized and queer folks who have not had a space to share their creations before. 
             <br /> <br/>

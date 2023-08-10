@@ -14,9 +14,9 @@ const Handle = (props) => {
 const Handles = ({props}) => {
     return (
         <div className={styles.wrapper}>
-            <Handle logo='/logos/Instagram.png' handle={'@'+props?.instagram} alt='Instagram logo'/>
+            <Handle logo='/logos/Instagram.png' handle={'@'+props?.instagram} alt='Instagram: '/>
             <div className={styles.spacer}></div>
-            <Handle logo='/logos/Venmo.png' handle={'@'+props?.venmo} alt='Venmo logo'/>
+            <Handle logo='/logos/Venmo.png' handle={'@'+props?.venmo} alt='Venmo: '/>
         </div>
     )
 }

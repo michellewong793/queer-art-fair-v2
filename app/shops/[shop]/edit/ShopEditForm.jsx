@@ -106,7 +106,7 @@ export default function ShopEditForm( props ) {
                     <div>
                         <Label htmlFor={instagramId}><strong>Instagram</strong></Label>
                         <div className={styles.handleInput}>
-                            <img className={styles.logo} src='/logos/Instagram.png' alt='Instagram logo'/>
+                            <img className={styles.logo} src='/logos/Instagram.png' alt=''/>
                             <Input
                                 id={instagramId}
                                 className={styles.input}
@@ -120,7 +120,7 @@ export default function ShopEditForm( props ) {
                     <div>
                         <Label htmlFor={venmoId}><strong>Venmo*</strong></Label>
                         <div className={styles.handleInput}>
-                            <img className={styles.logo} src='/logos/Venmo.png' alt='Venmo logo'/>
+                            <img className={styles.logo} src='/logos/Venmo.png' alt=''/>
                             <Input
                                 id={venmoId}
                                 className={styles.input}

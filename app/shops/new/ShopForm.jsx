@@ -107,7 +107,7 @@ export default function ShopForm({ session }) {
 
             <Label htmlFor={venmoId}><strong>Venmo*</strong> Add your shop's Venmo handle so your customers can pay you.</Label>
             <div className={styles.handleInput}>
-                <img className={styles.logo} src='/logos/Venmo.png' alt='Venmo logo'/>
+                <img className={styles.logo} src='/logos/Venmo.png' alt=''/>
                 <Input
                     id={venmoId}
                     type='text'
@@ -119,7 +119,7 @@ export default function ShopForm({ session }) {
 
             <Label htmlFor={instagramId}>Instagram (optional): Add your shop's Instagram handle.</Label>
             <div className={styles.handleInput}>
-                <img className={styles.logo} src='/logos/Instagram.png' alt='Instagram logo'/>
+                <img className={styles.logo} src='/logos/Instagram.png' alt=''/>
                 <Input
                     id={instagramId}
                     type='text'

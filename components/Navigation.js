@@ -12,11 +12,11 @@ const Navigation = () => {
                 <a  href = "/" className = {currentRoute === '/' ? style.active : style.nonActive}>
                     ABOUT
                 </a>
-                <img className = {style.image} src = '/heart.png' alt='inflatable heart'/>
+                <img className = {style.image} src = '/heart.png' alt=''/>
                 <a  href = "/events" className = {currentRoute === '/events' ? style.active : style.nonActive}>
                     EVENTS
                 </a>
-                <img className = {style.image} src = '/heart.png' alt='inflatable heart'/>
+                <img className = {style.image} src = '/heart.png' alt=''/>
                 <a href = "/donate" className = {currentRoute === '/donate' ? style.active : style.nonActive}>
                     DONATE
                 </a>

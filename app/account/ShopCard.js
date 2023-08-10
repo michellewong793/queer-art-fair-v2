@@ -9,7 +9,7 @@ export default function ShopCard ( props ) {
     return (
         <Card
         image={'/QAFLogoOrangePuffy.png'}
-        alt='Queer Art Faire Logo'
+        alt=""
         url={'/shops/'+urlName}
         edit={true}
         editUrl={'/shops/'+urlName+'/edit'}
