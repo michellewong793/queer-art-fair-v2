@@ -168,7 +168,7 @@ export default function ItemForm(props) {
             error={keywordError}
         />
 
-        <Label><strong>Images*</strong> Add images that illustrate key features of your item, such as views from different angles, color, and texture. For each image, write <strong>alt text</strong> describing the key features each image illustrates for the customer. Customers will read this alt text if images are unable to load or if they are using a screenreader.</Label>
+        <Label><strong>Images*</strong> Add images that illustrate key features of your item, such as views from different angles, color, and texture. For each image, write <strong>alt text</strong> describing the key features each image illustrates for the customer. Customers will read this alt text if images are unable to load or if they are using a screenreader. Alt text is strongly recommended.</Label>
 
         <div className={styles.imagesContainer}>
         
