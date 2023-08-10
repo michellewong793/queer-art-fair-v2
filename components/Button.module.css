@@ -1,7 +1,8 @@
 /*Global styles*/
 .button {
     text-align: center;
-    font-family: 'ClementePDak';
+    font-family: 'Clemente', 'ClementePDak-fallback', sans-serif;
+    font-weight: 600;
     font-size: 18px;
     height: 64px;
     padding: auto 0;
