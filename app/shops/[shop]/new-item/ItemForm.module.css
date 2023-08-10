@@ -12,16 +12,10 @@
     width: 150px;
 }
 
-.imageContainer {
+.imagesContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-}
-.imageWrapper {
-    width: fit-content;
-    height: fit-content;
-    background-color: white;
-    position: relative;
 }
 
 .image {
@@ -53,13 +47,30 @@
     opacity: 1;
 }
 
+@media screen and (min-width: 480px) {
+    .imageAltWrapper {
+        width: 100%;
+        display: flex;
+        gap: 16px;
+        margin-bottom: 16px;
+    }
+
+    .altTextWrapper {
+        width: 100%;
+    }
+}
+
 /*Desktop only*/
 @media screen and (min-width: 768px) {
-    .image, .fileInput {
+    .imageAltWrapper label {
+        font-size: 20px;
+    }
+    
+    .fileInput {
         width: 200px;
         height: 200px;
     } 
-
+    
     .deleteButton {
         width: 56px;
         height: 56px;

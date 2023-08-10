@@ -14,6 +14,7 @@ export default function DeletableImage ( props ) {
                 className={styles.image}
                 src={props?.imageUrl} 
                 alt={props?.altText}
+                id={props?.id}
                 />
 
             <button type='button' className={styles.deleteButton} onClick={handleOnClick}>

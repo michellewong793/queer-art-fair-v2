@@ -168,41 +168,51 @@ export default function ItemForm(props) {
             error={keywordError}
         />
 
-        <Label><strong>Images*</strong> Add images of your item. Consider adding images taken from a variety of angles that illustrate important aspects of your item like size, shape, color, and texture.</Label>
+        <Label><strong>Images*</strong> Add images that illustrate key features of your item, such as views from different angles, color, and texture. For each image, write <strong>alt text</strong> describing the key features each image illustrates for the customer. Customers will read this alt text if images are unable to load or if they are using a screenreader.</Label>
 
-        <div className={styles.imageContainer}>
+        <div className={styles.imagesContainer}>
         
         {
             images.map((image, k) => {
                 if (image.deleted) return
                 return(
-                    <div key={k}>
+                    <div key={k} className={styles.imageAltWrapper}>
+                        <div>
+                        <Label htmlFor={'image '+image.name}>Image {k}</Label>
                         <DeleteableImage
+                            id={'image '+image.name}
                             imageUrl={image.url}
                             altText={'Image '+k}
                             deleteFunction={() => {setImages(deleteLocalImage(image, images))}}
                         />
-                        <Input
-                            type='textarea'
-                            placeholder='alt text for image'
-                            onChange={(data) => 
-                                // updates the alt text
-                                setImages(images.map((i) => {
-                                    if (i.name == image.name) {
-                                        return {
-                                            name: image.name,
-                                            uploaded: image.uploaded,
-                                            deleted: image.deleted,
-                                            file: image.file,
-                                            url: image.url,
-                                            alt: data.value
+                        </div>
+                        
+                        <div className={styles.altTextWrapper}>
+                            <Label htmlFor={'alt '+image.name}>Alt text for image {k}</Label>
+                            <Input
+                                id={'alt '+image.name}
+                                class={styles.altText}
+                                type='textarea'
+                                placeholder='alt text for image'
+                                onChange={(data) => 
+                                    // updates the alt text
+                                    setImages(images.map((i) => {
+                                        if (i.name == image.name) {
+                                            return {
+                                                name: image.name,
+                                                uploaded: image.uploaded,
+                                                deleted: image.deleted,
+                                                file: image.file,
+                                                url: image.url,
+                                                alt: data.value
+                                            }
+                                        } else {
+                                            return i
                                         }
-                                    } else {
-                                        return i
-                                    }
-                                }))
-                            }
-                        />
+                                    }))
+                                }
+                            />
+                        </div>
                     </div>
                     
                 )        
