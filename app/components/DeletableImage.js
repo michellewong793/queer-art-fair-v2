@@ -9,7 +9,7 @@ export default function DeletableImage ( props ) {
     }
 
     return (
-        <Clickable className={styles.imageWrapper}>
+        <Clickable className={styles.imageWrapper +' '+props?.className}>
             <img 
                 className={styles.image}
                 src={props?.imageUrl} 

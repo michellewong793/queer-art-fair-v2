@@ -178,9 +178,8 @@ export default function ItemForm(props) {
                 return(
                     <div key={k} className={styles.imageAltWrapper}>
                         <div>
-                        <Label htmlFor={'image '+image.name}>Image {k}</Label>
                         <DeleteableImage
-                            id={'image '+image.name}
+                            className={styles.image}
                             imageUrl={image.url}
                             altText={'Image '+k}
                             deleteFunction={() => {setImages(deleteLocalImage(image, images))}}
@@ -188,12 +187,11 @@ export default function ItemForm(props) {
                         </div>
                         
                         <div className={styles.altTextWrapper}>
-                            <Label htmlFor={'alt '+image.name}>Alt text for image {k}</Label>
                             <Input
-                                id={'alt '+image.name}
+                                ariaLabel={'Alt text for image ' + {k}}
                                 class={styles.altText}
                                 type='textarea'
-                                placeholder='alt text for image'
+                                placeholder='alt text for above image'
                                 onChange={(data) => 
                                     // updates the alt text
                                     setImages(images.map((i) => {

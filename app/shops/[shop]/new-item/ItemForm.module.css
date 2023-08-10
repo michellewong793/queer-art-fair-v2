@@ -18,19 +18,6 @@
     gap: 16px;
 }
 
-.image {
-    width: 96px;
-    height: 96px;
-    object-fit: cover;
-    border-radius: 4px;
-    display: block;
-}
-
-.fileInput {
-    width: 96px;
-    height: 96px;
-}
-
 .deleteButton {
     background-color: rgba(0, 0, 0, 0);
     position: absolute;
@@ -47,10 +34,52 @@
     opacity: 1;
 }
 
-@media screen and (min-width: 480px) {
+/*Mobile only*/
+@media screen and (max-width: 480px) {
+    .imagesContainer {
+        margin-bottom: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
     .imageAltWrapper {
         width: 100%;
         display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .image img {
+        width: 250px;
+        height: 250px;
+    }
+    
+    /*the trash icon*/
+    .image button img {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .altTextWrapper {
+        width: 100%;
+    }
+    
+    .fileInput {
+        width: 300px;
+        margin: auto;
+    }
+}
+
+/*Tablet and desktop only*/
+@media screen and (min-width: 480px) {
+
+    .imageAltWrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
         gap: 16px;
         margin-bottom: 16px;
     }
@@ -65,11 +94,17 @@
     .imageAltWrapper label {
         font-size: 20px;
     }
-    
-    .fileInput {
-        width: 200px;
-        height: 200px;
-    } 
+
+    .fileInput, .image img {
+        width: 250px;
+        height: 250px;
+    }
+
+    /*the trash icon*/
+    .image button img {
+        width: 56px;
+        height: 56px;
+    }
     
     .deleteButton {
         width: 56px;
