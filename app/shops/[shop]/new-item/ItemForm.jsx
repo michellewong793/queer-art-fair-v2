@@ -173,18 +173,18 @@ export default function ItemForm(props) {
         <div className={styles.imageContainer}>
         
         {
-            images.map((image) => {
+            images.map((image, k) => {
                 if (image.deleted) return
                 return(
-                    <div key={image.name}>
+                    <div key={k}>
                         <DeleteableImage
                             imageUrl={image.url}
+                            altText={'Image '+k}
                             deleteFunction={() => {setImages(deleteLocalImage(image, images))}}
                         />
                         <Input
                             type='textarea'
                             placeholder='alt text for image'
-                            defaultValue={image.alt}
                             onChange={(data) => 
                                 // updates the alt text
                                 setImages(images.map((i) => {

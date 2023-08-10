@@ -49,14 +49,15 @@ export default function DetailEditForm( props ) {
             <Label><strong>Images*</strong></Label>
             
             <div className={styles.images}>
-            {images.map(image => {
+            {images.map((image, k) => {
                 if (image.deleted) {
                     return
                 }
                 return (
-                    <div key={image.name}>
+                    <div key={k}>
                     <DeletableImage
                         imageUrl={image.url}
+                        altText={image.alt || 'image '+k}
                         deleteFunction={() => {setImages(deleteLocalImage(image, images))}}
                     />
                     <Input

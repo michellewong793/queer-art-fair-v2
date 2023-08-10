@@ -13,6 +13,7 @@ export default function DeletableImage ( props ) {
             <img 
                 className={styles.image}
                 src={props?.imageUrl} 
+                alt={props?.altText}
                 />
 
             <button type='button' className={styles.deleteButton} onClick={handleOnClick}>
