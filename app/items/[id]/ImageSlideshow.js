@@ -48,7 +48,7 @@ export default function ImageSlideshow(props) {
                         let selected = slideIndex === k;
                         return (
                             <button key={k}
-                                name={'Jump to image '+k}
+                                aria-label={'Jump to image '+k}
                                 className={styles.dot + (selected ? (' '+styles.selected) : '')} 
                                 onClick={() => setSlideIndex(k)}></button>
                         )
