@@ -1,30 +1,36 @@
 @font-face {
     font-family: "Ilyas";
     src: url("/fonts/ilyas.woff2") format("woff2");
+    font-display: swap;
 }
 @font-face {
     font-family: "Helvetica Light";
     src: url("/fonts/Helvetica-Light.woff2");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Helvetica";
     src: url("/fonts/Helvetica.woff") format("woff");
+    font-display: swap;
 }
-
-@font-face{
-    font-family: "ClementePDak";
-    src: url("/fonts/ClementePDak.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "ClementePDae";
-    src: url("/fonts/ClementePDae-Light.woff2") format("woff2");
-}
-
 /* All the versions of Clemente font */
 @font-face {
     font-family: "Clemente";
+    src: url("/fonts/clemente_pd/ClementePDaa-Hairline.ttf");
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDaa";
+    src: url("/fonts/clemente_pd/ClementePDaa-Hairline.ttf");
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDaa";
     src: url("/fonts/clemente_pd/ClementePDaa-Hairline.ttf");
     font-style: normal;
     font-weight: 100;
@@ -34,15 +40,59 @@
     src: url("/fonts/clemente_pd/ClementePDab-HairlineItalic.ttf");
     font-style: italic;
     font-weight: 100;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDab";
+    src: url("/fonts/clemente_pd/ClementePDab-HairlineItalic.ttf");
+    font-style: italic;
+    font-weight: 100;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDab";
+    src: url("/fonts/clemente_pd/ClementePDab-HairlineItalic.ttf");
+    font-style: italic;
+    font-weight: 100;
 }
 @font-face {
     font-family: "Clemente";
     src: url("/fonts/clemente_pd/ClementePDac-ExtraLight.ttf");
     font-style: normal;
     font-weight: 200;
+    font-display: swap;
 }
 @font-face {
+    font-family: "ClementePDac";
+    src: url("/fonts/clemente_pd/ClementePDac-ExtraLight.ttf");
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "ClementePDac";
+    src: url("/fonts/clemente_pd/ClementePDac-ExtraLight.ttf");
+    font-style: normal;
+    font-weight: 200;
+}
+
+@font-face {
     font-family: "Clemente";
+    src: url("/fonts/clemente_pd/ClementePDad-ExtraLightItal.ttf");
+    font-style: italic;
+    font-weight: 200;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDad";
+    src: url("/fonts/clemente_pd/ClementePDad-ExtraLightItal.ttf");
+    font-style: italic;
+    font-weight: 200;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDad";
     src: url("/fonts/clemente_pd/ClementePDad-ExtraLightItal.ttf");
     font-style: italic;
     font-weight: 200;
@@ -52,9 +102,37 @@
     src: url("/fonts/clemente_pd/ClementePDae-Light.ttf");
     font-style: normal;
     font-weight: 300;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDae";
+    src: url("/fonts/clemente_pd/ClementePDae-Light.ttf");
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDae";
+    src: url("/fonts/clemente_pd/ClementePDae-Light.ttf");
+    font-style: normal;
+    font-weight: 300;
 }
 @font-face {
     font-family: "Clemente";
+    src: url("/fonts/clemente_pd/ClementePDaf-LightItalic.ttf");
+    font-style: italic;
+    font-weight: 200;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDaf";
+    src: url("/fonts/clemente_pd/ClementePDaf-LightItalic.ttf");
+    font-style: italic;
+    font-weight: 200;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDaf";
     src: url("/fonts/clemente_pd/ClementePDaf-LightItalic.ttf");
     font-style: italic;
     font-weight: 200;
@@ -64,15 +142,51 @@
     src: url("/fonts/clemente_pd/ClementePDag-Book.ttf");
     font-style: normal;
     font-weight: 350;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDag";
+    src: url("/fonts/clemente_pd/ClementePDag-Book.ttf");
+    font-style: normal;
+    font-weight: 350;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDag";
+    src: url("/fonts/clemente_pd/ClementePDag-Book.ttf");
+    font-style: normal;
+    font-weight: 350;
 }
 @font-face {
     font-family: "Clemente";
     src: url("/fonts/clemente_pd/ClementePDah-BookItalic.ttf");
     font-style: italic;
     font-weight: 350;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDah";
+    src: url("/fonts/clemente_pd/ClementePDah-BookItalic.ttf");
+    font-style: italic;
+    font-weight: 350;
+    font-display: swap;
 } 
 @font-face {
     font-family: "Clemente";
+    src: url("/fonts/clemente_pd/ClementePDai-Regular.ttf");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDai";
+    src: url("/fonts/clemente_pd/ClementePDai-Regular.ttf");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDai";
     src: url("/fonts/clemente_pd/ClementePDai-Regular.ttf");
     font-style: normal;
     font-weight: 400;
@@ -82,9 +196,37 @@
     src: url("/fonts/clemente_pd/ClementePDaj-RegularItalic.ttf");
     font-style: italic;
     font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDaj";
+    src: url("/fonts/clemente_pd/ClementePDaj-RegularItalic.ttf");
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDaj";
+    src: url("/fonts/clemente_pd/ClementePDaj-RegularItalic.ttf");
+    font-style: italic;
+    font-weight: 400;
 }
 @font-face {
     font-family: "Clemente";
+    src: url("/fonts/clemente_pd/ClementePDak-SemiBold.ttf");
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDak";
+    src: url("/fonts/clemente_pd/ClementePDak-SemiBold.ttf");
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDak";
     src: url("/fonts/clemente_pd/ClementePDak-SemiBold.ttf");
     font-style: normal;
     font-weight: 600;
@@ -95,15 +237,51 @@
     src: url("/fonts/clemente_pd/ClementePDal-SemiBoldItalic.ttf") ;
     font-style: italic;
     font-weight: 600;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDal";
+    src: url("/fonts/clemente_pd/ClementePDal-SemiBoldItalic.ttf") ;
+    font-style: italic;
+    font-weight: 600;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDal";
+    src: url("/fonts/clemente_pd/ClementePDal-SemiBoldItalic.ttf") ;
+    font-style: italic;
+    font-weight: 600;
 }
 @font-face {
     font-family: "Clemente";
     src: url("/fonts/clemente_pd/ClementePDam-Bold.ttf");
     font-style: normal;
     font-weight: 700;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDam";
+    src: url("/fonts/clemente_pd/ClementePDam-Bold.ttf");
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
 } 
 @font-face {
     font-family: "Clemente";
+    src: url("/fonts/clemente_pd/ClementePDan-BoldItalic.ttf");
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDan";
+    src: url("/fonts/clemente_pd/ClementePDan-BoldItalic.ttf");
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDan";
     src: url("/fonts/clemente_pd/ClementePDan-BoldItalic.ttf");
     font-style: italic;
     font-weight: 700;
@@ -113,9 +291,37 @@
     src: url("/fonts/clemente_pd/ClementePDao-Heavy.ttf");
     font-style: normal;
     font-weight: 800;
+    font-display: swap;
+} 
+@font-face {
+    font-family: "ClementePDao";
+    src: url("/fonts/clemente_pd/ClementePDao-Heavy.ttf");
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+} 
+@font-face {
+    font-family: "ClementePDao";
+    src: url("/fonts/clemente_pd/ClementePDao-Heavy.ttf");
+    font-style: normal;
+    font-weight: 800;
 } 
 @font-face {
     font-family: "Clemente";
+    src: url("/fonts/clemente_pd/ClementePDap-HeavyItalic.ttf");
+    font-style: italic;
+    font-weight: 800;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDap";
+    src: url("/fonts/clemente_pd/ClementePDap-HeavyItalic.ttf");
+    font-style: italic;
+    font-weight: 800;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ClementePDap";
     src: url("/fonts/clemente_pd/ClementePDap-HeavyItalic.ttf");
     font-style: italic;
     font-weight: 800;
@@ -125,32 +331,68 @@
     src: url("/fonts/clemente_pd/ClementePDao-UltraBold.ttf");
     font-style: normal;
     font-weight: 900;
+    font-display: swap;
 }
 @font-face {
-    font-family: "Clemente";
+    font-family: "ClementePDao";
     src: url("/fonts/clemente_pd/ClementePDao-UltraBoldItali.ttf");
     font-style: italic;
     font-weight: 900;
+    font-display: swap;
+}
+
+/*Fallback fonts*/
+@font-face {
+    font-family: 'Ilyas-fallback';
+    src: local("Arial Narrow");
+}
+
+@font-face {
+    font-family: 'ClementePDak-fallback';
+    src: local("Arial");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'ClementePDae-fallback';
+    src: local("Arial Narrow");
+    font-weight: lighter;
+}
+
+@font-face {
+    font-family: 'Clemente-fallback';
+    src: local("Arial");
+}
+
+@font-face {
+    font-family: 'Helvetica-Light-fallback';
+    src: local("Arial");
+    font-weight: lighter;
+}
+
+@font-face {
+    font-family: "Helvetica-fallback";
+    src: local("Arial");
 }
 
 
 /*Global styles*/
 h1 {
-    font-family: 'Ilyas';
+    font-family: 'Ilyas', 'Ilyas-fallback', sans-serif;
     font-size: 36px;
     font-weight: normal;
     margin: 0;
     color: #1A361E;
 }
 h2 {
-    font-family: 'Ilyas';
+    font-family: 'Ilyas', 'Ilyas-fallback', sans-serif;
     font-size: 36px;
     font-weight: normal;
     margin: 0;
     color: #1A361E;
 }
 h3 {
-    font-family: 'Clemente';
+    font-family:'Clemente', 'Clemente-fallback', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
@@ -159,14 +401,84 @@ h3 {
 }
 
 p {
-    font-family: 'Helvetica Light';
+    font-family: 'Helvetica Light', 'Helvetica-Light-fallback', sans-serif;
     font-size: 16px;
     font-weight: 200;
     margin: 0;
     color: #0C180E;
 }
 
+listItem {
+    font-family: "ClementePDae";
+    background-color: whitesmoke;
+    padding: 4px;
+}
+
+listItem:hover {
+    background-color: gray;
+    cursor: pointer;
+    font-family: "ClementePDak";
+}
+
+resultContainer {
+    display: flex;
+    flex-direction: column;
+    width: 304px;
+}
+
+resultContainer:hover {
+    cursor: pointer;
+}
+
+img {
+    height: 304px;
+    width: 304px;
+    object-fit: contain;
+}
+
+result {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 32px;
+}
+
+prodName {
+    font-family: 'ClementePDae';
+    font-size: 24px;
+    padding-left: 8px;
+    padding-right: 16px;
+}
+
+prodPrice {
+    font-family: 'ClementePDak';
+    font-size: 16px;
+    padding: 8px;
+}
+
+noResults {
+    font-family: 'ClementePDae';
+    color: #1A361E;
+    font-size: 16px;
+    padding: 8px;
+    align-items: center;
+    text-align: center;
+}
+
+otherOptions {
+    font-family: 'ClementePDae';
+    color: #1A361E;
+    font-size: 32px;
+    padding: 8px;
+    align-items: center;
+    text-align: center;
+}
+
+
 @media screen and (min-width: 768px) {
+
     h1 {
         font-size: 120px;
     }
@@ -176,7 +488,7 @@ p {
     h3 {
         font-size: 40px;
     }
-    p {
+    p, li {
         font-size: 24px;
     }
 }

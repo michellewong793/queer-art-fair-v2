@@ -21,7 +21,7 @@
     font-size: 48px; 
     margin: 0;
     color: #1A361E; 
-    font-family: 'Ilyas';
+    font-family: 'Ilyas', 'Ilyas-fallback', 'sans-serif';
 }
 
 @media (min-width: 768px) {
@@ -41,7 +41,7 @@
 }
 
 .mediumStrawberry {
-    display: none;
+    display: block;
     height: 41px;
     width: 32px;
     background-image: url("/smallStrawberryBorder.png");

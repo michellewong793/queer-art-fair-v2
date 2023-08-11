@@ -1,0 +1,59 @@
+.error, .success, .neutral, .dismissed {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    width: 100%;
+    padding: 16px;
+    padding-right: 32px;
+    margin-bottom: 16px;
+
+    position: relative;
+    cursor: auto;
+
+    visibility: visible;
+
+    background-color: white;
+    border-bottom: 4px solid;
+    height: fit-content;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.error {
+    border-color: rgb(209, 0, 0);
+}
+
+.success {
+    border-color: rgb(44, 155, 0);
+}
+
+.neutral {
+    border-color: rgb(205, 160, 0);
+}
+
+.dismissed, .dismissed * {
+    opacity: 0;
+    font-size: 0;
+    padding: 0;
+    height: 0;
+    margin: 0;
+    visibility: hidden;
+}
+
+.close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    border: none;
+    background: #00000000;
+}
+.close p {
+    font-family: Helvetica;
+    color: #666;
+}
+
+.close:hover p {
+    color: #000;
+}

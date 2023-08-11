@@ -11,7 +11,7 @@
 }
 
 .pastVendorsText {
-    font-family: "ClementePDae";
+    font-family: "ClementePDae", 'ClementePDae-fallback', sans-serif;
     color: #113219;
     justify-content: center;
     align-items: center;

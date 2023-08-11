@@ -62,12 +62,13 @@
 
 .image{
     height: 200px;
-    width: auto;
+    width: 145px;
+    object-fit: contain;
 }
 
 @media (min-width: 768px) {
     .image {
-        height: auto;
+        height: 388px;
         width: 300px;
     }
 }
@@ -89,13 +90,13 @@
 
 .orange {
     height: 32px;
-    width: auto;
+    width: 25px;;
     padding-right: 8px; 
 }
 
 @media (min-width: 768px) {
     .orange {
-        width: auto;
+        width: 35px;
         height: 40px;
         padding-right: 16px;
     }
@@ -116,7 +117,7 @@
 .subheading {
     font-size: 16px;
     padding-bottom: 8px;
-    font-family: "Helvetica Light";
+    font-family: "Helvetica Light", "Helvetica-Light-fallback", sans-serif;
     margin: 0px
 }
 

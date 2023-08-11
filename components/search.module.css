@@ -1,0 +1,231 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inputText {
+    border: 1px solid transparent;
+    background-color: whitesmoke;
+    padding: 8px;
+    font-size: 16px;
+    font-family: "ClementePDae";
+    width: 225px;
+    height: 24px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+@media (min-width: 768px) {
+    .inputText {
+        width: 400px;
+    }
+}
+
+.inputSubmit {
+    border: 1px solid transparent;
+    border-radius: 8%;
+    background-color: #1A361E;
+    font-family: "ClementePDae";
+    padding: 10px;
+    font-size: 16px;
+    color: whitesmoke;
+    height: 40px;
+    width: 80px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.list {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+@media (min-width: 768px) {
+    .list {
+        width: 416px;
+    }
+}
+
+.searchResults {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 8px;
+    padding: 8px;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .searchResults {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 48px;
+        max-width: 1160px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+}
+
+@media(min-width: 1100px) {
+    .searchResults {
+        grid-template-columns: auto auto auto;
+    }
+}
+
+.columnContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.rowContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.filter {
+    border: 1px solid transparent;
+    font-family: "ClementePDae";
+    border-radius: 5px;
+    background-color: #1A361E;
+    padding: 10px;
+    font-size: 16px;
+    color: whitesmoke;
+    height: 18px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.filter:hover {
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .filter {
+        width: 98px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+}
+
+.filterColumnContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .filterColumnContainer {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
+
+.filterList {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    display: none;
+    flex-direction: column;
+    width: 220px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media(min-width: 768px) {
+    .filterList {
+        width: 120px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+}
+
+.listItem {
+    font-family: "ClementePDae";
+    background-color: whitesmoke;
+    padding: 4px;
+}
+
+.listItem:hover {
+    background-color: gray;
+    cursor: pointer;
+    font-family: "ClementePDak";
+}
+
+.collectionContainer {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 16px;
+    padding: 8px;
+    align-items: center;
+    justify-content: center;
+    max-width: 1160px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .collectionContainer {
+        grid-template-columns: auto auto auto auto;
+        gap: 24px;
+    }
+}
+
+.heading {
+    font-family: "ClementePDak";
+    color: #1A361E;
+    font-size: 24px;
+    padding: 4px;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .heading {
+        font-size: 32px;
+    }
+}
+
+.searchHeader {
+    font-family: "ClementePDae";
+    font-size: 48px;
+    color: #1A361E;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .gridContainer {
+        grid-template-columns: auto auto auto;
+    }
+}
+
+.noResults {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}

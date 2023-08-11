@@ -1,0 +1,49 @@
+/*Global styles*/
+
+.imageContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.imageWrapper {
+    width: fit-content;
+    height: fit-content;
+    background-color: white;
+    position: relative;
+}
+
+.image {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    display: block;
+}
+
+.deleteButton {
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 32px;
+    height: 32px;
+    z-index: 100;
+    opacity: 0.7;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.deleteButton:hover {
+    opacity: 1;
+}
+
+/*Desktop only*/
+@media screen and (min-width: 768px) {
+    .image {
+        width: 200px;
+        height: 200px;
+    } 
+
+    .deleteButton {
+        width: 56px;
+        height: 56px;
+    }
+}

@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: auto;
+    align-items: center;
+    background-color: #FFF9ED;
+    border-radius: 10%;
+    margin: 8px;
+}
+
+.container:hover {
+    cursor: pointer;
+}
+
+.image {
+    height: 150px;
+    width: 150px;
+    object-fit: contain;
+}
+
+.text{
+    font-family: "ClementePDak";
+    color: #1A361E;
+    font-size: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
