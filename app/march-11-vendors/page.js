@@ -11,6 +11,8 @@ import PastVendor from "../../components/PastVendor";
 export default function March11Vendors() {
   return (
     <div className = {pageStyles.pastVendorsBody}>
+      <title>March 11 Vendors</title>
+      <meta name = "decription" content = "list of vendors at the March 11 fair"></meta>
       <HeaderDecoration />
       <Logo />
       <Subheader />

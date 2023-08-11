@@ -13,6 +13,8 @@ import NextEvent from "./NextEvent";
 export default function Events() {
   return (
     <div style={Styles.body} className = {pageStyles.eventsBody}>
+        <title>Events</title>
+        <meta name = "description" content = "past and future events"></meta>
         <HeaderDecoration />
         <Logo />
         <Subheader />

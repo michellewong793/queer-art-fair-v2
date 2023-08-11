@@ -12,6 +12,8 @@ import Styles from "../../components/Theme";
 export default function June17Vendors() {
   return (
     <div className = {pageStyles.pastVendorsBody} style={Styles.body}>
+      <title>June 17 Vendors</title>
+      <meta name = "description" content = "list of vendors at the June 17 faire"></meta>
       <HeaderDecoration />
       <Logo />
       <Subheader />

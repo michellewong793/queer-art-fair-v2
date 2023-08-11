@@ -14,6 +14,8 @@ import Event from "../components/Event"
 export default function HomePage() {
     return (
       <div className={HomeStyles.body} style={Styles.body}>
+      <title>Queer Art Faire</title>
+      <meta name = "description" content = "Home page for Queer Art Faire"></meta>
       <HeaderDecoration />
       <Logo />
       <Subheader />

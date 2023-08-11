@@ -11,6 +11,8 @@ import Search from '../components/Search.js';
 export default function Marketplace() {
     return (
         <div className = {pageStyles.galleryBody} style = {Styles.body}>
+            <title>QAF Marketplace</title>
+            <meta name = "description" content = "Online marketplace for Queer Art Faire"></meta>
             <MarketHeaderDec />
             <Logo />
             <Subheader />

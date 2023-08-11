@@ -12,6 +12,8 @@ import GalleryPics from "../../components/GalleryPics";
 export default function Gallery() {
     return (
         <div className = {pageStyles.galleryBody} style = {Styles.body}>
+            <title>March 11 Photo Gallery</title>
+            <meta name = "description" content = "photos from the March 11 fair"></meta>
             <HeaderDecoration />
             <Logo />
             <Subheader />
