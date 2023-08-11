@@ -28,9 +28,10 @@ const HeaderDecoration = (props) => {
                         DONATE
                     </a>
                 </div>
+            </div>
+            <div className = {headerStyle.header}>
                 
             </div>
-            <div className = {headerStyle.header}></div>
         </div>
     )
 }

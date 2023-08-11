@@ -17,24 +17,23 @@ export default function Events() {
         <Logo />
         <Subheader />
         <Navigation />
-        <Strawberry heading = {"NEXT"} showLargeStrawberry = {'none'}/>
+        <Strawberry heading = {"PAST"} showLargeStrawberry = {'none'}/>
         <Spacer height = {5}/>
-        <NextEvent
+        <ContentComponent
           imageLeft = {true}
-          imagePath = {'/july8poster.jpg'}
+          imagePath = {'/july8poster.webp'}
           alt="July 8 Poster. Raffle, outdoor games, snacks and drinks. $5 suggested donation to Queer Art Faire for creating more spaces for BIPOC and queer artists!"
-          buttonText1 = {"RSVP here"}
-          url1 = {"https://www.eventbrite.com/e/queer-art-faire-at-lakeside-landing-tickets-634996761407?aff=ebdshpsearchautocomplete"}
+          buttonText1 = {"Photos"}
+          buttonText2 = {"Vendors"}
           heading = {"July Queer Art Faire"}
           subheader = {"7.8.23 | 1-5pm | 2504 Ocean Ave San Francisco"}
           text1 = {"$5 suggested donation to Queer Art Faire"}
           text2 = {"Many local BIPOC and Queer artists selling theirs creations!"}
         />
-        <Strawberry heading = {"PAST"} showLargeStrawberry = {'none'}/>
         <Spacer height = {5}/>
         <ContentComponent 
             imageLeft = {true} 
-            imagePath = {'/poster.svg'}
+            imagePath = {'/June17FaireSquare.png'}
             alt = ""
             buttonText1 = {'Photos'}
             buttonText2 = {'Vendors'}
@@ -47,7 +46,7 @@ export default function Events() {
         <Spacer height = {5}/>
         <ContentComponent 
             imageLeft = {true} 
-            imagePath = {'/QueerArtFaireSF.jpg'}
+            imagePath = {'/QueerArtFaireSF.webp'}
             alt = "Spring fair poster. Pebble Bed. an inclusive space for all. Apply to be a vendor: michellurito@gmail.com. Instagram @queerartfairsf"
             buttonText1 = {'Photos'}
             url1 = {"/march-11-gallery"}

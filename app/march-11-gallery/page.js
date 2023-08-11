@@ -17,7 +17,7 @@ export default function Gallery() {
             <Logo />
             <Subheader />
             <Navigation />
-            <Strawberry heading = {"PHOTO GALLERY"} showLargeStrawberry = {"none"}/>
+            <Strawberry heading = {"PHOTOS"} showLargeStrawberry = {"none"}/>
             <Spacer height = {2}/>
             {ImageList.map((image, k) => { 
                 if (k%2 === 1) return // skip every odd number

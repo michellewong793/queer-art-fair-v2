@@ -10,7 +10,7 @@ export default function Index() {
         <h1> Featured Vendor: 
         KRISTIE FLEMING </h1>
         <a href="https://feralcountyfurniture.etsy.com">Preorder Here</a> 
-        <h3>Biography</h3>
+        <h2>Biography</h2>
         <p>Feral County Furnishings was founded in the midst of the Pandemic in 2020….converting her backyard into a work space, Kristie Fleming mastered the art of Shou Sugi Ban wood burning. This process preserves and protects the wood from rot, insects and the elements…But Kristie takes it those few vital steps further by actually staining the wood, then carving unique images into her pieces making this a truly custom made-to-order company.
 
         Kristie Fleming’s love of collaborating stems from a decade’s worth of editing TV shows in Los Angeles and being surrounded by similar creative talents.

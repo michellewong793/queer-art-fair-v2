@@ -2,7 +2,7 @@
 
 .active {
     font-size: 30px;
-    font-family: "ClementePDak"; 
+    font-family: "ClementePDak", "ClementePDak-fallback", sans-serif; 
     margin: 0;
     color: #113219; 
     text-decoration: none;
@@ -29,7 +29,7 @@
 .nonActive {
     text-decoration: none;
     font-size: 30px;
-    font-family: 'ClementePDae';
+    font-family: 'ClementePDae', 'ClementePDae-fallback', sans-serif;
     margin: 0px; 
     color: #113219; 
     text-decoration: none; 
@@ -39,6 +39,25 @@
 
 @media (max-width: 780px) {
     .nonActive{
+        font-size: 25px;
+    }
+}
+
+.homeNonActive {
+    text-decoration: none;
+    font-size: 30px;
+    font-family: 'ClementePDae';
+    margin: 0px; 
+    color: #113219; 
+    text-decoration: none; 
+    padding-bottom: 16px;
+    text-align: center;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+@media (max-width: 780px) {
+    .homeNonActive{
         font-size: 25px;
     }
 }
@@ -58,19 +77,16 @@
 }
 
 .button {
-    height: 40px;
-    width: 50px; 
-    margin-bottom: 30px;
+    height: 32px;
+    width: 32px; 
     justify-content: center;
-    border-radius: 15px;
     border: none;
     outline: none;
     margin-left: 10px;
     background-color: #FFF9ED;
     align-items: center;
     background-image: url("/hamburger.png");
-    background-size: 35px 35px;
-    background-position: 8px 4px;
+    background-size: 32px 32px;
     background-repeat: no-repeat;
 }
 .button:focus {
@@ -88,13 +104,13 @@
     flex-direction: column; 
     justify-content: center;
     align-items: center;
-    margin-top: 0px;
+    padding-top: 16px;
     padding-left: 10%;
     padding-right: 10%;
     margin-left: auto;
     margin-right: auto;
     position: relative;
-
+    background-color: #FFF9ED;
 }
 
 @media(min-width: 780px) {
