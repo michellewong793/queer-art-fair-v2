@@ -1,25 +1,22 @@
-import {useRouter} from 'next/router';
+'use client'
+import { usePathname } from 'next/navigation'
 import style from './navigation.module.css';
-import React, {useState} from 'react';
 
 const MarketNav = () => {
 
-    const router = useRouter();
-    const currentRoute = router.pathname;
-
-    const [showMarketNav, setShowMarketNav] = useState(false);
+    const currentRoute = usePathname();
 
     return (
             <div className = {style.desktopContainer}> 
-                <img className = {style.image} src = '/heart.png'/>
+                <img className = {style.image} src = '/heart.png' alt=''/>
                 <a  href = "/" className = {currentRoute === '/' ? style.active : style.homeNonActive}>
                     HOME
                 </a>
-                <img className = {style.image} src = '/heart.png'/>
+                <img className = {style.image} src = '/heart.png' alt=''/>
                 <a  href = "/login" className = {currentRoute === '/login' ? style.active : style.nonActive}>
                     MY ACCOUNT
                 </a>
-                <img className = {style.image} src = '/heart.png'/>
+                <img className = {style.image} src = '/heart.png' alt=''/>
             </div>
     )
 

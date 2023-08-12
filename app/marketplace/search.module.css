@@ -103,7 +103,6 @@
     padding: 10px;
     font-size: 16px;
     color: whitesmoke;
-    height: 18px;
     width: 200px;
     margin-left: auto;
     margin-right: auto;
@@ -157,6 +156,9 @@
     font-family: "ClementePDae";
     background-color: whitesmoke;
     padding: 4px;
+    border: none;
+    text-align: left;
+    font-size: 16px;
 }
 
 .listItem:hover {

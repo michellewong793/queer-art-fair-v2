@@ -1,9 +1,9 @@
+'use client'
 import style from './search.module.css';
 import React, {useState, useEffect} from 'react';
-//import supabaseClient from './supabaseClient';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
-import Collection from './Collection';
-import Spacer from './Spacer';
+import Collection from '../../components/Collection';
+import Spacer from '../../components/Spacer';
 
 
 //populates search bar with clicked search term 
@@ -47,23 +47,26 @@ function shuffle(indexArray) {
 }
 
 //creates a new product card to be displayed when searched
-function createProduct(name, price, imageUrls, id) {
+function createProduct(name, price, imageUrls, altText, id) {
+    console.log('createProduct( name:', name, ', price: ', price, ', imageUrls: ', imageUrls, ', id: ', id, ')')
     let searchResults = document.getElementById('searchResults');
 
-    let resultContainer = document.createElement('resultContainer');
+    let resultContainer = document.createElement('button');
     resultContainer.classList.add("resultContainer");
     searchResults.appendChild(resultContainer);
     let itemUrl = "/items/" + id;
     resultContainer.onclick = function(){window.location = itemUrl};
+    
 
     let resultImg = document.createElement('img');
     resultImg.classList.add('resultImg');
     resultImg.src = imageUrls[0];
+    resultImg.alt = altText[0] || '';
     resultContainer.appendChild(resultImg);
 
     if (imageUrls.length > 1) {
-        resultImg.addEventListener('mouseover', () => resultImg.src = imageUrls[1]);
-        resultImg.addEventListener('mouseout', () => resultImg.src = imageUrls[0]);
+        resultImg.addEventListener('mouseover', () => { resultImg.src = imageUrls[1]; resultImg.altText = altText[1] || ''; });
+        resultImg.addEventListener('mouseout', () => { resultImg.src = imageUrls[0]; resultImg.altText = altText[0] || ''; });
     }
 
     let result = document.createElement("result");
@@ -174,11 +177,13 @@ export default function Search() {
                 let inputReg = RegExp(userInput);
                 let result = inputReg.test(wordToTest);
                 if (result == true) {
-                    let listItem = document.createElement("listItem");
+                    let listItem = document.createElement("button");
                     listItem.innerText = wordToTest;
                     listItem.classList.add("listItem");
-                    listItem.addEventListener('click', () => listItem.id = "selectedResult");
-                    listItem.addEventListener('click', () => populate(setClicked()));
+                    listItem.onclick = function() { 
+                        listItem.id = "selectedResult"; 
+                        populate(setClicked());
+                    };
                     list.appendChild(listItem); 
                 }
             }
@@ -201,7 +206,7 @@ export default function Search() {
         
         let { data: items, error} = await supabaseClient
             .from('items')
-            .select('name, price, keywords, image_urls')
+            .select('id, name, price, keywords, image_urls, alt_text')
             .order('price', {ascending: true})
         
         if (error) {
@@ -237,11 +242,13 @@ export default function Search() {
             for (let m = 0; m < prodIndex.length; m++) {
                 let index = prodIndex[m];
                 let row = items[index];
+                console.log('row: ', row)
                 let prodName = row.name;
                 let prodPrice = row.price;
                 let prodImages = row.image_urls;
                 let prodId = row.id;
-                createProduct(prodName, prodPrice, prodImages, prodId);
+                let prodAlt = row.alt_text;
+                createProduct(prodName, prodPrice, prodImages, prodAlt, prodId);
             }
         }
     }
@@ -262,7 +269,7 @@ export default function Search() {
         
         let { data: items, error} = await supabaseClient
             .from('items')
-            .select('name, price, keywords, image_urls')
+            .select('id, name, price, keywords, image_urls, alt_text')
             .order('price', {ascending: false})
         
         if (error) {
@@ -298,11 +305,13 @@ export default function Search() {
             for (let m = 0; m < prodIndex.length; m++) {
                 let index = prodIndex[m];
                 let row = items[index];
+                console.log('row: ', row)
                 let prodName = row.name;
                 let prodPrice = row.price;
                 let prodImages = row.image_urls;
                 let prodId = row.id;
-                createProduct(prodName, prodPrice, prodImages, prodId);
+                let prodAlt = row.alt_text;
+                createProduct(prodName, prodPrice, prodImages, prodAlt, prodId);
             }
         }
     }
@@ -326,7 +335,7 @@ export default function Search() {
         
         let { data: items, error} = await supabaseClient
             .from('items')
-            .select('name, price, keywords, image_urls')
+            .select('id, name, price, keywords, image_urls, alt_text')
         
         if (error) {
             console.warn(error);
@@ -352,7 +361,6 @@ export default function Search() {
                         }
                         else {
                             prodIndex.push(i);
-                            console.log(prodIndex);
                         }
             
                     }
@@ -369,11 +377,13 @@ export default function Search() {
                 for (let m = 0; m < prodIndex.length; m++) {
                     let index = prodIndex[m];
                     let row = items[index];
+                    console.log('row: ', row)
                     let prodName = row.name;
                     let prodPrice = row.price;
                     let prodImages = row.image_urls;
                     let prodId = row.id;
-                    createProduct(prodName, prodPrice, prodImages, prodId);
+                    let prodAlt = row.alt_text;
+                    createProduct(prodName, prodPrice, prodImages, prodAlt, prodId);
                 }
             }
     
@@ -400,13 +410,15 @@ export default function Search() {
                     noResultsContainer.appendChild(otherOptions);
     
                     for (let m = 0; m < prodIndex.length; m++) {
+                        console.log('row: ', row)
                         let index = prodIndex[m];
                         let row = items[index];
                         let prodName = row.name;
                         let prodPrice = row.price;
                         let prodImages = row.image_urls;
                         let prodId = row.id;
-                        createProduct(prodName, prodPrice, prodImages, prodId);
+                        let prodAlt = row.alt_text;
+                        createProduct(prodName, prodPrice, prodImages, prodAlt, prodId);
                     }
                 }
             }
@@ -443,17 +455,17 @@ export default function Search() {
                         />
 
                         <div className = {style.filterColumnContainer}>
-                            <div 
+                            <button 
                                 className = {style.filter}
                                 onClick = {() => setShowFilterOptions(!showFilterOptions)}
                                 style = {{display: showFilterButton ? 'block' : 'none'}}
                             >
                                 Filter
-                            </div>
+                            </button>
                             <div className = {style.filterList} style = {{display: showFilterOptions ? "flex" : "none"}}>
-                                <div className = {style.listItem} onClick = {() => getItems(document.getElementById('searchTerm').value.toLowerCase())}>Clear Filters</div>
-                                <div className = {style.listItem} onClick = {() => getItemsLowHigh(document.getElementById('searchTerm').value.toLowerCase())}>Price: Low to High</div>
-                                <div className = {style.listItem} onClick = {() => getItemsHighLow(document.getElementById('searchTerm').value.toLowerCase())}>Price: High to Low</div>
+                                <button className = {style.listItem} onClick = {() => getItems(document.getElementById('searchTerm').value.toLowerCase())}>Clear Filters</button>
+                                <button className = {style.listItem} onClick = {() => getItemsLowHigh(document.getElementById('searchTerm').value.toLowerCase())}>Price: Low to High</button>
+                                <button className = {style.listItem} onClick = {() => getItemsHighLow(document.getElementById('searchTerm').value.toLowerCase())}>Price: High to Low</button>
                             </div>
                         </div>
 
@@ -461,18 +473,13 @@ export default function Search() {
                     <Spacer height = {2}/>
                     <div className = {style.heading}>Shop Our Featured Categories</div>
                     <div className = {style.collectionContainer}>
-                        <div onClick = {() => getItems("ceramics")}>
-                            <Collection image = {"url('/June17FaireSquare.png')"} text = {"Ceramics"}/>
-                        </div>
-                        <div onClick = {() => getItems("stickers")}>
-                            <Collection image = {"url('/June17FaireSquare.png')"} text = {"Stickers"}/>
-                        </div>
-                        <div onClick = {() => getItems("crochet")}>
-                            <Collection image = {"url('/June17FaireSquare.png')"} text = {"Crochet"}/>
-                        </div>
-                        <div onClick = {() => getItems("paintings")}>
-                            <Collection image = {"url('/June17FaireSquare.png')"} text = {"Paintings"}/>
-                        </div>
+                        <Collection image = {"url('/June17FaireSquare.png')"} text = {"Ceramics"} getItems={() => getItems('ceramics')}/>
+                        
+                        <Collection image = {"url('/June17FaireSquare.png')"} text = {"Stickers"} getItems={() => getItems('stickers')}/>
+                        
+                        <Collection image = {"url('/June17FaireSquare.png')"} text = {"Crochet"} getItems={() => getItems('crochet')}/>
+                        
+                        <Collection image = {"url('/June17FaireSquare.png')"} text = {"Paintings"} getItems={() => getItems('paintings')}/>
                     </div>
                     <div className = {style.noResults} id = "noResultsContainer"></div>
                     <div className = {style.searchResults} id = "searchResults"></div>

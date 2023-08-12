@@ -1,6 +1,4 @@
 import style from './collection.module.css';
-import supabaseClient from './supabaseClient';
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 
 const Collection = (props) => {
     let collectionStyles = {
@@ -14,10 +12,10 @@ const Collection = (props) => {
         }
     };
     return (
-        <div className = {style.container}>
+        <button type='button' className = {style.container} onClick={() => props?.getItems()}>
             <div style = {collectionStyles.image} className = {style.image}></div>
             <div className = {style.text}>{props.text}</div>
-        </div>
+        </button>
     );
 };
 

@@ -5,8 +5,10 @@
     height: auto;
     align-items: center;
     background-color: #FFF9ED;
-    border-radius: 10%;
+    border: none;
+    border-radius: 0 0 10% 10%;
     margin: 8px;
+    padding: 0;
 }
 
 .container:hover {

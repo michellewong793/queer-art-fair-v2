@@ -1,0 +1,77 @@
+.listItem {
+    font-family: "ClementePDae";
+    background-color: whitesmoke;
+    padding: 4px;
+    border: none;
+}
+
+.listItem:hover {
+    background-color: gray;
+    cursor: pointer;
+    font-family: "ClementePDak";
+}
+
+.resultContainer {
+    display: flex;
+    flex-direction: column;
+    width: 304px;
+    padding: 0;
+    background-color: #ff000000;
+    border: none;
+    height: fit-content;
+}
+
+.resultContainer:hover {
+    cursor: pointer;
+}
+
+img {
+    height: 304px;
+    width: 304px;
+    object-fit: cover;
+}
+
+result {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 32px;
+    width: 100%;
+}
+
+prodName {
+    font-family: 'ClementePDae';
+    font-size: 24px;
+    padding-left: 8px;
+    padding-right: 16px;
+    text-overflow: ellipsis;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+prodPrice {
+    font-family: 'ClementePDak';
+    font-size: 16px;
+    padding: 8px;
+}
+
+noResults {
+    font-family: 'ClementePDae';
+    color: #1A361E;
+    font-size: 16px;
+    padding: 8px;
+    align-items: center;
+    text-align: center;
+}
+
+otherOptions {
+    font-family: 'ClementePDae';
+    color: #1A361E;
+    font-size: 32px;
+    padding: 8px;
+    align-items: center;
+    text-align: center;
+}
