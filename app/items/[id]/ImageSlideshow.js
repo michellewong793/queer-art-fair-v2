@@ -32,7 +32,7 @@ export default function ImageSlideshow(props) {
             <img 
                 className={styles.image} 
                 src={imageUrls[slideIndex]}
-                alt={hasAltText && altText[slideIndex]}
+                alt={hasAltText ? altText[slideIndex] : ''}
                 />
 
             <button 
