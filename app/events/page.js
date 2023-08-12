@@ -22,6 +22,7 @@ export default function Events() {
         <ContentComponent
           imageLeft = {true}
           imagePath = {'/july8poster.webp'}
+          alt="July 8 Poster. Raffle, outdoor games, snacks and drinks. $5 suggested donation to Queer Art Faire for creating more spaces for BIPOC and queer artists!"
           buttonText1 = {"Photos"}
           buttonText2 = {"Vendors"}
           heading = {"July Queer Art Faire"}
@@ -33,6 +34,7 @@ export default function Events() {
         <ContentComponent 
             imageLeft = {true} 
             imagePath = {'/June17FaireSquare.png'}
+            alt = ""
             buttonText1 = {'Photos'}
             buttonText2 = {'Vendors'}
             url2 = {'/june-17-vendors'}
@@ -45,6 +47,7 @@ export default function Events() {
         <ContentComponent 
             imageLeft = {true} 
             imagePath = {'/QueerArtFaireSF.webp'}
+            alt = "Spring fair poster. Pebble Bed. an inclusive space for all. Apply to be a vendor: michellurito@gmail.com. Instagram @queerartfairsf"
             buttonText1 = {'Photos'}
             url1 = {"/march-11-gallery"}
             buttonText2 = {'Vendors'}

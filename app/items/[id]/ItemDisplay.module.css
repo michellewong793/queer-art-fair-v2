@@ -1,5 +1,5 @@
 /*Global styles*/
-.wrapper h3 {
+.wrapper h2 {
     margin-top: 32px;
     margin-bottom: 16px;
 }
@@ -33,7 +33,7 @@
 
 /*Desktop only*/
 @media screen and (min-width: 768px) {
-    .wrapper h3 {
+    .wrapper h2 {
         margin-top: 40px;
         margin-bottom: 24px;
     }

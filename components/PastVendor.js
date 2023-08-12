@@ -21,7 +21,7 @@ const PastVendor = (props) => {
     };
     return (
         <div style = {pastVendorStyles.container}> 
-            <img style = {pastVendorStyles.image} src = "/orange.png" loading = "lazy"/>
+            <img style = {pastVendorStyles.image} src = "/orange.png" alt='' loading = "lazy"/>
             <Spacer width = {1}/>
             <a className = {style.pastVendorsText} href = {props.url1}>
                 {props.text1}
@@ -33,7 +33,7 @@ const PastVendor = (props) => {
                 {props.text2}
             </a>
             <Spacer width = {1}/>
-            <img style = {pastVendorStyles.image} src = "/orange.png" loading = "lazy"/>
+            <img style = {pastVendorStyles.image} src = "/orange.png" alt='' loading = "lazy"/>
         </div>
     )
 };

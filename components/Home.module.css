@@ -112,7 +112,7 @@
     }
 
     .smallEventsContainer {
-        margin-top: 80px; /*Space between UPCOMING and the small events*/
+        margin-top: 0; /*Space between UPCOMING and the small events*/
         flex-direction: row;
     }
 
@@ -123,7 +123,7 @@
     }
 
     .testimonialsContainer {
-        padding-top: 160px; /* Space between UPCOMING and Testimonials heading*/
+        padding-top: 0; /* Space between UPCOMING and Testimonials heading*/
         max-width: 1035px;
         margin: 0 auto;
     }

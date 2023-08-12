@@ -9,17 +9,21 @@ export default function DeletableImage ( props ) {
     }
 
     return (
-        <Clickable className={styles.imageWrapper}>
+        <Clickable className={styles.imageWrapper +' '+props?.className}>
             <img 
                 className={styles.image}
                 src={props?.imageUrl} 
+                alt={props?.altText}
+                id={props?.id}
                 />
 
-            <img
-                className={styles.deleteButton}
-                src='/TrashIcon.svg'
-                onClick={handleOnClick}
-            />                
+            <button type='button' className={styles.deleteButton} onClick={handleOnClick}>
+                <img
+                    className={styles.icon}
+                    src='/TrashIcon.svg'
+                    alt='Delete this image'
+                />  
+            </button>              
         </Clickable>
     )
 }

@@ -3,22 +3,22 @@
 // the form to create a new item
 // Info needed: name, photos, description, price, quantity, expiration_date, key_words, shop_id
 
-// TODO: limit number of images added, functionality to delete images
+// TODO: limit number of images added, limit image size
 
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-import { redirect } from "next/navigation";
-import { useState, useEffect } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { useState, useId } from "react";
 import Label from "../../../components/forms/label";
 import Input from "../../../components/forms/input";
 import styles from "./ItemForm.module.css"
 import DeleteableImage from "../../../components/DeletableImage"
+import { deleteLocalImage, getLocalImage, updateDatabaseImages } from '../../../components/imageHandler'
+import { useRouter } from "next/navigation";
 
 export default function ItemForm(props) {
     const supabase = createClientComponentClient()
+    const router = useRouter()
     const shopId = props?.shop.id;
 
-    const [itemId, setId] = useState();
     const [itemName, setName] = useState();
     const [itemDescription, setDescription] = useState();
     const [itemPrice, setPrice] = useState();
@@ -26,8 +26,6 @@ export default function ItemForm(props) {
     const [keywords, setKeywords] = useState([]);
 
     const [images, setImages] = useState([]);
-
-    const [imageUrls, setImageUrls] = useState([]);
 
     const [nameError, setNameError] = useState(null);
     const [descriptionError, setDescriptionError] = useState(null);
@@ -38,12 +36,11 @@ export default function ItemForm(props) {
 
     const [formError, setFormError] = useState(null);
 
-    async function getImage(data) {
-        let file = data.files[0]
-        if (file) {
-            setImages(arr => [ ...arr, file]);
-        }
-    }
+    const nameId = useId()
+    const descriptionId = useId()
+    const priceId = useId()
+    const quantityId = useId()
+    const keywordId = useId()
 
     // adds a new row to the "items" table with the new item info (except the image urls)
     const createItem = async (e) => {
@@ -79,9 +76,6 @@ export default function ItemForm(props) {
             return;
         }
         
-        // reset imageUrls
-        setImageUrls([]);
-
         // put the item in the database
         const { data, error } = await supabase
             .from('items')
@@ -99,88 +93,21 @@ export default function ItemForm(props) {
             return;
         }
         if (data) {
-            setId(data[0].id)
+            let itemId = data[0].id
+            // add the images and alt text
+            await updateDatabaseImages(itemId, images)
+            router.replace('/items/'+itemId)
         }
     }
-    // itemId is set after the item has been added to the database via createItem.
-    useEffect (() => {
-
-        // uploads the image to supabase storage and adds the image's public url to imageUrls[]
-        async function uploadImage(image, itemId) {
-            const imageId = uuidv4();
-
-            const { data, error } = await supabase
-                    .storage
-                    .from('item-photos')
-                    .upload(itemId + '/' + imageId, image)
-            if (error) {
-                setFormError(error.message)
-                return
-            }
-            if (data) {
-                addImageUrl(data.path);
-            }
-        }
-
-        async function addImageUrl(path) {
-            // Add the image url to the item
-            const { data } = supabase
-                .storage
-                .from('item-photos')
-                .getPublicUrl(path)
-            if (data) {
-                setImageUrls( arr => [ ...arr, data.publicUrl])
-            }
-        }
-
-        async function uploadImages() {
-            // upload the images to supabase storage
-            await images.forEach(async image => {
-                await uploadImage(image, itemId)
-            })
-
-        }
-        
-        if (!itemId || imageUrls.length > 0) return;
-        // upload the images to item-photos bucket under folder [itemId]
-        uploadImages();
-        
-    }, [itemId])
-
-    // when all the image urls have been created (as uploadImages runs), add them to the items table
-    useEffect(() => {
-
-        async function updateItemImageUrls() {
-            // set the imageUrls
-            const { data, error } = await supabase
-                .from('items')
-                .update({ image_urls: imageUrls })
-                .eq('id', itemId)
-                .select()
-            
-
-            if(error) {
-                console.warn(error)
-            }
-            if (data) {
-            }
-        }
-
-        if (imageUrls.length !== images.length) return;
-        if (imageUrls.length == 0) return;
-        updateItemImageUrls();
-
-        // redirect to the new item
-        redirect('/items/' + itemId.toString(), 'push');
-    }, [imageUrls])
 
     return (
         <>
-        <h3>Create Item</h3>
+        <h2>Create Item</h2>
         <p className={styles.instructions}>You're adding an item to your shop <b>{props?.shop.name}</b>. Fill out the form fields below.</p>
         <form onSubmit={createItem}>
-            <Label><strong>Name* </strong>Give your item a concise, descriptive name.</Label>
+            <Label htmlFor={nameId}><strong>Name* </strong>Give your item a concise, descriptive name.</Label>
             <Input
+                id={nameId}
                 className={styles.input}
                 type='text'
                 placeholder='eg. Mini Pink Panda Crocheted Plush'
@@ -190,8 +117,9 @@ export default function ItemForm(props) {
                 error={nameError}
             />
 
-        <Label><strong>Description* </strong>Write a description for your item. Include all details you think a customer would need to know, for instance size/dimensions, materials, what's included in the purchase, etc.</Label>
+        <Label htmlFor={descriptionId}><strong>Description* </strong>Write a description for your item. Include all details you think a customer would need to know, for instance size/dimensions, materials, what's included in the purchase, etc.</Label>
         <Input
+            id={descriptionId}
             className={styles.input}
             type='textarea'
             placeholder='eg. This hand-crocheted panda is made of cotton yarn and measures 3"...'
@@ -201,8 +129,9 @@ export default function ItemForm(props) {
             error={descriptionError}
         />
 
-        <Label><strong>Price* </strong>Add the price of your item in USD. Consider factoring in additional costs such as shipping when setting a price.</Label>
+        <Label htmlFor={priceId}><strong>Price* </strong>Add the price of your item in USD. Consider factoring in additional costs such as shipping when setting a price.</Label>
         <Input
+            id={priceId}
             className={styles.input + ' ' + styles.number}
             type='number'
             min='0.01'
@@ -214,8 +143,9 @@ export default function ItemForm(props) {
             error={priceError}
         />
 
-        <Label><strong>Quantity* </strong>Add the quantity of your item--how many of this item would you be able to sell?</Label>
+        <Label htmlFor={quantityId}><strong>Quantity* </strong>Add the quantity of your item--how many of this item would you be able to sell?</Label>
         <Input
+            id={quantityId}
             className={styles.input + ' ' + styles.number}
             type='number'
             min='1'
@@ -226,8 +156,9 @@ export default function ItemForm(props) {
             error={quantityError}
         />
 
-        <Label><strong>Keywords*</strong> Add keywords for your item. Separate keywords with commas or new lines. We use keywords to determine whether your item matches a users' search, so add all relevant search terms and check your spelling.</Label>
+        <Label htmlFor={keywordId}><strong>Keywords*</strong> Add keywords for your item. Separate keywords with commas or new lines. We use keywords to determine whether your item matches a users' search, so add all relevant search terms and check your spelling.</Label>
         <Input
+            id={keywordId}
             className={styles.input}
             type='textarea'
             placeholder='eg. stuffed animal, plush, plushie, panda, pink panda, toy, pink, crochet'
@@ -237,26 +168,61 @@ export default function ItemForm(props) {
             error={keywordError}
         />
 
-        <Label><strong>Images*</strong> Add images of your item. Consider adding images taken from a variety of angles that illustrate important aspects of your item like size, shape, color, and texture.</Label>
+        <Label><strong>Images*</strong> Add images that illustrate key features of your item, such as views from different angles, color, and texture. For each image, write <strong>alt text</strong> describing the key features each image illustrates for the customer. Customers will read this alt text if images are unable to load or if they are using a screenreader. Alt text is strongly recommended.</Label>
 
-        <div className={styles.imageContainer}>
+        <div className={styles.imagesContainer}>
         
         {
             images.map((image, k) => {
+                if (image.deleted) return
                 return(
-                    <DeleteableImage
-                        imageUrl={URL.createObjectURL(image)}
-                        deleteFunction={() => {setImages(images.slice(0, k).concat(images.slice(k + 1, images.length)))}}
-                    />
+                    <div key={k} className={styles.imageAltWrapper}>
+                        <div>
+                        <DeleteableImage
+                            className={styles.image}
+                            imageUrl={image.url}
+                            altText={'Image '+k}
+                            deleteFunction={() => {setImages(deleteLocalImage(image, images))}}
+                        />
+                        </div>
+                        
+                        <div className={styles.altTextWrapper}>
+                            <Input
+                                ariaLabel={'Alt text for image ' + {k}}
+                                class={styles.altText}
+                                type='textarea'
+                                placeholder="alt text, eg 'front view of panda showing purple body, pink ears, and embroidered smile'"
+                                onChange={(data) => 
+                                    // updates the alt text
+                                    setImages(images.map((i) => {
+                                        if (i.name == image.name) {
+                                            return {
+                                                name: image.name,
+                                                uploaded: image.uploaded,
+                                                deleted: image.deleted,
+                                                file: image.file,
+                                                url: image.url,
+                                                alt: data.value
+                                            }
+                                        } else {
+                                            return i
+                                        }
+                                    }))
+                                }
+                            />
+                        </div>
+                    </div>
+                    
                 )        
             })
         }
 
         <Input
+            ariaLabel="Upload new image"
             className={styles.input + ' ' + styles.fileInput}
             type='file'
             accept="image/png, image/jpeg, image/jpg"
-            onChange={(data) => getImage(data)} 
+            onChange={(data) => setImages([...images, getLocalImage(data)])} 
             error={imageError}
         />
         </div>

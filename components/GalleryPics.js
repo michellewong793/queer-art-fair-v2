@@ -3,71 +3,35 @@
 import style from "./gallery.module.css";
 import {useState} from 'react';
 import Spacer from './Spacer';
+import Modal from "../app/components/Modal";
 
 const GalleryPics = (props) => {
     
     const [showPic1, setShowPic1] = useState(false); 
     const [showPic2, setShowPic2] = useState(false);
 
-    let styles = {
-        button1: {
-            backgroundImage: props.imagePath1,
-            backgroundRepeat: 'no-repeat', 
-            backgroundSize: 'auto 325px',
-            border: 'none',
-            backgroundColor: '#E2F5F6',
-            backgroundPosition: 'center center',  
-            marginLeft: '8px',
-            marginRight: '8px',
-        },
-
-        button2: {
-            backgroundImage: props.imagePath2,
-            backgroundRepeat: 'no-repeat', 
-            backgroundSize: 'auto 325px',
-            border: 'none',
-            backgroundColor: '#E2F5F6',
-            backgroundPosition: 'center center',
-            marginLeft: '8px',
-            marginRight: '8px',
-        }, 
-
-        imageDiv1: {
-            height: '600px',
-            backgroundImage: props.imagePath1,
-            backgroundRepeat: 'no-repeat', 
-            backgroundSize: 'auto 500px',
-            border: 'none',
-            backgroundColor: '#E2F5F6',
-            backgroundPosition: 'center center',
-        },
-
-        imageDiv2: {
-            height: '600px',
-            background: props.imagePath2,
-            backgroundRepeat: 'no-repeat', 
-            backgroundSize: 'auto 500px',
-            border: 'none',
-            backgroundColor: '#E2F5F6',
-            backgroundPosition: 'center center',
-        }
-    }
-
     return (
         <div>
-            <div style = {{display: showPic1 ? "block" : "none"}} loading = "lazy">
-                <div className = {style.imageDiv} style = {styles.imageDiv1} onClick = {() => setShowPic1(!showPic1)} loading = "lazy"></div>
-            </div>
-            
-            <div style = {{display: showPic2 ? "block" : "none"}} loading = "lazy">
-                <div className = {style.imageDiv} style = {styles.imageDiv2} onClick = {() => setShowPic2(!showPic2)} loading = "lazy"></div>
-            </div>
 
             <div className = {style.container}>
-                <button className = {style.button} style = {styles.button1} onClick = {() => setShowPic1(!showPic1)} loading = "lazy"></button>
+                <button aria-label='expand image' className = {style.button} onClick = {() => setShowPic1(true)}>
+                    <img src={props.imagePath1} alt={props.alt1} className={style.image} loading="lazy"/>
+                </button>
                 <Spacer height = {2.5}/>
-                <button className = {style.button} style = {styles.button2} onClick = {() => setShowPic2(!showPic2)} loading = "lazy"></button>
+                { props?.imagePath2 &&
+                    <button aria-label='expand image' className = {style.button}  onClick = {() => setShowPic2(true)}>
+                        <img src={props.imagePath2} alt={props.alt2} className={style.image} loading="lazy"/>
+                    </button>
+                }
             </div>
+
+            <Modal onRequestClose={() => setShowPic1(false)} isOpen={showPic1}>
+                <img src={props.imagePath1} alt={props.alt1} className={style.image} loading="lazy"/>
+            </Modal>
+
+            <Modal onRequestClose={() => setShowPic2(false)} isOpen={showPic2}>
+                <img src={props.imagePath2} alt={props.alt2} className={style.image} loading="lazy"/>
+            </Modal>
             
         </div>
         

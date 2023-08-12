@@ -8,7 +8,7 @@
     margin-top: 24px;
 }
 
-.content h3 {
+.content h2 {
     margin-bottom: 16px;
 }
 
@@ -35,10 +35,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-}
-
-.new {
-    width: 100%;
 }
 
 .shop {
@@ -70,10 +66,5 @@
 
     .content a {
         font-size: 24px;
-    }
-
-    .new {
-        max-width: 100%;
-        width: 320px;
     }
 }

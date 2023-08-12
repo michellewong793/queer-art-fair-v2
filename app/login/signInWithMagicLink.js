@@ -11,6 +11,6 @@ export default async function signInWithMagicLink(props) {
     })
 
     if (error) {
-        console.log(error)
+        console.warn(error)
     }
 }

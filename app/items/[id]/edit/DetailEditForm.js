@@ -5,6 +5,8 @@ import Input from '../../../components/forms/input'
 import styles from './DetailEditForm.module.css'
 import { useState } from 'react'
 import BannerNotification from "../../../components/BannerNotification"
+import { useId } from "react"
+
 // TODO: other errors, non numeric quantities/prices
 
 export default function DetailEditForm( props ) {
@@ -25,6 +27,12 @@ export default function DetailEditForm( props ) {
     const [keywordError, setKeywordError] = useState(null)
 
     const [notifications, setNotifications] = useState([])
+
+    const nameId = useId()
+    const descriptionId = useId()
+    const priceId = useId()
+    const quantityId = useId()
+    const keywordsId = useId()
 
     function checkFields() {
         let error = false;
@@ -80,7 +88,7 @@ export default function DetailEditForm( props ) {
     }
     return (
         <div>
-        <h3>Item Details</h3>
+        <h2>Item Details</h2>
 
         { notifications?.map (notification => (
             <BannerNotification type={notification.type}>
@@ -89,8 +97,9 @@ export default function DetailEditForm( props ) {
         ))}
         
         <form onSubmit={(e) => updateItem(e)}>
-            <Label><strong>Name*</strong></Label>
+            <Label htmlFor={nameId}><strong>Name*</strong></Label>
             <Input
+                id={nameId}
                 className={styles.input}
                 type='text'
                 value={name}
@@ -98,8 +107,9 @@ export default function DetailEditForm( props ) {
                 error={nameError}
             />
 
-            <Label><strong>Description*</strong></Label>
+            <Label htmlFor={descriptionId}><strong>Description*</strong></Label>
             <Input
+                id={descriptionId}
                 className={styles.input}
                 type='textarea'
                 defaultValue={description}
@@ -107,8 +117,9 @@ export default function DetailEditForm( props ) {
                 error={descriptionError}
             /> 
 
-            <Label><strong>Price*</strong></Label>
+            <Label htmlFor={priceId}><strong>Price*</strong></Label>
             <Input
+                id={priceId}
                 className={styles.input + ' ' + styles.number}
                 type='number'
                 min='0.01'
@@ -118,8 +129,9 @@ export default function DetailEditForm( props ) {
                 error={priceError}
             />  
 
-            <Label><strong>Quantity*</strong></Label>
+            <Label htmlFor={quantityId}><strong>Quantity*</strong></Label>
             <Input
+                id={quantityId}
                 className={styles.input + ' ' + styles.number}
                 type='number'
                 min='1'
@@ -128,8 +140,9 @@ export default function DetailEditForm( props ) {
                 error={quantityError}
             />  
 
-            <Label><strong>Keywords*</strong></Label>
+            <Label htmlFor={keywordsId}><strong>Keywords*</strong></Label>
             <Input
+                id={keywordsId}
                 className={styles.input}
                 type='textarea'
                 defaultValue={keywords.join(', ')}

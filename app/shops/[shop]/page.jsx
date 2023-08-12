@@ -63,12 +63,12 @@ export default function Page({params}) {
         <Subheader />
         <Navigation />
         <div className={styles.content}>
-            <h3>{shopName} </h3>
+            <h2>{shopName} </h2>
             <p className={styles.description}>{shop?.description}</p>
             <Handles props={shop}/>
 
             <div className = {styles.productsContainer}>
-                <h3>Products</h3>
+                <h2>Products</h2>
                 <div className = {styles.products}>
                     {items ? items.map((item) => (
                         <ItemCard item={item}/>

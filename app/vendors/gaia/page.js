@@ -9,7 +9,7 @@ export default function Index() {
       <div style={Styles.content}>
         <h1> Featured Vendor: 
         <a href="https://instagram.com/fka.gaia"> fka.gaia </a> </h1>
-        <h3>Biography</h3>
+        <h2>Biography</h2>
         <p> 
         Gaia is a nonbinary, multi-ethnic Bay Area native, now currently residing in Berkeley, CA. Since 2021, they’ve stepped fully into their passion as a creative director, artist, writer, and community organizer, and now work as a full-time artist. They’ve shown art in galleries such as Babylon Burning Press, Hella Positive Gallery, Omni Commons, WeTheCollected Gallery, Good Mother Gallery, and more. In their shop, they offer unique and colorful prints featuring their signature character, CATBOY, as well as other whimsical pieces. They also offer a variety of handmade jewelry, hand-sculpted dishes, vases, and ashtrays, and other fun surprises. 
 

@@ -1,19 +1,68 @@
 .fileInput {
-    width: 96px;
-    height: 96px;
+    width: 250px;
     margin-bottom: 32px;
 }
 
-.images {
+.imagesContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
 }
 
+/*Mobile only*/
+@media screen and (max-width: 480px) {
+    .imagesContainer {
+        margin-bottom: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    .imageAltWrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .altTextWrapper {
+        width: 100%;
+    }
+
+    .fileInput {
+        margin: auto;
+    }
+}
+
+/*Tablet and desktop only*/
+@media screen and (min-width: 480px) {
+
+    .imageAltWrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 16px;
+        margin-bottom: 16px;
+    }
+
+    .altTextWrapper {
+        width: 100%;
+    }
+
+    .fileInput {
+        width: 150px;
+    }
+}
+
 /*Desktop only*/
 @media screen and (min-width: 768px) {
+    .imageAltWrapper label {
+        font-size: 20px;
+    }
+
     .fileInput {
         width: 200px;
-        height: 200px;
-    } 
+    }
 }

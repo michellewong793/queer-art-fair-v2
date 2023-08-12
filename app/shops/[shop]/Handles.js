@@ -4,7 +4,7 @@ import styles from './Handles.module.css'
 const Handle = (props) => {
     return (
         <div className={styles.handle}>
-            <img className={styles.logo} src={props?.logo}/>
+            <img className={styles.logo} src={props?.logo} alt={props?.alt}/>
             <p>{props?.handle}</p>
         </div>
     )
@@ -14,9 +14,9 @@ const Handle = (props) => {
 const Handles = ({props}) => {
     return (
         <div className={styles.wrapper}>
-            <Handle logo='/logos/Instagram.png' handle={'@'+props?.instagram}/>
+            <Handle logo='/logos/Instagram.png' handle={'@'+props?.instagram} alt='Instagram: '/>
             <div className={styles.spacer}></div>
-            <Handle logo='/logos/Venmo.png' handle={'@'+props?.venmo}/>
+            <Handle logo='/logos/Venmo.png' handle={'@'+props?.venmo} alt='Venmo: '/>
         </div>
     )
 }

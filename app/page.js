@@ -24,9 +24,9 @@ export default function HomePage() {
           <Strawberry heading='UPCOMING' showLargeStrawberry='none'/>
           <div className = {HomeStyles.smallEventsContainer}>
             <Event className = {HomeStyles.centerFlexChild} name="Lakeside Landing" info="July 8, 2023"/>
-            <img className = {HomeStyles.upcomingOrange} src='./puffyOrange.svg' loading = "lazy"></img>
+            <img className = {HomeStyles.upcomingOrange} src='./puffyOrange.svg' alt="" loading = "lazy"></img>
             <Event className = {HomeStyles.centerFlexChild} name="Fall Faire" info={'Sept 16, 2023'}/>
-            <img className = {HomeStyles.upcomingOrange} src='./puffyOrange.svg' loading = "lazy"></img>
+            <img className = {HomeStyles.upcomingOrange} src='./puffyOrange.svg' alt="" loading = "lazy"></img>
             <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" info={'Dec 2, 2023'}/>
           </div>
         </div>
@@ -50,7 +50,7 @@ export default function HomePage() {
           <Strawberry heading='ABOUT' showMediumStrawberry = {"none"}/>
           <div className = {HomeStyles.aboutSubContainer}>
             <div className = {HomeStyles.rowContainer}>
-              <img className = {HomeStyles.aboutImage} src='./PeachWithWater.svg' loading = "lazy"></img>
+              <img className = {HomeStyles.aboutImage} src='./PeachWithWater.svg' alt="" loading = "lazy"></img>
             </div>
             <p className= {HomeStyles.aboutText}>
             We are a community hosting art fairs in San Francisco for marginalized and queer folks who have not had a space to share their creations before. 

@@ -21,7 +21,7 @@ export default async function Page() {
         <Subheader />
         <Navigation />
         <div className={styles.content}>
-            <h3>New Shop</h3>
+            <h2>New Shop</h2>
             <ShopForm session={session}/>
         </div>
         

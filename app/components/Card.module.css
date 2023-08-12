@@ -32,6 +32,13 @@
     gap: 8px;
 }
 
+.button {
+    border: none;
+    background-color: #00000000;
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+}
 .icon {
     width: 72px;
     height: 72px;
@@ -44,13 +51,8 @@
     -webkit-transition: opacity 0.15s ease-in-out;
 }
 
-.icon:hover {
+.icon:hover, .icon:focus {
     opacity: 1.0;
-}
-
-.hidden {
-    display: none;
-    
 }
 
 .textWrapper {
@@ -65,7 +67,7 @@
 }
 
 /*desktop only*/
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 480px) {
 
     .wrapper {
         width: 320px;

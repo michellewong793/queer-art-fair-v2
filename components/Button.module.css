@@ -1,4 +1,10 @@
 /*Global styles*/
+.link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .button {
     text-align: center;
     font-family: 'Clemente', 'ClementePDak-fallback', sans-serif;
@@ -15,7 +21,7 @@
     transition: translate 0.05s ease-in-out;
 }
 
-.button:hover {
+.button:hover, .button:focus {
     translate: 0px -2px;
     box-shadow: -3px 6px 12px -1px rgba(0, 0, 0, 0.4)
 }

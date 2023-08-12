@@ -24,23 +24,23 @@ const ContentComponent = (props) => {
         {imageLeft ? (
             
                 <div className = {style.container}>
-                    <img className = {style.image} src = {props.imagePath}/>
+                    <img className = {style.image} src = {props.imagePath} alt={props?.alt}/>
                     <Spacer width = {2}/>
                     <div className = {style.smallContainer}>
-                        <p className = {style.heading} style = {contentStyles.heading}>
+                        <h3 className = {style.heading} style = {contentStyles.heading}>
                             {props.heading}
-                        </p>
+                        </h3>
                         <p className = {style.subheading} >
                             {props.subheader}
                         </p>
                         <div className = {style.textContainer}>
-                            <img className = {style.orange} src = {"/orange.png"} loading = "lazy"/>
+                            <img className = {style.orange} src = {"/orange.png"} alt='' loading = "lazy"/>
                             <p className = {style.text} style = {contentStyles.text}> 
                                 {props.text1}
                             </p>
                         </div>
                         <div className = {style.textContainer}>
-                            <img className = {style.orange} src = {"/orange.png"} loading = "lazy"/>
+                            <img className = {style.orange} src = {"/orange.png"} alt='' loading = "lazy"/>
                             <p className = {style.text} style = {contentStyles.text}> 
                                 {props.text2}
                             </p>
@@ -59,20 +59,20 @@ const ContentComponent = (props) => {
             
                 <div className = {style.container}>
                     <div className = {style.smallContainer}>
-                        <p className = {style.heading} style = {contentStyles.heading}>
+                        <h3 className = {style.heading} style = {contentStyles.heading}>
                             {props.heading}
-                        </p>
+                        </h3>
                         <p className = {style.subheading} >
                             {props.subheader}
                         </p>
                         <div className = {style.textContainer}>
-                            <img className = {style.orange} src = {"/orange.png"} loading = "lazy"/>
+                            <img className = {style.orange} src = {"/orange.png"} alt='' loading = "lazy"/>
                             <p className = {style.text} style = {contentStyles.text}> 
                                 {props.text1}
                             </p>
                         </div>
                         <div className = {style.textContainer}>
-                            <img className = {style.orange} src = {"/orange.png"} loading = "lazy"/>
+                            <img className = {style.orange} src = {"/orange.png"} alt='' loading = "lazy"/>
                             <p className = {style.text} style = {contentStyles.text}> 
                                 {props.text2}
                             </p>
@@ -86,7 +86,7 @@ const ContentComponent = (props) => {
                         </div>
                     </div>
                     <Spacer width = {2}/>
-                    <img className = {style.image} src = {props.imagePath}/>
+                    <img className = {style.image} src = {props.imagePath} alt={props?.alt}/>
                 </div>
             
         )}

@@ -9,6 +9,7 @@ import { ReactNode } from 'react'
 type CardProps = {
     className?,
     image?,
+    altText,
     url?,
     edit?,
     editUrl?,
@@ -20,6 +21,7 @@ type CardProps = {
 const Card: React.FC<CardProps> = ({
     className,
     image,
+    altText,
     url,
     edit,
     editUrl,
@@ -39,15 +41,42 @@ const Card: React.FC<CardProps> = ({
     return (
         <Clickable className={styles.wrapper + ' ' + className}>
             <div className={styles.icons}>
-                <Link className={styles.link} href={editUrl} rel="noopener noreferrer" target="_blank">
-                        <img className={edit ? styles.icon : styles.hidden} src={'/PencilEditIcon.svg'} />
-                </Link>
+                { edit && 
+                    <Link 
+                        className={styles.link} 
+                        href={editUrl} 
+                        rel="noopener noreferrer" 
+                        target="_blank"
+                    >
+                            <img 
+                                className={styles.icon} 
+                                src={'/PencilEditIcon.svg'} 
+                                alt='Open new page to edit'
+                            />
+                    </Link>
+                }
 
-                <img className={trash ? styles.icon : styles.hidden} src={'/TrashIcon.svg'} onClick={handleOnTrash}/>
+                { trash && 
+                    <button 
+                        type='button'
+                        onClick={handleOnTrash}
+                        className={styles.button}
+                    >
+                        <img 
+                            className={styles.icon} 
+                            src={'/TrashIcon.svg'} 
+                            alt='Delete'
+                        /> 
+                    </button>
+                }
             </div>
 
             <Link className={styles.link} href={url} rel="noopener noreferrer" target="_blank">
-                <img className={styles.image} src={image} />
+                <img 
+                    className={styles.image} 
+                    src={image} 
+                    alt={altText}
+                />
                 <div className={styles.textWrapper}>
                     {children}
                 </div>

@@ -5,6 +5,9 @@ import styles from './ImageSlideshow.module.css'
 
 export default function ImageSlideshow(props) {
     let imageUrls = props?.imageUrls
+    let altText = props?.altText
+    let hasAltText = props?.altText && props?.altText?.length === imageUrls?.length
+
     const [slideIndex, setSlideIndex] = useState(0);
 
     function previousImage() {
@@ -21,19 +24,21 @@ export default function ImageSlideshow(props) {
         <>
         <div className={styles.slideContainer}>
             <button 
-                name={'View previous image'}
                 className={styles.button+' '+styles.left} 
                 onClick={()=>previousImage()
                 }>
-                <img src={'/LeftArrow.svg'}/>
+                <img src={'/LeftArrow.svg'} alt='View previous image'/>
             </button>   
-            <img className={styles.image} src={imageUrls[slideIndex]}/>
+            <img 
+                className={styles.image} 
+                src={imageUrls[slideIndex]}
+                alt={hasAltText ? altText[slideIndex] : ''}
+                />
 
             <button 
-                name={'View next image'}
                 className={styles.button+' '+styles.right} 
                 onClick={()=>nextImage()}>
-                <img src={'/RightArrow.svg'}
+                <img src={'/RightArrow.svg'} alt='View next image'
                 />
             </button>
 
@@ -43,7 +48,7 @@ export default function ImageSlideshow(props) {
                         let selected = slideIndex === k;
                         return (
                             <button key={k}
-                                name={'Jump to image '+k}
+                                aria-label={'Jump to image '+k}
                                 className={styles.dot + (selected ? (' '+styles.selected) : '')} 
                                 onClick={() => setSlideIndex(k)}></button>
                         )

@@ -1,13 +1,14 @@
 'use client'
 
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import CSS from 'csstype'
 import styles from './Button.module.css'
+import Link from "next/link";
 
 type ButtonProps = {
     name?,
     className?,
+    type?,
 
     text?: string;
     textColor?: string;
@@ -22,6 +23,7 @@ type ButtonProps = {
 const Button: React.FC<ButtonProps> = ({
     className,
     text = 'Button Text', 
+    type = 'button',
     name = text,
     textColor = 'white',
     backgroundColor = '#002809', 
@@ -32,23 +34,12 @@ const Button: React.FC<ButtonProps> = ({
     onClick,
 
 }) => {
-    const router = useRouter()
     const [isHovered, setIsHovered] = useState(false);
     const handleMouseEnter = () => {
         setIsHovered(true);
     };
     const handleMouseLeave = () => {
         setIsHovered(false);
-    }
-
-    const handleOnClick = (event) => {
-        if (typeof onClick === "function") {
-            onClick({
-                value: event.target.value
-            })
-        } else if (url) {
-            router.push(url)
-        }
     }
 
     const buttonStyle: CSS.Properties = {
@@ -61,8 +52,27 @@ const Button: React.FC<ButtonProps> = ({
         buttonStyle.width = width;
     }
 
+    if (url) return (
+        <Link href={url}
+            style={buttonStyle}
+            className={styles.button + ' ' + styles.link + ' ' + className}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave} >
+            {text}
+        </Link>
+    )
+
+    const handleOnClick = (event) => {
+        if (typeof onClick === "function") {
+            onClick({
+                value: event.target.value
+            })
+        }
+    }
+    
     return (
         <button style={buttonStyle}
+            type={type}
             name={name}
             className={styles.button + ' ' + className}
             onMouseEnter={handleMouseEnter}

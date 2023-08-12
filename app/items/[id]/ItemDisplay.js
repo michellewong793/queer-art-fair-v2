@@ -20,14 +20,17 @@ export default function ItemDisplay(props) {
 
     return (
         <div className={styles.wrapper}>
-            <ImageSlideshow imageUrls={item.image_urls}/>
+            <ImageSlideshow 
+                imageUrls={item.image_urls}
+                altText={item.alt_text}
+            />
             <div className={styles.namePriceWrapper}>
-                <h3>{item?.name}</h3>
-                <h3>${item?.price}</h3>
+                <h2>{item?.name}</h2>
+                <h2>${item?.price}</h2>
             </div>
             <p className={styles.shop}>Sold by <Link href={'/shops/'+shop?.name.split(' ').join('_')}>{shop?.name}</Link></p>
 
-            <h3>Details</h3>
+            <h2>Details</h2>
             <p className={styles.description}>{item?.description}</p>
 
             <Button
@@ -40,10 +43,10 @@ export default function ItemDisplay(props) {
                 isOpen={showOrderInfo}
                 onRequestClose={(e) => setShowOrderInfo(false)}
             >
-                <h3>How to order</h3>
+                <h2>How to order</h2>
                 <p>All Queer Art Faire Online orders are placed directly with sellers via email. To place an order:</p>
                 <ol>
-                    <li>Click the button below to write an email to the seller{shopOwner?.name && <span>{', '+shopOwner.name+','}</span>} at {shopOwner?.email}. We'll draft an order message for you.</li>
+                    <li>Click the button below to write an email to the seller{shopOwner?.name && <span>{', '+shopOwner.name+','}</span>} at {shopOwner?.email && <span>{shopOwner.email}</span>}. We'll draft an order message for you.</li> 
                     
                     <li>Add any details you have for the order, for instance, order quantity (if more than one), measurements (if ordering something customizable), etc. Additionally, you can ask {shopOwnerName} questions about this product before finalizing your order.
                     </li>
@@ -58,15 +61,6 @@ export default function ItemDisplay(props) {
                     />
                 </a>
             </Modal>
-            <h3>Tags</h3>
-            <p>
-            {
-                item?.keywords.map((word, k) => (
-                    // TODO: make this link to search for word
-                    <span><Link href='/'>{word}</Link>, </span>
-                ))
-            }
-            </p>
         </div>
     )
 }

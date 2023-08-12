@@ -1,4 +1,5 @@
 /*Global styles*/
+
 .instructions {
     font-family: Helvetica;
     margin-bottom: 32px;
@@ -12,29 +13,15 @@
     width: 150px;
 }
 
-.imageContainer {
+.imagesContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
 }
-.imageWrapper {
-    width: fit-content;
-    height: fit-content;
-    background-color: white;
-    position: relative;
-}
-
-.image {
-    width: 96px;
-    height: 96px;
-    object-fit: cover;
-    border-radius: 4px;
-    display: block;
-}
 
 .fileInput {
-    width: 96px;
-    height: 96px;
+    width: 250px;
+    margin-bottom: 32px;
 }
 
 .deleteButton {
@@ -53,15 +40,60 @@
     opacity: 1;
 }
 
+/*Mobile only*/
+@media screen and (max-width: 480px) {
+    .imagesContainer {
+        margin-bottom: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    .imageAltWrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .altTextWrapper {
+        width: 100%;
+    }
+    
+    .fileInput {
+        margin: auto;
+    }
+}
+
+/*Tablet and desktop only*/
+@media screen and (min-width: 480px) {
+
+    .imageAltWrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 16px;
+        margin-bottom: 16px;
+    }
+
+    .altTextWrapper {
+        width: 100%;
+    }
+
+    .fileInput {
+        width: 150px;
+    }
+}
+
 /*Desktop only*/
 @media screen and (min-width: 768px) {
-    .image, .fileInput {
-        width: 200px;
-        height: 200px;
-    } 
+    .imageAltWrapper label {
+        font-size: 20px;
+    }
 
-    .deleteButton {
-        width: 56px;
-        height: 56px;
+    .fileInput {
+        width: 200px;
     }
 }

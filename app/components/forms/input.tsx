@@ -18,6 +18,7 @@ type InputProps = {
     step?: number,
     accept?: string,
 
+    ariaLabel?: string,
     error?: string,
     disabled?,
     onChange?,
@@ -34,6 +35,7 @@ const Input: React.FC<InputProps> = ({
     max,
     step,
     accept,
+    ariaLabel,
     error,
     disabled,
     onChange,
@@ -50,6 +52,7 @@ const Input: React.FC<InputProps> = ({
     }
 
     const fieldProps = {
+        id,
         placeholder,
         value,
         disabled,
@@ -62,9 +65,9 @@ const Input: React.FC<InputProps> = ({
                 return (
                     <div className={styles.border}>
                     <TextareaAutosize 
-                        id={id}
                         className={styles.input} 
                         defaultValue={defaultValue}
+                        aria-label={ariaLabel}
                         {...fieldProps} /> 
                     </div>
                 )
@@ -76,25 +79,28 @@ const Input: React.FC<InputProps> = ({
                         min={min}
                         max={max}
                         step={step}
+                        aria-label={ariaLabel}
                         {...fieldProps} />
                     </div>
                 )
             case 'file':
                 return (
                     <>
-                    <label className={styles.fileInputLabel}>
-                        <NewCard />
-                        <input 
-                            className={styles.fileInput}
-                            type='file'
-                            accept={accept}
-                            {...fieldProps} />
-                    </label>
+                        <label className={styles.fileInputLabel}>
+                            <NewCard className={styles.fileInputBorder}/>
+                            <input 
+                                className={styles.fileInput}
+                                type='file'
+                                accept={accept}
+                                aria-label={ariaLabel}
+                                {...fieldProps} />
+                        </label>
                     </>
                 )
             case 'submit':
                 return (
                     <Button
+                        type='submit'
                         text={value}
                     />
                 )

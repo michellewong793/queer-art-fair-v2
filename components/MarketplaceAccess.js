@@ -17,10 +17,10 @@ export default function MarketplaceAccess() {
     }
 
     return(
-        <div className = {style.button} onClick = {checkLoggedIn}>
-            <div className = {style.text}>
+        <button className = {style.button} onClick = {checkLoggedIn}>
+            <p className = {style.text}>
                 Go to Market
-            </div>
-        </div>
+            </p>
+        </button>
     );
 }

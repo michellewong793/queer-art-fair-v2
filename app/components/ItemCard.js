@@ -2,7 +2,7 @@
 import styles from './ItemCard.module.css'
 import Card from './Card'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Modal from './Modal'
 import Button from '../../components/Button'
 
@@ -39,6 +39,7 @@ const ItemCard = (props) => {
                 <Card
                 image={item?.image_urls[0]}
                 url={viewUrl}
+                altText={item?.alt_text?.length > 0 && item?.alt_text[0]}
                 edit={props?.edit}
                 editUrl={editUrl}
                 trash={props?.edit}

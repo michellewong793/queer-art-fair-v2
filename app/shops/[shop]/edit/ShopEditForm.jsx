@@ -1,7 +1,7 @@
 'use client'
 
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useId } from "react"
 import { useRouter } from "next/navigation";
 import Label from "../../../components/forms/label";
 import Input from "../../../components/forms/input";
@@ -21,6 +21,11 @@ export default function ShopEditForm( props ) {
     const [descriptionError, setDescriptionError] = useState(null)
     const [venmoError, setVenmoError] = useState(null)
     const [formError, setFormError] = useState()
+
+    const nameId = useId()
+    const descriptionId = useId()
+    const instagramId = useId()
+    const venmoId = useId()
 
     // set all of the state variables
     useEffect(() => {
@@ -44,6 +49,10 @@ export default function ShopEditForm( props ) {
             setNameError('*That name is already taken.')
             formatError = true;
         }
+        if (name.includes('_')) {
+            setNameError('*Shop name may not contain underscores.')
+            formatError = true;
+        }
         if (!description) {
             setDescriptionError('*Description is required.')
             formatError = true;
@@ -53,6 +62,7 @@ export default function ShopEditForm( props ) {
             formatError = true;
         } else {setVenmoError(null)}
         if (formatError) {
+            alert('This form contains errors. Please fix the errors and resubmit.')
             return;
         }
 
@@ -75,10 +85,11 @@ export default function ShopEditForm( props ) {
 
     return (
         <>
-            <h3>Your Shop Details</h3>
+            <h2>Your Shop Details</h2>
             <form className={styles.form} onSubmit={(e) => updateShop(e)}>
-                <Label><strong>Name*</strong> Your shop name must be unique and may not contain underscores.</Label>
+                <Label htmlFor={nameId}><strong>Name*</strong> Your shop name must be unique and may not contain underscores.</Label>
                 <Input
+                    id={nameId}
                     className={styles.input}
                     type='text'
                     value={name || ''}
@@ -86,8 +97,9 @@ export default function ShopEditForm( props ) {
                     error={nameError}
                 />
 
-                <Label><strong>Description*</strong></Label>
+                <Label htmlFor={descriptionId}><strong>Description*</strong></Label>
                 <Input
+                    id={descriptionId}
                     className={styles.input}
                     type='textarea'
                     value={description || ''}
@@ -97,10 +109,11 @@ export default function ShopEditForm( props ) {
 
                 <div className={styles.handleWrapper}>
                     <div>
-                        <Label><strong>Instagram</strong></Label>
+                        <Label htmlFor={instagramId}><strong>Instagram</strong></Label>
                         <div className={styles.handleInput}>
-                            <img className={styles.logo} src='/logos/Instagram.png'></img>
+                            <img className={styles.logo} src='/logos/Instagram.png' alt=''/>
                             <Input
+                                id={instagramId}
                                 className={styles.input}
                                 type='text'
                                 value={instagram || ''}
@@ -110,10 +123,11 @@ export default function ShopEditForm( props ) {
                     </div>
 
                     <div>
-                        <Label><strong>Venmo*</strong></Label>
+                        <Label htmlFor={venmoId}><strong>Venmo*</strong></Label>
                         <div className={styles.handleInput}>
-                            <img className={styles.logo} src='/logos/Venmo.png'></img>
+                            <img className={styles.logo} src='/logos/Venmo.png' alt=''/>
                             <Input
+                                id={venmoId}
                                 className={styles.input}
                                 type='text'
                                 value={venmo || ''}

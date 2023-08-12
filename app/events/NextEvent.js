@@ -24,7 +24,7 @@ const NextEvent = (props) => {
         {imageLeft ? (
             <div className = {style.nextEventContainer}>
                 <div className = {style.container}>
-                    <img className = {style.image} src = {props.imagePath}/>
+                    <img className = {style.image} src = {props.imagePath} alt={props?.alt}/>
                     <Spacer width = {2}/>
                     <div className = {style.smallContainer}>
                         <p className = {style.heading} style = {contentStyles.heading}>
@@ -34,13 +34,13 @@ const NextEvent = (props) => {
                             {props.subheader}
                         </p>
                         <div className = {style.textContainer}>
-                            <img className = {style.orange} src = {"/orange.svg"}/>
+                            <img className = {style.orange} src = {"/orange.svg"} alt=""/>
                             <p className = {style.text} style = {contentStyles.text}> 
                                 {props.text1}
                             </p>
                         </div>
                         <div className = {style.textContainer}>
-                            <img className = {style.orange} src = {"/orange.svg"}/>
+                            <img className = {style.orange} src = {"/orange.svg"} alt=""/>
                             <p className = {style.text} style = {contentStyles.text}> 
                                 {props.text2}
                             </p>
@@ -61,13 +61,13 @@ const NextEvent = (props) => {
                             {props.subheader}
                         </p>
                         <div className = {style.textContainer}>
-                            <img className = {style.orange} src = {"/orange.svg"}/>
+                            <img className = {style.orange} src = {"/orange.svg"} alt=""/>
                             <p className = {style.text} style = {contentStyles.text}> 
                                 {props.text1}
                             </p>
                         </div>
                         <div className = {style.textContainer}>
-                            <img className = {style.orange} src = {"/orange.svg"}/>
+                            <img className = {style.orange} src = {"/orange.svg"} alt=""/>
                             <p className = {style.text} style = {contentStyles.text}> 
                                 {props.text2}
                             </p>
@@ -76,7 +76,7 @@ const NextEvent = (props) => {
                         <Button text = {props.buttonText2} url = {props.url2}/>
                     </div>
                     <Spacer width = {2}/>
-                    <img className = {style.image} src = {props.imagePath}/>
+                    <img className = {style.image} src = {props.imagePath} alt={props?.alt}/>
                 </div>
             </div>
         )}

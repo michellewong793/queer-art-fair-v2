@@ -5,7 +5,7 @@
     width: 200px;
     height: 32px;
     border-radius: 5px;
-    border: 2px solid #ff4d4d;
+    border: 2px solid #980000;
     background-color: #FFF9ED;
     transition: background-color 0.3s ease-in-out;
     margin-top: 16px;
@@ -13,12 +13,12 @@
 
 .button:hover {
     cursor: pointer;
-    background-color: #ff4d4d;
+    background-color: #980000;
 }
 
 .text {
     font-size: 16px;
-    color: #ff4d4d;
+    color: #980000;
     font-family: "ClementePDae";
     text-align: center;
     padding-top: 6px;

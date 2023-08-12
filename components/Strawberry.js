@@ -24,7 +24,7 @@ const Strawberry = (props) => {
                     <div style = {strawberryStyles.largeStrawberry} className = {style.largeStrawberry} />
                 </div>
                 
-                <p className = {style.text}>{props.heading}</p>
+                <h2 className = {style.text}>{props.heading}</h2>
 
                 <div className = {style.imageRight}>
                     <div style = {strawberryStyles.mediumStrawberry} className = {style.mediumStrawberry}  />

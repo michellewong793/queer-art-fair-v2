@@ -10,11 +10,12 @@
     height: fit-content;
     background-color: white;
     position: relative;
+    cursor: default;
 }
 
 .image {
-    width: 96px;
-    height: 96px;
+    width: 250px;
+    height: 250px;
     object-fit: cover;
     display: block;
 }
@@ -24,15 +25,30 @@
     position: absolute;
     top: 2px;
     right: 2px;
-    width: 32px;
-    height: 32px;
+    width: fit-content;
+    height: fit-content;
     z-index: 100;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+.deleteButton img {
+    width: 56px;
+    height: 56px;
     opacity: 0.7;
     transition: opacity 0.2s ease-in-out;
+    display: block;
 }
 
-.deleteButton:hover {
+.deleteButton:hover img, .deleteButton:focus img{
     opacity: 1;
+}
+
+@media screen and (min-width: 480px) {
+    .image {
+        width: 150px;
+        height: 150px;
+    }
 }
 
 /*Desktop only*/
@@ -41,9 +57,4 @@
         width: 200px;
         height: 200px;
     } 
-
-    .deleteButton {
-        width: 56px;
-        height: 56px;
-    }
 }

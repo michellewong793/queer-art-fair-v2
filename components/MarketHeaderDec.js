@@ -1,12 +1,12 @@
-import { useRouter } from "next/router";
+'use client'
+import { usePathname } from 'next/navigation'
 import React, {useState} from 'react';
 import style from "./navigation.module.css";
 import headerStyle from "./headerDecoration.module.css";
 
 const MarketHeaderDec = (props) => {
 
-    const router = useRouter();
-    const currentRoute = router.pathname;
+    const currentRoute = usePathname();
 
     const [showNav, setShowNav] = useState(false);
 
