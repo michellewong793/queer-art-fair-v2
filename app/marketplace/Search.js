@@ -241,7 +241,6 @@ export default function Search() {
             for (let m = 0; m < prodIndex.length; m++) {
                 let index = prodIndex[m];
                 let row = items[index];
-                console.log('row: ', row)
                 let prodName = row.name;
                 let prodPrice = row.price;
                 let prodImages = row.image_urls;
@@ -304,7 +303,6 @@ export default function Search() {
             for (let m = 0; m < prodIndex.length; m++) {
                 let index = prodIndex[m];
                 let row = items[index];
-                console.log('row: ', row)
                 let prodName = row.name;
                 let prodPrice = row.price;
                 let prodImages = row.image_urls;
@@ -376,7 +374,6 @@ export default function Search() {
                 for (let m = 0; m < prodIndex.length; m++) {
                     let index = prodIndex[m];
                     let row = items[index];
-                    console.log('row: ', row)
                     let prodName = row.name;
                     let prodPrice = row.price;
                     let prodImages = row.image_urls;
@@ -409,7 +406,6 @@ export default function Search() {
                     noResultsContainer.appendChild(otherOptions);
     
                     for (let m = 0; m < prodIndex.length; m++) {
-                        console.log('row: ', row)
                         let index = prodIndex[m];
                         let row = items[index];
                         let prodName = row.name;
