@@ -17,6 +17,8 @@ export default function Login() {
     const [email, setEmail] = useState();
     return(
         <div style = {Styles.body} className = {style.bodyBackground}>
+        <title>Login</title>
+        <meta name = "description" content = "Login page for QAF"></meta>
         <HeaderDecoration />
         <Logo />
         <Subheader />
