@@ -430,12 +430,11 @@ export default function Search() {
                     <div className = {style.gridContainer}>
 
                         <div className = {style.columnContainer}>
-                            <label htmlFor='searchTerm'></label>
                             <input 
+                                aria-label = "Search products"
                                 className = {style.inputText} 
                                 onKeyUp = {() => autocompleteSearch()}
                                 name = "searchTerm" 
-                                id = "searchTerm"
                                 type = "text" 
                                 placeholder='Search products...'
                             />
