@@ -8,9 +8,6 @@ import Button from '../../components/Button'
 
 // props = item, edit (T/F), trash (T/F)
 const ItemCard = (props) => {
-    useEffect(() => {
-        console.log()
-    }, [])
     const item = props?.item
     const editUrl = '/items/'+item?.id+'/edit'
     const viewUrl = '/items/'+item?.id

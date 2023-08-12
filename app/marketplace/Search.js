@@ -48,7 +48,6 @@ function shuffle(indexArray) {
 
 //creates a new product card to be displayed when searched
 function createProduct(name, price, imageUrls, altText, id) {
-    console.log('createProduct( name:', name, ', price: ', price, ', imageUrls: ', imageUrls, ', id: ', id, ')')
     let searchResults = document.getElementById('searchResults');
 
     let resultContainer = document.createElement('button');

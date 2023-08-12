@@ -77,7 +77,6 @@ export default function ShopForm({ session }) {
         }
         if (data) {
             setFormError(null)
-            console.log(shopName)
             let url = '/shops/'+shopName.split(' ').join('_')
             router.replace(url)
         }
