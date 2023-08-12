@@ -61,15 +61,6 @@ export default function ItemDisplay(props) {
                     />
                 </a>
             </Modal>
-            <h2>Tags</h2>
-            <p>
-            {
-                item?.keywords.map((word, k) => (
-                    // TODO: make this link to search for word
-                    <span key={k}><Link href='/'>{word}</Link>, </span>
-                ))
-            }
-            </p>
         </div>
     )
 }
