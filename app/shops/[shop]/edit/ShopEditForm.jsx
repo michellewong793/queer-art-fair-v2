@@ -49,6 +49,10 @@ export default function ShopEditForm( props ) {
             setNameError('*That name is already taken.')
             formatError = true;
         }
+        if (name.includes('_')) {
+            setNameError('*Shop name may not contain underscores.')
+            formatError = true;
+        }
         if (!description) {
             setDescriptionError('*Description is required.')
             formatError = true;
@@ -58,6 +62,7 @@ export default function ShopEditForm( props ) {
             formatError = true;
         } else {setVenmoError(null)}
         if (formatError) {
+            alert('This form contains errors. Please fix the errors and resubmit.')
             return;
         }
 

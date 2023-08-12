@@ -3,7 +3,7 @@
 }
 
 /*desktop only*/
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 480px) {
     .link {
         width: fit-content;
     }

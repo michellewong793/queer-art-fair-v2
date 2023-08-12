@@ -24,6 +24,8 @@
 }
 
 /*desktop only*/
-@media screen and (min-width: 768px) {
-
+@media screen and (min-width: 480px) {
+    .wrapper {
+        width: 320px;
+    }
 }

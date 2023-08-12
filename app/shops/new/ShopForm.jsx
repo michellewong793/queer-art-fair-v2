@@ -47,6 +47,10 @@ export default function ShopForm({ session }) {
             setNameError('*That name is already taken.')
             formatError = true;
         }
+        if (shopName.includes('_')) {
+            setNameError('*Shop name may not contain underscores.')
+            formatError = true;
+        }
         if (!shopDescription) {
             setDescriptionError('*Description is required.')
             formatError = true;
@@ -56,6 +60,7 @@ export default function ShopForm({ session }) {
             formatError = true;
         } else {setVenmoError(null)}
         if (formatError) {
+            alert('This form contains errors. Please fix the errors and resubmit.')
             return;
         }
 

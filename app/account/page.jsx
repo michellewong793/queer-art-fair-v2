@@ -85,11 +85,9 @@ export default async function Account() {
                   <h2>Your Shops</h2>
 
                   <div className={styles.shops}>
-                    <div className={styles.new}>
-                      <Link href='./shops/new' target="_blank" rel="noopener noreferrer">
-                        <NewCard/>
-                      </Link>
-                    </div>
+                    <Link href='./shops/new' target="_blank" rel="noopener noreferrer">
+                      <NewCard/>
+                    </Link>
                     
                     {shops?.map((shop, k) => (
                       <ShopCard shop={shop} />
