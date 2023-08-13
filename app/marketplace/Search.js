@@ -435,6 +435,7 @@ export default function Search() {
                                 className = {style.inputText} 
                                 onKeyUp = {() => autocompleteSearch()}
                                 name = "searchTerm" 
+                                id = "searchTerm"
                                 type = "text" 
                                 placeholder='Search products...'
                             />
