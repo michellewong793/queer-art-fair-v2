@@ -14,6 +14,7 @@ import ShopCard from './ShopCard'
 import NewCard from '../components/NewCard';
 import Input from '../components/forms/input';
 
+export const dynamic = 'force-dynamic'
 
 export default async function Account() {
   const supabase = createServerComponentClient({ cookies })

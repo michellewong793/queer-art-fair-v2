@@ -11,6 +11,8 @@ import Subheader from "../../../../components/Subheader";
 import Navigation from "../../../../components/Navigation";
 import Footer from "../../../../components/Footer";
 
+export const dynamic = 'force-dynamic'
+
 export default async function Page( {params} ) {
     const supabase = createServerComponentClient({ cookies })
 

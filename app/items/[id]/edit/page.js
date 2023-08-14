@@ -12,6 +12,8 @@ import DetailEditForm from './DetailEditForm'
 import ImageEditForm from './ImageEditForm'
 import DeleteForm from './DeleteForm'
 
+export const dynamic = 'force-dynamic'
+
 export default async function Page( {params} ) {
     const supabase = createServerComponentClient({ cookies })
 

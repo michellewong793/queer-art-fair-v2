@@ -9,6 +9,8 @@ import HeaderDecoration from "../../../components/HeaderDecoration";
 import Footer from "../../../components/Footer";
 import ShopForm from './ShopForm'
 
+export const dynamic = 'force-dynamic'
+
 export default async function Page() {
     const supabase = createServerComponentClient({ cookies })
 

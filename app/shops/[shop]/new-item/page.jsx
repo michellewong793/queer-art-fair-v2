@@ -12,6 +12,8 @@ import Navigation from "../../../../components/Navigation";
 import Footer from "../../../../components/Footer";
 import styles from "./page.module.css"
 
+export const dynamic = 'force-dynamic'
+
 export default async function Page({params}) {
     const supabase = createServerComponentClient({ cookies })
 
