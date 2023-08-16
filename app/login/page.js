@@ -12,42 +12,65 @@ import Subheader from "../../components/Subheader";
 import Footer from "../../components/Footer";
 import style from './login.module.css';
 import Styles from "../../components/Theme";
+import PasswordProtection from './PasswordProtection'
 
 export default function Login() {
     const [email, setEmail] = useState();
-    return(
+    const [verifiedPassword, setVerifiedPassword] = useState(false)
+    const password = 'QueerArtFaire'
+
+    function loginForm() {
+
+        return (
+            <>
+                <div className = {style.heading}>
+                    Login
+                </div>
+                <Spacer height = {3}/>
+                <button className = {style.signInGoogle} onClick={() => signInWithGoogle()}>
+                    <img className = {style.googleLogo} src = {"../../googleLogo.svg"}/>
+                    <Spacer width = {1}/>
+                    <div className = {style.signInText}>
+                        Sign in with Google
+                    </div>
+                </button>
+                <Spacer height = {2} />
+                <div className = {style.bold}>OR</div>
+                <Spacer height = {2}/>
+                <input placeholder='Enter your email...' className = {style.enterEmail} onChange={(e) => setEmail(e.target.value)}></input>
+                <Spacer height = {1}/>
+                <button className = {style.emailSignIn} onClick={() => signInWithMagicLink({email: email})}>
+                    <div className = {style.signInText}>
+                        Sign in with magic link
+                    </div>
+                </button>
+            </>
+        )
+    }
+    
+    function passwordProtect () {
+        return (
+            <PasswordProtection 
+                password={password} 
+                unlockWithPassword={() => setVerifiedPassword(true)} 
+            />
+        )
+    }
+    
+    return (
         <div style = {Styles.body} className = {style.bodyBackground}>
-        <HeaderDecoration />
-        <Logo />
-        <Subheader />
-        <Navigation />
-        <Spacer height = {3}/>
-        <div className = {style.columnContainer}>
-            <div className = {style.heading}>
-                Login
-            </div>
+            <HeaderDecoration />
+            <Logo />
+            <Subheader />
+            <Navigation />
             <Spacer height = {3}/>
-            <button className = {style.signInGoogle} onClick={() => signInWithGoogle()}>
-                <img className = {style.googleLogo} src = {"../../googleLogo.svg"}/>
-                <Spacer width = {1}/>
-                <div className = {style.signInText}>
-                    Sign in with Google
-                </div>
-            </button>
-            <Spacer height = {2} />
-            <div className = {style.bold}>OR</div>
-            <Spacer height = {2}/>
-            <input placeholder='Enter your email...' className = {style.enterEmail} onChange={(e) => setEmail(e.target.value)}></input>
-            <Spacer height = {1}/>
-            <button className = {style.emailSignIn} onClick={() => signInWithMagicLink({email: email})}>
-                <div className = {style.signInText}>
-                    Sign in with magic link
-                </div>
-            </button>
+            <div className = {style.columnContainer}>
+                { verifiedPassword && loginForm() }
+                { !verifiedPassword && passwordProtect() }
+            </div>
+            <Footer />
         </div>
-        
-        <Footer />
-        </div>
-        
     )
+    
+    
 }
