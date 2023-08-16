@@ -21,6 +21,7 @@ type InputProps = {
     error?: string,
     disabled?,
     onChange?,
+    onClick?,
 }
 
 const Input: React.FC<InputProps> = ({
@@ -37,6 +38,7 @@ const Input: React.FC<InputProps> = ({
     error,
     disabled,
     onChange,
+    onClick,
 }) => {
     
 
@@ -49,11 +51,20 @@ const Input: React.FC<InputProps> = ({
         }
     }
 
+    const handleClick = (event) => {
+        if (typeof onClick === "function") {
+            onClick({
+                value: event.target.value
+            })
+        }
+    }
+
     const fieldProps = {
         placeholder,
         value,
         disabled,
-        onChange: handleChange
+        onChange: handleChange,
+        onClick: handleClick
     }
     
     function inputSwitch() {
@@ -98,10 +109,25 @@ const Input: React.FC<InputProps> = ({
                         text={value}
                     />
                 )
+
+            case 'checkbox':
+                return (
+                    <div className={styles.checkboxBorder}>
+                        <input 
+                            className={styles.checkbox}
+                            type='checkbox'
+                            {...fieldProps}
+                        />
+                    </div>
+                )
             default:
                 return (
                     <div className={styles.border}>
-                    <input className={styles.input} {...fieldProps} />
+                    <input 
+                        className={styles.input} 
+                        type={type}
+                        {...fieldProps} 
+                    />
                     </div>
                 )
         }
