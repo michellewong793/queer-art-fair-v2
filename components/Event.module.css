@@ -7,9 +7,16 @@
     font-size: 24px;
 }
 
+.details {
+    text-align:center;
+    font-size:16px;
+    margin-top: 1rem;
+}
+
 .info {
     text-align: center;
     font-size: 16px;
+    margin-top: 1rem;
     white-space: pre-wrap; /*Applies line breaks in the info*/
 }
 

@@ -1,8 +1,5 @@
 const TestimonialsList = [
-    {
-        testimonial: "I really loved meeting the other vendors! I traded a pair of earrings for a hair clip from frootyshop, and traded another pair of earrings for a tattoo from flashedbystace. It was a beautiful day of sharing art with radical queer artists <3",
-        source: "junenelsonx"
-    },
+   
  {
         testimonial: "Community and talking to other artist were really amazing. The volunteers and organizers were all super helpful, kind, and accomodating",
         source: "inkyfingersprintshop",
@@ -12,13 +9,10 @@ const TestimonialsList = [
         source: "annalam218"
     },
     {
-        testimonial: "I absolutely loved the vibes! I think that everyone was amazing and talented, and there was great diversity in the types of art and vendors who were there. I was impressed by the amount of people who showed up, and I loved connecting with both vendors and just folks stopping by. I think the organizers did an incredible job, and were very responsive. The entire process was easy and simple. In particular I found the ability to hear from other artists about where else they vend and swap tips, etc was incredibly valuable as someone who's just starting out.",
+        testimonial: "I loved the vibes! I think that everyone was amazing and talented, and there was great diversity in the types of art and vendors who were there. I was impressed by the amount of people who showed up, and I loved connecting with both vendors and just folks stopping by. I think the organizers did an incredible job, and were very responsive. The entire process was easy and simple. In particular I found the ability to hear from other artists about where else they vend and swap tips, etc was incredibly valuable as someone who's just starting out.",
         source: "ashoka.alvarez"
     },
-    {
-        testimonial: "A friend we made at a karaoke night in SJ showed up to the fair to support. She is new to town in SJ and I think she was really happy to find cool artists/friends. I'm going to hang out with her soon! yay new friends!",
-        source: "Anonymous",
-    },
+   
     // {
     //     testimonial: "Community and talking to other artist were really amazing. The volunteers and organizers were all super helpful, kind, and accomodating",
     //     source: "inkyfingersprintshop",

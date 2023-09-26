@@ -20,7 +20,7 @@ export default function HomePage() {
       <Navigation />
       <div className={HomeStyles.content}>
         <div className = {HomeStyles.nextContainer}>
-          <Strawberry heading='NEXT' showMediumStrawberry = {'none'}/>
+          {/* <Strawberry heading='NEXT' showMediumStrawberry = {'none'}/>
           <img className = {HomeStyles.nextPoster} src='./QAF Poster July 8.png'></img>
 
           <div className = {HomeStyles.nextButtonContainer}>
@@ -38,17 +38,13 @@ export default function HomePage() {
             borderColor="#489056"
             url="https://docs.google.com/forms/d/e/1FAIpQLSePS8SsNjo6JF0JvOVwPIYPIv-cc8VCp2ZLEC2u5cIkPKNodA/viewform"
             />
-          </div>
+          </div> */}
         </div>
         
         <div className = {HomeStyles.upcomingContainer}>
           <Strawberry heading='UPCOMING' showLargeStrawberry='none'/>
           <div className = {HomeStyles.smallEventsContainer}>
-            <Event className = {HomeStyles.centerFlexChild} name="Lakeside Landing" info="July 8, 2023"/>
-            <img className = {HomeStyles.upcomingOrange} src='./puffyOrange.svg'></img>
-            <Event className = {HomeStyles.centerFlexChild} name="Fall Faire" info={'Sept 16, 2023'}/>
-            <img className = {HomeStyles.upcomingOrange} src='./puffyOrange.svg'></img>
-            <Event className = {HomeStyles.centerFlexChild} name="Winter Faire" info={'Dec 2, 2023'}/>
+            <Event className = {HomeStyles.centerFlexChild} name="Holiday Market" info={'Dec 2, 2023 and Dec 9, 2023'} details={'Details coming soon!'}/>
           </div>
         </div>
         
@@ -72,15 +68,9 @@ export default function HomePage() {
           <div className = {HomeStyles.aboutSubContainer}>
             <img className = {HomeStyles.aboutImage} src='./PeachWithWater.svg'></img>
             <p className= {HomeStyles.aboutText}>
-            We are a community hosting art fairs in San Francisco for marginalized and queer folks who have not had a space to share their creations before. 
-            <br /> <br/>
-            We are completely a volunteer-run organization running on donations. 
-            <br/> <br/>
-            If you want to support us, we will be offering collectible merch at our fairs, and we receive donations via Venmo! 
-            <br/> <br/>
-            Venmo: @queerartfair
+            We are a community hosting art fairs in San Francisco for artists who have not had a space to share their creations before. 
             </p>
-          </div>
+        </div>
           
         </div>
         
