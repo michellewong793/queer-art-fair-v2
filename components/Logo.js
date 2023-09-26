@@ -15,7 +15,7 @@ const Logo = (props) => {
     }
 
     return (
-        <img className={Styles.logoImg} src='/./QAFLogoOrangePuffy.png'></img>
+        <img className={Styles.logoImg} src='./QAFLogoOrangePuffy.webp'></img>
     )
 }
 

@@ -34,13 +34,13 @@ const ContentComponent = (props) => {
                             {props.subheader}
                         </p>
                         <div className = {style.textContainer}>
-                            <img className = {style.orange} src = {"/orange.svg"}/>
+                            <img className = {style.orange} src = {"/orange.png"} loading = "lazy"/>
                             <p className = {style.text} style = {contentStyles.text}> 
                                 {props.text1}
                             </p>
                         </div>
                         <div className = {style.textContainer}>
-                            <img className = {style.orange} src = {"/orange.svg"}/>
+                            <img className = {style.orange} src = {"/orange.png"} loading = "lazy"/>
                             <p className = {style.text} style = {contentStyles.text}> 
                                 {props.text2}
                             </p>
@@ -66,13 +66,13 @@ const ContentComponent = (props) => {
                             {props.subheader}
                         </p>
                         <div className = {style.textContainer}>
-                            <img className = {style.orange} src = {"/orange.svg"}/>
+                            <img className = {style.orange} src = {"/orange.png"} loading = "lazy"/>
                             <p className = {style.text} style = {contentStyles.text}> 
                                 {props.text1}
                             </p>
                         </div>
                         <div className = {style.textContainer}>
-                            <img className = {style.orange} src = {"/orange.svg"}/>
+                            <img className = {style.orange} src = {"/orange.png"} loading = "lazy"/>
                             <p className = {style.text} style = {contentStyles.text}> 
                                 {props.text2}
                             </p>

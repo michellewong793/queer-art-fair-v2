@@ -66,7 +66,9 @@ export default function HomePage() {
         <div className = {HomeStyles.aboutContainer}>
           <Strawberry heading='ABOUT' showMediumStrawberry = {"none"}/>
           <div className = {HomeStyles.aboutSubContainer}>
-            <img className = {HomeStyles.aboutImage} src='./PeachWithWater.svg'></img>
+            <div className = {HomeStyles.rowContainer}>
+              <img className = {HomeStyles.aboutImage} src='./PeachWithWater.svg' loading = "lazy"></img>
+            </div>
             <p className= {HomeStyles.aboutText}>
             We are a community hosting art fairs in San Francisco for artists who have not had a space to share their creations before. 
             </p>
